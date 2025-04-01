@@ -392,7 +392,7 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
         <!-- Variable para almacenar la posicion del foco. -->
         <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
         	
-        <input type="hidden" name="sessionid" value="E645207CB4BA22BA8B2AE28EF6B30DFB">
+        <input type="hidden" name="sessionid" value="4AC71A5ECF28725D3FDB3EA916F83022">
         
         <input id="modelo" type="hidden" name="modelo" value="600_2009">												
         
@@ -401,7 +401,7 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
         
         <input type="hidden" name="idListaSesion" id="idListaSesion" value="">
         
-        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="2305942741">      
+        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="8263119067">      
                 
          
 
@@ -715,7 +715,7 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
 		<div class="capaAsistenteAncho80 ">        
             
             
-            <h1></h1><h2></h2>
+            
             <div class="cabecera">
 	            <fieldset class="bordeTablaPrincipal">
 	            	<div class="filaCentrada">
@@ -759,7 +759,7 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
 			</div>
 			
 			<div id="divErrorTransmitentesNoConsecutivos" style="margin-top:10px; display:none">
-				<img src="p_files/errorgrave.gif" style="vertical-align:middle">													
+				<img src="p_files/errorgrave.gif" style="vertical-align:middle" alt="error grave">													
 				<label style="color: red; vertical-align: middle;">						
 					Es necesario rellenar los transmitentes de manera consecutiva						
 				</label>	
@@ -1480,10 +1480,10 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
             <div class="filaCentrada">
                 <div class="colCentrada">
                     <fieldset class="paralelos">
-                        <label for="tipoPeriodo" name="labelTipoPeriodo">
+                        <label for="tipoPeriodo">
                             Tipo de periodo
                         </label>
-                        <label for="tipoPeriodo" name="tipoPeriodoError" class="marcaError">
+                        <label for="tipoPeriodoPensiones" class="marcaError">
                             
                         </label>
                         <select id="tipoPeriodoPensiones" name="tipoPeriodoPensiones" size="1" onchange="document.forms[0].botonPensiones.click()"> 
@@ -1537,18 +1537,18 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
                     <legend class="letra110">Pensión vitalicia</legend>
                     <div class="fila">	
                         <div class="col5px">
-                            <label for="fechaDevengoDia" name="labelFechaDevengoDia">
+                            <label for="fechaDevengoDia">
                                 Fecha nacimiento pensionista
                             </label>
-                            <label for="accesibilidad" name="fechaNacimientoError" class="marcaError">
+                            <label for="accesibilidad" class="marcaError">
                                 
                             </label>
                             <div class="w-100">
-                            <input id="fechaNacimientoDia" name="fechaNacimientoDia" size="1" maxlength="2">
+                            <input id="fechaNacimientoDia" name="fechaNacimientoDia" title="Día Fecha Nacimiento" size="1" maxlength="2">
 
-                            <input id="fechaNacimientoMes" name="fechaNacimientoMes" size="1" maxlength="2">
+                            <input id="fechaNacimientoMes" name="fechaNacimientoMes" title="Mes Fecha Nacimiento" size="1" maxlength="2">
 
-                            <input id="fechaNacimientoAnyo" name="fechaNacimientoAnyo" size="3" maxlength="4">
+                            <input id="fechaNacimientoAnyo" name="fechaNacimientoAnyo" title="Año Fecha Nacimiento" size="3" maxlength="4">
                             </div>
 
                         </div>
@@ -3065,7 +3065,7 @@ documento notarial a requerimiento de los obligados tributarios
                         <label for="auSelectExentos">Cód. Exención</label> 
                         <select id="auSelectExentos" class="w-100 select2-hidden-accessible" name="auSelectExentos" disabled="disabled" size="1" data-select2-id="select2-data-auSelectExentos" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-1-e8t2" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectExentos-container" aria-controls="select2-auSelectExentos-container"><span class="select2-selection__rendered" id="select2-auSelectExentos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-1-l2ox" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectExentos-container" aria-controls="select2-auSelectExentos-container"><span class="select2-selection__rendered" id="select2-auSelectExentos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         		
                         <input type="hidden" name="auSelectExentosValidado" value="">	
                     </div>
@@ -3092,7 +3092,7 @@ documento notarial a requerimiento de los obligados tributarios
                     <div class="col-12 col-xl-10 colResponsive">     
                         <select id="auSelectBonifEstatales" name="auSelectBonifEstatales" class="w-100 select2-hidden-accessible" size="1" disabled="disabled" data-select2-id="select2-data-auSelectBonifEstatales" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-2-oteo" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifEstatales-container" aria-controls="select2-auSelectBonifEstatales-container"><span class="select2-selection__rendered" id="select2-auSelectBonifEstatales-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-2-0c89" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifEstatales-container" aria-controls="select2-auSelectBonifEstatales-container"><span class="select2-selection__rendered" id="select2-auSelectBonifEstatales-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
                         		
                         <input type="hidden" name="auSelectBonifEstatalesValidado" value="">
                     </div>
@@ -3115,7 +3115,7 @@ documento notarial a requerimiento de los obligados tributarios
                         <label for="auSelectBonifAutonomicas">Cód. Bonif. Autonómicas</label> 
                         <select id="auSelectBonifAutonomicas" class="w-100 select2-hidden-accessible" name="auSelectBonifAutonomicas" disabled="disabled" size="1" data-select2-id="select2-data-auSelectBonifAutonomicas" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-3-6g28" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifAutonomicas-container" aria-controls="select2-auSelectBonifAutonomicas-container"><span class="select2-selection__rendered" id="select2-auSelectBonifAutonomicas-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-3-dp9y" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifAutonomicas-container" aria-controls="select2-auSelectBonifAutonomicas-container"><span class="select2-selection__rendered" id="select2-auSelectBonifAutonomicas-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
                         
                         <input type="hidden" name="auSelectBonifAutonomicasValidado" value="">
                     </div>
@@ -3138,7 +3138,7 @@ documento notarial a requerimiento de los obligados tributarios
                         <label for="auSelectNoSujetos">Cód. No Sujeción</label>                             
                            <select id="auSelectNoSujetos" class="w-100 select2-hidden-accessible" name="auSelectNoSujetos" disabled="disabled" size="1" data-select2-id="select2-data-auSelectNoSujetos" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-4-q8wy" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectNoSujetos-container" aria-controls="select2-auSelectNoSujetos-container"><span class="select2-selection__rendered" id="select2-auSelectNoSujetos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-4-u56r" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectNoSujetos-container" aria-controls="select2-auSelectNoSujetos-container"><span class="select2-selection__rendered" id="select2-auSelectNoSujetos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
                         
                         <input type="hidden" name="auSelectNoSujetosValidado" value="">
                     </div>
@@ -3402,7 +3402,7 @@ documento notarial a requerimiento de los obligados tributarios
                 	<strong>Lugar de firma</strong>: En <input type="hidden" id="accesible">
                	</label>
                	<input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
-				<label for="rpLugarFirma"> a 31 de marzo de 2025</label>                	                	
+				<label for="rpLugarFirma"> a 1 de abril de 2025</label>                	                	
 			</div>
 		</div>
 	</fieldset>
