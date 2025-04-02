@@ -1,0 +1,3781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><!-- INCLUMOS LA HOJA DE ESTILO --><head>
+    	  	    
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">
+		
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+	
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery_003.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery_004.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery_002.js"></script>
+
+<link href="p_files/select2.css" rel="stylesheet">
+<script src="p_files/select2.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+		
+    	
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+       
+        
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery_003.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery_004.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery_002.js"></script>
+
+<link href="p_files/select2.css" rel="stylesheet">
+<script src="p_files/select2.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+           
+    <script src="p_files/GreJsFuncionesJQueryAdjuntarDocumento_v1.js"></script>
+    
+	<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+	<script> 
+		if (history.forward(1)){location.replace(history.forward(1))}
+		
+		
+		
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}	
+		
+		//CONTROLAMOS LOS EVENTOS DEL MODELO
+		$(function() 
+		{
+			
+			
+			$("#ddDocumentoJudicial").on('change',function()
+			{
+				if ($("#ddDocumentoJudicial").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoJudicial');
+				}
+				else
+				{
+					//SI HEMOS DESMARCADO EL CHECK
+					mostrarDialogoConfirmacionResetarDialogoJudicial();
+				}
+		    });
+			
+			$("#ddDocumentoNotarial").on('change',function()
+			{
+				if ($("#ddDocumentoNotarial").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoNotarial');
+				}
+				else
+				{
+					//SI HEMOS DESMARCADO EL CHECK
+					mostrarDialogoConfirmacionResetarDialogoNotarial();
+				}
+			}); 
+			
+			$("#ddCheckNotarioFueraTablas").on('change',function()
+			{
+				if ($("#ddCheckNotarioFueraTablas").is(':checked'))
+				{
+					//SI HEMOS DESMARCADO EL CHECK
+					mostrarDialogoConfirmacionResetarDialogoNotarialFT();
+				}
+				else
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddCheckNotarioFueraTablas');
+				}
+			}); 
+			
+			if ($("#ddDocumentoNotarial").is(':checked'))
+			{
+				//SI SE DESHABILITA SI TIENE DOCUEMENTOS ADJUTNOS.
+				if ($("#numeroDocumetosAdjuntos").length > 0 
+						&& $("#numeroDocumetosAdjuntos").val() != '0')
+				{
+					deshabilitarDatepicker('ddFechaEscritura');
+				}
+				else
+				{
+					// Control de calendario en campo ddFechaEscritura
+					$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+					$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+					$("#ddFechaEscritura").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+				}
+			}
+			
+			
+			$("#ddDocumentoAdministrativo").on('change',function()
+			{
+				if ($("#ddDocumentoAdministrativo").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoAdministrativo');
+				}
+				else
+				{
+					
+					//SI HEMOS DESMARCADO EL CHECK
+					if ($("#numeroDocumetosAdjuntos").length > 0 
+							&& $("#numeroDocumetosAdjuntos").val() != '0')
+					{
+						//SI HEMOS DESMARCADO EL CHECK
+						mostrarDialogoConfirmacionResetarDialogoADMINISTRATIVO();
+					}
+					else
+					{
+						submitWithPosicionScroll('ddDocumentoAdministrativo');
+					}
+				}
+		    });
+			
+			$("#ddDocumentoPrivado").on('change',function()
+			{
+				if ($("#ddDocumentoPrivado").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoPrivado');
+					
+				}
+				else
+				{
+					
+					if ($("#numeroDocumetosAdjuntos").length > 0 
+							&& $("#numeroDocumetosAdjuntos").val() != '0')
+					{
+						//SI HEMOS DESMARCADO EL CHECK
+						mostrarDialogoConfirmacionResetarDialogoPRIVADO();
+					}
+					else
+					{
+						submitWithPosicionScroll('ddDocumentoPrivado');
+					}
+				}
+		    });
+			
+		
+		});
+		
+		//CARGAMOS LOS DATOS EN EL CASO DE QUE SE REALICEN CAMBIOS SIN HACER SUBMIT
+		function doLoadDatos2Asistente()
+		{
+			//CARGAMOS EN EL ASISTENTE EL CAMPO identificacionAutoAdministrativa
+			if ($("#ddNombreAutoridad").length > 0 && $("#ddNombreAutoridad").val() != '')
+			{
+				$("#identificacionAutoAdministrativa").val($("#ddNombreAutoridad").val());
+				$("#filaIdentificacionAutoAdministrativa").show();
+			}
+			else
+			{
+				$("#identificacionAutoAdministrativa").val("");
+				$("#filaIdentificacionAutoAdministrativa").hide();
+			}
+			
+			//CARGAMOS EN EL ASISTENTE EL CAMPO valorEnDocumento
+			if ($("#ddValorDocumento").length > 0 && $("#ddValorDocumento").val() != '')
+			{
+				$("#valorEnDocumento").val($("#ddValorDocumento").val());
+				$("#filaValorEnDocumento").show();
+			}
+			else
+			{
+				$("#valorEnDocumento").val("");
+				$("#filaValorEnDocumento").hide();
+			}
+			
+			//CARGAMOS EN EL ASISTENTE EL CAMPO localidadFormalizacion
+			if ($("#ddOtorgSelectMunicipio").length > 0 
+					&& $("#ddOtorgSelectMunicipio").val() != '0'
+						&& $("#ddOtorgSelectMunicipio").val() != null)
+			{
+				$("#localidadFormalizacion").val($('select[name="ddOtorgSelectMunicipio"] option:selected').text());
+				$("#filaLocalidadFormalizacion").show();
+			}
+			else
+			{
+				$("#localidadFormalizacion").val("");
+				$("#filaLocalidadFormalizacion").hide();
+			}
+			
+			//String decripcionOperacionActo = "";//casilla 57  	ddOperacion
+			//CARGAMOS EN EL ASISTENTE EL CAMPO localidadFormalizacion
+			if ($("#ddOperacion").length > 0 
+					&& $("#ddOperacion").val() != '0'
+						&& $("#ddOperacion").val() != null)
+			{
+				$("#decripcionOperacionActo").val($('#ddOperacion').val());
+				$("#filaDecripcionOperacionActo").show();
+			}
+			else
+			{
+				$("#decripcionOperacionActo").val("");
+				$("#filaDecripcionOperacionActo").hide();
+			}
+			
+			
+		}
+		
+		function updateIdentificacionAutoridadJudicial()
+		{
+			var sb_return = "";
+			sb_return = sb_return + $("#ddNombreJuzgado").val();
+			
+			sb_return = sb_return + " - ";
+			sb_return = sb_return + $("#ddTipoProcedimiento").val();
+			
+			sb_return = sb_return + " - ";
+			sb_return = sb_return + $("#ddNumeroAutos").val();
+			
+			sb_return = sb_return + " - ";
+			sb_return = sb_return + $("#ddAnyoAutos").val();
+			
+			$('#ddNombreAutoridad').val(sb_return);
+		}
+		
+
+	</script>
+	
+
+
+	 	 
+</head>
+	  
+
+
+	
+    
+    
+    
+    
+	
+
+   <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
+            
+        	<!-- ESTA LINEA ES NECESARIA PARA LOS ELEMENTOS DE ACCESIBILIDAD -->
+        
+        <div id="alertaDN51" title="Aviso!" style="display:none;">
+		   <span class="ui-icon ui-icon-alert dialogoAviso"></span><p>El concepto DN51 no se puede aplicar con fecha de devengo a partir del 28 de diciembre de 2019</p>
+	    </div>
+
+        <div id="alertaBonificaciones" title="Aviso!" style="display:none;">
+		   <span class="ui-icon ui-icon-alert dialogoAviso"></span><p>Para las
+ bonificaciones autonómicas con código 416 y 418: La bonificación no se 
+puede aplicar con fecha de devengo a partir del 28 de diciembre de 2019</p>
+	    </div>
+	    
+	    <div id="alertasDN51YBonificaciones" title="Aviso!" style="display:none;">
+	    	<span class="ui-icon ui-icon-alert dialogoAviso"></span>
+	    	<p>Para las bonificaciones autonómicas con código 416 y 418: La 
+bonificación no se puede aplicar con fecha de devengo a partir del 28 de
+ diciembre de 2019</p>
+	    	<span class="ui-icon ui-icon-alert dialogoAviso"></span>
+	    	<p>El concepto DN51 no se puede aplicar con fecha de devengo a partir del 28 de diciembre de 2019</p>
+	    </div>	            
+		
+ 		<form id="MODELO" name="MODELO" method="post" action="./GreSvlProcesarPeticiones" target="_self">		
+
+        <!-- Variable para almacenar la posicion del scroll. -->
+        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">
+        
+        <!-- Variable para almacenar la posicion del foco. -->
+        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+        	
+        <input type="hidden" name="sessionid" value="F6AF5D369237F67B28C981A466DD9935">
+        
+        <input id="modelo" type="hidden" name="modelo" value="600_2009">												
+        
+        <!-- No se puede mover de aquí, necesario para los anexos. -->
+        <input id="validar" type="hidden" name="validar" value="false">	
+        
+        <input type="hidden" name="idListaSesion" id="idListaSesion" value="">
+        
+        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="8577065874">      
+                
+         
+
+
+
+        
+        <!-- DATOS PERSONALES -->       
+
+	        
+
+
+
+
+   
+
+
+
+
+
+
+
+  <br>
+  		<!-- CAPA ASISTENTE -->
+		<div class="capaAsistenteAncho80 ">
+        
+            
+			
+            
+            
+
+            <div class="cabecera">
+	            <fieldset class="bordeTablaPrincipal">
+		           
+	            	<div class="filaCentrada">
+	                	<fieldset id="marcosInformativos" class="letra70">
+			                <div>
+	        		            ESTE ANEXO DEBE CUMPLIMENTARSE ÚNICAMENTE CUANDO LOS 
+	                		    SUJETOS PASIVOS QUE INTERVIENEN EN LA 
+			                    OPERACIÓN SEAN 2 O MÁS
+	        		        </div>
+	                		<div class="filaSepardor"></div>
+			                <div>
+	        		            Se consignará la identificación de cada uno de los 
+	                		    Sujeto Pasivo (N.I.F., apellidos y nombre o razón social) 
+			                    y dirección cuyo número debe coincidir, necesariamente, 
+	        		            con el declarado en la casilla 'Nº Sujeto Pasivo' del 
+			                    modelo 600 (Autoliquidación). La relación se iniciará 
+			                    con el Sujeto Pasivo que figura en el apartado 
+	        		            'SUJETO PASIVO' del mismo modelo 600
+	                		</div>
+	   					</fieldset>	    
+		           </div>
+		           
+	    	   </fieldset>
+   	   		</div>
+   	   		<div class="filaSepardor"></div>
+	   	  	<!-- ZONA DE BOTON ARRIBA -->
+	   	  	<div class="cabecera">
+			    <fieldset class="bordeTablaPrincipal">
+			        <div class="filaCentrada">
+			            <fieldset id="marcosInformativos" class="letra70">
+			                <div class="filaCentrada">
+			                    <div class="colCentrada">
+			                        <div class="colCentrada letraNormal">
+										<input id="almacenarsp" name="almacenarsp" type="submit" value="     Almacenar datos introducidos     ">
+			                        </div>
+			                    </div>
+			                </div>	
+			            </fieldset>	    
+			        </div>
+			    </fieldset>
+			</div>
+       		<div class="filaSepardor"></div>
+	        <div class="contenidoCabecera">
+	       		<fieldset class="contenidoCabeceraAnexo fondoAreaSujetosPasivos">
+	          	  <div class="anexoCabeceraTexto fondoAreaSujetosPasivos">
+			        <div class="col">
+				           Sujeto Pasivo
+			       </div>
+			        
+			          
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_Cumplimentaci%C3%B3n%20del%20ANEXO%201" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			          			          	 
+			    </div></fieldset>
+		    </div>
+
+		
+			<fieldset class="contenidoNumeroBien">			<!-- fila correspondiente a un sujeto pasivo (contiene dos columnas una con el numero de sujeto pasivo y otra con el resto) -->							
+            	<div class="colNumeroSujetoPasivo">		<!-- columna con el numero de sujeto pasivo -->            		
+            		1
+            	</div>
+            	<div class="colCamposBien">				<!-- columna con todos los campos del sujeto pasivo --> 			
+            	<div class="row">		
+                	<div class="col-12 col-xl-2 colResponsive">
+                		
+                		<input type="hidden" name="datosDeProcePorLotes0" value="false">
+                    	
+                    	<input name="spCoeficienteError0" for="0" type="hidden" value="">
+                    	<label for="0" class="marcaError">
+                    		
+                   		</label>
+                    	<label for="0">
+                    		Coeficiente de participación
+                   		</label>
+                       	<input class="w-100" id="0" name="spCoeficiente0" size="4" maxlength="5">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-xl-2 colResponsive">
+						<input for="spNif0" name="spNifError0" type="hidden" value="">
+						<label for="spNif0" name="spNif0" class="marcaError">
+								
+						</label>
+	                	<label for="0">NIF</label>
+	                   	<input class="w-100" name="spNif0" id="spNif0" size="8" maxlength="9">
+	               	</div>
+	                <div class="col-12 col-xl-6 colResponsive">
+	                    <input id="0" name="spNombreError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+	                	<label for="0">
+	                		Apellidos y nombre o razón social
+                		</label>
+	                    <input class="w-100" id="0" name="spNombre0" type="text" size="42" maxlength="60">
+	                </div>
+               	</div>
+               	<div class="row">
+               		<div class="col-12 col-xl-2 colResponsive">
+	                    <input id="0" name="spSelectSiglasError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Siglas
+                   		</label>
+                        <select class="w-100" id="0" name="spSelectSiglas0" size="1">
+                       			<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                       	</select>
+                    </div>
+                    <div class="col-12 col-xl-6 colResponsive">
+                    	<input id="0" name="spNombreViaError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Nombre Vía Pública
+                   		</label>
+                        <input class="w-100" id="0" name="spNombreVia0" type="text" size="31" maxlength="60">		   	
+                    </div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                    	<input id="0" name="spNumeroError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Número
+                   		</label>
+                       	<input class="w-100" id="0" name="spNumero0" size="4" maxlength="8">		   	
+                    </div>
+                </div>	   	
+                <div class="row">		
+                	<div class="col-12 col-xl-2 colResponsive">
+                		<input id="0" name="spLetraError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Bloque
+                   		</label>
+                        <input class="w-100" id="0" name="spLetra0" size="1" maxlength="3">
+                   	</div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                    	<input id="0" name="spEscaleraError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Escalera
+                   		</label>
+                        <input class="w-100" id="0" name="spEscalera0" size="1" maxlength="2">
+                    </div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                    	<input id="0" name="spPisoError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Planta
+                   		</label>
+                       	<input class="w-100" id="0" name="spPiso0" size="1" maxlength="2">
+                   </div>
+                   <div class="col-12 col-xl-2 colResponsive">
+                   		<input id="0" name="spPuertaError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                   		<label for="0">
+                   			Puerta
+           				</label>
+                        <input class="w-100" id="0" name="spPuerta0" size="1" maxlength="2">
+                   </div>
+                   <div class="col-12 col-xl-2 colResponsive">
+                   		<input id="0" name="spTelefonoError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                   		<label for="0">
+                   			Telf.
+                   		</label>
+                        <input class="w-100" id="0" name="spTelefono0" size="8" maxlength="9">
+                   </div>
+                   <div class="col-12 col-xl-2 colResponsive">
+                   		<input id="0" name="spFaxError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                   		<label for="0">
+                   			Fax
+                   		</label>
+                        <input class="w-100" id="0" name="spFax0" size="8" maxlength="9">
+                   </div>
+                </div>	   	
+                <div class="row">
+                   	<div class="col-12 col-xl-4 colResponsive">
+                   		<input id="0" name="spSelectProvinciaError0" value="" type="hidden">
+	                	<label for="0" class="marcaError"> 
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Provincia
+                    	</label>
+                        <select class="w-100" id="0" onchange="almacenarPosicionScroll('spSelectProvincia0');document.forms[0].almacenarspcopia.click()" name="spSelectProvincia0" size="1">
+                        	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+                   		</select>
+                    </div>
+                	<div class="col-12 col-xl-4 colResponsive">
+                		<input id="0" name="spMunicipioError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="0">
+                    		Municipio/Localidad
+                    	</label>
+                        <select class="w-100" id="0" name="spSelectMunicipio0" size="1">
+                       			
+               			</select>	
+                    </div>	
+                   	<div class="col-12 col-xl-2 colResponsive">
+                   		<input id="0" name="spCodPostalError0" value="" type="hidden">
+	                	<label for="0" class="marcaError">
+	                		 
+	                	</label>
+                       	<label for="0">
+                       		Código Postal
+                       	</label>
+                           <input class="w-100" id="0" name="spCodPostal0" type="text" size="4" maxlength="5">
+                    </div>
+                </div>
+                
+                </div>	<!-- fin columna con todos los campos del sujeto pasivo -->            
+            </fieldset>              
+	
+		
+	<div class="novisible">
+		<input id="oculto" name="almacenarspcopia" type="submit" value="veamos">
+	</div>
+		
+	<input name="tipo" value="sp" type="hidden">
+	<input name="veces" value="1" type="hidden">
+	
+
+	
+	</div>	<!-- fin capa asistente -->
+	
+	<!-- CAPA INTERMEDIA QUE SE PONE ENTRE LA PAGINA PRINCIPAL DEL MODELO Y EL ASISTENTE -->
+	<div class="capaFondoDisabledAsistente600_2009 "></div>	
+	
+
+	 	 		
+
+	        
+
+
+
+
+   
+
+
+
+
+
+
+
+  <br>
+        <!-- capa asistente -->
+		<div class="capaAsistenteAncho80 ">        
+            
+            
+            
+            <div class="cabecera">
+	            <fieldset class="bordeTablaPrincipal">
+	            	<div class="filaCentrada">
+	                	<fieldset id="marcosInformativos" class="letra70">
+			                <div>
+	        		            ESTE ANEXO DEBE CUMPLIMENTARSE ÚNICAMENTE CUANDO LOS 
+	                		    TRANSMITENTES QUE INTERVIENEN EN LA 
+			                    OPERACIÓN SEAN 2 O MÁS
+	        		        </div>
+	                		<div class="filaSepardor"></div>
+			                <div>
+	        		            Se consignará la identificación de cada uno de los 
+	                		    Transmitente (N.I.F., apellidos y nombre o razón social) 
+			                    y dirección cuyo número debe coincidir, necesariamente, 
+	        		            con el declarado en la casilla 'Nº Transmitente' del 
+			                    modelo 600 (Autoliquidación). La relación se iniciará 
+			                    con el Sujeto Pasivo que figura en el apartado 
+	        		            'TRANSMITENTE' del mismo modelo 600
+	                		</div>
+	   					</fieldset>	    
+		           </div>
+		           
+	    	   </fieldset>
+   	  		</div>
+   	   		<div class="filaSepardor"></div>
+	   	    <!-- ZONA DE BOTON ARRIBA -->
+	   	    <div class="cabecera">
+			    <fieldset class="bordeTablaPrincipal">
+			        <div class="filaCentrada">
+			            <fieldset id="marcosInformativos" class="letra70">
+			                <div class="filaCentrada">
+			                    <div class="colCentrada">
+			                        <div class="colCentrada letraNormal">
+									<input id="almacenartr" onclick="return validarNoHuecos()" name="almacenartr" type="submit" value="     Almacenar datos introducidos     ">
+			                        </div>
+			                    </div>
+			                </div>	
+			            </fieldset>	    
+			        </div>
+			    </fieldset>
+			</div>
+			
+			<div id="divErrorTransmitentesNoConsecutivos" style="margin-top:10px; display:none">
+				<img src="p_files/errorgrave.gif" style="vertical-align:middle" alt="error grave">													
+				<p style="color: red; vertical-align: middle;">						
+					Es necesario rellenar los transmitentes de manera consecutiva						
+				</p>	
+			</div>
+			
+       		<div class="filaSepardor"></div>
+	        <div class="contenidoCabecera">
+	       		<fieldset class="contenidoCabeceraAnexo fondoAreaTransmitentes">
+	          	  <div class="anexoCabeceraTexto fondoAreaTransmitentes">
+	       			<div class="col">
+				           Transmitente
+				    </div>    
+			        
+			          
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_Cumplimentaci%C3%B3n%20del%20ANEXO%201" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+	
+			    </div></fieldset>
+		    </div>
+
+		
+			<fieldset class="contenidoNumeroBien">		<!-- fila correspondiente a un transmitente (contiene dos columnas una con el numero de transmitente y otra con el resto) -->						
+            	<div class="colNumeroSujetoPasivo">		<!-- columna con el numero de transmitente -->            		
+            		1
+            	</div>
+            	<div class="colCamposBien">				<!-- columna con todos los campos del transmitente -->			
+            	<div class="row">		
+                	<div class="col-12 col-xl-2 colResponsive">
+                		
+                		<input type="hidden" name="datosDeProcePorLotes0" value="false">
+                		
+                		<input name="trCoeficienteError0" for="0" type="hidden" value="">
+                    	<label for="trCoeficienteError0" class="marcaError"></label>
+                    	<label for="trCoeficiente0">Coeficiente de participación</label>
+                       	<input id="0" class="w-100" name="trCoeficiente0" size="4" maxlength="5">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-xl-2 colResponsive">
+						<input name="trNifError0" type="hidden" value="">
+						<label for="trNifError0" class="marcaError">
+							
+						</label>
+	                	<label for="trNif0">NIF</label>
+	                   	<input class="w-100" name="trNif0" id="trNif0" size="8" maxlength="9">
+	               	</div>
+	                <div class="col-12 col-xl-6 colResponsive">
+	                	<input name="trNombreError0" type="hidden" value="">
+	                	<label for="trNombreError0" class="marcaError">
+	                		
+	                	</label>
+	                	<label for="trNombre0">Apellidos y nombre o razón social</label>
+	                    <input id="trNombre0" name="trNombre0" class="w-100" type="text" size="42" maxlength="60">
+	                </div>
+               	</div>
+               	<div class="row">
+               		<div class="col-12 col-xl-2 colResponsive">
+               			<input name="trSelectSiglasError0" type="hidden" value="">
+	                	<label for="trSelectSiglasError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trSelectSiglas0">Siglas</label>
+                        <select class="w-100" id="trSelectSiglas0" name="trSelectSiglas0" size="1">
+                       		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                       	</select>
+                    </div>
+                    <div class="col-12 col-xl-6 colResponsive">
+                    	<input name="trNombreViaError0" type="hidden" value="">
+	                	<label for="trNombreViaError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trNombreVia0">
+                    		Nombre Vía Pública
+                   		</label>
+                        <input class="w-100" id="trNombreVia0" name="trNombreVia0" type="text" size="31" maxlength="60">		   	
+                    </div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                    	<input name="trNumeroError0" type="hidden" value="">
+	                	<label for="trNumeroError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trNumero0">
+                    		Número
+                   		</label>
+                       	<input class="w-100" id="trNumero0" name="trNumero0" size="4" maxlength="8">		   	
+                    </div>
+                </div>	   	
+                <div class="row">		
+                	<div class="col-12 col-xl-2 colResponsive">
+                		<input name="trLetraError0" type="hidden" value="">
+	                	<label for="trLetraError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trLetra0">
+                    		Bloque
+                   		</label>
+                        <input class="w-100" id="trLetra0" name="trLetra0" size="1" maxlength="3">
+                   	</div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                    	<input name="trEscaleraError0" type="hidden" value="">
+	                	<label for="trEscaleraError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trEscalera0">
+                    		Escalera
+                   		</label>
+                        <input class="w-100" id="trEscalera0" name="trEscalera0" size="1" maxlength="2">
+                    </div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                    	<input name="trPisoError0" type="hidden" value="">
+	                	<label for="trPisoError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trPiso0">
+                    		Planta
+                   		</label>
+                       	<input class="w-100" id="trPiso0" name="trPiso0" size="1" maxlength="2">
+                   </div>
+                   <div class="col-12 col-xl-2 colResponsive">
+                   		<input name="trPuertaError0" type="hidden" value="">
+	                	<label for="trPuertaError0" class="marcaError">
+	                		
+	                	</label>
+                   		<label for="trPuerta0">
+                   			Puerta
+           				</label>
+                        <input class="w-100" id="trPuerta0" name="trPuerta0" size="1" maxlength="2">
+                   </div>
+                   <div class="col-12 col-xl-2 colResponsive">
+                   		<input name="trTelefonoError0" type="hidden" value="">
+	                	<label for="trTelefonoError0" class="marcaError">
+	                		
+	                	</label>
+                   		<label for="trTelefono0">
+                   			Telf.
+                   		</label>
+                        <input class="w-100" id="trTelefono0" name="trTelefono0" size="8" maxlength="9">
+                   </div>
+                   <div class="col-12 col-xl-2 colResponsive">
+                   		<input class="w-100" name="trFaxError0" type="hidden" value="">
+	                	<label for="trFaxError0" class="marcaError">
+	                		
+	                	</label>
+                   		<label for="trFax0">
+                   			Fax
+                   		</label>
+                        <input class="w-100" id="trFax0" name="trFax0" size="8" maxlength="9">
+                   </div>
+                </div>	   	
+                <div class="row">
+                   	<div class="col-12 col-xl-4 colResponsive">
+                   		<input name="trSelectProvinciaError0" type="hidden" value="">
+	                	<label for="trSelectProvinciaError0" class="marcaError"> 
+	                		
+	                	</label>
+                    	<label for="trSelectProvincia0">
+                    		Provincia
+                    	</label>
+                        <select class="w-100" id="trSelectProvincia0" onchange="almacenarPosicionScroll('trSelectProvincia0');document.forms[0].almacenartrcopia.click()" name="trSelectProvincia0" size="1">
+                        	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+                   		</select>
+                    </div>
+                	<div class="col-12 col-xl-4 colResponsive">
+                		<input name="trMunicipioError0" type="hidden" value="">
+	                	<label for="trMunicipioError0" class="marcaError">
+	                		
+	                	</label>
+                    	<label for="trSelectMunicipio0">Municipio/Localidad</label>
+                        <select class="w-100" id="trSelectMunicipio0" name="trSelectMunicipio0" size="1">
+                       		
+               			</select>	
+                    </div>	
+                   	<div class="col-12 col-xl-2 colResponsive">
+                   		<input name="trCodPostalError0" type="hidden" value="">
+	                	<label for="trCodPostalError0" class="marcaError">
+	                		 
+	                	</label>
+                       	<label for="trCodPostal0">
+                       		Código Postal
+                       	</label>
+                           <input class="w-100" id="trCodPostal0" name="trCodPostal0" type="text" size="4" maxlength="5">
+                    </div>
+                </div>                
+               	</div>	<!-- fin columna con todos los campos del transmitente -->                
+            </fieldset>       
+	
+		 
+	<div class="novisible">
+			<input id="oculto" name="almacenartrcopia" type="submit" value="veamos">
+	</div>
+		
+	<input name="tipo" value="tr" type="hidden">
+	<input name="veces" value="1" type="hidden">
+	
+
+	
+	</div>	<!-- fin capa asistente -->
+	
+	<!-- CAPA INTERMEDIA QUE SE PONE ENTRE LA PAGINA PRINCIPAL DEL MODELO Y EL ASISTENTE -->
+	<div class="capaFondoDisabledAsistente600_2009 "></div>	
+
+	<script>
+	function validarNoHuecos()
+	{		
+		var n = document.getElementById("trCantidadTransmitente").value
+	    var relleno0=false;
+		var relleno1=false;
+				
+		for(q=0; q<n; q++)
+		{			
+			if(!document.getElementById("trNif"+q).value=="" ||	
+			   !document.getElementById("trNombre"+q).value=="" ||
+			   (document.getElementById("trSelectSiglas"+q).value!="" && document.getElementById("trSelectSiglas"+q).value!="0") ||  
+			   !document.getElementById("trNombreVia"+q).value=="" ||
+			   !document.getElementById("trLetra"+q).value=="" ||
+			   !document.getElementById("trEscalera"+q).value=="" ||
+			   !document.getElementById("trPiso"+q).value=="" ||
+			   !document.getElementById("trPuerta"+q).value=="" ||
+			   !document.getElementById("trTelefono"+q).value=="" ||
+			   !document.getElementById("trFax"+q).value=="" ||
+			   (document.getElementById("trSelectProvincia"+q).value!="" && document.getElementById("trSelectProvincia"+q).value!="0") ||
+			   (document.getElementById("trSelectMunicipio"+q).value!="" && document.getElementById("trSelectMunicipio"+q).value!="0") ||
+			   !document.getElementById("trCodPostal"+q).value=="")
+			{				
+				if(q==0)
+					relleno0 = true;
+				else
+				if(q==1)
+					relleno1 = true; 	
+				else //q>1
+				{
+					relleno0 = relleno1;
+					relleno1 = true;
+				}				
+			}
+			else
+			{			
+				if(q==0)
+					relleno0 = false;
+				else
+				if(q==1)
+					relleno1 = false; 	
+				else //q>1
+				{
+					relleno0 = relleno1;
+					relleno1 = false;	
+				}
+			}
+			
+			if(relleno0==false && relleno1==true)
+			{
+				document.getElementById('divErrorTransmitentesNoConsecutivos').style.display='block'
+				return false;
+			}			
+		}			
+
+		document.getElementById('divErrorTransmitentesNoConsecutivos').style.display='none'
+		
+		return true
+	}
+	
+	</script>
+	     
+
+        
+        
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<div class="filaSepardor"></div>		
+		
+		<div class="capaAsistenteAncho68 asistenteVisible">	<!-- CAPA ASISTENTE -->
+				
+			
+
+
+
+
+
+
+
+
+
+			
+			<div class="filaSepardor"></div>
+			<!-- CABECERA -->
+			<div class="contenidoCabecera">
+				<fieldset class="contenidoCabecera">
+					<div class="contenidoCabeceraTexto">
+						<div class="col">Cálculo del recargo e intereses de demora por presentación fuera de plazo</div>
+ 						
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_Recargo%20e%20intereses%20de%20autoliquidaciones%20fuera%20de%20plazo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+</div>
+			</fieldset>
+		</div>
+		
+		<div class="contenidoDatos">	<!-- DIV CONTENIDO DATOS -->
+			<fieldset class="contenidoDatos">
+				<div class="contenidoDatos">
+					<div class="row">
+						<div class="col-12 col-xl-4 colResponsive">
+							<label for="fechaDevengoDiaIntereses" name="labelFechaDevengoDia">
+
+										Devengo 
+ 
+							</label>
+							<label for="fechaDevengoDiaIntereses" name="fechaDevengoError" class="marcaError"> 
+								 
+							</label>
+ 
+								<label for="fechaDevengoDiaIntereses" name="fechaDevengoError" class="marcaError"> 
+									 
+								</label>
+
+								<div class="w-100">
+									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Día fecha devengo intereses" class="proteger" value="02" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" value="04" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" value="2025" size="3" maxlength="4" readonly="readonly">
+								</div> 
+
+					</div>
+						
+						
+	
+					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="EH0204" size="6" maxlength="6" readonly="readonly" type="hidden">
+
+				<div class="col-12 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="labelFechaFinDePlazoDia"> 
+
+						Fecha fin de plazo 
+ 
+					</label>
+					<label for="fechaFinDePlazoDia" name="fechaFinDePlazoError" class="marcaError">
+						  
+					</label>
+
+					<div class="w-100">		
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Día Fecha Fin de Plazo" value="02" size="1" maxlength="2"> 
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" value="05" size="1" maxlength="2"> 
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" value="2025" size="3" maxlength="4"></div>
+					</div>
+					
+				<div class="col-12 col-xl-4 colResponsive">
+					<label for="fechaIngresoDia" name="labelFechaIngresoDia"> 
+						Fecha presentación prevista 
+					</label>
+					<label for="fechaIngresoDia" name="fechaIngresoError" class="marcaError"> 
+						 
+					</label>
+					<div class="w-100"> 
+						<input id="fechaIngresoDia" name="fechaIngresoDia" title="Día fecha ingreso" size="1" maxlength="2"> 
+					    <input id="fechaIngresoMes" title="Mes fecha ingreso" name="fechaIngresoMes" size="1" maxlength="2"> 
+					    <input id="fechaIngresoAnyo" title="Año fecha ingreso" name="fechaIngresoAnyo" size="3" maxlength="4">
+			    </div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-12 col-xl-6 colResponsive">
+				<label for="importeCuota" name="labelimporteCuota"> 
+					Importe a ingresar resultante de la autoliquidación 
+				</label> 
+				<label for="importeCuota" name="labelimporteCuotaIntereses" class="marcaError">
+				 	 
+				 </label>
+				<input id="importeCuota" name="importeCuota" readonly="readonly" value="0" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<label for="porcentajeRecargoIntereses"> Corresponde un recargo del (%) </label>
+				<input id="porcentajeRecargoIntereses" name="porcentajeRecargoIntereses" value="0" size="4" maxlength="4" class="w-100 proteger alineamientoDerecha" readonly="readonly"> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 colResponsive">
+				<label for="importeRecargoIntereses" name="labelporcentajeRecargoIntereses">
+					 %. No obstante, si realiza el
+					ingreso de la deuda resultante de esta autoliquidación el recargo se
+					reduce en el 25 %. 
+				</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">
+				<label for="importeIntereses" name="labelimporteIntereses"> 
+					Recargo reducido 
+				</label>
+				<input id="importeRecargoIntereses" name="importeRecargoIntereses" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			</div>
+			<div class="col-12 col-xl-3 colResponsive">
+				<label for="importeIntereses" name="labelimporteIntereses"> 
+					Intereses 
+				</label>
+				<input id="importeIntereses" name="importeIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+				</div>			
+			<div class="col-12 col-xl-3 colResponsive">
+				<label for="importeTotalAPagarIntereses" name="labelimporteTotalAPagarIntereses"> 
+					Total a ingresar 
+				</label>
+				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	</div></fieldset>
+
+		<!-- SEPARADOR DE LA BARRA DE BOTONES -->
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<!-- MARCO BARRA DE BOTONES -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">						
+							<!-- BOTONES -->	
+							<input type="submit" value="  Realizar el cálculo  " name="botonIntereses">
+							<input type="submit" value="   Incorporar datos    " name="botonInteresesIncorporar">
+							<input type="submit" value="   Salir    " name="botonInteresesSalir">
+  						</div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+
+
+	<!-- CAMPOS HIDDEN -->
+	<input type="hidden" name="comprobarIntereses" value="1">
+	<input type="hidden" name="periodoAnterior" value="02042025">
+
+	</div>	<!-- FIN DIV CONTENIDO DATOS -->
+</div>	<!-- FIN CAPA ASISTENTE -->
+
+
+<!-- CAPA INTERMEDIA QUE SE PONE ENTRE LA PAGINA PRINCIPAL DEL MODELO Y EL ASISTENTE -->
+<div class="capaFondoDisabledAsistente600_2009 asistenteVisible"></div>	
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+	<!-- capa asistente -->
+	<div class="capaAsistenteAncho68 ">	
+	
+	
+
+	
+	
+	
+	
+	
+
+
+
+	
+				
+		
+
+
+
+
+
+
+
+
+
+        <div class="filaSepardor"></div>
+        <!-- capa con botones -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">
+		                	<!-- BOTONES -->	
+		                	
+							<input type="submit" value="  Realizar el cálculo  " name="botonArrendamiento">
+							<input type="submit" value="   Incorporar datos    " name="botonArrendamientoIncorporar">
+							<input type="submit" value="   Salir    " name="botonArrendamientoSalir">
+						</div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+		<div class="filaSepardor"></div>
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+				<div class="contenidoCabeceraTexto">
+					<div class="col">
+						Cálculo de la base imponible de los arrendamientos.
+					</div>
+					
+			          
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_C%C3%A1lculo%20de%20la%20base%20imponible%20de%20arrendamientos" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+	
+				</div>	 
+			</fieldset>
+		</div>
+		<div class="contenidoDatos">
+			<fieldset class="contenidoDatos">
+	   	       		<div class="filaCentrada">
+   			        	<div class="colCentrada">    		
+    	    				<label for="tipoPeriodo" name="labelTipoPeriodo">
+  	        						Tipo de periodo
+        					</label>
+   	            	        <label for="tipoPeriodo" name="tipoPeriodoError" class="marcaError">
+           	            	    
+        	                </label>
+   	        	           	<select class="w-100" id="tipoPeriodo" name="tipoPeriodo" size="1" onchange="document.forms[0].botonArrendamiento.click()"> 
+           	        	        <option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">BIANUAL</option><option value="2">ANUAL</option><option value="3">SEMESTRAL</option><option value="4">CUATRIMESTRAL</option><option value="5">TRIMESTRAL</option><option value="6">BIMENSUAL</option><option value="7">MENSUAL</option>
+   	        	            </select>
+						</div>
+					</div><!-- FIN DE LA FILA 1 -->
+					<div class="filaCentrada">
+						<div class="colCentrada">
+							<fieldset class="paralelos">
+							<label for="numeroDePeriodo" name="labelnumeroDePeriodo">
+									Número de periodos 
+							</label>
+							<label for="numeroDePeriodo" name="labelnumeroDePeriodo" class="marcaError">
+									
+							</label>
+							<input id="numeroDePeriodo" name="numeroDePeriodo" value="0" size="5" maxlength="5" class="alineamientoDerecha">
+						</fieldset>
+						<fieldset class="paralelos">
+							<label for="importePeriodo" name="labelimportePeriodo">
+									Importe por periodo
+							</label>
+							<label for="importePeriodo" name="labelimportePeriodo" class="marcaError">
+									
+							</label>
+							<input id="importePeriodo" name="importePeriodo" value="0" size="15" maxlength="15" class="alineamientoDerecha">
+						</fieldset>
+						</div>
+					</div><!-- FIN DE LA FILA 2 -->
+					<div class="fila">
+						<div class="colCentrada">
+							<label for="periodoDuracion">
+								No consta periodo de duración del contrato
+							</label>
+							<input id="periodoDuracion" name="chkPeriodoDuracion" type="checkbox" value="X" null="">
+						</div>
+					</div><!-- FIN DE LA FILA 3 -->
+					<div class="fila">
+						<div class="colCentrada">
+							<label for="chkArrendamiento">
+								Arrendamiento de vivienda sujeto a prorroga forzosa
+							</label>
+							<input id="chkArrendamiento" name="chkArrendamiento" type="checkbox" value="X" null="">
+						</div>	
+					</div><!-- FIN DE LA FILA 4 -->
+				<div class="filaCentrada">
+					<div class="colCentrada">
+						<fieldset class="paralelosConBorde">
+							<legend>Total Base Imponible</legend><label for="totalBaseImponibleArrendamiento"></label>
+							<input type="text" id="totalBaseImponibleArrendamiento" name="totalBaseImponibleArrendamiento" value="0" class="proteger alineamientoDerecha" readonly="readonly">
+							<label for="accesible">Euros</label>
+						</fieldset>
+					</div>
+				</div><!-- FIN DE LA FILA 5 -->
+		</fieldset>			
+			
+	</div><!-- FIN CONTENIDO DATOS -->
+	
+	<input type="hidden" name="comprobarArrendamiento" value="0">
+			
+	</div>	<!-- fin capa asistente -->
+
+	<!-- FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA Y EL POP UP -->
+	<div class="capaFondoDisabledAsistente600_2009 ">
+	</div>	
+			
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+
+    <div class="filaSepardor"></div>
+    <div class="principal novisible">
+        
+
+
+
+
+
+
+
+
+
+        <div class="filaSepardor"></div>
+        <div class="contenidoCabecera">
+            <fieldset class="contenidoCabecera">
+                <div class="contenidoCabeceraTexto">
+                   	<div class="col">
+                    	Cálculo de la base imponible de pensiones.
+                    </div>
+                    
+			          
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_C%C3%A1lculo%20de%20la%20base%20imponible%20de%20pensiones" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+	
+                </div>
+            </fieldset>
+        </div>
+        <div class="contenidoDatos">
+            <fieldset class="contenidoDatos">
+            <div class="filaCentrada">
+                <div class="colCentrada">
+                    <fieldset class="paralelos">
+                        <label for="tipoPeriodo">
+                            Tipo de periodo
+                        </label>
+                        <label for="tipoPeriodoPensiones" class="marcaError">
+                            
+                        </label>
+                        <select id="tipoPeriodoPensiones" name="tipoPeriodoPensiones" size="1" onchange="document.forms[0].botonPensiones.click()"> 
+                            <option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">BIANUAL</option><option value="2">ANUAL</option><option value="3">SEMESTRAL</option><option value="4">CUATRIMESTRAL</option><option value="5">TRIMESTRAL</option><option value="6">BIMENSUAL</option><option value="7">MENSUAL</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="paralelos">
+                        <label for="importePeriodoPensiones" name="labelImportePeriodoPensiones">
+                            Importe por periodo (Euros)
+                        </label>
+                        <label for="importePeriodo" name="importePeriodoError" class="marcaError">
+                            
+                        </label>
+                        
+                        <input id="importePeriodoPensiones" name="importePeriodoPensiones" value="0" size="15" maxlength="16" class="alineamientoDerecha">
+                    </fieldset>
+                </div>
+            </div>
+        	           	
+            <div class="filaCentrada">
+                <div class="colCentrada">
+                    <label for="importeNoCuantificado">
+                        Importe <strong>no</strong> cuantificado en 
+                        unidades monetarias
+                    </label>
+                    <label for="importeNoCuantificado" name="importeNoCuantificadoError" class="marcaError">
+                        
+                    </label>
+                    <input id="importeNoCuantificado" name="importeNoCuantificado" type="checkbox" onclick="document.forms[0].botonPensiones.click()" null="">
+                </div>
+            </div>
+            <div class="filaSepardor"></div>
+            <div class="filaCentrada">
+                <fieldset class="paralelosConBorde">
+                    <legend class="letra110">Pensión temporal</legend>
+                    <div class="fila">
+                        <div class="col5px">
+                            <label for="duracionTemporal">
+                                Duración 
+                            </label>
+                            <label for="duracionTemporal" name="duracionTemporalError" class="marcaError">
+                                
+                            </label>
+                            
+                            <input id="duracionTemporal" name="duracionTemporal" value="0" size="4" maxlength="5" class="alineamientoDerecha">
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset class="paralelosConBorde">
+                    <legend class="letra110">Pensión vitalicia</legend>
+                    <div class="fila">	
+                        <div class="col5px">
+                            <label for="fechaDevengoDia">
+                                Fecha nacimiento pensionista
+                            </label>
+                            <label for="accesibilidad" class="marcaError">
+                                
+                            </label>
+                            <div class="w-100">
+                            <input id="fechaNacimientoDia" name="fechaNacimientoDia" title="Día Fecha Nacimiento" size="1" maxlength="2">
+
+                            <input id="fechaNacimientoMes" name="fechaNacimientoMes" title="Mes Fecha Nacimiento" size="1" maxlength="2">
+
+                            <input id="fechaNacimientoAnyo" name="fechaNacimientoAnyo" title="Año Fecha Nacimiento" size="3" maxlength="4">
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset> 
+                <div class="filaSepardor"></div>
+                <div class="filaCentrada">
+                    <div class="colCentrada">
+                        <fieldset class="paralelosConBorde">
+                            <legend>Total Base Imponible</legend><label for="totalBaseImponiblePensiones"></label>
+                            <input type="text" id="totalBaseImponiblePensiones" name="totalBaseImponiblePensiones" value="0" class="proteger alineamientoDerecha" readonly="readonly">
+                            <label for="accesibilidad">Euros</label>
+                        </fieldset>
+                    </div>
+                </div> 
+                <div class="filaSepardor"></div>
+                </div></fieldset> 
+            </div> 
+            
+            
+        <!-- SEPARADOR DE LA BARRA DE BOTONES -->
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<!-- MARCO BARRA DE BOTONES -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">
+		                	<!-- BOTONES -->	
+		                	
+			                <input type="submit" value="  Realizar el cálculo  " name="botonPensiones">
+			                <input type="submit" value="   Incorporar datos    " name="botonPensionesIncorporar">
+			                <input type="submit" value="   Salir    " name="botonPensionesSalir">
+			            </div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+            
+            
+        </div> 
+   		<input type="hidden" name="comprobarPensiones" value="0">
+    
+    <div class="filaSepardor"></div>
+
+
+        
+
+
+
+
+
+ 
+
+
+
+	
+	
+											
+	
+	
+	
+											
+	
+	
+	
+
+
+<!-- capa asistente -->
+<div class="capaAsistenteAncho68 ">
+
+        
+
+
+
+
+
+
+
+
+
+        <div class="filaSepardor"></div>
+		<!-- capa con la barra de botones -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">
+		                	<!-- BOTONES -->
+					        <input id="botonConcesionesAsistente" name="botonConcesionesAsistente" type="submit" value="  Realizar el cálculo  ">
+					        <input type="submit" value="   Incorporar datos    " name="botonConcesionesIncorporar">
+					        <input type="submit" value="   Salir    " name="botonConcesionesSalir">
+    					</div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+		<div class="filaSepardor"></div>
+	    <div class="contenidoCabecera">
+	        <fieldset class="contenidoCabecera">
+	            <div class="contenidoCabeceraTexto">
+	               <div class="col">
+	                Cálculo de la base imponible de concesiones administrativas.
+	               </div> 
+	                
+			          
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_C%C3%A1lculo%20de%20la%20base%20imponible%20de%20concesiones%20administrativas" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+	
+	            </div>
+	        </fieldset>
+	    </div>
+    	<div class="contenidoDatos">
+        <fieldset class="contenidoDatos">
+            <div class="fila">
+                <div class="col">
+                    <label for="cantidadTolal" class="marcaError">
+                        
+                    </label>
+                    <label for="cantidadTolal">
+                        Cantidad total en concepto de precio
+                    </label>
+                    <label for="cantidadTolal">
+                        o canon que deba satisfacer el concesionario:
+                    </label>
+                    <input type="text" id="cantidadTolal" name="cantidadTolal" size="10" maxlength="10" class="alineamientoDerecha">
+                    <label for="cantidadTolal">
+                        Euros
+                    </label>	
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col">
+                    <label for="duracionConcesion" class="marcaError">
+                    </label>
+                    <label for="duracionConcesion">
+                        Duración de la concesión:
+                    </label>
+                    <input type="text" id="duracionConcesion" name="duracionConcesion" class="alineamientoDerecha" size="3" maxlength="3">
+                    <label for="duracionConcesion">
+                        Años
+                    </label>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col">
+                    <label for="cantidadPeriodica" class="marcaError">
+                        
+                    </label>
+                    <label for="cantidadPeriodica">
+                        Cantidad periódica en concepto de precio
+                    </label>
+                    <label for="cantidadPeriodica">
+                        o canon, participación o beneficio mínimo:
+                    </label>
+                    <input type="text" id="cantidadPeriodica" name="cantidadPeriodica" class="alineamientoDerecha">
+                    <label for="cantidadPeriodica">
+                        Euros
+                    </label>	
+                </div>	
+            </div>
+            <div class="fila">
+                <div class="col">
+                    <label for="fondoReversion" class="marcaError">
+                        
+                    </label>
+                    <label for="fondoReversion">
+                        Valor del fondo de reversión:
+                    </label>
+                    <input type="text" id="fondoReversion" name="fondoReversion" class="alineamientoDerecha">
+                    <label for="fondoReversion">
+                        Euros
+                    </label>	
+                </div>
+            </div>
+            
+            <div class="fila">
+                <div class="col">
+                    <fieldset class="ponerborde">
+                        <legend>Casos especiales</legend>
+                        <div class="fila">
+                            <div class="col">
+                                <label for="activosFijos" class="marcaError">
+                                    
+                                </label>
+                                <label for="activosFijos">
+                                    Valor de los activos fijos afectos a la explotación:
+                                </label>
+                                <input type="text" id="activosFijos" name="activosFijos" class="alineamientoDerecha  ">
+                                <label for="activosFijos">
+                                    Euros
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label for="noAplicableActivosFijos" class="marcaError"> 
+                                </label>
+                                <label for="noAplicableActivosFijos">
+                                    No aplicable
+                                </label>
+                                <input type="checkbox" id="noAplicableActivosFijos" name="noAplicableActivosFijos" onclick="almacenarPosicionScroll('noAplicableActivosFijos');document.forms[0].botonConcesionesAsistente.click()" value="X" null="">
+                            </div>
+                        </div>	
+                        <div class="fila">
+                            <div class="col">
+                                <label for="valoracionAdministracion" class="marcaError">
+                                    
+                                </label>
+                                <label for="valoracionAdministracion">
+                                    Valoración señalada por la respectiva administración pública:
+                                </label>
+                                <input type="text" id="valoracionAdministracion" name="valoracionAdministracion" class="alineamientoDerecha  ">
+                                <label for="valoracionAdministracion">
+                                    Euros
+                                </label>		
+                            </div>
+                            <div class="col">
+                                <label for="noAplicableValoracionAdmi" class="marcaError">
+                                </label>
+                                <label for="noAplicableValoracionAdmi">No aplicable</label>
+                                <input type="checkbox" id="noAplicableValoracionAdmi" name="noAplicableValoracionAdmi" onclick="almacenarPosicionScroll('noAplicableValoracionAdmi');document.forms[0].botonConcesionesAsistente.click()" value="X" null="">
+                            </div>
+                        </div>	
+                        <div class="fila">
+                            <div class="col">
+                                <label for="valorDelaradoPorInteresados" class="marcaError">
+                                </label>
+                                <label for="valorDelaradoPorInteresados">Valor de declarado por los interesados:</label>
+                                
+                                <input type="text" id="valorDelaradoPorInteresados" name="valorDelaradoPorInteresados" class="alineamientoDerecha ">
+                                <label for="valorDelaradoPorInteresados">Euros</label>		
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="filaSepardor"></div>
+            <div class="filaCentrada">
+            	<div class="colCentrada">
+	                <fieldset class="paralelosConBorde">
+	                    <legend>Total Base Imponible</legend><label for="totalBaseImponibleConcesiones"></label>
+	                    <input type="text" id="totalBaseImponibleConcesiones" name="totalBaseImponibleConcesiones" class="proteger alineamientoDerecha" readonly="readonly">
+	                    <label for="accesibilidad">Euros</label>	 	
+	                </fieldset>
+                </div>
+            </div>
+        </fieldset>
+    </div>   		
+    
+	<input type="hidden" name="comprobarConcesiones" value="0">
+		
+</div>	<!-- fin capa asistente -->
+
+<!-- FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA Y EL POP UP -->
+<div class="capaFondoDisabledAsistente600_2009 ">
+</div>	
+        
+
+		
+
+        <div class="filaSepardor"></div>
+        
+      
+            
+
+            
+        <!-- PRINCIPAL MODELO 600_2009 -->
+            
+        <div id="principal" class="principal visible">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>IMPUESTO SOBRE TRANSMISIONES PATRIMONIALES Y ACTOS JURÍDICOS DOCUMENTADOS</h1>
+			
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 600</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202510</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+						<div class="fila">
+							<div class="colAlineamientoDerecha">
+								  	 
+								<button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">
+											
+									<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+												<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+									</svg>
+									<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+										 Identificarse
+									</span>
+								</button>
+							</div> 
+						</div>	 	
+	
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+			<!--  <div class="filaSepardor"></div> -->
+			<div class="filaCentrada">
+				<div class="colCentrada">
+					<fieldset class="paralelos">
+						<a href="https://webgreco.local/webgreco/procesamientoporlotes/jsp/GreJspAdjuntarArchivo.jsp?modelo=600_2009" target="_self" onclick="registrarEnLogPulsacionBoton('PROCESO POR LOTES', " +="" sdatoscenso_+="" ");="" window.open(this.href,="" '',="" '');="" return="" false;"="">
+							Proceso por lotes
+						</a>
+					</fieldset>					
+					<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#Procesoporlotes" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+					</a>		
+				</div>	
+			</div>
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+
+            <div class="filaSepardor"></div> 
+	         
+            
+
+
+
+
+
+
+
+
+
+            
+            <div class="filaSepardor"></div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$(function()  
+	{
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#fechaDevengo").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+	});
+	
+	function updateFechaDevengo()
+	{
+		//alert('se ha modificado la fecha de devengo.');
+		    
+	    var isCorrectaFechaDevengo = validarFormatoFecha($('#fechaDevengo').val());
+	    //alert('Fecha de devengo correcta: ' + isCorrectaFechaDevengo);
+	    
+	    if (isCorrectaFechaDevengo)
+	    {
+	    	$("#fechaDevengoDia").val($("#fechaDevengo").val().substring(0,2));
+	    	$("#fechaDevengoMes").val($("#fechaDevengo").val().substring(3,5));
+	    	$("#fechaDevengoAnno").val($("#fechaDevengo").val().substring(6,10));
+	    }
+	    else
+	    {
+	    	$("#fechaDevengoDia").val('');
+	    	$("#fechaDevengoMes").val('');
+	    	$("#fechaDevengoAnno").val('');
+	    }
+	    
+	    submitWithPosicionScroll('fechaDevengo');
+	}
+	
+	function validarFormatoFecha(campo) {
+	     var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+	     if ((campo.match(RegExPattern)) && (campo!='')) {
+	           return true;
+	     } else {
+	           return false;
+	     }
+	}
+	
+	function existeFecha(fecha){
+	     var fechaf = fecha.split("/");
+	     var day = fechaf[0];
+	     var month = fechaf[1];
+	     var year = fechaf[2];
+	     var date = new Date(year,month,'0');
+	     if((day-0)>(date.getDate()-0)){
+	           return false;
+	     }
+	     return true;
+	}
+
+</script>
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+
+	
+    
+
+ 	
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+        
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos del Documento
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_Oficina%20liquidadora%20y%20c%C3%B3digo%20territorial" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<div class="row"> <!-- FILA 1 -->
+			<div class="col-6 col-xl-3 colResponsive">
+				<label for="selectOficinaLiquidadora" name="selectOficinaLiquidadoraError" class="marcaError"></label>
+
+				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
+					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
+	                	<option value="0">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option value="EH0202">ALCARAZ</option><option value="EH1302">ALCÁZAR DE SAN JUAN</option><option value="EH1303">ALMADÉN</option><option value="EH1304">ALMAGRO</option><option value="EH0203">ALMANSA</option><option value="EH1305">ALMODOVAR DEL CAMPO</option><option value="EH1602">BELMONTE</option><option value="EH1902">BRIHUEGA</option><option selected="selected" value="EH0204">CASAS DE IBÁÑEZ</option><option value="EH0205">CHINCHILLA</option><option value="EH1903">CIFUENTES</option><option value="EH1301">CIUDAD REAL</option><option value="EH1904">COGOLLUDO</option><option value="EH1601">CUENCA</option><option value="EH1306">DAIMIEL</option><option value="EH4502">ESCALONA</option><option value="EH1901">GUADALAJARA</option><option value="EH0206">HELLÍN</option><option value="EH1603">HUETE</option><option value="EH4503">ILLESCAS</option><option value="EH0207">LA RODA</option><option value="EH4504">LILLO</option><option value="EH4505">MADRIDEJOS</option><option value="EH1307">MANZANARES</option><option value="EH1905">MOLINA DE ARAGÓN</option><option value="EH1604">MOTILLA DEL PALANCAR</option><option value="EH4506">NAVAHERMOSA</option><option value="EH4507">OCAÑA</option><option value="EH4508">ORGAZ</option><option value="EH1906">PASTRANA</option><option value="EH1308">PIEDRABUENA</option><option value="EH4509">PUENTE DEL ARZOBISPO</option><option value="EH4510">QUINTANAR DE LA ORDEN</option><option value="EH1907">SACEDÓN</option><option value="EH1605">SAN CLEMENTE</option><option value="EH1908">SIGÜENZA</option><option value="EH4511">TALAVERA DE LA REINA</option><option value="EH1606">TARANCÓN</option><option value="EH4501">TOLEDO</option><option value="EH1309">TOMELLOSO</option><option value="EH4512">TORRIJOS</option><option value="EH1310">VALDEPEÑAS</option><option value="EH1311">VILLANUEVA DE LOS INFANTES</option><option value="EH0208">YESTE</option>
+	               	</select>
+               	
+               	
+                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="EH0204">
+
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
+				<label for="codigoTerritorial">Código territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6" value="EH0204">
+			</div>
+		</div>
+		
+		
+				
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">
+					<strong>2</strong>
+    	            <label for="accesibilidad">Fecha Devengo:</label><input type="hidden" id="accesibilidad">
+				<label for="fechaDevengo" class="marcaError">
+					
+				</label>
+				
+				
+				<input type="text" size="10" maxlength="10" name="fechaDevengo" id="fechaDevengo" class="w-100 hasDatepicker" readonly="readonly" onchange="updateFechaDevengo()" placeholder="dd/mm/yyyy" value="02/04/2025">
+						
+				<input type="hidden" id="fechaDevengoDia" name="fechaDevengoDia" class="" value="02" size="2" maxlength="2">
+				<input type="hidden" id="fechaDevengoMes" name="fechaDevengoMes" class="" value="04" size="2" maxlength="2">			
+				<input type="hidden" id="fechaDevengoAnno" name="fechaDevengoAnno" class="" value="2025" size="4" maxlength="4">
+			</div>
+		</div>
+		
+
+		
+		
+
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+
+	
+              
+		<div class="row">
+			<div class="col-12 col-xl-12 colResponsive">
+				
+				<label for="selectConceptoDescripcion"><strong>4</strong> Concepto</label>				
+				<label for="selectConceptoDescripcion" name="selectConceptoDescripcionError" class="marcaError"></label>
+				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
+			</div>
+			
+			<div class="col-12 col-xl-12 colResponsive">
+				<select id="selectConceptoDescripcion" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" class="select2-hidden-accessible" size="1" data-select2-id="select2-data-selectConceptoDescripcion" tabindex="-1" aria-hidden="true">
+					<option class="option" value="0"> 
+SELECCIONE UNA OPCIÓN</option>
+<optgroup class="optGroupNivel_1" label="TRANSMISIONES PATRIMONIALES"> 
+</optgroup><optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;TRANSMISIÓN Y DERECHOS REALES S/INMUEBLES URBANOS"> 
+<option class="option">TU00 - SOLARES</option> 
+<option class="option">TU10 - VIVIENDAS</option> 
+<option class="option">TU11 - PRIMERA VIVIENDA HABITUAL CUYO VALOR NO EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO </option> 
+<option class="option">TU12 - PRIMERA VIVIENDA HABITUAL CUYO V. NO 
+EXCEDA DE 180.000 EUROS FINANCIADA CON PRÉST. HIPOT. EN MUNICIP. EN 
+RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">TU13 - PRIMERA VIVIENDA HABITUAL CUYO V. NO 
+EXCEDA DE 180.000 EUROS FINANCIADA CON PRÉST. HIPOT. EN MUNICIP. DE 
+INTENSA DESPOBLACIÓN</option> 
+<option class="option">TU14 - PRIMERA VIVIENDA HABITUAL CUYO V. NO 
+EXCEDA DE 180.000 EUROS FINANCIADA CON PRÉST. HIPOT. EN MUNICIP. DE 
+EXTREMA DESPOBLACIÓN</option> 
+<option class="option">TU15 - PRIMERA VIVIENDA HABITUAL CUYO VALOR NO 
+EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO, PARA 
+MENORES DE 36 AÑOS; PARA DISCAPACITADOS IGUAL O SUPERIOR AL  65 %; O 
+PARA MIEMBROS DE FAMILIAS NUMEROSAS O MONOPARENTALES</option> 
+<option class="option">TU16 - TOTALIDAD O PARTE DE UNA O MÁS VIVIENDAS Y
+ SUS ANEXOS A EMPRESA A LA QUE SE  APLIQUEN NORMAS DE ADAPTACIÓN DEL PGC
+ A EMPRESAS INMOBILIARIAS</option> 
+<option class="option">TU17 - BIENES INMUEBLES INCLUIDOS EN EL 
+PATRIMONIO EMPRESARIAL O PROFESIONAL DEL SUJETO PASIVO Y CONSTITUYAN O 
+SEAN SUSCEPTIBLES DE CONSTITUIR UNIDAD ECONÓMICA AUTÓNOMA</option> 
+<option class="option">TU20 - LOCALES Y OTRAS EDIFICACIONES</option> 
+<option class="option">TU21 - INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR. O LOCALES NEGOCIOS EN MUNICIP. EN RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">TU22 - INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE ESAS.  O LOCALES DE NEGOCIOS EN MUNICIP. DE INTENSA DESPOBLACIÓN</option> 
+<option class="option">TU23 - INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE ESAS.  O LOCALES DE NEGOCIOS EN MUNICIP. DE EXTREMA DESPOBLACIÓN</option> 
+<option class="option">TU30 - DERECHO DE APROVECHAMIENTO POR TURNO DE BIENES INMUEBLES DE USO TURÍSTICO</option> 
+<option class="option">TU41 - INMUEBLES URBANOS CON DCHO RENUNCIA IVA, SIN RENUNCIA (ART 20.DOS LIVA) </option> 
+<option class="option">TO00 - VIVIENDAS CON PROTECCIÓN PÚBLICA  </option> 
+<option class="option">TO01 - PRIMERA VIVIENDA HABITUAL CON PROTECCIÓN 
+PÚBLICA CUYO VALOR NO EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO 
+HIPOTECARIO</option> 
+</optgroup> 
+<optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;TRANSMISIÓN Y DERECHOS REALES S/INMUEBLES RUSTICOS"> 
+<option class="option">TR00 - SECANO </option> 
+<option class="option">TR10 - REGADÍO</option> 
+<option class="option">TR20 - OTROS INMUEBLES RÚSTICOS</option> 
+<option class="option">TR41 - INMUEBLES RÚSTICOS CON DCHO RENUNCIA IVA, SIN RENUNCIA (ART 20.DOS LIVA) </option> 
+</optgroup> 
+<option class="option">TS00 - TRANSMISIÓN DE INMUEBLES EN SUBASTA JUDICIAL ADMINISTRATIVA O NOTARIAL</option> 
+<option class="option">ED00 - EXPEDIENTES DE DOMINIO, ACTAS DE NOTORIEDAD, ACTAS COMPLEMENTARIAS Y CERTIFICADOS DE DOMINIO</option> 
+<option class="option">TM00 - TRANSMISIONES Y DERECHOS REALES S/MUEBLES, EXCEPTO VALORES MOBILIARIOS</option> 
+<option class="option">CA00 - CONCESIONES ADMINISTRATIVAS Y OTROS CONCEPTOS </option> 
+<option class="option">CA01 - CONCESIONES ADMINISTRATIVAS Y ACTOS 
+ASIMILADOS, CON CONCESIÓN DEMANIAL O DERECHOS DE USO SOBRE INMUEBLES DE 
+TITULARIDAD PÚBLICA</option> 
+<option class="option">DG00 - DERECHOS REALES DE GARANTÍA Y CONDICIONES RESOLUTORIAS EXPLÍCITAS</option> 
+<option class="option" selected="selected" data-select2-id="select2-data-2-tzd4">PN00 - PENSIONES</option> 
+<option class="option">PN10 - PENSIONES A CAMBIO DE CESIÓN DE BIENES</option> 
+<option class="option">FZ00 - FIANZAS</option> 
+<option class="option">PO00 - PRÉSTAMOS Y OBLIGACIONES</option> 
+<option class="option">AU00 - ARRENDAMIENTO FINCAS URBANAS</option> 
+<option class="option">AR00 - ARRENDAMIENTO FINCAS RÚSTICAS</option> 
+<option class="option">AD00 - TRANSMISIÓN DE ACCIONES, DERECHOS DE SUSCRIPCIÓN, OBLIGACIONES Y.TÍTULOS ANÁLOGOS</option> 
+<option class="option">TV00 - TRANSMISIÓN DE VALORES Y DERECHOS DE 
+SUSCRIPCIÓN CONTEMPLADOS EN EL ART. 108 DE LA LEY 24/1988, DE 28 DE 
+JULIO, DEL MERCADO DE VALORES</option> 
+<option class="option">OC00 - OPCIÓN DE COMPRA SOBRE INMUEBLES</option> 
+<option class="option">OC01 - OPCIÓN DE COMPRA S/VIVIENDA HABITUAL CON PROTECCIÓN PÚBLICA PARA MENORES DE 36 AÑOS.</option> 
+<option class="option">TP00 - TRANSMISIONES PATRIMONIALES NO SUJETAS AL IMPUESTO</option> 
+ 
+<optgroup class="optGroupNivel_1" label="OPERACIONES SOCIETARIAS"> 
+</optgroup><optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;SOCIEDADES ANÓNIMAS"> 
+<option class="option">SX00 - CONSTITUCIÓN</option> 
+<option class="option">SX10 - AUMENTO DE CAPITAL</option> 
+<option class="option">SX20 - DISOLUCIÓN </option> 
+<option class="option">SX30 - DISMINUCIÓN DE CAPITAL</option> 
+<option class="option">SX70 - APORTACIONES DE SOCIOS QUE NO SUPONGAN UN AUMENTO DEL CAPITAL SOCIAL </option> 
+<option class="option">SX80 - TRASLADO A ESPAÑA DE SEDE O DOMICILIO SOCIAL (ART. 19 DEL T.R. DEL I.T.P. Y     A.J.D.) </option> 
+</optgroup> 
+<optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;SOCIEDADES NO ANÓNIMAS"> 
+<option class="option">SO00 - CONSTITUCIÓN</option> 
+<option class="option">SO10 - AUMENTO DE CAPITAL</option> 
+<option class="option">SO20 - DISOLUCIÓN </option> 
+<option class="option">SO30 - DISMINUCIÓN DE CAPITAL </option> 
+<option class="option">SO70 - APORTACIONES DE SOCIOS QUE NO SUPONGAN UN AUMENTO DEL CAPITAL SOCIAL</option> 
+<option class="option">SO80 - TRASLADO A ESPAÑA DE SEDE O DOMICILIO SOCIAL (ART. 19 DEL T.R. DEL I.T.P. Y     A.J.D.)</option> 
+</optgroup> 
+<option class="option">OS00 - OPERACIONES SOCIETARIAS NO SUJETAS AL IMPUESTO</option> 
+ 
+<optgroup class="optGroupNivel_1" label="ACTOS JURIDICOS"> 
+</optgroup><optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;DOCUMENTOS NOTARIALES"> 
+<option class="option">DN00 - SEGREGACIÓN</option> 
+<option class="option">DN01 - AGREGACIÓN</option> 
+<option class="option">DN10 - AGRUPACIÓN</option> 
+<option class="option">DN20 - DECLARACIÓN DE OBRA NUEVA</option> 
+<option class="option">DN30 - DIVISIÓN HORIZONTAL</option> 
+<option class="option">DN40 - ENTREGAS SUJETAS AL I.V.A</option> 
+<option class="option">DN41 - ENTREGAS SUJETAS AL I.V.A. POR  RENUNCIA A LA EXENCIÓN</option> 
+<option class="option">DN42 - ENTREGAS SUJETAS AL I.V.A. POR  LAS QUE SE
+ ADQUIERA PRIMERA VIVIENDA HABITUAL CUYO VALOR NO EXCEDA DE 180.000 
+EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO </option> 
+<option class="option">DN43 - ENTREGAS SUJETAS AL I.V.A. DE VIVIENDAS CON PROTECCIÓN PÚBLICA</option> 
+<option class="option">DN44 - ENTREGAS SUJETAS AL I.V.A. POR  LAS QUE SE
+ ADQUIERA PRIMERA VIVIENDA HABITUAL CON PROTECCIÓN PÚBLICA CUYO VALOR NO
+ EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO </option> 
+<option class="option">DN45 - ENTREGAS SUJETAS AL I.V.A. EN SUBASTA JUDICIAL, ADMINISTRATIVA O NOTARIAL</option> 
+<option class="option">DN50 - CONSTITUCIÓN DE HIPOTECA SIMULTÁNEA A PRÉSTAMO SUJETO A I.V.A.</option> 
+<option class="option">DN51 - CONSTITUCIÓN DE HIPOTECA SIMULTÁNEA A 
+PRÉSTAMO SUJETO A I.V.A. PARA FINANCIAR LA ADQUISICIÓN  DE LA PRIMERA 
+VIVIENDA HABITUAL CUYO VALOR NO EXCEDA 180.000 EUROS</option> 
+<option class="option">DN60 - OPCIÓN DE COMPRA SUJETA A I.V.A. S/VIVIENDA HABITUAL CON PROTECCIÓN PÚBLICA PARA MENORES DE 36 AÑOS</option> 
+<option class="option">DN70 - CANCELACIÓN DE HIPOTECA</option> 
+<option class="option">DN80 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE PRIMERA V. HABITUAL CUYO V. NO EXCEDA DE 180.000 EUROS FINANCIADA 
+CON PRÉST. HIPOT. EN MUNICIP. EN RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">DN81 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE PRIMERA V. HABITUAL CUYO V. NO EXCEDA DE 180.000 EUROS FINANCIADA 
+CON PRÉST. HIPOT. EN MUNICIP. DE INTENSA DESPOBLACIÓN</option> 
+<option class="option">DN82 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE PRIMERA V. HABITUAL CUYO V. NO EXCEDA DE 180.000 EUROS FINANCIADA 
+CON PRÉST. HIPOT. EN MUNICIP. DE EXTREMA DESPOBLACIÓN</option> 
+<option class="option">DN83 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR.   O A 
+LOCALES DE NEGOCIOS EN MUNICIP. DE RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">DN84 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR.  O A 
+LOCALES DE NEGOCIOS EN MUNICIP. DE INTENSA DESPOBLACIÓN</option> 
+<option class="option">DN85 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR.  O A 
+LOCALES DE NEGOCIOS EN MUNICIP. DE EXTREMA DESPOBLACIÓN</option> 
+<option class="option">DN86 - ENTREGAS SUJETAS AL I.V.A. POR LAS QUE SE 
+ADQUIERA PRIMERA VIVIENDA HABITUAL CUYO VALOR NO EXCEDA DE 180.000 
+EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO, PARA MENORES DE 36 AÑOS; 
+PARA DISCAPACITADOS IGUAL O SUPERIOR AL  65 %; O PARA MIEMBROS DE 
+FAMILIAS NUMEROSAS O MONOPARENTALES</option> 
+<option class="option">DN90 - OTROS DOCUMENTOS NOTARIALES</option> 
+</optgroup> 
+<option class="option">AP00 - ANOTACIONES PREVENTIVAS</option> 
+<option class="option">GT00 - GRANDEZAS Y TÍTULOS</option> 
+<option class="option">AJ00 - ACTOS JURÍDICOS DOCUMENTADOS NO SUJETOS AL IMPUESTO</option> 
+ 
+
+				</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-1-8nkm" style="width: 1067.87px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-selectConceptoDescripcion-container" aria-controls="select2-selectConceptoDescripcion-container"><span class="select2-selection__rendered" id="select2-selectConceptoDescripcion-container" role="textbox" aria-readonly="true" title="PN00 - PENSIONES">PN00 - PENSIONES</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+			</div>
+				
+		</div>
+		<div class="row">
+			<div class="col-6 col-xl-3 colResponsive">						
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" value="PN00" size="4" maxlength="4" readonly="readonly">
+				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="w-100 proteger" value="PN00 - PENSIONES">		
+			</div>
+		</div>
+				
+		
+				
+			
+	</fieldset>
+</div>			
+            
+
+
+            
+			    
+            <div class="filaSepardor"></div>
+                        
+            <!-- SUJETO PASIVO -->          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Sujeto Pasivo (A)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_(A)%20Datos%20identificativos%20del%20sujeto%20pasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+			<div class="colAlineamientoDerecha">
+				
+				<input id="spCantidadSujetoPasivo" title="cantidad sujeto pasivo" name="spCantidadSujetoPasivo" class="" value="1" size="1" maxlength="2">
+				<input id="botonCantidadSujetoPasivos" name="botonCantidadSujetoPasivos" type="submit" value="Anexo 1 - Sujetos Pasivos">
+            </div>  
+            
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="0">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="0">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="600_2009">
+</div>		
+
+            
+            <div class="filaSepardor"></div>
+                        
+            <!-- TRANSMITENTE -->            
+            
+
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Transmitente (B)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_(B)%20Datos%20identificativos%20de%20transmitente" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+			<div class="colAlineamientoDerecha">
+				
+				<input id="trCantidadTransmitente" title="Cantidad Transmitente" name="trCantidadTransmitente" class="" value="1" size="1" maxlength="2">
+				<input id="botonCantidadTransmitentes" name="botonCantidadTransmitentes" type="submit" value="Anexo 1 - Transmitentes ">
+            </div>  
+            
+		</div>
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		
+			
+			
+			
+		<!--  Fila 1 NIF, Nombre -->
+		<!-- ------------------- -->		 
+		<div class="row">			
+			<input type="hidden" name="trVehiculoUE" value=""> 
+			<input type="hidden" name="trCoeficiente" value=""> 
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>19</strong>
+				<label for="trNif" name="trNifError" class="marcaError"></label>
+                <label for="trNif">NIF</label>
+                <input id="trNif" name="trNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>20</strong>
+				<label for="trNombre" name="trNombreError" class="marcaError"></label>
+                <label for="trNombre">Apellidos y nombre o razón social</label>
+                <input id="trNombre" name="trNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>
+		</div>
+				
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>21</strong>
+				<label for="trSelectSiglas" name="trSelectSiglasError" class="marcaError"></label>
+                <label for="trSelectSiglas">Siglas</label>
+                <select id="trSelectSiglas" name="trSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+           		</select>
+               		
+                <input type="hidden" name="trSelectSiglasValidado" value="0"> 
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>22</strong>
+				<label for="trNombreVia" name="trNombreViaError" class="marcaError"></label>
+                <label for="trNombreVia">Nombre Vía Pública</label>
+                <input id="trNombreVia" name="trNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>23</strong>
+				<label for="trNumero" name="trNumeroError" class="marcaError"></label>
+                <label for="trNumero">Número</label>
+                <input id="trNumero" name="trNumero" class="w-100 " size="4" maxlength="8">
+			</div>
+		</div>
+		
+		
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>24</strong>
+				<label for="trLetra" name="trLetraError" class="marcaError"></label>
+                <label for="trLetra">Bloque</label>
+                <input id="trLetra" name="trLetra" class="w-100 " size="1" maxlength="3">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>25</strong>
+				<label for="trEscalera" name="trEscaleraError" class="marcaError"></label>
+                <label for="trEscalera">Escalera</label>
+                <input id="trEscalera" name="trEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>26</strong>
+				<label for="trPiso" name="trPisoError" class="marcaError"></label>
+                <label for="trPiso">Planta</label>
+                <input id="trPiso" name="trPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>27</strong>
+				<label for="trPuerta" name="trPuertaError" class="marcaError"></label>
+                <label for="trPuerta">Puerta</label>
+                <input id="trPuerta" name="trPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>28</strong>
+				<label for="trTelefono" name="trTelefonoError" class="marcaError"></label>
+                <label for="trTelefono">Telf.</label>
+                <input id="trTelefono" name="trTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>29</strong>
+				<label for="trFax" name="trFaxError" class="marcaError"></label>
+                <label for="trFax">Fax</label>
+                <input id="trFax" name="trFax" class="w-100 " size="8" maxlength="9">
+			</div>
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				<strong>31</strong>
+				<label for="trSelectProvincia" name="trSelectProvinciaError" class="marcaError"></label>
+		        <label for="trSelectProvincia">Provincia</label>
+				<select id="trSelectProvincia" name="trSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('trSelectProvincia', 'trSelectMunicipio')">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+		        </select>
+		        	
+        		<input type="hidden" name="trSelectProvinciaValidado" value="0">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>30</strong>
+				<label for="trSelectMunicipio" name="trMunicipioError" class="marcaError"></label>
+                <label for="trSelectMunicipio">Municipio</label>
+                <select id="trSelectMunicipio" name="trSelectMunicipio" class="w-100 " size="1"> 
+                	
+               	</select>
+            		
+                <input type="hidden" name="trSelectMunicipioValidado" value="">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>32</strong>
+				<label for="trCodPostal" name="trCodPostalError" class="marcaError"></label>
+                <label for="trCodPostal">C. Postal</label>
+                <input id="trCodPostal" name="trCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+		</div>
+	</fieldset>
+</div>	
+
+		
+            	
+            <div class="filaSepardor"></div>
+            
+            <!-- DATOS DEL DOCUMENTO -->            
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+                        <div class="col">
+                            Datos del documento (C)
+                        </div>
+			            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_(C)%20Datos%20del%20documento" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+                        
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="contenidoDatos">
+                <fieldset class="contenidoDatos"> 
+               		<!-- BIENES -->
+                	<fieldset class="contenidoDatos">
+                  	    <legend>Bienes</legend>
+						<div class="row">
+	                       <div class="col-6 col-xl-2 colResponsive"> 
+								<label for="numBienesUrbanos">Nº bienes urbanos:</label>
+						   </div>
+						   <div class="col-5 col-xl-2 colResponsive">
+								<input id="numBienesUrbanos" name="numBienesUrbanos" value="1" class=" " size="2" maxlength="3">
+						   </div>	
+						</div>		
+						<div class="row">
+	                       <div class="col-6 col-xl-2 colResponsive"> 
+								<label for="numBienesRusticos">Nº bienes rústicos:</label>
+							</div>
+							<div class="col-5 col-xl-2 colResponsive">
+								<input id="numBienesRusticos" name="numBienesRusticos" value="0" class=" " size="2" maxlength="3">
+							</div>	
+						</div>		
+						<div class="row">
+	                       <div class="col-6 col-xl-2 colResponsive"> 
+								<label for="numBienesOtros">Nº otros bienes:</label>
+						   </div>
+						   <div class="col-5 col-xl-2 colResponsive">
+								<input id="numBienesOtros" name="numBienesOtros" value="0" class=" " size="2" maxlength="3">
+						   </div>
+						 </div>
+						 <div class="row">	
+						 	<div class="col-4 col-xl-4 colResponsive">
+	                           <input id="btnCargarBien" type="submit" name="btnCargarBien" value="Anexo 2 - Cumplimentar bienes">
+	                        </div>
+	                     </div>
+	                     <!-- MENSAJE INFORMACION - NUMERO TOTAL DE BIENES SUPERADO -->
+
+                <!-- FIN MENSAJE NUMERO TOTAL DE BIENES SUPERADO -->
+	                </fieldset>	
+                 <!-- FIN BIENES -->
+                <div class="filaSepardor"></div>
+                <div class="fila"> <!-- FILA 1 -->
+                    <div class="col">
+                        <strong>47</strong>
+                        <label for="ddDocumentoNotarial" name="ddDocumentoNotarialError" class="marcaError">
+                            
+                        </label>
+                        <label for="ddDocumentoNotarial">
+                            Documento notarial
+                        </label>
+                        <input id="ddDocumentoNotarial" name="ddDocumentoNotarial" type="checkbox" value="X" null="">
+                        		
+                        <input type="hidden" name="ddDocumentoNotarialValidado" value=""> 		
+                    </div>
+                    <div class="col">
+                        <strong>48</strong>
+                        <label for="ddDocumentoPrivado" name="ddDocumentoPrivadoError" class="marcaError">
+                            
+                        </label>
+                        <label for="ddDocumentoPrivado">
+                            Documento Privado
+                        </label>
+                        <input id="ddDocumentoPrivado" name="ddDocumentoPrivado" type="checkbox" value="X" null="">
+                        		
+                        <input type="hidden" name="ddDocumentoPrivadoValidado" value="">			
+                    </div>
+                    <div class="col">
+                        <strong>49</strong>
+                        <label for="ddDocumentoJudicial" name="ddDocumentoJudicialError" class="marcaError">
+                            
+                        </label>
+                        <label for="ddDocumentoJudicial">
+                            Documento Judicial
+                        </label>
+                        <input id="ddDocumentoJudicial" name="ddDocumentoJudicial" type="checkbox" value="X" null="">
+                        
+                                <input type="hidden" name="ddDocumentoJudicialValidado" value="">
+                    </div>
+                    <div class="col">
+                        <strong>50</strong>
+                        <label for="ddDocumentoAdministrativo" name="ddDocumentoAdministrativoError" class="marcaError">
+                        </label>
+                        <label for="ddDocumentoAdministrativo">
+                            Documento Administrativo
+                        </label>
+                        <input id="ddDocumentoAdministrativo" name="ddDocumentoAdministrativo" type="checkbox" value="X" null="">
+                        		
+                        <input type="hidden" name="ddDocumentoAdministrativoValidado" value="">
+                    </div>
+                </div>                    
+                <div class="fila"></div>             
+				
+ 	           
+	           
+				<div class="novisible ocultarCombo">
+					
+					<fieldset class="sombreado ">
+						<legend>Cumplimentación del Notario/a o Fedatario/a Público</legend>
+						
+						<div class="filaSepardor"></div>
+						
+						<!-- AVISO SELECCIÓN MANUAL DEL NOTARIO-->
+						<div class="fila">
+							<div class="fila"></div>
+							<label for="ddApellidoNotario" class="mensajeInfoStrong"> 
+								Introduzca el primer apellido del Notario/a o Fedatario/a Público para realizar la búsqueda
+							</label>
+						</div>
+						     
+						<div class="fila">
+							<div class="col">
+								
+								 <label for="ddApellidoNotario">  
+								 	Primer Apellido
+								 </label>
+								 <input id="ddApellidoNotario" name="ddApellidoNotario" class=" proteger" type="text" size="18" maxlength="15" disabled="disabled" onkeypress="caracteresAlfaNumericosPermitiendoEspacios(event)">
+				                      	  
+								<input type="submit" id="botonDatosNotarios" name="botonDatosNotarios" class="busqueda" value="_" title="Pulse para obtener automáticamente la lista de notarios." onclick="sinSubmitWithPosicionScroll('botonDatosNotarios')" disabled="disabled">
+							</div>
+							
+							<div class="col">
+															
+								<label for="ddNotarioSelectNotariosError" name="ddNotarioSelectNotariosError" class="marcaError">
+		                            
+		                        </label> 
+		                        <label for="ddNotarioSelectNotarios">Notarios </label> 
+		                        
+								<select id="ddNotarioSelectNotarios" name="ddNotarioSelectNotarios" size="1" onchange="submitWithPosicionScroll('ddNotarioSelectNotarios')" disabled="disabled" class=" proteger">
+									
+								</select> 
+							</div>
+						
+
+					<div class="fila">
+						<div class="col10px"></div>
+						
+							<fieldset class="sombreadoAmarillo">						
+								<!-- AVISO SELECCIÓN MANUAL DEL NOTARIO-->
+								<div class="row">
+									<div class="col-12 col-xl-12 colResponsive">															
+										<div class="ImgMensajeInfo"></div>
+										<label for="ddCheckNotarioFueraTablas" class="mensajeInfoStrongAmarillo"> Si el Notario/a o Fedatario/a Público no ha sido encontrado mediante la búsqueda anterior,
+											 se puede cumplimentar directamente activando la siguiente casilla 
+										</label>
+										
+										<input id="ddCheckNotarioFueraTablas" class="w-100" name="ddCheckNotarioFueraTablas" style="display: inline;" value="X" null="" type="checkbox">
+									</div>
+								</div>								
+								<div class="row">
+									<div class="col-12 col-xl-12 colResponsive">
+										<label for="ddNombreNotario" class="marcaError">
+				                            
+			                        	</label> 									
+				                        <label for="ddNombreNotario"><strong>51</strong>  
+										 	Apellidos y nombre del notario o fedatario o identificación de la autoridad judicial o administrativa
+										</label>
+										<input id="ddNombreNotario" name="ddNombreNotario" readonly="readonly" class="w-100   proteger" type="text" size="120" maxlength="60">
+									</div>
+								</div>	
+							</fieldset>
+						
+						<div class="col10px"></div>	
+					</div>
+					</div></fieldset>	
+	            </div>         
+	             
+
+				<div class="row"><!-- FILA 4 -->
+                   <div class="col-6 col-xl-3 colResponsive">
+                       <strong>53</strong>
+                       <label for="ddProtocoloNumero" name="ddProtocoloNumeroError" class="marcaError">
+                           
+                       </label>
+                       <label for="ddProtocoloNumero">Nº Protocolo</label>
+                       <input id="ddProtocoloNumero" name="ddProtocoloNumero" disabled="disabled" class="w-100  proteger" type="text" size="6" maxlength="6">
+                   </div>
+                   <div class="col-6 col-xl-3 colResponsive">
+                       <strong>54</strong>
+                       <label for="ddProtocoloAnno" name="ddProtocoloAnnoError" class="marcaError">
+                           
+                       </label>
+                       <label for="ddProtocoloAnno">Año Protocolo</label>
+                       <input id="ddProtocoloAnno" name="ddProtocoloAnno" class="w-100  proteger" disabled="disabled" type="text" size="4" maxlength="4">									
+                   </div>
+                   
+                   <!-- nueva casilla Bis -->
+                   <div class="col-6 col-xl-3 colResponsive">
+                       <strong>63</strong>
+                       <label for="ddProtocoloNumeroBis" name="ddProtocoloNumeroBisError" class="marcaError">
+                           
+                       </label>
+                       <label for="ddProtocoloNumeroBis">Bis</label>
+                       <input id="ddProtocoloNumeroBis" name="ddProtocoloNumeroBis" disabled="disabled" class="w-100  proteger" type="text" size="3" maxlength="3">
+                   </div>
+                   
+                   <div class="col-6 col-xl-3 colResponsive">
+                   		<strong>64</strong>
+			            	
+										            						
+							<label for="ddFechaEscritura" class="marcaError"></label>
+							<label for="ddFechaEscritura">Fecha de escritura</label>
+							<input type="text" size="10" maxlength="10" name="ddFechaEscritura" id="ddFechaEscritura" class="w-100  proteger" disabled="disabled" placeholder="dd/mm/yyyy">							
+                   </div>                   
+               </div>             
+	            
+	            
+            
+	            <div class="novisible ocultarCombo">
+	            											
+						<div class="row">									
+							<div class="col-12 col-xl-12 colResponsive">																
+								<!-- AVISO SELECCIÓN MANUAL DEL NOTARIO-->
+								<strong class="me-2">65</strong>
+								<label for="ddNotarioAutorizaso_SP" class="mt-1"> Marque esta 
+casilla si el notario ha remitido la copia simple electrónica del 
+documento notarial a requerimiento de los obligados tributarios
+								</label>
+								
+								<input id="ddNotarioAutorizaso_SP" name="ddNotarioAutorizaso_SP" style="display: inline;" value="X" class="ms-1" null="" type="checkbox">
+							</div>					
+						</div>	<!-- fin de la fila -->		
+					
+	            </div>
+
+                <div class="row">
+                    <div class="col-12 col-xl-4 colResponsive">
+                        <strong>55</strong>
+                        <label for="ddOtorgSelectProvincia" name="ddOtorgSelectProvinciaError" class="marcaError"></label>
+                        <label for="ddOtorgSelectProvincia">Provincia Formalización / Otorgamiento</label>
+                        <select id="ddOtorgSelectProvincia" name="ddOtorgSelectProvincia" size="1" class="w-100 " onchange="cargarMunicipiosAjax('ddOtorgSelectProvincia', 'ddOtorgSelectMunicipio')">
+                            <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+                        </select>
+                        		
+                        <input type="hidden" name="ddOtorgSelectProvinciaValidado" value="0">
+                    </div>  
+                                	
+                    <div class="col-12 col-xl-4 colResponsive">
+                        <strong>56</strong>
+                        <label for="ddOtorgSelectMunicipio" name="ddOtorgSelectMunicipioError" class="marcaError"></label>
+                        <label for="ddOtorgSelectMunicipio">Municipio Formalización / Otorgamiento</label>
+                        <select id="ddOtorgSelectMunicipio" name="ddOtorgSelectMunicipio" size="1" class="w-100 ">
+                            
+                        </select>
+                        
+                        <input type="hidden" name="ddOtorgSelectMunicipioValidado" value="">
+                    </div>   
+                </div>
+                
+					  				
+                <div class="row">
+					<div class="col-12 col-xl-7 colResponsive">
+                        <strong>57</strong>
+                        <label for="ddOperacion" name="ddOperacionError" class="marcaError">
+                            
+                        </label>
+                        <label for="ddOperacion">Descripción de la Operación o Acto</label>
+                        <input id="ddOperacion" name="ddOperacion" readonly="readonly" class="w-100 proteger " value=" PENSIONES" type="text" size="60" maxlength="60">
+                    </div>     
+                </div>							
+                <div class="row">
+                    <div class="col-6 col-xl-2 colResponsive">
+                        <strong>58</strong>
+                        <label for="ddCantidadSujetosPasivos" name="ddCantidadSujetosPasivosError" class="marcaError">
+                            
+                        </label>
+                        <label for="ddCantidadSujetosPasivos">
+                            Nº Sujetos Pasivos
+                        </label>
+
+                        <input id="ddCantidadSujetosPasivos" class="w-100 " name="ddCantidadSujetosPasivos" value="1" type="text" size="1" maxlength="2" readonly="true">
+                    </div>
+                    <div class="col-6 col-xl-2 colResponsive">
+                        <strong>59</strong>
+                        <label for="ddCantidadTransmitente" name="ddCantidadTransmitenteError" class="marcaError">
+                            
+                        </label>
+                        <label for="ddCantidadTransmitente">Nº Transmitentes</label>
+
+                        <input id="ddCantidadTransmitente" class="w-100 " name="ddCantidadTransmitente" value="1" type="text" size="1" maxlength="2" readonly="true">
+                    </div>
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>60</strong>
+                        <label for="ddValorDocumento" name="ddValorDocumentoError" class="marcaError"></label>
+                        <label for="ddValorDocumento">Valor en Documento</label>  
+                        <input id="ddValorDocumento" name="ddValorDocumento" class="w-100  alineamientoDerecha" type="text" size="14" maxlength="16">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        
+        <div class="filaSepardor"></div>
+                    
+        <!-- AUTOLIQUIDACIÓN -->
+        <div class="contenidoCabecera">
+            <fieldset class="contenidoCabecera">
+                <div class="contenidoCabeceraTexto">
+                	<div class="col">
+	                    Autoliquidación (D)
+    	            </div>
+	    	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_(D)%20Autoliquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		         </div>
+            </fieldset>
+        </div>
+        <div class="contenidoDatos">
+            <fieldset class="contenidoFila"> <!-- FILA 1 -->
+                <div class="row"> 
+                    <div class="col-6 col-xl-2 colResponsive">
+                        <strong>100</strong>
+                        <label for="auValorDeclarado" name="auValorDeclaradoError" class="marcaError"></label>
+                        <label for="auValorDeclarado">Valor Declarado</label>
+                        <input id="auValorDeclarado" name="auValorDeclarado" type="text" size="14" maxlength="16" class="w-100  alineamientoDerecha">
+                    </div>	
+                </div>
+                   
+                <div class="row">    
+                    <div class="col-6 col-xl-2 colResponsive">
+                        <strong>101</strong>
+                        <label for="auExentos" name="auExentosError" class="marcaError"></label>
+                        <label for="auExentos">Exento</label>
+                        <input id="auExentos" name="auExentos" value="X" type="checkbox" onclick="submitWithPosicionScroll('auExentos')" null="">
+                        		
+                        <input type="hidden" name="auExentosValidado" value="">	
+                    </div>
+                 </div>
+                 <div class="row">   
+                    <div class="col-12 col-xl-10 colResponsive">
+                        <strong>106</strong>
+                        <label for="auSelectExentos" name="auSelectExentosError" class="marcaError"></label>
+                        <label for="auSelectExentos">Cód. Exención</label> 
+                        <select id="auSelectExentos" class="w-100 select2-hidden-accessible" name="auSelectExentos" disabled="disabled" size="1" data-select2-id="select2-data-auSelectExentos" tabindex="-1" aria-hidden="true">
+                            0
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-3-s64b" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectExentos-container" aria-controls="select2-auSelectExentos-container"><span class="select2-selection__rendered" id="select2-auSelectExentos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        		
+                        <input type="hidden" name="auSelectExentosValidado" value="">	
+                    </div>
+                </div>    
+                    
+                <div class="row">    
+                    <div class="col-8 col-xl-3 colResponsive">
+                        <strong>102</strong>
+                        <label for="auBonifEstatales" name="auBonifEstatalesError" class="marcaError"></label>
+                        <label for="auBonifEstatales">Otras Bonif. estatales</label> 
+                        <input id="auBonifEstatales" name="auBonifEstatales" value="X" type="checkbox" onclick="submitWithPosicionScroll('auBonifEstatales')" null="">
+                        		
+                        <input type="hidden" name="auBonifEstatalesValidado" value="">	
+                    </div>
+                 </div>
+                 <div class="row">   
+                    <div class="col-12 col-xl-10 colResponsive">
+                        <strong>107</strong>
+                                                <label for="auSelectBonifEstatales" name="auSelectBonifEstatalesError" class="marcaError"></label>
+                        <label for="auSelectBonifEstatales">Cód. Otras Bonif.</label> 
+                    </div>
+                 </div>
+                 <div class="row">    
+                    <div class="col-12 col-xl-10 colResponsive">     
+                        <select id="auSelectBonifEstatales" name="auSelectBonifEstatales" class="w-100 select2-hidden-accessible" size="1" disabled="disabled" data-select2-id="select2-data-auSelectBonifEstatales" tabindex="-1" aria-hidden="true">
+                            0
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-4-zrjq" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifEstatales-container" aria-controls="select2-auSelectBonifEstatales-container"><span class="select2-selection__rendered" id="select2-auSelectBonifEstatales-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        		
+                        <input type="hidden" name="auSelectBonifEstatalesValidado" value="">
+                    </div>
+                </div>    
+                    
+                <div class="row">    
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>103</strong>
+                        <label for="auBonifAutonomicas" name="auBonifAutonomicasError" class="marcaError"></label>
+                        <label for="auBonifAutonomicas">Bonif. Autonómicas</label> 
+                        <input id="auBonifAutonomicas" name="auBonifAutonomicas" value="X" type="checkbox" onclick="submitWithPosicionScroll('auBonifAutonomicas')" null="">
+                        		
+                        <input type="hidden" name="auBonifAutonomicasValidado" value="">	
+                    </div>
+                 </div>
+                 <div class="row">    
+                    <div class="col-12 col-xl-10 colResponsive">
+                        <strong>108</strong>
+                        <label for="auSelectBonifAutonomicas" name="auSelectBonifAutonomicasError" class="marcaError"></label>
+                        <label for="auSelectBonifAutonomicas">Cód. Bonif. Autonómicas</label> 
+                        <select id="auSelectBonifAutonomicas" class="w-100 select2-hidden-accessible" name="auSelectBonifAutonomicas" disabled="disabled" size="1" data-select2-id="select2-data-auSelectBonifAutonomicas" tabindex="-1" aria-hidden="true">
+                            0
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-5-3kq5" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifAutonomicas-container" aria-controls="select2-auSelectBonifAutonomicas-container"><span class="select2-selection__rendered" id="select2-auSelectBonifAutonomicas-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        
+                        <input type="hidden" name="auSelectBonifAutonomicasValidado" value="">
+                    </div>
+                </div>    
+                                    
+                <div class="row">
+                    <div class="col-6 col-xl-2 colResponsive">
+                        <strong>104</strong>
+                        <label for="auNoSujetos" name="auNoSujetosError" class="marcaError"></label>
+                        <label for="auNoSujetos">No Sujeto</label>
+                        <input id="auNoSujetos" name="auNoSujetos" value="X" onclick="submitWithPosicionScroll('auNoSujetos')" null="" type="checkbox">	
+                        		
+                        <input type="hidden" name="auNoSujetosValidado" value="">
+                    </div>
+                </div>
+                <div class="row">     
+                    <div class="col-12 col-xl-10 colResponsive">
+                        <strong>109</strong>
+                        <label for="auSelectNoSujetos" name="auSelectNoSujetosError" class="marcaError"></label>
+                        <label for="auSelectNoSujetos">Cód. No Sujeción</label>                             
+                           <select id="auSelectNoSujetos" class="w-100 select2-hidden-accessible" name="auSelectNoSujetos" disabled="disabled" size="1" data-select2-id="select2-data-auSelectNoSujetos" tabindex="-1" aria-hidden="true">
+                            0
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-6-bate" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectNoSujetos-container" aria-controls="select2-auSelectNoSujetos-container"><span class="select2-selection__rendered" id="select2-auSelectNoSujetos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        
+                        <input type="hidden" name="auSelectNoSujetosValidado" value="">
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-6 col-xl-2 colResponsive">
+                        <strong>105</strong>
+                        <label for="auPrescrito" name="auPrescritoError" class="marcaError"></label>
+                        <label for="auPrescrito">Prescrito</label>
+                        <input id="auPrescrito" name="auPrescrito" value="X" onclick="submitWithPosicionScroll('auPrescrito')" null="" type="checkbox">	
+                        		
+                        <input type="hidden" name="auNoPrescritoValidado" value="">
+                    </div>
+                </div>
+            </fieldset>
+            
+            
+            
+            
+            
+            <fieldset class="contenidoFila"> <!-- FILA 2 -->
+                <div class="row"> 
+                    <div class="col-10 col-xl-4 colResponsive">
+                        <strong>110</strong>
+                        <label for="auComplementaria" name="auComplementariaError" class="marcaError"></label>
+                        <label for="auComplementaria">Autoliquidación complementaria</label>
+                        <input id="auComplementaria" name="auComplementaria" onclick="submitWithPosicionScroll('auComplementaria')" value="X" null="" type="checkbox">
+                        		
+                        <input type="hidden" name="auComplementariaValidado" value="">
+                    </div>
+                </div>
+                 
+               	<div class="row"> 
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>111</strong>
+                        <label for="auFechaPresentacionDia" name="auFechaPresentacionDiaError" class="marcaError"></label>
+                        <label for="auFechaPresentacionDia">Fecha de presentación</label>
+                        
+                        <div class="w-100">
+                        <input id="auFechaPresentacionDia" name="auFechaPresentacionDia" disabled="disabled" size="2" maxlength="2" class=" proteger">
+                        <label for="auFechaPresentacionMes" name="auFechaPresentacionMesError" class="marcaError"></label>
+                        <input id="auFechaPresentacionMes" name="auFechaPresentacionMes" disabled="disabled" size="2" maxlength="2" class="proteger">
+                        <label for="auFechaPresentacionAnno" name="auFechaPresentacionAnnoError" class="marcaError"></label>
+                        <input id="auFechaPresentacionAnno" name="auFechaPresentacionAnno" class="proteger" disabled="disabled" size="4" maxlength="4">
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>112</strong>
+                        <label for="auNumero" name="auNumeroError" class="marcaError"></label>
+                        <label for="auNumero">Número de justificante</label>
+                        <input id="auNumero" name="auNumero" class="w-100 proteger" disabled="disabled" type="text" size="13" maxlength="13">
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>113 </strong>
+                        <label for="auImporteIngresado" name="auImporteIngresadoError" class="marcaError"></label>
+                        <label for="auImporteIngresado">Importe ingresado</label>
+                        <input id="auImporteIngresado" disabled="disabled" name="auImporteIngresado" size="11" maxlength="16" class="w-100 proteger alineamientoDerecha">
+                    </div>
+                </div>
+            </fieldset>
+            
+            
+            <fieldset class="contenidoDatos"> <!-- FILA 3 -->
+                <div class="row">
+                    <div class="col-12">
+                        <fieldset class="contenidoDatos">
+                            <legend>Asistentes</legend>
+                            <div class="row">
+                                <div class="col-12 col-xl-5 colResponsive">                            	
+                                    <input style="width:133px" name="botonArrendamiento" value="Arrendamientos" disabled="disabled" type="submit">
+                                    <input style="width:133px" name="botonConcesiones" value="Concesiones" disabled="disabled" type="submit">
+                                    <!-- AJGG. DESATIVAMOS TEMPORALMENTE AL BOTON DEL ASISTEMTE DE PENSIONES -->
+                                    <input style="width:133px" name="botonPensiones" value="Pensiones" type="submit">
+                                    
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-6 col-xl-2 colResponsive">
+	                    <label for="auReduccion"><strong>115</strong> Reducción (%)</label>                                    
+                        <label for="auReduccion" name="auReduccionError" class="marcaError"></label>
+                        <input id="auReduccion" name="auReduccion" disabled="disabled" size="5" maxlength="6" class="w-100  alineamientoDerecha">                        
+                    </div>
+					<div class="col-6 col-xl-2 colResponsive">                                
+						<label for="auTipo"><strong>118</strong> Tipo (%)</label>
+                    	<label for="auTipo" name="auTipoError" class="marcaError"></label>                                                  
+                        <input id="auTipo" name="auTipo" readonly="true" class="w-100 proteger alineamientoDerecha" value="1,00" size="5" maxlength="5">                        
+                    </div>
+					<div class="col-12 col-xl-2 colResponsive">                                
+						<label for="auBonificacion"><strong>120</strong> Bonificación (%)</label>                                                 
+                        <label for="auBonificacion" name="auBonificacionError" class="marcaError"></label>
+                        <input id="auBonificacion" name="auBonificacion" disabled="disabled" size="5" maxlength="5" class="w-100  alineamientoDerecha">                        
+                    </div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                        <label for="auLimiteBonificacion">Límite en euros de</label>                        
+                        <label for="auLimiteBonificacion" name="auLimiteBonificacionError" class="marcaError"></label>
+                        <input id="auLimiteBonificacion" name="auLimiteBonificacion" disabled="disabled" readonly="readonly" size="5" maxlength="5" class="w-100  alineamientoDerecha">                                                
+                    </div>
+                </div>
+                                        
+                   <div class="row mt-3">
+                       <div class="col-12 col-xl-3 colResponsive">	
+                        <label for="auBaseImponible"><strong>114</strong> BASE IMPONIBLE</label>
+                        <label for="auBaseImponible" name="auBaseImponibleError" class="marcaError">
+                            
+                        </label>
+                    </div>
+                    <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auBaseImponible" name="auBaseImponible" size="15" maxlength="16" class="w-100  alineamientoDerecha">
+                       </div>
+                   </div>
+                   <div class="row">
+					<div class="col-12 col-xl-3 colResponsive">                                
+						<label for="auSobreBaseImponible"><strong>116</strong> s/base imponible</label>
+                           <label for="auSobreBaseImponible" name="auSobreBaseImponibleError" class="marcaError"></label>
+                       </div>
+                       <div class="col-12 col-xl-2 colResponsive">	                            
+                           <input id="auSobreBaseImponible" name="auSobreBaseImponible" value="0" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">
+                       </div>
+                   </div>
+                   <div class="row">
+					<div class="col-12 col-xl-3 colResponsive">                                
+                           <label for="auBaseLiquidable"><strong>117</strong> BASE LIQUIDABLE:114-116</label>
+                           <label for="auBaseLiquidable" name="auBaseLiquidableError" class="marcaError"></label>
+                       </div>
+                       <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auBaseLiquidable" name="auBaseLiquidable" value="0" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">
+                       </div>
+                   </div>
+                   <div class="row">
+                   	<div class="col-12 col-xl-3 colResponsive">
+                           <label for="auCuota"><strong>119</strong> CUOTA: 117x118</label>
+                           <label for="auCuota" name="auCuota" class="marcaError">
+                           </label>
+                       </div>	
+                       <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auCuota" name="auCuota" value="0" size="15" maxlength="16" readonly="true" class="w-100  proteger alineamientoDerecha">
+                       </div>
+                   </div>
+                   <div class="row">
+                   	<div class="col-12 col-xl-3 colResponsive">
+                           <label for="auBonificacionSobreCuota"><strong>121</strong> Bonificación s/cuota</label>
+                           <label for="auBonificacionSobreCuota" name="auBonificacionSobreCuotaError" class="marcaError"></label>
+                       </div>	                             
+                       <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auBonificacionSobreCuota" name="auBonificacionSobreCuota" value="0" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">
+                       </div>
+                   </div>
+                   <div class="row">
+                   	<div class="col-12 col-xl-3 colResponsive">
+                           <label for="auAIngresar"><strong>122</strong> A INGRESAR(119-121-113)</label>
+                           <label for="auAIngresar" name="auAIngresarError" class="marcaError"></label>
+                       </div>	 
+                       <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auAIngresar" name="auAIngresar" value="0" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">                            	
+                       </div>
+                   </div>
+                   <div class="row">
+                   	   <div class="col-12 col-xl-3 colResponsive">
+                           <label for="auRecargo"><strong>123</strong> Recargo</label>	            	        
+                           <label for="auRecargo" name="auRecargoError" class="marcaError"></label>
+                       </div>	
+                       <div class="col-6 col-xl-2 colResponsive">
+                           <input id="auRecargo" name="auRecargo" value="0" size="15" maxlength="16" class="w-100  alineamientoDerecha">
+                       </div>
+                       <div class="col-6 col-xl-3 colResponsive">                            
+                           <input name="botonIntereses" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" type="submit">
+                       </div>
+                   </div>
+                   <div class="row">
+                   	<div class="col-12 col-xl-3 colResponsive">
+                           <label for="auInteresesDemora"><strong>124</strong>	Intereses de demora</label>
+                           <label for="auInteresesDemora" name="auInteresesDemoraError" class="marcaError">
+                           	
+                  			</label>
+                       </div>	
+                       <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auInteresesDemora" name="auInteresesDemora" value="0" size="15" maxlength="16" class="w-100  alineamientoDerecha">                           		
+                       </div>
+                   </div>
+                   <div class="row">
+                   	<div class="col-12 col-xl-3 colResponsive">
+                           <label for="auTotalAIngresar"><strong>125</strong> TOTAL A INGRESAR: (122+123+124)</label>
+                           <label for="auTotalAIngresar" name="auTotalAIngresarError" class="marcaError"></label>
+                       </div> 
+                       <div class="col-12 col-xl-2 colResponsive">
+                           <input id="auTotalAIngresar" name="auTotalAIngresar" value="0" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">
+                       </div>
+                   </div>
+            </fieldset>
+        </div>	
+
+        
+        <div class="filaSepardor"></div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Firma (E)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-600-instrucciones-para-su-cumplimentacion#600_(E)%20Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoFila">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                <label for="rpLugarFirna" class="marcaError">
+                	
+                </label>
+                <label for="rpLugarFirma" name="rpLugarFirma">               	
+                	<strong>Lugar de firma</strong>: En <input type="hidden" id="accesible">
+               	</label>
+               	<input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+				<label for="rpLugarFirma"> a 2 de abril de 2025</label>                	                	
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="contenidoDatos">
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-12 colResponsive">
+             	<label for="accesibilidad">En caso de que la 
+autoliquidación se suscriba por el representante del sujeto pasivo, se 
+deberá cumplimentar de forma obligatoria las siguientes casillas:</label>
+            </div>                                
+		</div>
+		
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>150</strong>
+				
+                <label for="rpNif">N.I.F. del representante</label>
+                <input id="rpNif" name="rpNif" class="w-100 " size="8" maxlength="15">
+			</div>
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>151</strong>
+                
+                <label for="rpNombre">
+                	Apellidos y nombre o razón social
+               	</label>
+                <input id="rpNombre" name="rpNombre" class="w-100 " type="text" size="35" maxlength="40">
+			 </div>
+		</div>
+	</fieldset>
+	
+
+
+
+		
+
+
+
+        <div class="filaSepardor"></div>	       
+        <div class="filaSepardor"></div>		
+        </div>      		
+
+        <input id="600_2009" type="hidden" value="600_2009" name="MOD">
+        <input id="referencia" type="hidden" name="referencia" value="600_2009">
+        <input id="version" type="hidden" name="version" value="6">
+                
+    
+    	
+    
+        
+	        
+
+
+
+
+
+
+
+
+	
+		
+	    
+    
+    	<!-- ASISTENTE CATASTRO URBANOS	 -->
+    
+		<input type="hidden" name="mostrarAsistenteDatosCatastro" id="mostrarAsistenteDatosCatastro" value="null">	
+
+	
+		<!-- ASISTENTE CATASTRO RUSTICOS -->
+
+		<input type="hidden" name="mostrarAsistenteCatastroRusticos" id="mostrarAsistenteCatastroRusticos" value="null">
+
+
+
+     
+             
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+             
+             
+             
+             
+    	</form>
+    	
+   	
+    	
+    
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+	
+	    
+    
+
+    <div id="dialog-ficheroErroneo" title="Error Grave!" style="display:none;">
+	   <p>Fichero xml incorrecto. No es posible completar la carga.</p><p>Debe corregir el fichero primero para poder continuar.</p><p>En
+ procesos por lotes tenga en cuenta, que si hay más de 1 transmitente 
+debe trasladar los datos del primer transmitente de las casillas 019 a 
+031 a las casillas 261 a 275.</p>
+    </div>
+    
+
+    <script>
+    $(function() 
+	{
+		
+		 
+		 $("#selectConceptoDescripcion").select2();
+		 $("#auSelectExentos").select2();
+		 $("#auSelectBonifEstatales").select2();
+		 $("#auSelectBonifAutonomicas").select2();
+		 $("#auSelectNoSujetos").select2();
+		 
+		
+	});
+	
+	 
+	
+    </script>
+
+	<div id="avisoObligatoriedadPresentacionTelematica" title="Aviso!" style="display:none">
+	<!-- <span class="ui-icon ui-icon-alert dialogoAviso"></span>-->
+	<p><strong>Importante: </strong>la autoliquidación que va a imprimir es
+ obligatorio que se presente telemáticamente en el Registro Electrónico 
+tributario. Le recomendamos pagarla y presentarla en ese Registro a 
+través de la plataforma de pagos y presentación telemática, para ello 
+pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
+	<p>Si por el contrario, prefiere pagar esta autoliquidación por otros 
+medios y posteriormente presentarla en el Registro Electrónico 
+tributario pulse <strong>Continuar</strong> para imprimir la primera hoja del Ejemplar para el interesado y el Ejemplar para la entidad colaboradora. </p> 		
+</div>
+
+	<div id="avisoNoObligadoPresentacionTelematicaPeroConDocAdjunta" title="Aviso!" style="display:none">
+	<!-- <span class="ui-icon ui-icon-alert dialogoAviso"></span>-->
+	<p><strong>Importante: </strong> La autoliquidación que va a imprimir 
+tiene documentación electrónica adjunta que sólo puede ser presentada en
+ el Registro Electrónico tributario junto con la autoliquidación a la 
+que se ha anexado. Le recomendamos pagarla y presentarla en el Registro 
+electrónico tributario a través de la plataforma de pagos y presentación
+ telemática, para ello pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
+	<p>Si por el contrario, prefiere pagar esta autoliquidación por otros 
+medios y posteriormente realizar la presentación de la autoliquidación y
+ de los documentos comprensivos de los hechos imponibles del impuesto, 
+en alguno de los Servicios de Atención al Contribuyente de la Consejería
+ de Hacienda, Administraciones Públicas y Transformación Digital u 
+Oficinas Liquidadoras de Distrito Hipotecario pulse <strong>Continuar</strong> para obtener una copia impresa de la misma.</p> 		
+</div>
+
+	<div id="avisoSinIngresoNoObligadoPresentacionTelematicaPeroConDocAdjunta" title="Aviso!" style="display:none">
+	<!-- <span class="ui-icon ui-icon-alert dialogoAviso"></span>-->
+	<p><strong>Importante: </strong> La autoliquidación que va a imprimir 
+tiene documentación electrónica adjunta que sólo puede ser presentada en
+ el Registro Electrónico tributario junto con la autoliquidación a la 
+que se ha anexado. Le recomendamos presentarla en el Registro 
+electrónico tributario, para ello pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
+	<p>Si por el contrario, prefiere realizar la presentación de la 
+autoliquidación y de los documentos comprensivos de los hechos 
+imponibles del impuesto, en alguno de los Servicios de Atención al 
+Contribuyente de la Consejería de Hacienda, Administraciones Públicas y 
+Transformación Digital u Oficinas Liquidadoras de Distrito Hipotecario 
+pulse <strong>Continuar</strong> para obtener una copia impresa de la misma.</p> 		
+</div>
+
+    	
+    
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
