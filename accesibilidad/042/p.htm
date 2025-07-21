@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0089)https://webgreco.local/webgreco/modelos/jsp/GreJspDistribucion.jsp?modelo=042&inicio=true -->
-<html lang="es" katalonextensionid="ljdobmomdgdljniojadhoplhkpialdid"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">		
+<html lang="es"><head>		
 
-    	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="theme-color" content="#002855">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<!--<base target="_self" href="https://webgreco.local/webgreco/">--><base href="." target="_self">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">
+		<!-- base href="https://webgreco.local/webgreco/" -->
 		
 
 
@@ -29,7 +26,7 @@
  	<title>Programas de ayuda CLM-WEB</title>
  		
 	
-	<script type="text/javascript" src="https://webgreco.local/webgreco/js/GreJsFunciones_v2.js">
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
 	</script>
 	
 	<!-- JQUERY -->	
@@ -38,33 +35,33 @@
 
 
 <!-- Motor JQuery -->
-<script src="https://webgreco.local/webgreco/webjars/jquery/3.6.3/jquery.min.js"></script>
+<script src="p_files/jquery_003.js"></script>
 
 <!-- JQuery UI -->
-<script src="https://webgreco.local/webgreco/webjars/jquery-ui/1.13.2/jquery-ui.min.js"></script> 
+<script src="p_files/jquery-ui.js"></script> 
 
 <!--  Estilos JQuery UI -->
-<link rel="stylesheet" href="https://webgreco.local/webgreco/webjars/jquery-ui/1.13.2/jquery-ui.min.css"> 
+<link rel="stylesheet" href="p_files/jquery-ui.css"> 
 
 <!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
-<script src="https://webgreco.local/webgreco/js/jquery-external-pluggins/jquery.blockUI.js"></script>
+<script src="p_files/jquery_004.js"></script>
 
-<script src="https://webgreco.local/webgreco/js/browserDetect.js"></script>
+<script src="p_files/browserDetect.js"></script>
 
 <!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
-<script src="https://webgreco.local/webgreco/js/GreJsFuncionesJQuery_v3.js"></script> 
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
 
 <!-- jQuery Form Plugin -->
-<script src="https://webgreco.local/webgreco/js/jquery-external-pluggins/jquery.form.js"></script>
+<script src="p_files/jquery.js"></script>
 
 <!-- B64 jQuery Plugin -->
-<script src="https://webgreco.local/webgreco/js/jquery-external-pluggins/jquery.base64.js"></script>
+<script src="p_files/jquery_002.js"></script>
 
-<link href="https://webgreco.local/webgreco/js/jquery-external-pluggins/select2/dist/css/select2.min.css" rel="stylesheet">
-<script src="https://webgreco.local/webgreco/js/jquery-external-pluggins/select2/dist/js/select2.min.js"></script>
+<link href="p_files/select2.css" rel="stylesheet">
+<script src="p_files/select2.js"></script>
 
 
-<script src="https://webgreco.local/webgreco/js/jquery-external-pluggins/i18n/datepicker-es.js"></script> 
+<script src="p_files/datepicker-es.js"></script> 
 
 <!-- compatibilidad IE 11 
 <link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
@@ -74,19 +71,19 @@
 	
 	
 	<!-- BOOTSTRAP -->
-	<link rel="stylesheet" type="text/css" href="https://webgreco.local/webgreco/webjars/bootstrap/5.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.css">
 
-	<script type="text/javascript" src="https://webgreco.local/webgreco/webjars/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="p_files/bootstrap.js"></script>
 	
 	
 	<!-- HOJA DE ESTILOS CORPORATIVA -->
-	<link rel="stylesheet" href="https://webgreco.local/webgreco/css/responsive/assets/css/styles.css">
+	<link rel="stylesheet" href="p_files/styles.css">
 	<!-- HOJA DE ESTILOS WEBGRECO -->
-	<link rel="stylesheet" type="text/css" href="https://webgreco.local/webgreco/css/grecoOV.css">
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
 	
 	
 	<!-- compatibilidad IE 11 -->
-	<link rel="stylesheet" href="https://webgreco.local/webgreco/css/bootstrap-ie11.min.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
 	
 
 
@@ -118,7 +115,7 @@
 
 
 	
-	 <script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/prompt.js"></script><script src="chrome-extension://ljdobmomdgdljniojadhoplhkpialdid/page/runScript.js"></script></head>
+	 </head>
 
 
 	
@@ -132,7 +129,7 @@
 
 
 	
-    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie(&#39;https://webgreco.local/webgreco&#39;);posicionarScroll();controlarSesion(&#39;https://webgreco.local/webgreco/GreSvlComprobarSesion&#39;)" onunload="doUnload()">
+    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
 	
        
         
@@ -144,7 +141,7 @@
 	        
 	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
 	
-			<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="9103032595">
+			<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="4437461835">
 	
 			
 			    
@@ -160,7 +157,7 @@
 		
 		<div style="z-index:1000; left: 45%;">
 			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
-					<img src="https://webgreco.local/webgreco/imagenes/ajax_loader.gif" alt="Cargando...">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
 			</span>
 		</div>
 
@@ -187,11 +184,13 @@
 
 <!-- AJGG. NUEVA CABECERA -->
 	<header class="shadow-sm">
-		<img class="logo" src="https://webgreco.local/webgreco/css/responsive/assets/images/manifest-icon-192.png" alt="Castilla la Mancha"> 
-		<img class="logo-xl" src="https://webgreco.local/webgreco/css/responsive/assets/images/logo-xl.png" alt="Castilla la Mancha">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
 		<div>
 			<h1>TASA FISCAL SOBRE EL JUEGO</h1>
-			<h2>Rifas, Tómbolas, apuestas, combinaciones aleatorias y otros juegos que se desarrollen por medios electrónicos, informáticos, telemáticos o interactivos</h2>
+			<h2>Rifas, Tómbolas, apuestas, combinaciones aleatorias y otros 
+juegos que se desarrollen por medios electrónicos, informáticos, 
+telemáticos o interactivos</h2>
 		</div>
 		 
 		<div class="g-0 mb-3">
@@ -228,7 +227,7 @@
 		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="separadorFilaAncha"></div>
 
-				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton(&#39;VALIDAR&#39;, false); return procesarPeticion();">
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
 
 				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
 
@@ -247,8 +246,8 @@
 						</span>						
 					</button>-->	
 					
-					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion" target="_blank" onclick="window.open(this.href, &#39;&#39;, &#39;height=600,width=800,resizable=1&#39;); return false;">
-						<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 	        		</a>	        		
 								
 				</fieldset>
@@ -512,8 +511,8 @@ $(function()
 
 
 	<div class="colAlineamientoDerecha">
-		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#Cuestionesgeneralesdecumplimentaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, &#39;height=600,width=800,resizable=1&#39;); return false;">
-			<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#Cuestionesgeneralesdecumplimentaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 		</a>		
 	</div>
 
@@ -528,7 +527,7 @@ $(function()
 
 				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
 					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
-	                	<option value="0">SELECCIONE UNA OPCIÓN</option><option selected="" value="EH4501">TOLEDO</option>
+	                	<option value="0">SELECCIONE UNA OPCIÓN</option><option selected="selected" value="EH4501">TOLEDO</option>
 	               	</select>
                	
                	
@@ -538,7 +537,7 @@ $(function()
 			<div class="col-6 col-xl-2 colResponsive">
 				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
 				<label for="codigoTerritorial">Código territorial</label>
-				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6" value="">
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6">
 			</div>
 		</div>
 		
@@ -566,7 +565,7 @@ $(function()
 					<input type="hidden" id="accesible">
 				</label>				
    	            <select id="modelo_042_Devengo" name="modelo_042_Devengo" class="w-100 " size="1"> 
-					<option selected="" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">2025</option><option value="2">2024</option><option value="3">2023</option><option value="4">2022</option><option value="5">2021</option><option value="6">2020</option><option value="7">2019</option><option value="8">2018</option><option value="9">2017</option><option value="10">2016</option><option value="11">2015</option><option value="12">2014</option><option value="13">2013</option>
+					<option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">2025</option><option value="2">2024</option><option value="3">2023</option><option value="4">2022</option><option value="5">2021</option><option value="6">2020</option><option value="7">2019</option><option value="8">2018</option><option value="9">2017</option><option value="10">2016</option><option value="11">2015</option><option value="12">2014</option><option value="13">2013</option>
 				</select>
 			</div>	
 			<div class="col-6 col-xl-4 colResponsive">
@@ -575,7 +574,7 @@ $(function()
 					
 				</label>
    	            <select id="modelo_042_Periodo" name="modelo_042_Periodo" class="w-100 " size="1"> 
-					<option selected="" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+					<option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
 				</select>
 			</div>
 		</div>
@@ -617,8 +616,8 @@ $(function()
 				<label for="selectConceptoDescripcion" class="labelInline">Concepto			
 				<label for="selectConceptoDescripcion" name="selectConceptoDescripcionError" class="marcaError"></label>
 				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
-	                <select id="selectConceptoDescripcion" class="w-100" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll(&#39;selectConceptoDescripcion&#39;)" size="1">
-						<option class="option" value="0"> 
+	                <select id="selectConceptoDescripcion" class="w-100" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" size="1">
+						<option class="option" value="0" selected="selected"> 
 SELECCIONE UNA OPCIÓN</option>
 <optgroup class="optGroupNivel_1" label="RIFAS Y TÓMBOLAS"> 
 <option class="option">TJ10 - TIPO GENERAL</option> 
@@ -641,7 +640,7 @@ SELECCIONE UNA OPCIÓN</option>
 			
 			<div class="col-12 col-xl-2 colResponsive">
 				<label class="labelInline" for="codigoConcepto">&nbsp;</label>
-				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" value="" size="4" maxlength="4" readonly="readonly">
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" size="4" maxlength="4" readonly="readonly">
 				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="proteger" value=" ">		
 								
 			</div>
@@ -669,7 +668,7 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 
-<link rel="stylesheet" href="https://webgreco.local/webgreco/css/403.css">
+<link rel="stylesheet" href="p_files/403.css">
 
 
 
@@ -692,8 +691,8 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 	<div class="colAlineamientoDerecha">
-		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(A)Datosidentificativosdelsujetopasivo" target="_blank" onclick="window.open(this.href, this.target, &#39;height=600,width=800,resizable=1&#39;); return false;">
-			<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(A)Datosidentificativosdelsujetopasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 		</a>		
 	</div>
 
@@ -715,13 +714,13 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>5</strong>
 				
                 <label for="spNif">NIF</label>
-                <input id="spNif" name="spNif" class="w-100 " value="" size="8" maxlength="9">
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
 			</div>
 			<div class="col-12 col-xl-6 colResponsive">
 				<strong>6</strong>
 				
                 <label for="spNombre">Apellidos y nombre o razón social</label>
-                <input id="spNombre" name="spNombre" class="w-100 " value="" type="text" size="42" maxlength="60">
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
 			</div>			
 						
 		</div>	
@@ -734,7 +733,7 @@ SELECCIONE UNA OPCIÓN</option>
 				
                 <label for="spSelectSiglas">Siglas</label>
                 <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
-                	<option value="0">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
                 </select>
                 		
                  <input type="hidden" name="spSelectSiglasValidado" value="">
@@ -743,13 +742,13 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>8</strong>
 				
                 <label for="spNombreVia">Nombre Vía Pública</label>
-                <input id="spNombreVia" name="spNombreVia" class="w-100 " value="" type="text" size="31" maxlength="60">
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
 			</div>
 			<div class="col-4 col-xl-2 colResponsive">
 				<strong>9</strong>
 				
                 <label for="spNumero">Número</label>
-                <input id="spNumero" name="spNumero" class="w-100 " value="" size="4" maxlength="8">
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
             </div>
 		</div>
 
@@ -760,32 +759,32 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>10</strong>
 				
                 <label for="spLetra">Bloque</label>
-                <input id="spLetra" name="spLetra" class="w-100 " value="" size="1" maxlength="3">
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
             </div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>11</strong>
 				
                 <label for="spEscalera">Escalera</label>
-                <input id="spEscalera" name="spEscalera" class="w-100 " value="" size="1" maxlength="2">						
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>12</strong>
 				
                 <label for="spPiso">Planta</label>
-                <input id="spPiso" name="spPiso" class="w-100 " value="" size="1" maxlength="2">
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>13</strong>
 				
                 <label for="spPuerta">Puerta</label>
-                <input id="spPuerta" name="spPuerta" class="w-100 " value="" size="1" maxlength="2">
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
 			</div>
 
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>14</strong>
 				
                 <label for="spTelefono">Telf.</label>
-                <input id="spTelefono" name="spTelefono" class="w-100 " value="" size="8" maxlength="9">
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
 			</div>
 			
 
@@ -793,7 +792,7 @@ SELECCIONE UNA OPCIÓN</option>
 					<strong>15</strong>
 					
 	                <label for="spFax">Fax</label>
-	                <input id="spFax" name="spFax" class="w-100 " value="" size="8" maxlength="9">
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
 				</div>				
 			
 		</div>
@@ -808,8 +807,8 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>17</strong>
 				
                 <label for="spSelectProvincia">Provincia</label>
-                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax(&#39;spSelectProvincia&#39;, &#39;spSelectMunicipio&#39;)">
-                	<option value="0">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
                	</select>
 		
             <input type="hidden" name="spSelectProvinciaValidado" value="">
@@ -829,7 +828,7 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>18</strong>
 				
                 <label for="spCodPostal">C. Postal</label>
-                <input id="spCodPostal" name="spCodPostal" class="w-100 " value="" type="text" size="4" maxlength="5">
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
 			</div>
 
 			
@@ -911,8 +910,8 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 	<div class="colAlineamientoDerecha">
-		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(B)Datosidentificativosdelrepresentante" target="_blank" onclick="window.open(this.href, this.target, &#39;height=600,width=800,resizable=1&#39;); return false;">
-			<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(B)Datosidentificativosdelrepresentante" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 		</a>		
 	</div>
 
@@ -928,13 +927,13 @@ SELECCIONE UNA OPCIÓN</option>
 				
                 <label for="prNif">NIF</label>
                 <input id="prNif" name="prNif" class="w-100 
-                	" value="" size="8" maxlength="9">
+                	" size="8" maxlength="9">
 			</div>
 			<div class="col-12 col-xl-6 colResponsive">
 				<strong>21</strong>
                 
                 <label for="prNombre">Apellidos y nombre o razón social</label>
-                <input id="prNombre" name="prNombre" class="w-100 " value="" type="text" size="38" maxlength="55">
+                <input id="prNombre" name="prNombre" class="w-100 " type="text" size="38" maxlength="55">
 			</div>
 		</div>
 		<div class="row"><!-- FILA 2 -->
@@ -943,20 +942,20 @@ SELECCIONE UNA OPCIÓN</option>
 				
                 <label for="prSelectSiglas">Siglas</label>
                 <select id="prSelectSiglas" name="prSelectSiglas" class="w-100 " size="1">
-                		<option value="0">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
        			</select>
 			</div>
 			<div class="col-8 col-xl-6 colResponsive">
 				<strong>23</strong>
 				
                 <label for="prNombreVia">Nombre Vía Pública</label>
-                <input id="prNombreVia" name="prNombreVia" class=" w-100" value="" type="text" size="31" maxlength="60">
+                <input id="prNombreVia" name="prNombreVia" class=" w-100" type="text" size="31" maxlength="60">
 			</div>
 			<div class="col-4 col-xl-2 colResponsive">
 				<strong>24</strong>
 				
                 <label for="prNumero">Número</label>
-                <input id="prNumero" name="prNumero" class=" w-100" value="" size="4" maxlength="8">
+                <input id="prNumero" name="prNumero" class=" w-100" size="4" maxlength="8">
 			</div>
 		</div>
 		<div class="row"><!-- FILA 3 -->
@@ -964,31 +963,31 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>25</strong>
 				
                 <label for="prLetra">Bloque</label>
-                <input id="prLetra" name="prLetra" class=" w-100" value="" size="1" maxlength="2">
+                <input id="prLetra" name="prLetra" class=" w-100" size="1" maxlength="2">
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>26</strong>
 				
                 <label for="prEscalera">Escalera</label>
-                <input id="prEscalera" name="prEscalera" class=" w-100" value="" size="1" maxlength="2">						
+                <input id="prEscalera" name="prEscalera" class=" w-100" size="1" maxlength="2">						
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>27</strong>
 				
                 <label for="prPiso">Planta</label>
-                <input id="prPiso" name="prPiso" class=" w-100" value="" size="1" maxlength="2">
+                <input id="prPiso" name="prPiso" class=" w-100" size="1" maxlength="2">
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>28</strong>
 				
                 <label for="prPuerta">Puerta</label>
-                <input id="prPuerta" name="prPuerta" class=" w-100" value="" size="1" maxlength="2">
+                <input id="prPuerta" name="prPuerta" class=" w-100" size="1" maxlength="2">
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<strong>29</strong>
 				
                 <label for="prTelefono">Telf.</label>
-                <input id="prTelefono" name="prTelefono" class=" w-100" value="" size="8" maxlength="9">
+                <input id="prTelefono" name="prTelefono" class=" w-100" size="8" maxlength="9">
 			</div>
 			
 
@@ -996,7 +995,7 @@ SELECCIONE UNA OPCIÓN</option>
      			<strong>30</strong>
      			
                 <label for="prFax">Fax</label>
-                <input id="prFax" name="prFax" class="w-100 " value="" size="8" maxlength="9">
+                <input id="prFax" name="prFax" class="w-100 " size="8" maxlength="9">
 			</div>	
 
 			
@@ -1010,8 +1009,8 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>32</strong>
 				
                 <label for="prSelectProvincia">Provincia</label>
-                <select id="prSelectProvincia" name="prSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax(&#39;prSelectProvincia&#39;, &#39;prSelectMunicipio&#39;)">
-                		<option value="0">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+                <select id="prSelectProvincia" name="prSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('prSelectProvincia', 'prSelectMunicipio')">
+                		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
                	</select>
                	
                			
@@ -1032,7 +1031,7 @@ SELECCIONE UNA OPCIÓN</option>
 				<strong>33</strong>
 				
                 <label for="prCodPostal">C. Postal</label>
-                <input id="prCodPostal" name="prCodPostal" class=" w-100" value="" type="text" size="4" maxlength="5">
+                <input id="prCodPostal" name="prCodPostal" class=" w-100" type="text" size="4" maxlength="5">
 			</div>
 		</div>
 	</fieldset>
@@ -1061,8 +1060,8 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 	<div class="colAlineamientoDerecha">
-		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(Autoliquidaci%C3%B3n)" target="_blank" onclick="window.open(this.href, this.target, &#39;height=600,width=800,resizable=1&#39;); return false;">
-			<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(Autoliquidaci%C3%B3n)" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 		</a>		
 	</div>
 
@@ -1083,21 +1082,21 @@ SELECCIONE UNA OPCIÓN</option>
 	                    	<label for="auBaseImponibleTG" name="auBaseImponibleTGError" class="marcaError mr-2">
 	                            
 	                        </label>                                                
-	                        <input id="auBaseImponibleTG" name="auBaseImponibleTG" readonly="true" value="" type="text" maxlength="16" size="16" class="w-100  proteger alineamientoDerecha">
+	                        <input id="auBaseImponibleTG" name="auBaseImponibleTG" readonly="true" type="text" maxlength="16" size="16" class="w-100  proteger alineamientoDerecha">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="auTipoTG"><strong>51 </strong>Tipo Gravamen</label>
 	                		<label for="auTipoTG" name="auTipoTGError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTipoTG" name="auTipoTG" readonly="readonly" value="" type="text" maxlength="16" size="16" class="w-100 proteger alineamientoDerecha">
+	                        <input id="auTipoTG" name="auTipoTG" readonly="readonly" type="text" maxlength="16" size="16" class="w-100 proteger alineamientoDerecha">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="auTotalTG"><strong>52</strong> Total Tasa</label>
 	                		<label for="auTotalTG" name="auTotalTGError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTotalTG" name="auTotalTG" readonly="readonly" value="" type="text" maxlength="16" size="16" class="w-100 proteger alineamientoDerecha">
+	                        <input id="auTotalTG" name="auTotalTG" readonly="readonly" type="text" maxlength="16" size="16" class="w-100 proteger alineamientoDerecha">
 						</div>
 					</div>
 					<div class="row mt-2">
@@ -1109,21 +1108,21 @@ SELECCIONE UNA OPCIÓN</option>
 	                    	<label for="auBaseImponibleBenefico" name="auBaseImponibleBeneficoError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auBaseImponibleBenefico" name="auBaseImponibleBenefico" readonly="true" value="" type="text" maxlength="16" size="16" class=" proteger alineamientoDerecha w-100"> 
+	                        <input id="auBaseImponibleBenefico" name="auBaseImponibleBenefico" readonly="true" type="text" maxlength="16" size="16" class=" proteger alineamientoDerecha w-100"> 
 					    </div>
 					    <div class="col-12 col-xl-2 colResponsive">
 					    	<label for="auTipoBenefico"><strong class="mr-2">54</strong> Tipo Gravamen</label>
 	                		<label for="auTipoBenefico" name="auTipoBeneficoError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTipoBenefico" name="auTipoBenefico" readonly="readonly" value="" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+	                        <input id="auTipoBenefico" name="auTipoBenefico" readonly="readonly" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
 					    </div>
 					    <div class="col-12 col-xl-2 colResponsive">
 					    	<label for="auTotalBenefico"><strong class="mr-2">55</strong> Total Tasa</label>
 	                		<label for="auTotalBenefico" name="auTotalBeneficoError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTotalBenefico" name="auTotalBenefico" readonly="readonly" value="" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+	                        <input id="auTotalBenefico" name="auTotalBenefico" readonly="readonly" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
 					    </div>					    
 					</div>
 					<hr>
@@ -1139,21 +1138,21 @@ SELECCIONE UNA OPCIÓN</option>
 	                    	<label for="auBaseImponibleCG" name="auBaseImponibleCGError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auBaseImponibleCG" name="auBaseImponibleCG" readonly="true" value="" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
+	                        <input id="auBaseImponibleCG" name="auBaseImponibleCG" readonly="true" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="auTipoCG"><strong class="mr-2">61</strong> Tipo Gravamen</label>
 	                		<label for="auTipoCG" name="auTipoCGError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTipoCG" name="auTipoCG" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+	                        <input id="auTipoCG" name="auTipoCG" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="auTotalCG"><strong class="mr-2">62</strong> Total Tasa</label>
 	                		<label for="auTotalCG" name="auTotalCGError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTotalCG" name="auTotalCG" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+	                        <input id="auTotalCG" name="auTotalCG" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
 						</div>
 					</div>
 					<div class="row mt-2">
@@ -1165,21 +1164,21 @@ SELECCIONE UNA OPCIÓN</option>
 	                    	<label for="auBaseImponibleDeportivas" name="auBaseImponibleDeportivasError" class="marcaError mr-2">
 	                               
 	                        </label>
-	                        <input id="auBaseImponibleDeportivas" name="auBaseImponibleDeportivas" readonly="true" value="" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
+	                        <input id="auBaseImponibleDeportivas" name="auBaseImponibleDeportivas" readonly="true" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
 					   	</div>
 					   	<div class="col-12 col-xl-2 colResponsive">
 					   		<label for="auTipoDeportivas"><strong class="mr-2">64</strong> Tipo Gravamen</label>
 	                		<label for="auTipoDeportivas" name="auTipoDeportivasError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTipoDeportivas" name="auTipoDeportivas" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+	                        <input id="auTipoDeportivas" name="auTipoDeportivas" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
 					   	</div>
 					   	<div class="col-12 col-xl-2 colResponsive">
 					   		<label for="auTotalDeportivas"><strong class="mr-2">65</strong> Total Tasa</label>
 	                		<label for="auTotalDeportivas" name="auTotalDeportivasError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTotalDeportivas" name="auTotalDeportivas" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+	                        <input id="auTotalDeportivas" name="auTotalDeportivas" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
 					   	</div>
 					</div>
 					<hr>
@@ -1192,21 +1191,21 @@ SELECCIONE UNA OPCIÓN</option>
 	                    	<label for="auBaseImponibleAleatorias" name="auBaseImponibleAleatoriasError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auBaseImponibleAleatorias" name="auBaseImponibleAleatorias" readonly="true" value="" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
+	                        <input id="auBaseImponibleAleatorias" name="auBaseImponibleAleatorias" readonly="true" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="auTipoAleatorias"><strong class="mr-2">71</strong> Tipo Gravamen</label>
 	                		<label for="auTipoAleatorias" name="auTipoAleatoriasError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTipoAleatorias" name="auTipoAleatorias" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+	                        <input id="auTipoAleatorias" name="auTipoAleatorias" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="auTotalAleatorias"><strong class="mr-2">72</strong> Total Tasa</label>
 	                		<label for="auTotalAleatorias" name="auTotalAleatoriasError" class="marcaError mr-2">
 	                            
 	                        </label>
-	                        <input id="auTotalAleatorias" name="auTotalAleatorias" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+	                        <input id="auTotalAleatorias" name="auTotalAleatorias" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
 						</div>						
 					</div>               	               	
 
@@ -1232,7 +1231,7 @@ SELECCIONE UNA OPCIÓN</option>
 	                    </label>
 	                    <label for="selectCanalUtilizado"> <strong>80</strong> Canal utilizado</label>
 	                    <select id="selectCanalUtilizado" name="selectCanalUtilizado" class="w-100   proteger readonly=" true"="" disabled="disabled" "="" size="1">							
-								<option selected="" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">TELEFÓNICO</option><option value="2">AUDIOVISUAL</option><option value="3">INTERNET</option><option value="4">OTRO</option>
+								<option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">TELEFÓNICO</option><option value="2">AUDIOVISUAL</option><option value="3">INTERNET</option><option value="4">OTRO</option>
 		    			</select>
             		</div>
             		<div class="col-12 col-xl-2 colResponsive">
@@ -1240,15 +1239,15 @@ SELECCIONE UNA OPCIÓN</option>
                     	<label for="auBaseImponibleOtrosJuegos" name="auBaseImponibleOtrosJuegosError" class="marcaError mr-2">
                             
                         </label>
-                        <input id="auBaseImponibleOtrosJuegos" name="auBaseImponibleOtrosJuegos" readonly="true" value="" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
+                        <input id="auBaseImponibleOtrosJuegos" name="auBaseImponibleOtrosJuegos" readonly="true" type="text" size="16" maxlength="16" class=" proteger alineamientoDerecha w-100">
             		</div>
             		<div class="col-12 col-xl-2 colResponsive">
             			<label for="auTipoGravamenOtroJuegos"><strong class="mr-2">86</strong> Tipo Gravamen</label>
-                        <input id="auTipoGravamenOtroJuegos" name="auTipoGravamenOtroJuegos" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+                        <input id="auTipoGravamenOtroJuegos" name="auTipoGravamenOtroJuegos" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
             		</div>
             		<div class="col-12 col-xl-2 colResponsive">
             			<label for="auTotalOtroJuegos"><strong class="mr-2">87</strong> Total Tasa</label>
-                        <input id="auTotalOtroJuegos" name="auTotalOtroJuegos" readonly="readonly" value="" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
+                        <input id="auTotalOtroJuegos" name="auTotalOtroJuegos" readonly="readonly" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha w-100">
             		</div>
             	</div>               
             </fieldset>
@@ -1265,7 +1264,7 @@ SELECCIONE UNA OPCIÓN</option>
 	                        <label for="auComplementaria">
 	                            Autoliquidación complementaria
 	                        </label>
-	                        <input id="auComplementaria" name="auComplementaria" value="X" onclick="submitWithPosicionScroll(&#39;auComplementaria&#39;)" null="" type="checkbox">
+	                        <input id="auComplementaria" name="auComplementaria" value="X" onclick="submitWithPosicionScroll('auComplementaria')" null="" type="checkbox">
 	                                                
 	                        <input type="hidden" name="auComplementariaValidado" value="">
 	                    </div>
@@ -1281,17 +1280,17 @@ SELECCIONE UNA OPCIÓN</option>
 	                            Fecha de presentación
 	                        </label>
 	                        <div class="w-100">
-		                        <input id="auFechaPresentacionDia" name="auFechaPresentacionDia" disabled="" value="" size="2" maxlength="2" class="  
+		                        <input id="auFechaPresentacionDia" name="auFechaPresentacionDia" disabled="disabled" size="2" maxlength="2" class="  
 		    	                    	proteger">
 		                        <label for="auFechaPresentacionMes" name="auFechaPresentacionMesError" class="marcaError">
 		                            
 		                        </label>
-		                        <input id="auFechaPresentacionMes" name="auFechaPresentacionMes" disabled="" value="" size="2" maxlength="2" class=" 
+		                        <input id="auFechaPresentacionMes" name="auFechaPresentacionMes" disabled="disabled" size="2" maxlength="2" class=" 
 		        	                	proteger">
 	                        <label for="auFechaPresentacionAnyo" name="auFechaPresentacionAnyoError" class="marcaError">
 	                            
 	                        </label>
-	                        <input id="auFechaPresentacionAnyo" name="auFechaPresentacionAnyo" disabled="" value="" size="4" maxlength="4" class="
+	                        <input id="auFechaPresentacionAnyo" name="auFechaPresentacionAnyo" disabled="disabled" size="4" maxlength="4" class="
 	            	            	proteger">
 	                    	</div>
 	                    </div>
@@ -1303,7 +1302,7 @@ SELECCIONE UNA OPCIÓN</option>
 	                        <label for="auNumero">
 	                            Número de justificante
 	                        </label>
-	                        <input id="auNumero" name="auNumero" disabled="" value="" type="text" size="13" maxlength="13" class="w-100 
+	                        <input id="auNumero" name="auNumero" disabled="disabled" type="text" size="13" maxlength="13" class="w-100 
 	        	                	proteger 
 		        	                alineamientoDerecha">
 	                    </div>
@@ -1315,7 +1314,7 @@ SELECCIONE UNA OPCIÓN</option>
 	                            <label for="auImporteIngresado">
 	                            	Importe ingresado
 	                            </label>
-	                            <input id="auImporteIngresado" disabled="" name="auImporteIngresado" size="11" value="" maxlength="16" class="w-100 
+	                            <input id="auImporteIngresado" disabled="disabled" name="auImporteIngresado" size="11" maxlength="16" class="w-100 
 	                           			proteger  
 	                           			alineamientoDerecha">
 	                        </div>
@@ -1333,7 +1332,7 @@ SELECCIONE UNA OPCIÓN</option>
                         </label>
                     </div>
                     <div class="col-6 col-xl-3 colResponsive">
-                        <input id="auAIngresar" name="auAIngresar" readonly="readonly" value="" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">                        
+                        <input id="auAIngresar" name="auAIngresar" readonly="readonly" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">                        
                     </div>
                 </div>
                    <div class="row">
@@ -1347,7 +1346,7 @@ SELECCIONE UNA OPCIÓN</option>
                         </label>
                     </div>
                     <div class="col-6 col-xl-3 colResponsive">
-                        <input id="auRecargo" name="auRecargo" value="" type="text" size="16" maxlength="16" class="w-100  alineamientoDerecha">                        
+                        <input id="auRecargo" name="auRecargo" type="text" size="16" maxlength="16" class="w-100  alineamientoDerecha">                        
                         <input name="botonIntereses" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" type="submit">                        
                     </div>
                 </div>
@@ -1362,7 +1361,7 @@ SELECCIONE UNA OPCIÓN</option>
                         </label>
                     </div>
                    	<div class="col-6 col-xl-3 colResponsive">
-                        <input id="auInteresesDemora" name="auInteresesDemora" value="" type="text" size="16" maxlength="16" class="w-100  alineamientoDerecha">
+                        <input id="auInteresesDemora" name="auInteresesDemora" type="text" size="16" maxlength="16" class="w-100  alineamientoDerecha">
                     </div>
                 </div>
                 <div class="row">
@@ -1405,7 +1404,7 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 
-<link rel="stylesheet" href="https://webgreco.local/webgreco/css/403.css">
+<link rel="stylesheet" href="p_files/403.css">
 
 
 
@@ -1438,8 +1437,8 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 	<div class="colAlineamientoDerecha">
-		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(D)Firma" target="_blank" onclick="window.open(this.href, this.target, &#39;height=600,width=800,resizable=1&#39;); return false;">
-			<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#(D)Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 		</a>		
 	</div>
 
@@ -1453,7 +1452,7 @@ SELECCIONE UNA OPCIÓN</option>
                 <label for="rpLugarFirma" name="rpLugarFirma">
                 	<strong>Lugar de firma</strong>: En
                	</label>
-                <input id="rpLugarFirma" name="rpLugarFirma" class="" value="" type="text" size="35" maxlength="40">
+                <input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
                 <label for="rpLugarFirma"> a 21 de julio de 2025</label>
 			</div>
 		</div>
@@ -1549,8 +1548,8 @@ SELECCIONE UNA OPCIÓN</option>
 
 
 	<div class="colAlineamientoDerecha">
-		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#Tiposdeasistentesdisponibles" target="_blank" onclick="window.open(this.href, this.target, &#39;height=600,width=800,resizable=1&#39;); return false;">
-			<img src="https://webgreco.local/webgreco/imagenes/aplicacion/ayuda.gif" alt="Imagen que muestra la acción &#39;ayuda&#39;">  
+		<a href="https://portaltributario.jccm.es/modelo-042-instrucciones-para-su-cumplimentacion#Tiposdeasistentesdisponibles" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
 		</a>		
 	</div>
 </div>
@@ -1575,7 +1574,7 @@ SELECCIONE UNA OPCIÓN</option>
 								 
 							</label>
 
-								<input id="periodoDevengo" name="periodoDevengo" class="w-100 proteger" value="" size="1" maxlength="2" readonly="readonly">
+								<input id="periodoDevengo" name="periodoDevengo" class="w-100 proteger" size="1" maxlength="2" readonly="readonly">
 													
 								 		 
 								<input type="hidden" name="fechaDevengoDiaIntereses" id="fechaDevengoDiaIntereses" value="">
@@ -1614,9 +1613,9 @@ SELECCIONE UNA OPCIÓN</option>
 						  
 					</label>
 					<div class="w-100">
-						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Dia Fecha Fin de Plazo" value="" size="1" maxlength="2"> 
-						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" value="" size="1" maxlength="2"> 
-						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" value="" size="3" maxlength="4">
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Dia Fecha Fin de Plazo" size="1" maxlength="2"> 
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" size="1" maxlength="2"> 
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" size="3" maxlength="4">
 					</div>
 				</div>
 			</div>	
@@ -1632,9 +1631,9 @@ SELECCIONE UNA OPCIÓN</option>
 					 
 				</label> 
 				<div class="w-100">
-					<input id="fechaIngresoDia" name="fechaIngresoDia" title="Dia Fecha Ingreso" value="" size="1" maxlength="2"> 
-				    <input id="fechaIngresoMes" title="Mes Fecha Ingreso" name="fechaIngresoMes" value="" size="1" maxlength="2"> 
-				    <input id="fechaIngresoAnyo" title="Año Fecha Ingreso" name="fechaIngresoAnyo" value="" size="3" maxlength="4">
+					<input id="fechaIngresoDia" name="fechaIngresoDia" title="Dia Fecha Ingreso" size="1" maxlength="2"> 
+				    <input id="fechaIngresoMes" title="Mes Fecha Ingreso" name="fechaIngresoMes" size="1" maxlength="2"> 
+				    <input id="fechaIngresoAnyo" title="Año Fecha Ingreso" name="fechaIngresoAnyo" size="3" maxlength="4">
 			    </div>
 			</div>
 		</div>
@@ -1674,7 +1673,7 @@ SELECCIONE UNA OPCIÓN</option>
 			</div>
 		
 			<div class="col-7 col-xl-4 colResponsive">
-				<input id="importeRecargoIntereses" name="importeRecargoIntereses" value="" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+				<input id="importeRecargoIntereses" name="importeRecargoIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
 			</div>
 		</div>
 	
@@ -1685,7 +1684,7 @@ SELECCIONE UNA OPCIÓN</option>
 				</label>
 			</div>
 			<div class="col-7 col-xl-4 colResponsive">
-			<input id="importeIntereses" name="importeIntereses" value="" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			<input id="importeIntereses" name="importeIntereses" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
 			</div>
 		</div>
 	
@@ -1696,7 +1695,7 @@ SELECCIONE UNA OPCIÓN</option>
 				</label>
 			</div>
 			<div class="col-7 col-xl-4 colResponsive">
-				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" value="" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
 			</div>
 		</div>
 	</div></fieldset>
@@ -1805,8 +1804,14 @@ SELECCIONE UNA OPCIÓN</option>
         
         <div id="avisoObligatoriedadPresentacionTelematica" title="Aviso!" style="display:none">
 	<!-- <span class="ui-icon ui-icon-alert dialogoAviso"></span>-->
-	<p><strong>Importante: </strong>la autoliquidación que va a imprimir es obligatorio que se presente telemáticamente en el Registro Electrónico tributario. Le recomendamos pagarla y presentarla en ese Registro a través de la plataforma de pagos y presentación telemática, para ello pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
-	<p>Si por el contrario, prefiere pagar esta autoliquidación por otros medios y posteriormente presentarla en el Registro Electrónico tributario pulse <strong>Continuar</strong> para imprimir la primera hoja del Ejemplar para el interesado y el Ejemplar para la entidad colaboradora. </p> 		
+	<p><strong>Importante: </strong>la autoliquidación que va a imprimir es
+ obligatorio que se presente telemáticamente en el Registro Electrónico 
+tributario. Le recomendamos pagarla y presentarla en ese Registro a 
+través de la plataforma de pagos y presentación telemática, para ello 
+pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
+	<p>Si por el contrario, prefiere pagar esta autoliquidación por otros 
+medios y posteriormente presentarla en el Registro Electrónico 
+tributario pulse <strong>Continuar</strong> para imprimir la primera hoja del Ejemplar para el interesado y el Ejemplar para la entidad colaboradora. </p> 		
 </div>
 
     
