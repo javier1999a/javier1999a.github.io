@@ -209,10 +209,30 @@
 				}
 				else
 				{
+					// DATA PICKER ACCESIBLE
+					//--------------------------------------------------------------------------
+					$("#ddFechaEscritura").datepicker({
+					  beforeShow: function (input, inst) {
+						setTimeout(function () {
+						  addAccessibilityAttributes(inst);
+						}, 0);
+					  },
+					  onChangeMonthYear: function (year, month, inst) {
+						setTimeout(function () {
+						  addAccessibilityAttributes(inst);
+						}, 0);
+					  },
+					  onClose: function () {
+						// Reaplica los atributos al cerrar el Datepicker
+						addAccessibilityAttributes($.datepicker._curInst);
+					  }
+					});
+				
 					// Control de calendario en campo ddFechaEscritura
 					$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
 					$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
 					$("#ddFechaEscritura").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+					
 				}
 			}
 			
@@ -392,7 +412,7 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
         <!-- Variable para almacenar la posicion del foco. -->
         <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
         	
-        <input type="hidden" name="sessionid" value="1FE48C9B52B934B4D1C61BFE48241ADA">
+        <input type="hidden" name="sessionid" value="C7AE5C51A294CF1F07506F40B4787EFF">
         
         <input id="modelo" type="hidden" name="modelo" value="600_2009">												
         
@@ -401,7 +421,7 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
         
         <input type="hidden" name="idListaSesion" id="idListaSesion" value="">
         
-        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="4392194425">      
+        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="1807188145">      
                 
          
 
@@ -1129,16 +1149,16 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
 								</label>
 
 								<div class="w-100">
-									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Día fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
-									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
-									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" size="3" maxlength="4" readonly="readonly">
+									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Día fecha devengo intereses" class="proteger" value="24" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" value="07" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" value="2025" size="3" maxlength="4" readonly="readonly">
 								</div> 
 
 					</div>
 						
 						
 	
-					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="" size="6" maxlength="6" readonly="readonly" type="hidden">
+					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="EH0202" size="6" maxlength="6" readonly="readonly" type="hidden">
 
 				<div class="col-12 col-xl-4 colResponsive">
 					<label for="fechaFinDePlazoDia" name="labelFechaFinDePlazoDia"> 
@@ -1151,9 +1171,9 @@ bonificación no se puede aplicar con fecha de devengo a partir del 28 de
 					</label>
 
 					<div class="w-100">		
-						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Día Fecha Fin de Plazo" size="1" maxlength="2"> 
-						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" size="1" maxlength="2"> 
-						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" size="3" maxlength="4"></div>
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Día Fecha Fin de Plazo" value="25" size="1" maxlength="2"> 
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" value="08" size="1" maxlength="2"> 
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" value="2025" size="3" maxlength="4"></div>
 					</div>
 					
 				<div class="col-12 col-xl-4 colResponsive">
@@ -2222,17 +2242,17 @@ $(function()
 
 				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
 					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
-	                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option value="EH0202">ALCARAZ</option><option value="EH1302">ALCÁZAR DE SAN JUAN</option><option value="EH1303">ALMADÉN</option><option value="EH1304">ALMAGRO</option><option value="EH0203">ALMANSA</option><option value="EH1305">ALMODOVAR DEL CAMPO</option><option value="EH1602">BELMONTE</option><option value="EH1902">BRIHUEGA</option><option value="EH0204">CASAS DE IBÁÑEZ</option><option value="EH0205">CHINCHILLA</option><option value="EH1903">CIFUENTES</option><option value="EH1301">CIUDAD REAL</option><option value="EH1904">COGOLLUDO</option><option value="EH1601">CUENCA</option><option value="EH1306">DAIMIEL</option><option value="EH4502">ESCALONA</option><option value="EH1901">GUADALAJARA</option><option value="EH0206">HELLÍN</option><option value="EH1603">HUETE</option><option value="EH4503">ILLESCAS</option><option value="EH0207">LA RODA</option><option value="EH4504">LILLO</option><option value="EH4505">MADRIDEJOS</option><option value="EH1307">MANZANARES</option><option value="EH1905">MOLINA DE ARAGÓN</option><option value="EH1604">MOTILLA DEL PALANCAR</option><option value="EH4506">NAVAHERMOSA</option><option value="EH4507">OCAÑA</option><option value="EH4508">ORGAZ</option><option value="EH1906">PASTRANA</option><option value="EH1308">PIEDRABUENA</option><option value="EH4509">PUENTE DEL ARZOBISPO</option><option value="EH4510">QUINTANAR DE LA ORDEN</option><option value="EH1907">SACEDÓN</option><option value="EH1605">SAN CLEMENTE</option><option value="EH1908">SIGÜENZA</option><option value="EH4511">TALAVERA DE LA REINA</option><option value="EH1606">TARANCÓN</option><option value="EH4501">TOLEDO</option><option value="EH1309">TOMELLOSO</option><option value="EH4512">TORRIJOS</option><option value="EH1310">VALDEPEÑAS</option><option value="EH1311">VILLANUEVA DE LOS INFANTES</option><option value="EH0208">YESTE</option>
+	                	<option value="0">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option selected="selected" value="EH0202">ALCARAZ</option><option value="EH1302">ALCÁZAR DE SAN JUAN</option><option value="EH1303">ALMADÉN</option><option value="EH1304">ALMAGRO</option><option value="EH0203">ALMANSA</option><option value="EH1305">ALMODOVAR DEL CAMPO</option><option value="EH1602">BELMONTE</option><option value="EH1902">BRIHUEGA</option><option value="EH0204">CASAS DE IBÁÑEZ</option><option value="EH0205">CHINCHILLA</option><option value="EH1903">CIFUENTES</option><option value="EH1301">CIUDAD REAL</option><option value="EH1904">COGOLLUDO</option><option value="EH1601">CUENCA</option><option value="EH1306">DAIMIEL</option><option value="EH4502">ESCALONA</option><option value="EH1901">GUADALAJARA</option><option value="EH0206">HELLÍN</option><option value="EH1603">HUETE</option><option value="EH4503">ILLESCAS</option><option value="EH0207">LA RODA</option><option value="EH4504">LILLO</option><option value="EH4505">MADRIDEJOS</option><option value="EH1307">MANZANARES</option><option value="EH1905">MOLINA DE ARAGÓN</option><option value="EH1604">MOTILLA DEL PALANCAR</option><option value="EH4506">NAVAHERMOSA</option><option value="EH4507">OCAÑA</option><option value="EH4508">ORGAZ</option><option value="EH1906">PASTRANA</option><option value="EH1308">PIEDRABUENA</option><option value="EH4509">PUENTE DEL ARZOBISPO</option><option value="EH4510">QUINTANAR DE LA ORDEN</option><option value="EH1907">SACEDÓN</option><option value="EH1605">SAN CLEMENTE</option><option value="EH1908">SIGÜENZA</option><option value="EH4511">TALAVERA DE LA REINA</option><option value="EH1606">TARANCÓN</option><option value="EH4501">TOLEDO</option><option value="EH1309">TOMELLOSO</option><option value="EH4512">TORRIJOS</option><option value="EH1310">VALDEPEÑAS</option><option value="EH1311">VILLANUEVA DE LOS INFANTES</option><option value="EH0208">YESTE</option>
 	               	</select>
                	
                	
-                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="">
+                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="EH0202">
 
 			</div>
 			<div class="col-6 col-xl-2 colResponsive">
 				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
 				<label for="codigoTerritorial">Código territorial</label>
-				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6">
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6" value="EH0202">
 			</div>
 		</div>
 		
@@ -2247,11 +2267,11 @@ $(function()
 				</label>
 				
 				
-				<input type="text" size="10" maxlength="10" name="fechaDevengo" id="fechaDevengo" class="w-100 hasDatepicker" readonly="readonly" onchange="updateFechaDevengo()" placeholder="dd/mm/yyyy">
+				<input type="text" size="10" maxlength="10" name="fechaDevengo" id="fechaDevengo" class="w-100 hasDatepicker" readonly="readonly" onchange="updateFechaDevengo()" placeholder="dd/mm/yyyy" value="24/07/2025">
 						
-				<input type="hidden" id="fechaDevengoDia" name="fechaDevengoDia" class="" value="" size="2" maxlength="2">
-				<input type="hidden" id="fechaDevengoMes" name="fechaDevengoMes" class="" value="" size="2" maxlength="2">			
-				<input type="hidden" id="fechaDevengoAnno" name="fechaDevengoAnno" class="" value="" size="4" maxlength="4">
+				<input type="hidden" id="fechaDevengoDia" name="fechaDevengoDia" class="" value="24" size="2" maxlength="2">
+				<input type="hidden" id="fechaDevengoMes" name="fechaDevengoMes" class="" value="07" size="2" maxlength="2">			
+				<input type="hidden" id="fechaDevengoAnno" name="fechaDevengoAnno" class="" value="2025" size="4" maxlength="4">
 			</div>
 		</div>
 		
@@ -2299,12 +2319,154 @@ $(function()
 				<label for="selectConceptoDescripcion" name="selectConceptoDescripcionError" class="marcaError"></label>
 				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
 			</div>
+			
+			<div class="col-12 col-xl-12 colResponsive">
+				<select id="selectConceptoDescripcion" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" class="select2-hidden-accessible" size="1" data-select2-id="select2-data-selectConceptoDescripcion" tabindex="-1" aria-hidden="true">
+					<option class="option" value="0"> 
+SELECCIONE UNA OPCIÓN</option>
+<optgroup class="optGroupNivel_1" label="TRANSMISIONES PATRIMONIALES"> 
+</optgroup><optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;TRANSMISIÓN Y DERECHOS REALES S/INMUEBLES URBANOS"> 
+<option class="option" selected="selected" data-select2-id="select2-data-2-lwzm">TU00 - SOLARES</option> 
+<option class="option">TU10 - VIVIENDAS</option> 
+<option class="option">TU11 - PRIMERA VIVIENDA HABITUAL CUYO VALOR NO EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO </option> 
+<option class="option">TU12 - PRIMERA VIVIENDA HABITUAL CUYO V. NO 
+EXCEDA DE 180.000 EUROS FINANCIADA CON PRÉST. HIPOT. EN MUNICIP. EN 
+RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">TU13 - PRIMERA VIVIENDA HABITUAL CUYO V. NO 
+EXCEDA DE 180.000 EUROS FINANCIADA CON PRÉST. HIPOT. EN MUNICIP. DE 
+INTENSA DESPOBLACIÓN</option> 
+<option class="option">TU14 - PRIMERA VIVIENDA HABITUAL CUYO V. NO 
+EXCEDA DE 180.000 EUROS FINANCIADA CON PRÉST. HIPOT. EN MUNICIP. DE 
+EXTREMA DESPOBLACIÓN</option> 
+<option class="option">TU15 - PRIMERA VIVIENDA HABITUAL CUYO VALOR NO 
+EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO, PARA 
+MENORES DE 36 AÑOS; PARA DISCAPACITADOS IGUAL O SUPERIOR AL  65 %; O 
+PARA MIEMBROS DE FAMILIAS NUMEROSAS O MONOPARENTALES</option> 
+<option class="option">TU16 - TOTALIDAD O PARTE DE UNA O MÁS VIVIENDAS Y
+ SUS ANEXOS A EMPRESA A LA QUE SE  APLIQUEN NORMAS DE ADAPTACIÓN DEL PGC
+ A EMPRESAS INMOBILIARIAS</option> 
+<option class="option">TU17 - BIENES INMUEBLES INCLUIDOS EN EL 
+PATRIMONIO EMPRESARIAL O PROFESIONAL DEL SUJETO PASIVO Y CONSTITUYAN O 
+SEAN SUSCEPTIBLES DE CONSTITUIR UNIDAD ECONÓMICA AUTÓNOMA</option> 
+<option class="option">TU20 - LOCALES Y OTRAS EDIFICACIONES</option> 
+<option class="option">TU21 - INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR. O LOCALES NEGOCIOS EN MUNICIP. EN RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">TU22 - INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE ESAS.  O LOCALES DE NEGOCIOS EN MUNICIP. DE INTENSA DESPOBLACIÓN</option> 
+<option class="option">TU23 - INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE ESAS.  O LOCALES DE NEGOCIOS EN MUNICIP. DE EXTREMA DESPOBLACIÓN</option> 
+<option class="option">TU30 - DERECHO DE APROVECHAMIENTO POR TURNO DE BIENES INMUEBLES DE USO TURÍSTICO</option> 
+<option class="option">TU41 - INMUEBLES URBANOS CON DCHO RENUNCIA IVA, SIN RENUNCIA (ART 20.DOS LIVA) </option> 
+<option class="option">TO00 - VIVIENDAS CON PROTECCIÓN PÚBLICA  </option> 
+<option class="option">TO01 - PRIMERA VIVIENDA HABITUAL CON PROTECCIÓN 
+PÚBLICA CUYO VALOR NO EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO 
+HIPOTECARIO</option> 
+</optgroup> 
+<optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;TRANSMISIÓN Y DERECHOS REALES S/INMUEBLES RUSTICOS"> 
+<option class="option">TR00 - SECANO </option> 
+<option class="option">TR10 - REGADÍO</option> 
+<option class="option">TR20 - OTROS INMUEBLES RÚSTICOS</option> 
+<option class="option">TR41 - INMUEBLES RÚSTICOS CON DCHO RENUNCIA IVA, SIN RENUNCIA (ART 20.DOS LIVA) </option> 
+</optgroup> 
+<option class="option">TS00 - TRANSMISIÓN DE INMUEBLES EN SUBASTA JUDICIAL ADMINISTRATIVA O NOTARIAL</option> 
+<option class="option">ED00 - EXPEDIENTES DE DOMINIO, ACTAS DE NOTORIEDAD, ACTAS COMPLEMENTARIAS Y CERTIFICADOS DE DOMINIO</option> 
+<option class="option">TM00 - TRANSMISIONES Y DERECHOS REALES S/MUEBLES, EXCEPTO VALORES MOBILIARIOS</option> 
+<option class="option">CA00 - CONCESIONES ADMINISTRATIVAS Y OTROS CONCEPTOS </option> 
+<option class="option">CA01 - CONCESIONES ADMINISTRATIVAS Y ACTOS 
+ASIMILADOS, CON CONCESIÓN DEMANIAL O DERECHOS DE USO SOBRE INMUEBLES DE 
+TITULARIDAD PÚBLICA</option> 
+<option class="option">DG00 - DERECHOS REALES DE GARANTÍA Y CONDICIONES RESOLUTORIAS EXPLÍCITAS</option> 
+<option class="option">PN00 - PENSIONES</option> 
+<option class="option">PN10 - PENSIONES A CAMBIO DE CESIÓN DE BIENES</option> 
+<option class="option">FZ00 - FIANZAS</option> 
+<option class="option">PO00 - PRÉSTAMOS Y OBLIGACIONES</option> 
+<option class="option">AU00 - ARRENDAMIENTO FINCAS URBANAS</option> 
+<option class="option">AR00 - ARRENDAMIENTO FINCAS RÚSTICAS</option> 
+<option class="option">AD00 - TRANSMISIÓN DE ACCIONES, DERECHOS DE SUSCRIPCIÓN, OBLIGACIONES Y.TÍTULOS ANÁLOGOS</option> 
+<option class="option">TV00 - TRANSMISIÓN DE VALORES Y DERECHOS DE 
+SUSCRIPCIÓN CONTEMPLADOS EN EL ART. 338 DE LA LEY 6/2023, DE 17 DE 
+MARZO, DE LOS MERCADOS DE VALORES Y DE LOS SERVICIOS DE INVERSIÓN</option> 
+<option class="option">OC00 - OPCIÓN DE COMPRA SOBRE INMUEBLES</option> 
+<option class="option">OC01 - OPCIÓN DE COMPRA S/VIVIENDA HABITUAL CON PROTECCIÓN PÚBLICA PARA MENORES DE 36 AÑOS.</option> 
+<option class="option">TP00 - TRANSMISIONES PATRIMONIALES NO SUJETAS AL IMPUESTO</option> 
+ 
+<optgroup class="optGroupNivel_1" label="OPERACIONES SOCIETARIAS"> 
+</optgroup><optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;SOCIEDADES ANÓNIMAS"> 
+<option class="option">SX00 - CONSTITUCIÓN</option> 
+<option class="option">SX10 - AUMENTO DE CAPITAL</option> 
+<option class="option">SX20 - DISOLUCIÓN </option> 
+<option class="option">SX30 - DISMINUCIÓN DE CAPITAL</option> 
+<option class="option">SX70 - APORTACIONES DE SOCIOS QUE NO SUPONGAN UN AUMENTO DEL CAPITAL SOCIAL </option> 
+<option class="option">SX80 - TRASLADO A ESPAÑA DE SEDE O DOMICILIO SOCIAL (ART. 19 DEL T.R. DEL I.T.P. Y     A.J.D.) </option> 
+</optgroup> 
+<optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;SOCIEDADES NO ANÓNIMAS"> 
+<option class="option">SO00 - CONSTITUCIÓN</option> 
+<option class="option">SO10 - AUMENTO DE CAPITAL</option> 
+<option class="option">SO20 - DISOLUCIÓN </option> 
+<option class="option">SO30 - DISMINUCIÓN DE CAPITAL </option> 
+<option class="option">SO70 - APORTACIONES DE SOCIOS QUE NO SUPONGAN UN AUMENTO DEL CAPITAL SOCIAL</option> 
+<option class="option">SO80 - TRASLADO A ESPAÑA DE SEDE O DOMICILIO SOCIAL (ART. 19 DEL T.R. DEL I.T.P. Y     A.J.D.)</option> 
+</optgroup> 
+<option class="option">OS00 - OPERACIONES SOCIETARIAS NO SUJETAS AL IMPUESTO</option> 
+ 
+<optgroup class="optGroupNivel_1" label="ACTOS JURIDICOS"> 
+</optgroup><optgroup class="optGroupNivel_2" label="&nbsp;&nbsp;DOCUMENTOS NOTARIALES"> 
+<option class="option">DN00 - SEGREGACIÓN</option> 
+<option class="option">DN01 - AGREGACIÓN</option> 
+<option class="option">DN10 - AGRUPACIÓN</option> 
+<option class="option">DN20 - DECLARACIÓN DE OBRA NUEVA</option> 
+<option class="option">DN30 - DIVISIÓN HORIZONTAL</option> 
+<option class="option">DN40 - ENTREGAS SUJETAS AL I.V.A</option> 
+<option class="option">DN41 - ENTREGAS SUJETAS AL I.V.A. POR  RENUNCIA A LA EXENCIÓN</option> 
+<option class="option">DN42 - ENTREGAS SUJETAS AL I.V.A. POR  LAS QUE SE
+ ADQUIERA PRIMERA VIVIENDA HABITUAL CUYO VALOR NO EXCEDA DE 180.000 
+EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO </option> 
+<option class="option">DN43 - ENTREGAS SUJETAS AL I.V.A. DE VIVIENDAS CON PROTECCIÓN PÚBLICA</option> 
+<option class="option">DN44 - ENTREGAS SUJETAS AL I.V.A. POR  LAS QUE SE
+ ADQUIERA PRIMERA VIVIENDA HABITUAL CON PROTECCIÓN PÚBLICA CUYO VALOR NO
+ EXCEDA DE 180.000 EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO </option> 
+<option class="option">DN45 - ENTREGAS SUJETAS AL I.V.A. EN SUBASTA JUDICIAL, ADMINISTRATIVA O NOTARIAL</option> 
+<option class="option">DN50 - CONSTITUCIÓN DE HIPOTECA SIMULTÁNEA A PRÉSTAMO SUJETO A I.V.A.</option> 
+<option class="option">DN51 - CONSTITUCIÓN DE HIPOTECA SIMULTÁNEA A 
+PRÉSTAMO SUJETO A I.V.A. PARA FINANCIAR LA ADQUISICIÓN  DE LA PRIMERA 
+VIVIENDA HABITUAL CUYO VALOR NO EXCEDA 180.000 EUROS</option> 
+<option class="option">DN60 - OPCIÓN DE COMPRA SUJETA A I.V.A. S/VIVIENDA HABITUAL CON PROTECCIÓN PÚBLICA PARA MENORES DE 36 AÑOS</option> 
+<option class="option">DN70 - CANCELACIÓN DE HIPOTECA</option> 
+<option class="option">DN80 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE PRIMERA V. HABITUAL CUYO V. NO EXCEDA DE 180.000 EUROS FINANCIADA 
+CON PRÉST. HIPOT. EN MUNICIP. EN RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">DN81 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE PRIMERA V. HABITUAL CUYO V. NO EXCEDA DE 180.000 EUROS FINANCIADA 
+CON PRÉST. HIPOT. EN MUNICIP. DE INTENSA DESPOBLACIÓN</option> 
+<option class="option">DN82 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE PRIMERA V. HABITUAL CUYO V. NO EXCEDA DE 180.000 EUROS FINANCIADA 
+CON PRÉST. HIPOT. EN MUNICIP. DE EXTREMA DESPOBLACIÓN</option> 
+<option class="option">DN83 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR.   O A 
+LOCALES DE NEGOCIOS EN MUNICIP. DE RIESGO DE DESPOBLACIÓN</option> 
+<option class="option">DN84 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR.  O A 
+LOCALES DE NEGOCIOS EN MUNICIP. DE INTENSA DESPOBLACIÓN</option> 
+<option class="option">DN85 - ENTREGAS SUJETAS AL I.V.A. POR ADQUISICIÓN
+ DE INMUEBLES DESTINADOS A SEDE SOC. O C. DE TRABAJO DE EMPR.  O A 
+LOCALES DE NEGOCIOS EN MUNICIP. DE EXTREMA DESPOBLACIÓN</option> 
+<option class="option">DN86 - ENTREGAS SUJETAS AL I.V.A. POR LAS QUE SE 
+ADQUIERA PRIMERA VIVIENDA HABITUAL CUYO VALOR NO EXCEDA DE 180.000 
+EUROS, FINANCIADA CON PRÉSTAMO HIPOTECARIO, PARA MENORES DE 36 AÑOS; 
+PARA DISCAPACITADOS IGUAL O SUPERIOR AL  65 %; O PARA MIEMBROS DE 
+FAMILIAS NUMEROSAS O MONOPARENTALES</option> 
+<option class="option">DN90 - OTROS DOCUMENTOS NOTARIALES</option> 
+</optgroup> 
+<option class="option">AP00 - ANOTACIONES PREVENTIVAS</option> 
+<option class="option">GT00 - GRANDEZAS Y TÍTULOS</option> 
+<option class="option">AJ00 - ACTOS JURÍDICOS DOCUMENTADOS NO SUJETOS AL IMPUESTO</option> 
+ 
+
+				</select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-1-p49t" style="width: 1067.87px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-selectConceptoDescripcion-container" aria-controls="select2-selectConceptoDescripcion-container"><span class="select2-selection__rendered" id="select2-selectConceptoDescripcion-container" role="textbox" aria-readonly="true" title="TU00 - SOLARES">TU00 - SOLARES</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+			</div>
 				
 		</div>
 		<div class="row">
 			<div class="col-6 col-xl-3 colResponsive">						
-				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" size="4" maxlength="4" readonly="readonly">
-				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="w-100 proteger" value=" ">		
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" value="TU00" size="4" maxlength="4" readonly="readonly">
+				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="w-100 proteger" value="TU00 - SOLARES">		
 			</div>
 		</div>
 				
@@ -2410,7 +2572,7 @@ $(function()
                 	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
                 </select>
                 		
-                 <input type="hidden" name="spSelectSiglasValidado" value="">
+                 <input type="hidden" name="spSelectSiglasValidado" value="0">
 			</div>
 			<div class="col-8 col-xl-6 colResponsive">
 				<strong>8</strong>
@@ -2485,7 +2647,7 @@ $(function()
                 	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
                	</select>
 		
-            <input type="hidden" name="spSelectProvinciaValidado" value="">
+            <input type="hidden" name="spSelectProvinciaValidado" value="0">
 			</div>
 			<div class="col-12 col-xl-4 colResponsive">
 				<strong>16</strong>
@@ -2596,7 +2758,7 @@ $(function()
                 	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
            		</select>
                		
-                <input type="hidden" name="trSelectSiglasValidado" value=""> 
+                <input type="hidden" name="trSelectSiglasValidado" value="0"> 
 			</div>
 			<div class="col-8 col-xl-6 colResponsive">
 				<strong>22</strong>
@@ -2667,7 +2829,7 @@ $(function()
 					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
 		        </select>
 		        	
-        		<input type="hidden" name="trSelectProvinciaValidado" value="">
+        		<input type="hidden" name="trSelectProvinciaValidado" value="0">
 			</div>
 			<div class="col-12 col-xl-4 colResponsive">
 				<strong>30</strong>
@@ -2738,7 +2900,7 @@ $(function()
 								<label for="numBienesRusticos">Nº bienes rústicos:</label>
 							</div>
 							<div class="col-5 col-xl-2 colResponsive">
-								<input id="numBienesRusticos" name="numBienesRusticos" value="1" class=" " size="2" maxlength="3">
+								<input id="numBienesRusticos" name="numBienesRusticos" value="0" class=" proteger" size="2" maxlength="3" readonly="readonly">
 							</div>	
 						</div>		
 						<div class="row">
@@ -2746,7 +2908,7 @@ $(function()
 								<label for="numBienesOtros">Nº otros bienes:</label>
 						   </div>
 						   <div class="col-5 col-xl-2 colResponsive">
-								<input id="numBienesOtros" name="numBienesOtros" value="1" class=" " size="2" maxlength="3">
+								<input id="numBienesOtros" name="numBienesOtros" value="0" class=" proteger" size="2" maxlength="3" readonly="readonly">
 						   </div>
 						 </div>
 						 <div class="row">	
@@ -2769,9 +2931,9 @@ $(function()
                         <label for="ddDocumentoNotarial">
                             Documento notarial
                         </label>
-                        <input id="ddDocumentoNotarial" name="ddDocumentoNotarial" type="checkbox" value="X" null="">
+                        <input id="ddDocumentoNotarial" name="ddDocumentoNotarial" type="checkbox" value="X" checked="checked">
                         		
-                        <input type="hidden" name="ddDocumentoNotarialValidado" value=""> 		
+                        <input type="hidden" name="ddDocumentoNotarialValidado" value="X"> 		
                     </div>
                     <div class="col">
                         <strong>48</strong>
@@ -2813,7 +2975,7 @@ $(function()
 				
  	           
 	           
-				<div class="novisible ocultarCombo">
+				<div class="visible">
 					
 					<fieldset class="sombreado ">
 						<legend>Cumplimentación del Notario/a o Fedatario/a Público</legend>
@@ -2834,9 +2996,9 @@ $(function()
 								 <label for="ddApellidoNotario">  
 								 	Primer Apellido
 								 </label>
-								 <input id="ddApellidoNotario" name="ddApellidoNotario" class=" proteger" type="text" size="18" maxlength="15" disabled="disabled" onkeypress="caracteresAlfaNumericosPermitiendoEspacios(event)">
+								 <input id="ddApellidoNotario" name="ddApellidoNotario" class=" " type="text" size="18" maxlength="15" onkeypress="caracteresAlfaNumericosPermitiendoEspacios(event)">
 				                      	  
-								<input type="submit" id="botonDatosNotarios" name="botonDatosNotarios" class="busqueda" value="_" title="Pulse para obtener automáticamente la lista de notarios." onclick="sinSubmitWithPosicionScroll('botonDatosNotarios')" disabled="disabled">
+								<input type="submit" id="botonDatosNotarios" name="botonDatosNotarios" class="busqueda" value="_" title="Pulse para obtener automáticamente la lista de notarios." onclick="sinSubmitWithPosicionScroll('botonDatosNotarios')">
 							</div>
 							
 							<div class="col">
@@ -2846,7 +3008,7 @@ $(function()
 		                        </label> 
 		                        <label for="ddNotarioSelectNotarios">Notarios </label> 
 		                        
-								<select id="ddNotarioSelectNotarios" name="ddNotarioSelectNotarios" size="1" onchange="submitWithPosicionScroll('ddNotarioSelectNotarios')" disabled="disabled" class=" proteger">
+								<select id="ddNotarioSelectNotarios" name="ddNotarioSelectNotarios" size="1" onchange="submitWithPosicionScroll('ddNotarioSelectNotarios')" class=" ">
 									
 								</select> 
 							</div>
@@ -2893,7 +3055,7 @@ $(function()
                            
                        </label>
                        <label for="ddProtocoloNumero">Nº Protocolo</label>
-                       <input id="ddProtocoloNumero" name="ddProtocoloNumero" disabled="disabled" class="w-100  proteger" type="text" size="6" maxlength="6">
+                       <input id="ddProtocoloNumero" name="ddProtocoloNumero" class="w-100  " type="text" size="6" maxlength="6">
                    </div>
                    <div class="col-6 col-xl-3 colResponsive">
                        <strong>54</strong>
@@ -2901,7 +3063,7 @@ $(function()
                            
                        </label>
                        <label for="ddProtocoloAnno">Año Protocolo</label>
-                       <input id="ddProtocoloAnno" name="ddProtocoloAnno" class="w-100  proteger" disabled="disabled" type="text" size="4" maxlength="4">									
+                       <input id="ddProtocoloAnno" name="ddProtocoloAnno" class="w-100  " type="text" size="4" maxlength="4">									
                    </div>
                    
                    <!-- nueva casilla Bis -->
@@ -2911,7 +3073,7 @@ $(function()
                            
                        </label>
                        <label for="ddProtocoloNumeroBis">Bis</label>
-                       <input id="ddProtocoloNumeroBis" name="ddProtocoloNumeroBis" disabled="disabled" class="w-100  proteger" type="text" size="3" maxlength="3">
+                       <input id="ddProtocoloNumeroBis" name="ddProtocoloNumeroBis" class="w-100  " type="text" size="3" maxlength="3">
                    </div>
                    
                    <div class="col-6 col-xl-3 colResponsive">
@@ -2920,13 +3082,13 @@ $(function()
 										            						
 							<label for="ddFechaEscritura" class="marcaError"></label>
 							<label for="ddFechaEscritura">Fecha de escritura</label>
-							<input type="text" size="10" maxlength="10" name="ddFechaEscritura" id="ddFechaEscritura" class="w-100  proteger" disabled="disabled" placeholder="dd/mm/yyyy">							
+							<input type="text" size="10" maxlength="10" name="ddFechaEscritura" id="ddFechaEscritura" class="w-100 hasDatepicker" placeholder="dd/mm/yyyy" value="24/07/2025">							
                    </div>                   
                </div>             
 	            
 	            
             
-	            <div class="novisible ocultarCombo">
+	            <div class="visible">
 	            											
 						<div class="row">									
 							<div class="col-12 col-xl-12 colResponsive">																
@@ -2952,7 +3114,7 @@ documento notarial a requerimiento de los obligados tributarios
                             <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
                         </select>
                         		
-                        <input type="hidden" name="ddOtorgSelectProvinciaValidado" value="">
+                        <input type="hidden" name="ddOtorgSelectProvinciaValidado" value="0">
                     </div>  
                                 	
                     <div class="col-12 col-xl-4 colResponsive">
@@ -2975,7 +3137,7 @@ documento notarial a requerimiento de los obligados tributarios
                             
                         </label>
                         <label for="ddOperacion">Descripción de la Operación o Acto</label>
-                        <input id="ddOperacion" name="ddOperacion" readonly="readonly" class="w-100 proteger " value=" " type="text" size="60" maxlength="60">
+                        <input id="ddOperacion" name="ddOperacion" readonly="readonly" class="w-100 proteger " value=" SOLARES" type="text" size="60" maxlength="60">
                     </div>     
                 </div>							
                 <div class="row">
@@ -3065,7 +3227,7 @@ documento notarial a requerimiento de los obligados tributarios
                         <label for="auSelectExentos">Cód. Exención</label> 
                         <select id="auSelectExentos" class="w-100 select2-hidden-accessible" name="auSelectExentos" disabled="disabled" size="1" data-select2-id="select2-data-auSelectExentos" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-1-q29g" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectExentos-container" aria-controls="select2-auSelectExentos-container"><span class="select2-selection__rendered" id="select2-auSelectExentos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-3-hz1p" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectExentos-container" aria-controls="select2-auSelectExentos-container"><span class="select2-selection__rendered" id="select2-auSelectExentos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         		
                         <input type="hidden" name="auSelectExentosValidado" value="">	
                     </div>
@@ -3092,7 +3254,7 @@ documento notarial a requerimiento de los obligados tributarios
                     <div class="col-12 col-xl-10 colResponsive">     
                         <select id="auSelectBonifEstatales" name="auSelectBonifEstatales" class="w-100 select2-hidden-accessible" size="1" disabled="disabled" data-select2-id="select2-data-auSelectBonifEstatales" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-2-vu3s" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifEstatales-container" aria-controls="select2-auSelectBonifEstatales-container"><span class="select2-selection__rendered" id="select2-auSelectBonifEstatales-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-4-4xhh" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifEstatales-container" aria-controls="select2-auSelectBonifEstatales-container"><span class="select2-selection__rendered" id="select2-auSelectBonifEstatales-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
                         		
                         <input type="hidden" name="auSelectBonifEstatalesValidado" value="">
                     </div>
@@ -3115,7 +3277,7 @@ documento notarial a requerimiento de los obligados tributarios
                         <label for="auSelectBonifAutonomicas">Cód. Bonif. Autonómicas</label> 
                         <select id="auSelectBonifAutonomicas" class="w-100 select2-hidden-accessible" name="auSelectBonifAutonomicas" disabled="disabled" size="1" data-select2-id="select2-data-auSelectBonifAutonomicas" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-3-zb2l" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifAutonomicas-container" aria-controls="select2-auSelectBonifAutonomicas-container"><span class="select2-selection__rendered" id="select2-auSelectBonifAutonomicas-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-5-4kyy" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectBonifAutonomicas-container" aria-controls="select2-auSelectBonifAutonomicas-container"><span class="select2-selection__rendered" id="select2-auSelectBonifAutonomicas-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
                         
                         <input type="hidden" name="auSelectBonifAutonomicasValidado" value="">
                     </div>
@@ -3138,7 +3300,7 @@ documento notarial a requerimiento de los obligados tributarios
                         <label for="auSelectNoSujetos">Cód. No Sujeción</label>                             
                            <select id="auSelectNoSujetos" class="w-100 select2-hidden-accessible" name="auSelectNoSujetos" disabled="disabled" size="1" data-select2-id="select2-data-auSelectNoSujetos" tabindex="-1" aria-hidden="true">
                             0
-                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-4-1tzb" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectNoSujetos-container" aria-controls="select2-auSelectNoSujetos-container"><span class="select2-selection__rendered" id="select2-auSelectNoSujetos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
+                        </select><span class="select2 select2-container select2-container--default select2-container--disabled" dir="ltr" data-select2-id="select2-data-6-nwa6" style="width: 938.183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="true" aria-labelledby="select2-auSelectNoSujetos-container" aria-controls="select2-auSelectNoSujetos-container"><span class="select2-selection__rendered" id="select2-auSelectNoSujetos-container" role="textbox" aria-readonly="true"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>	
                         
                         <input type="hidden" name="auSelectNoSujetosValidado" value="">
                     </div>
@@ -3230,7 +3392,7 @@ documento notarial a requerimiento de los obligados tributarios
 					<div class="col-6 col-xl-2 colResponsive">                                
 						<label for="auTipo"><strong>118</strong> Tipo (%)</label>
                     	<label for="auTipo" name="auTipoError" class="marcaError"></label>                                                  
-                        <input id="auTipo" name="auTipo" readonly="true" class="w-100 proteger alineamientoDerecha" size="5" maxlength="5">                        
+                        <input id="auTipo" name="auTipo" readonly="true" class="w-100 proteger alineamientoDerecha" value="9,00" size="5" maxlength="5">                        
                     </div>
 					<div class="col-12 col-xl-2 colResponsive">                                
 						<label for="auBonificacion"><strong>120</strong> Bonificación (%)</label>                                                 
@@ -3636,4 +3798,4 @@ pulse <strong>Continuar</strong> para obtener una copia impresa de la misma.</p>
 
     	
     
-<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; top: 203.1px; left: 64.1px; z-index: 1; display: none;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="&amp;#x3C;Ant"><span class="ui-icon ui-icon-circle-triangle-w">&amp;#x3C;Ant</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Sig&amp;#x3E;"><span class="ui-icon ui-icon-circle-triangle-e">Sig&amp;#x3E;</span></a><div class="ui-datepicker-title"><select class="ui-datepicker-month" aria-label="Select month" data-handler="selectMonth" data-event="change"><option value="0">ene</option><option value="1">feb</option><option value="2">mar</option><option value="3">abr</option><option value="4">may</option><option value="5">jun</option><option value="6" selected="selected">jul</option><option value="7">ago</option><option value="8">sep</option><option value="9">oct</option><option value="10">nov</option><option value="11">dic</option></select><select class="ui-datepicker-year" aria-label="Select year" data-handler="selectYear" data-event="change"><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025" selected="selected">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col"><span title="lunes">L</span></th><th scope="col"><span title="martes">M</span></th><th scope="col"><span title="miÃƒÂ©rcoles">X</span></th><th scope="col"><span title="jueves">J</span></th><th scope="col"><span title="viernes">V</span></th><th scope="col" class="ui-datepicker-week-end"><span title="sÃƒÂ¡bado">S</span></th><th scope="col" class="ui-datepicker-week-end"><span title="domingo">D</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="5" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="30">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="1">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="2">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="3">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="4">4</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="5">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="6">6</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="7">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="8">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="9">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="10">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="11">11</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="12">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="13">13</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="14">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="15">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="16">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="17">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="18">18</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="19">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="20">20</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="21">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="22">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="23">23</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default ui-state-highlight" href="#" aria-current="false" data-date="24">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="25">25</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="26">26</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="27">27</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="28">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="29">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="30">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="31">31</a></td><td class=" ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="7" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="1">1</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="7" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="2">2</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="7" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="3">3</a></td></tr></tbody></table><div class="ui-datepicker-buttonpane ui-widget-content"><button type="button" class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" data-handler="today" data-event="click">Hoy</button><button type="button" class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" data-handler="hide" data-event="click">Cerrar</button></div></div></body></html>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; top: 1926.63px; left: 947.35px; z-index: 1; display: none;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="&amp;#x3C;Ant"><span class="ui-icon ui-icon-circle-triangle-w">&amp;#x3C;Ant</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Sig&amp;#x3E;"><span class="ui-icon ui-icon-circle-triangle-e">Sig&amp;#x3E;</span></a><div class="ui-datepicker-title"><label for="ui-datepicker-month" class="ui-datepicker-label">Mes:</label><select class="ui-datepicker-month" aria-label="Select month" data-handler="selectMonth" data-event="change" id="ui-datepicker-month"><option value="0">ene</option><option value="1">feb</option><option value="2">mar</option><option value="3">abr</option><option value="4">may</option><option value="5">jun</option><option value="6" selected="selected">jul</option><option value="7">ago</option><option value="8">sep</option><option value="9">oct</option><option value="10">nov</option><option value="11">dic</option></select><label for="ui-datepicker-year" class="ui-datepicker-label">AÃ±o:</label><select class="ui-datepicker-year" aria-label="Select year" data-handler="selectYear" data-event="change" id="ui-datepicker-year"><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025" selected="selected">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col"><span title="lunes">L</span></th><th scope="col"><span title="martes">M</span></th><th scope="col"><span title="miÃƒÂ©rcoles">X</span></th><th scope="col"><span title="jueves">J</span></th><th scope="col"><span title="viernes">V</span></th><th scope="col" class="ui-datepicker-week-end"><span title="sÃƒÂ¡bado">S</span></th><th scope="col" class="ui-datepicker-week-end"><span title="domingo">D</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="5" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="30">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="1">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="2">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="3">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="4">4</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="5">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="6">6</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="7">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="8">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="9">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="10">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="11">11</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="12">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="13">13</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="14">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="15">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="16">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="17">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="18">18</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="19">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="20">20</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="21">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="22">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="23">23</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default ui-state-highlight" href="#" aria-current="false" data-date="24">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="25">25</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="26">26</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="27">27</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="28">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="29">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="30">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2025"><a class="ui-state-default" href="#" aria-current="false" data-date="31">31</a></td><td class=" ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="7" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="1">1</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="7" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="2">2</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month " data-handler="selectDay" data-event="click" data-month="7" data-year="2025"><a class="ui-state-default ui-priority-secondary" href="#" aria-current="false" data-date="3">3</a></td></tr></tbody></table><div class="ui-datepicker-buttonpane ui-widget-content"><button type="button" class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" data-handler="today" data-event="click">Hoy</button><button type="button" class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" data-handler="hide" data-event="click">Cerrar</button></div></div></body></html>

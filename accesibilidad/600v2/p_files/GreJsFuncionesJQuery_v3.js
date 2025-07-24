@@ -408,4 +408,30 @@ function dialogCatastroIdentificacion() {
 	);	
 }
 
+
+// Se usa para hacer accesible los datapickers que de otro modo no lo serian al no tener el select que crean un id ni un label asociado
+// Un ejemplo de llamada a esta funcion puede verse en GreJspModelo046_20A2.jsp
+//--------------------------------------------------------------------------------------------------------------------------------------
+  function addAccessibilityAttributes(inst) {
+    const datepickerDiv = inst.dpDiv;
+
+    // Añade IDs y etiquetas a los selectores de mes y año
+    const monthSelect = datepickerDiv.find(".ui-datepicker-month");
+    const yearSelect = datepickerDiv.find(".ui-datepicker-year");
+
+    if (monthSelect.length) {
+      monthSelect.attr("id", "ui-datepicker-month");
+      if (!datepickerDiv.find("label[for='ui-datepicker-month']").length) {
+        monthSelect.before('<label for="ui-datepicker-month" class="ui-datepicker-label">Mes:</label>');
+      }
+    }
+
+    if (yearSelect.length) {
+      yearSelect.attr("id", "ui-datepicker-year");
+      if (!datepickerDiv.find("label[for='ui-datepicker-year']").length) {
+        yearSelect.before('<label for="ui-datepicker-year" class="ui-datepicker-label">Año:</label>');
+      }
+    }
+  }           	
+
 // --------------------------------------------------------------------------------------------------------------
