@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">		    	
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+    	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">
+        
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+	
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery_003.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery_004.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery_002.js"></script>
+
+<link href="p_files/select2.css" rel="stylesheet">
+<script src="p_files/select2.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+        
+
+
+	
+    <script> 
+		if (history.forward(1)){location.replace(history.forward(1))}
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}					
+	</script></head>
+
+	
+	
+	<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+	
+
+    
+    
+	
+	 
+
+
+	
+    
+    
+    
+       	
+  
+
+
+    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
+
+        <!-- ESTA LINEA ES NECESARIA PARA LOS ELEMENTOS DE ACCESIBILIDAD -->
+        
+
+        <form name="MODELO" method="post" action="./GreSvlProcesarPeticiones" target="_self">
+
+			
+	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+	        
+	        
+	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+	        
+	        
+	        <input id="validar" type="hidden" name="validar" value="true">
+	
+			<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="1060473347">
+
+
+        <!-- BARRA DE CARGA DE DATOS -->	
+		
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+
+		            
+        <div id="principal" class="principal visible">
+           
+            
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>TASAS, PRECIOS PÚBLICOS Y OTROS INGRESOS DE ORGANISMOS Y ENTIDADES DE LA JUNTA DE COMUNIDADES DE C-LM</h1>
+			
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 047</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202510</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=047" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+
+	         <div class="filaSepardor"></div> 
+	         
+            
+
+
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+    <fieldset class="contenidoCabeceraConScroll">
+        <div class="contenidoCabeceraTexto">
+            Errores detectados
+        </div>	 
+    </fieldset>
+</div>
+<div class="contenidoDatos">
+    <fieldset class="contenidoDatosConScroll"> 
+        <div id="Errores">
+            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#selectCentro" target="_self">
+		   	                    Código de Centro obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#selectTerritorial" target="_self">
+		   	                    Código Territorial obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#fechaDevengoMes" target="_self">
+		   	                    Mes obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#fechaDevengoAnno" target="_self">
+		   	                    Año obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#auSelectCodigo" target="_self">
+		   	                    La casilla CÓDIGO es obligatoria.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#auDescripcion" target="_self">
+		   	                    La casilla descripción es obligatoria.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#auTotalAIngresar" target="_self">
+		   	                    La casilla total a ingresar es obligatoria.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#rpLugarFirma" target="_self">
+		   	                    Lugar de la firma obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+        </div>
+    </fieldset>
+</div>	
+
+
+            
+            <div class="filaSepardor"></div>
+            
+            
+
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos del Documento
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=047&amp;ayudaContextual=DelegacionDeOrganoGestorYCodigoTerritorial" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<input type="hidden" value="047" name="modelo">
+		<div class="row">
+			<div class="col-12 col-xl-5 colResponsive">
+				<label for="selectCentro">Seleccione la Consejería u Organismo Autónomo:</label>
+				<span class="marcaError">*</span>
+				<select class="col-12" name="selectCentro" id="selectCentro" onchange="submitWithPosicionScroll('selectCentro')">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AA">INFRAESTRUCTURAS DEL AGUA DE CASTILLA-LA MANCHA</option><option value="AG">CONSEJERIA DE AGRICULTURA, GANADERIA, Y DESARROLLO RURAL</option><option value="AP">PRESIDENCIA</option><option value="AR">AGENCIA DEL AGUA DE CASTILLA-LA MANCHA</option><option value="BS">CONSEJERÍA DE BIENESTAR SOCIAL</option><option value="DS">CONSEJERÍA DE DESARROLLO SOSTENIBLE</option><option value="EC">CONSEJERÍA DE EDUCACION, CULTURA Y DEPORTES</option><option value="EH">CONSEJERÍA DE HACIENDA, ADMINISTRACIONES PÚBLICAS, Y TRANSFORMACIÓN DIGITAL</option><option value="IM">INSTITUTO DE LA MUJER DE CASTILLA-LA MANCHA</option><option value="IP">INSTITUTO DE PROMOCION EXTERIOR DE CASTILLA-LA MANCHA</option><option value="IV">INSTITUTO REGIONAL DE INVESTIGACIÓN Y DESARROLLO AGROALIMENTARIO Y FORESTAL DE C-LM</option><option value="OV">CONSEJERÍA DE FOMENTO</option><option value="SA">CONSEJERÍA DE SANIDAD</option><option value="SS">SERVICIO DE SALUD DE CASTILLA-LA MANCHA (SESCAM)</option><option value="TE">CONSEJERÍA DE ECONOMÍA, EMPRESAS Y EMPLEO</option><option value="AI">AGENCIA DE INVESTIGACIÓN E INNOVACIÓN DE CASTILLA-LA MANCHA</option>
+				</select>
+			</div>
+			<div class="col-12 col-xl-5 colResponsive">
+				<label for="selectTerritorial">Órgano Gestor</label>
+				<span class="marcaError">*</span>
+				<select name="selectTerritorial" id="selectTerritorial" class="w-100 " onchange="submitWithPosicionScroll('selectTerritorial')">
+					
+				</select>
+			</div>					
+		</div>
+		
+		<div class="row">	
+			<div class="col-12 col-xl-2 colResponsive">
+				<label for="codigoTerritorial">Código Territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" type="text" size="6" maxlength="6" class="proteger" readonly="readonly">
+			</div>	
+			<div class="col-12 col-xl-3 colResponsive">				
+    	        <span><strong>3</strong> Período</span>
+				<div class="w-100">
+					<label for="fechaDevengoMes">Mes</label>
+					<span class="marcaError">*</span>
+					<input id="fechaDevengoMes" name="fechaDevengoMes" class="" size="2" maxlength="2">			
+					<label for="fechaDevengoAnno">Año</label>
+					<span class="marcaError">*</span>
+					<input id="fechaDevengoAnno" name="fechaDevengoAnno" class="" size="4" maxlength="4">
+				</div>
+			</div>			
+			<div class="col-12 col-xl-2 colResponsive">
+										               					               
+							<span class="marcaError">
+																		
+							</span>		
+							<label for="concepto"><strong>4</strong> Concepto</label>
+							
+							<input id="concepto" name="concepto" type="text" size="4" maxlength="4" class="w-100 proteger" readonly="readonly">
+			</div>
+		</div>
+	</fieldset>
+</div>           
+	         
+	        <div class="filaSepardor"></div>
+
+            <!-- LIQUIDACION -->
+         
+            <!-- CABECERA (TITULO) -->
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+						<div class="col">
+	                        Descripción (A)
+						</div>                    
+			            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=047&amp;ayudaContextual=_A_Descripcion" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                    </div>	                     
+                </fieldset>
+            </div>
+            
+			<div class="contenidoDatos">
+          
+ 	           <!-- FILA 1 -->
+               <fieldset class="contenidoFila">
+					<div class="row">
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>19</strong>
+							<span class="marcaError">*</span>
+							<label for="auSelectCodigo">Denominación del concepto:</label>
+							<select name="auSelectCodigo" id="auSelectCodigo" class="w-100 " onchange="submitWithPosicionScroll('auSelectCodigo')">
+								
+							</select>
+						</div>	
+					</div>
+
+					<!-- JLF - input hidden para almacenar el valor del combo Denominacion del concepto -->
+ 					<input type="hidden" name="auCodigoAnterior" value="">
+
+               		<div class="row">
+               			<div class="col-12 col-xl-12 colResponsive">
+			               	<strong>27</strong>				               	
+							<span class="marcaError">
+									*
+							</span>		
+							<label for="auDescripcion">
+								Descripción
+							</label>
+
+							<textarea class="w-100" id="auDescripcion" name="auDescripcion" cols="100" rows="16" onkeypress="return imposeMaxLength(this, 280);" onkeyup="return imposeMaxLength(this, 280);"></textarea>
+						</div>
+					</div>
+     
+					
+					<div class="row">						
+						<div class="col-12 col-xl-6 colResponsive">
+			               	<strong>20</strong>				               	
+							<span class="marcaError">
+									
+							</span>		
+							<label for="auIngresoInmobiliaria">
+								Ingreso procedente de operación inmobiliaria    
+							</label>
+							<input id="auIngresoInmobiliaria" name="auIngresoInmobiliaria" type="checkbox">		               		        	
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>21</strong>				               	
+							<span class="marcaError">
+								
+							</span>		
+							<label for="auFondo">
+								Fondo
+							</label>
+							<!-- casilla deshabilitada en la que va el valor del codigo de fondo de la tabla II (relacionado con el concepto) -->
+							<input id="auFondo" name="auFondo" type="text" size="10" maxlength="10" readonly="readonly" class="w-100 alineamientoDerecha proteger ">							
+						</div>
+					</div>				
+					
+               </fieldset>
+            <!-- FILA4 -->
+          	   <fieldset class="contenidoFila">
+	               	<div class="row">			               		
+						<div class="col-12 col-xl-2 colResponsive">
+			               	<strong>22</strong>				               	
+							<span class="marcaError">
+									
+							</span>		
+							<label for="auIngresoIVA">
+								Ingreso IVA    
+							</label>
+							<input id="auIngresoIVA" name="auIngresoIVA" onclick="submitWithPosicionScroll('auIngresoIVA')" value="X" type="checkbox" disabled="disabled">		               		        	
+						</div>	
+					</div>	
+					<div class="row">
+						<div class="col-12 col-xl-2 colResponsive">
+			               	<strong>23</strong>				               	
+							<span class="marcaError">
+									
+							</span>		
+							<label for="auBaseIVA">
+								Base del IVA
+							</label>
+							<input id="auBaseIVA" name="auBaseIVA" type="text" size="13" maxlength="13" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+						</div>			
+						<div class="col-12 col-xl-3 colResponsive">
+			               	<strong>24</strong>				               	
+							<span class="marcaError">
+									
+							</span>		
+							<label for="auTipoImpositivoIVA">
+								Tipo impositivo IVA					
+							</label>			
+						   <select id="auTipoImpositivoIVA" name="auTipoImpositivoIVA" size="1" onchange="submitWithPosicionScroll('auTipoImpositivoIVA')" class="w-100 proteger" disabled="disabled">
+							   
+							   
+						   </select>
+								
+								
+						</div>			
+						<div class="col-12 col-xl-2 colResponsive">
+			               	<strong>25</strong>				               	
+							<span class="marcaError">
+									
+							</span>		
+							<label for="auImporteIVA">
+								Importe IVA
+							</label>
+							<input id="auImporteIVA" name="auImporteIVA" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+						</div>								
+					</div>
+               </fieldset>
+               <!-- FILA5 -->
+               <fieldset class="contenidoDatos">
+					<div class="fila">		
+						<div class="colAlineamientoDerecha">
+			               	<strong>26</strong>				               	
+							<span class="marcaError">
+									*
+							</span>		
+							<label for="auTotalAIngresar">
+								<strong>TOTAL A INGRESAR</strong>
+							</label>
+							<input id="auTotalAIngresar" name="auTotalAIngresar" type="text" size="16" maxlength="16" class="alineamientoDerecha ">
+						</div>			
+					</div>			
+               </fieldset>
+			</div>
+            
+	        <div class="filaSepardor"></div>
+	        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Firma (B)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=047&amp;ayudaContextual=_B_Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoDatos">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                
+                <span class="marcaError"><input type="hidden" id="accesible">
+                	*
+                </span>
+                
+                <label for="rpLugarFirma" name="rpLugarFirma">
+                	<strong>Lugar de firma</strong>: En
+               	</label>
+                <input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+                <span> a 25 de julio de 2025</span>
+			</div>
+		</div>
+	</fieldset>	
+	
+
+
+            
+             
+
+               
+            
+            <div class="filaSepardor"></div>          	
+            
+     </div>	
+
+        <input id="047" name="MOD" type="hidden" value="047">
+        <input id="referencia" type="hidden" name="referencia" value="047">
+        <input id="version" type="hidden" name="version" value="6">
+        <input type="hidden" name="codigoCentroComboAnterior" value="0">
+        <input type="hidden" name="selectCentro" value="0">
+        <input type="hidden" name="codigoTerritorialComboAnterior" value="">
+        <input type="hidden" name="selectTerritorial" value="">
+        <input type="hidden" name="codigoComboAnterior" value="">
+        <input type="hidden" name="subCodigoComboAnterior" value="">
+        
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+        
+        </form>     
+    
+</body></html>
