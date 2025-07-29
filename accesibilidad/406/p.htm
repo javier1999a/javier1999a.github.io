@@ -174,7 +174,7 @@ datos.</p>
 	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
 	        
 	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
-        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="0128360328">
+        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="2941191970">
 			
 	        
 			
@@ -639,25 +639,8 @@ datos.</p>
 	                <div class="col">
 	                    <label for="">
 	                    
-	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#heredero_nif1_0" target="_self">
-		   	                    El N.I.F del heredero no es valido. Fila 1
-				           	</a>
-				        
-	 					</label>
-	                </div>
-	            </div>
-	            
-	            <div class="fila2px">
-	            	<div class="col">
-	            		
-							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
-	            		
-	            	</div>
-	                <div class="col">
-	                    <label for="">
-	                    
-	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#bien_valoracion1_0" target="_self">
-		   	                    El valor introducido en Valoración del bien. Fila 1, debe ser un valor numérico.
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#bien_identificacion1_0" target="_self">
+		   	                    Es obligatorio introducir al menos un bien
 				           	</a>
 				        
 	 					</label>
@@ -1189,7 +1172,7 @@ datos.</p>
 	            <fieldset class="contenidoDatos">		            								
 					<div class="fila">
 						<div class="col">
-							<label class="labelFila"><span class="marcaError">*</span>Condición del Solicitante</label>
+							<label for="condicionDelSolicitante406" class="labelFila"><span class="marcaError">*</span>Condición del Solicitante</label>
 							<select style="width:275px" id="condicionDelSolicitante406" name="condicionDelSolicitante406" class="">
 								<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="HEREDERO">HEREDERO</option><option value="ALBACEA">ALBACEA</option><option value="ADMINISTRADOR DEL CAUDAL RELICTO">ADMINISTRADOR DEL CAUDAL RELICTO</option>								
 							</select>
@@ -1268,7 +1251,7 @@ datos.</p>
 					</div>
 					
 					<div class="fila" style="padding-bottom:0px; padding-top:10px">					
-						<div class="col ml-2"><label class="labelFila" style="font-size:90%">ÚLTIMO DOMICILIO EN CASTILLA-LA MANCHA</label></div>
+						<div class="col ml-2"><span class="labelFila" style="font-size:90%">ÚLTIMO DOMICILIO EN CASTILLA-LA MANCHA</span></div>
 					</div>
 					<div class="fila ml-1 mr-1" style="padding:0px">
 						<hr>
@@ -1327,7 +1310,7 @@ datos.</p>
 					<div class="col" style="padding-top:4px"><button type="button" title="NOTA: se sobreescribirán los datos de la fila actual, si los hubiera" id="copiarDatosInteresado" onclick="copiarDatosInteresadoAFilaHerederos()">Copiar Datos Interesado</button>
 					</div>															
 				
-					<div class="col" style="display:none" id="errorHerederoRellenarPrimeroLosDatosPendientes">
+					<div class="col" style="display: none;" id="errorHerederoRellenarPrimeroLosDatosPendientes">
 						<img src="p_files/errorgrave.gif" style="vertical-align:middle" onclick="$('#errorHerederoRellenarPrimeroLosDatosPendientes').hide()" alt="error">								
 						<span style="color: red; vertical-align: middle;">Debe rellenar primero los datos pendientes del Heredero antes de agregar más filas</span>	
 					</div>
@@ -1339,7 +1322,7 @@ datos.</p>
 	                        	            
 	            <fieldset id="fieldsetHeredero" class="contenidoDatos">		            								
 
-					<div class="row" id="trHeredero1_0">
+					<div class="row" id="trHeredero1_0" style="">
 						<div class="col-3 col-xl-1 colResponsive">							
 							<span class="labelFila">&nbsp;</span>
 							<input type="button" title="Borrar Fila" id="borrarFilaHeredero1_0" onclick="tablaHerederos.borrarFila(1, 0);" value="Borrar">							
@@ -1350,15 +1333,15 @@ datos.</p>
 						</label></div>
 						<div class="col-12 col-xl-3 colResponsive">
 							<label for="heredero_apellidosYNombre1_0" class="labelFila"><span class="marcaError"></span>APELLIDOS Y NOMBRE</label>
-							<input size="35" maxlength="60" id="heredero_apellidosYNombre1_0" name="heredero_apellidosYNombre1_0" class="w-100 " value="ASD">
+							<input size="35" maxlength="60" id="heredero_apellidosYNombre1_0" name="heredero_apellidosYNombre1_0" class="w-100 " value="asd">
 						</div>														
 						<div class="col-12 col-xl-2 colResponsive">
-							<label for="heredero_nif1_0" class="labelFila"><span class="marcaError">*</span>NIF</label>
-							<input size="9" maxlength="9" id="heredero_nif1_0" name="heredero_nif1_0" class="w-100 " value="ASD">
+							<label for="heredero_nif1_0" class="labelFila"><span class="marcaError"></span>NIF</label>
+							<input size="9" maxlength="9" id="heredero_nif1_0" name="heredero_nif1_0" class="w-100 " value="asd">
 						</div>																				
 						<div class="col-12 col-xl-3 colResponsive">
 							<label for="heredero_domicilio1_0" class="labelFila"><span class="marcaError"></span>DOMICILIO: CALLE Y MUNICIPIO</label>
-							<input size="30" maxlength="60" id="heredero_domicilio1_0" name="heredero_domicilio1_0" class="w-100 " value="ASD">
+							<input size="30" maxlength="60" id="heredero_domicilio1_0" name="heredero_domicilio1_0" class="w-100 " value="asd">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="heredero_grupoParentesco1_0" class="labelFila"><span class="marcaError"></span>GRUPO DE PARENTESCO</label>														
@@ -1372,7 +1355,7 @@ AFINIDAD (SUEGROS, NUERAS, YERNOS E HIJASTROS)</option><option value="GRUPO IV">
 						</div>
 					</div>							
 
-					<div class="row" id="trHeredero1_1" style="display: none;">
+					<div class="row" id="trHeredero1_1" style="">
 						<div class="col-3 col-xl-1 colResponsive">							
 							<span class="labelFila">&nbsp;</span>
 							<input type="button" title="Borrar Fila" id="borrarFilaHeredero1_1" onclick="tablaHerederos.borrarFila(1, 1);" value="Borrar">							
@@ -1383,7 +1366,7 @@ AFINIDAD (SUEGROS, NUERAS, YERNOS E HIJASTROS)</option><option value="GRUPO IV">
 						</label></div>
 						<div class="col-12 col-xl-3 colResponsive">
 							<label for="heredero_apellidosYNombre1_1" class="labelFila"><span class="marcaError"></span>APELLIDOS Y NOMBRE</label>
-							<input size="35" maxlength="60" id="heredero_apellidosYNombre1_1" name="heredero_apellidosYNombre1_1" class="w-100 ">
+							<input size="35" maxlength="60" id="heredero_apellidosYNombre1_1" name="heredero_apellidosYNombre1_1" class="w-100 " value="sad">
 						</div>														
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="heredero_nif1_1" class="labelFila"><span class="marcaError"></span>NIF</label>
@@ -2035,7 +2018,7 @@ AFINIDAD (SUEGROS, NUERAS, YERNOS E HIJASTROS)</option><option value="GRUPO IV">
 					<div class="col" style="padding-top:4px"><button type="button" title="Añadir más" id="masFilasBien" onclick='tablaBienes.activarFila(1, -1, "errorBienRellenarPrimeroLosDatosPendientes", "errorBienNoSePuedeMasFilas"); 
 					          actualizarScroll(tablaBienes, "fieldsetBien", "apartadoConScroll");'>Añadir</button>
 					</div>
-					<div class="col" style="display:none" id="errorBienRellenarPrimeroLosDatosPendientes">
+					<div class="col" style="display: none;" id="errorBienRellenarPrimeroLosDatosPendientes">
 						<img src="p_files/errorgrave.gif" style="vertical-align:middle" onclick="$('#errorBienRellenarPrimeroLosDatosPendientes').hide()" alt="error">								
 						<span style="color: red; vertical-align: middle;">Debe rellenar primero los datos pendientes del Bien antes de agregar más filas</span>	
 					</div>
@@ -2051,7 +2034,7 @@ AFINIDAD (SUEGROS, NUERAS, YERNOS E HIJASTROS)</option><option value="GRUPO IV">
 	                        	            
 	            <fieldset id="fieldsetBien" class="contenidoDatos">		            								
 
-					<div class="row" style="padding:0px" id="trBien1_0">						
+					<div class="row" style="padding: 0px;" id="trBien1_0">						
 						<div class="col-3 col-xl-1 colResponsive">							
 							<span class="labelFila">&nbsp;</span>
 							<input type="button" title="Borrar Fila" id="borrarFilaBien1_0" onclick="tablaBienes.borrarFila(1, 0);" value="Borrar">							
@@ -2063,27 +2046,27 @@ AFINIDAD (SUEGROS, NUERAS, YERNOS E HIJASTROS)</option><option value="GRUPO IV">
 						
 												
 						<div class="col-12 col-xl-3 colResponsive">
-							<label for="bien_identificacion1_0" class="labelFila"><span class="marcaError"></span>IDENTIFICACIÓN</label>
-							<input style="text-align:left;" size="40" maxlength="60" id="bien_identificacion1_0" name="bien_identificacion1_0" class="w-100 " value="ASD">
+							<label for="bien_identificacion1_0" class="labelFila"><span class="marcaError">*</span>IDENTIFICACIÓN</label>
+							<input style="text-align:left;" size="40" maxlength="60" id="bien_identificacion1_0" name="bien_identificacion1_0" class="w-100 " value="sad">
 						</div>														
 						<div class="col-12 col-xl-3 colResponsive">
 							<label for="bien_ubicacion1_0" class="labelFila"><span class="marcaError"></span>UBICACIÓN</label>						
-							<input style="text-align:left;" size="40" maxlength="60" id="bien_ubicacion1_0" name="bien_ubicacion1_0" class="w-100 " value="ASD">
+							<input style="text-align:left;" size="40" maxlength="60" id="bien_ubicacion1_0" name="bien_ubicacion1_0" class="w-100 " value="sad">
 						</div>		
 						
 						
 																								
 						<div class="col-12 col-xl-2 colResponsive">
 							<label for="bien_tipo1_0" class="labelFila"><span class="marcaError"></span>TIPO</label>						
-							<input style="text-align:left;" size="15" maxlength="20" id="bien_tipo1_0" name="bien_tipo1_0" class="w-100 " value="ASD">
+							<input style="text-align:left;" size="15" maxlength="20" id="bien_tipo1_0" name="bien_tipo1_0" class="w-100 " value="asd">
 						</div>
 						<div class="col-12 col-xl-2 colResponsive">
-							<label for="bien_valoracion1_0" class="labelFila"><span class="marcaError">*</span>VALORACIÓN</label>						
-							<input onchange="actualizarImporteTotal()" style="text-align:right;" size="15" maxlength="15" id="bien_valoracion1_0" name="bien_valoracion1_0" class="w-100 " value="ASD">
+							<label for="bien_valoracion1_0" class="labelFila"><span class="marcaError"></span>VALORACIÓN</label>						
+							<input onchange="actualizarImporteTotal()" style="text-align:right;" size="15" maxlength="15" id="bien_valoracion1_0" name="bien_valoracion1_0" class="w-100 " value="asd">
 						</div>
 					</div>							
 
-					<div class="row" style="padding: 0px; display: none;" id="trBien1_1">						
+					<div class="row" style="padding: 0px;" id="trBien1_1">						
 						<div class="col-3 col-xl-1 colResponsive">							
 							<span class="labelFila">&nbsp;</span>
 							<input type="button" title="Borrar Fila" id="borrarFilaBien1_1" onclick="tablaBienes.borrarFila(1, 1);" value="Borrar">							
@@ -4930,7 +4913,6 @@ AFINIDAD (SUEGROS, NUERAS, YERNOS E HIJASTROS)</option><option value="GRUPO IV">
 		cargarMunicipiosAjax('causante_provinciaCCM', 'causante_municipioCCM')
 		$("#causante_municipioCCM").val('0')
 		
-			$("#heredero_grupoParentesco1_"+0).val("GRUPO II")
 
 
 		actualizarImporteTotal()
