@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="es"><head>		
+    	
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+        <meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">
+
+		
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+	
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery_003.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery_004.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery_002.js"></script>
+
+<link href="p_files/select2.css" rel="stylesheet">
+<script src="p_files/select2.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+		
+
+		
+	    
+	    
+	    
+		 
+	    
+	
+	    
+	    
+	    
+	    
+				
+		
+		
+		<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+		<script type="text/javascript"> 
+			if (history.forward(1)){location.replace(history.forward(1))} 
+			
+			function comprobarNavegadorEsOk()
+			{
+				if(!navegadorOk())
+				{
+					document.getElementById("btnIzq").disabled='disabled'; 
+					return false;
+				}
+				
+				return true;
+			}						
+		</script>
+		
+		
+		
+		
+
+
+	
+     </head>			
+	
+	
+    
+	
+ 
+
+	
+  
+ 
+    <body onload="if(!comprobarNavegadorEsOk()) return false; iniciar()" onunload="doUnload()">
+    
+   
+	
+
+        
+        
+        
+        <form name="modelo" id="formulario412" method="post" action="https://webgreco.local/webgreco/GreSvlProcesarPeticiones" target="_self">
+
+	        
+	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+	        
+	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="2658586769">
+			
+	        
+			
+	
+		    
+	        
+	        
+			
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+
+			       	
+	
+	        
+	        
+	        
+        	<div id="principal" class="principal visible">
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>SOLICITUD DE RECTIFICACIÓN DE AUTOLIQUIDACIONES</h1>
+			
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 412</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>FORMULARIO</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202510</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+	        
+	        <div class="filaSepardor"></div>
+	         
+	        
+
+
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+    <fieldset class="contenidoCabeceraConScroll">
+        <div class="contenidoCabeceraTexto">
+            Errores detectados
+        </div>	 
+    </fieldset>
+</div>
+<div class="contenidoDatos">
+    <fieldset class="contenidoDatosConScroll"> 
+        <div id="Errores">
+            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spNif" target="_self">
+		   	                    N.I.F del Interesado Obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spNombre" target="_self">
+		   	                    Apellidos nombre / razón Social del Interesado Obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spSelectSiglas" target="_self">
+		   	                    Tipo de vía del Interesado Obligatoria.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spNombreVia" target="_self">
+		   	                    Nombre de la vía pública del Interesado Obligatoria.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spSelectProvincia" target="_self">
+		   	                    Provincia del Interesado Obligatoria.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spSelectMunicipio" target="_self">
+		   	                    Municipio del Interesado Obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#spCodPostal" target="_self">
+		   	                    Código Postal del Interesado Obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#numeroJustificanteAutoliquidacion" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Número Justificante Autoliquidación.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#fechaPresentacion" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Fecha Presentacion.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#conceptoImpositivo" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Concepto Impositivo.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#importe" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Importe.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#organo" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Organo.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#alegaciones" target="_self">
+		   	                    Es obligatorio cumplimentar el valor alegaciones.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#auSelectTipoPresentacion" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Tipo de presentaciíon.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#auSelectDestinatario" target="_self">
+		   	                    Es obligatorio cumplimentar el valor Destinatario.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+	            <div class="fila2px">
+	            	<div class="col">
+	            		
+							<img src="p_files/errorgrave.gif" alt="Imagen que presenta un error de tipo GRAVE que impide la impresión del modelo">
+	            		
+	            	</div>
+	                <div class="col">
+	                    <label for="">
+	                    
+	        	            <a href="https://webgreco.local/webgreco/GreSvlProcesarPeticiones#rpLugarFirma" target="_self">
+		   	                    Lugar de la firma obligatorio.
+				           	</a>
+				        
+	 					</label>
+	                </div>
+	            </div>
+	            
+        </div>
+    </fieldset>
+</div>	
+
+
+	        
+	         <div class="filaSepardor"></div>
+	        
+	        <!-- MODULO TIPO DE PRESENTACIÓN -->
+	        <div class="contenidoCabeceraFormularios">
+	            <fieldset class="contenidoCabeceraFormularios">
+	                <div class="contenidoCabeceraTextoFormularios">
+	                    <div class="col">
+	                        Tipo de presentación
+	                    </div>
+	                     
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=Tipodepresentacion" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	                </div>
+            	</fieldset>
+            </div>
+            <fieldset class="contenidoDatos">
+						
+					<div class="fila">
+						<span class="marcaError">
+								*
+						</span>	
+						<label for="auSelectTipoPresentacion">Tipo de <strong>presentación</strong> del documento cumplimentado: </label>
+						<select id="auSelectTipoPresentacion" name="auSelectTipoPresentacion" class="" size="1" onchange="submitWithPosicionScroll('auSelectTipoPresentacion')">
+		                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="2">TELEMÁTICA / CERTIFICADO DIGITAL</option><option value="1">PRESENCIAL / IMPRESIÓN DOCUMENTO</option>
+	                	</select>	
+	                	
+	                	<div class="filaSepardor"></div>
+	                	
+		            </div>
+	        </fieldset>	        	        
+	        <div class="filaSepardor"></div>
+	        
+	        <!-- ********************************************************************************* -->
+	        <!--  Interesado -->
+	        <!-- ********************************************************************************* -->
+	        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabeceraFormularios">
+		<div class="contenidoCabeceraTextoFormularios">
+			<div class="col">
+				Interesado (A)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=_A_DatosIdentificativosDelInterviniente" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+				<label for="spNif" name="spNifError" class="marcaError">*</label>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+				<label for="spNombre" name="spNombreError" class="marcaError">*</label>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+				<label for="spSelectSiglas" name="spSelectSiglasError" class="marcaError">*</label>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="0">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+				<label for="spNombreVia" name="spNombreViaError" class="marcaError">*</label>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+				<label for="spSelectProvincia" name="spSelectProvinciaError" class="marcaError">*</label>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="0">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+				<label for="spSelectMunicipio" name="spMunicipioError" class="marcaError">
+				 	*
+			 	</label>
+			 	
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+				<label for="spCodPostal" name="spCodPostalError" class="marcaError">*</label>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="412">
+</div>		
+
+	        <div class="filaSepardor"></div>
+	        
+	        <!-- ********************************************************************************* -->
+	        <!--  Representante -->
+	        <!-- ********************************************************************************* -->	        	    
+	        <div id="div_representante">
+	        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabeceraFormularios">
+		<div class="contenidoCabeceraTextoFormularios">
+			<div class="col">
+				 Representante (B)
+			</div>
+		
+        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=_B_DatosIdentificativosDelRepresentante" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+        </div>
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>19
+</strong>
+				
+                <label for="prNif">NIF</label>
+                <input id="prNif" name="prNif" class="w-100 
+                	" size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>20</strong>
+                
+                <label for="prNombre">Apellidos y nombre o razón social</label>
+                <input id="prNombre" name="prNombre" class="w-100 " type="text" size="38" maxlength="55">
+			</div>
+		</div>
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>21</strong>
+				
+                <label for="prSelectSiglas">Siglas</label>
+                <select id="prSelectSiglas" name="prSelectSiglas" class="w-100 " size="1">
+                		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+       			</select>
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>22</strong>
+				
+                <label for="prNombreVia">Nombre Vía Pública</label>
+                <input id="prNombreVia" name="prNombreVia" class=" w-100" type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>23</strong>
+				
+                <label for="prNumero">Número</label>
+                <input id="prNumero" name="prNumero" class=" w-100" size="4" maxlength="8">
+			</div>
+		</div>
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>24</strong>
+				
+                <label for="prLetra">Bloque</label>
+                <input id="prLetra" name="prLetra" class=" w-100" size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>25</strong>
+				
+                <label for="prEscalera">Escalera</label>
+                <input id="prEscalera" name="prEscalera" class=" w-100" size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>26</strong>
+				
+                <label for="prPiso">Planta</label>
+                <input id="prPiso" name="prPiso" class=" w-100" size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>27</strong>
+				
+                <label for="prPuerta">Puerta</label>
+                <input id="prPuerta" name="prPuerta" class=" w-100" size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>28</strong>
+				
+                <label for="prTelefono">Telf.</label>
+                <input id="prTelefono" name="prTelefono" class=" w-100" size="8" maxlength="9">
+			</div>
+			
+
+			<div class="col-6 col-xl-2 colResponsive">
+     			<strong>29</strong>
+     			
+                <label for="prFax">Fax</label>
+                <input id="prFax" name="prFax" class="w-100 " size="8" maxlength="9">
+			</div>	
+
+			
+			
+		</div>
+		<div class="row"><!-- FILA 4 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				
+
+				
+				<strong>31</strong>
+				
+                <label for="prSelectProvincia">Provincia</label>
+                <select id="prSelectProvincia" name="prSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('prSelectProvincia', 'prSelectMunicipio')">
+                		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+               	
+               			
+                 <input type="hidden" name="spSelectProvinciaValidado" value="0">
+
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>30</strong>
+				
+                <label for="prSelectMunicipio">Municipio</label>
+                <select id="prSelectMunicipio" name="prSelectMunicipio" class="w-100 " size="1">
+                		
+               	</select>
+               		
+                 <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>32</strong>
+				
+                <label for="prCodPostal">C. Postal</label>
+                <input id="prCodPostal" name="prCodPostal" class=" w-100" type="text" size="4" maxlength="5">
+			</div>
+		</div>
+	</fieldset>
+</div>		
+        	
+	        </div>
+	        <div class="filaSepardor"></div>
+
+	        	        	        	        
+	        <!-- ********************************************************************************* -->
+	        <!--  DATOS DE LA AUTOLIQUIDACIÓN -->
+	        <!-- ********************************************************************************* -->	        	    
+            <div>
+	            <div class="contenidoCabeceraFormularios">
+		            <fieldset class="contenidoCabeceraFormularios">
+		                <div class="contenidoCabeceraTextoFormularios">
+		                    <div class="col">
+		                        DATOS DE LA AUTOLIQUIDACIÓN (C)
+		                    </div>
+		                     
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=_C_DatosAutoliquidacion" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+ 		                </div>
+	            	</fieldset>
+	            </div>            
+	            <fieldset class="contenidoDatos">
+		            <fieldset class="apartado">		            
+						<div class="row">
+							<div class="col-12 col-xl-5 colResponsive">
+				            	
+											            						
+								<span class="marcaError">*</span>
+			              		<label for="numeroJustificanteAutoliquidacion">Nº de justificante autoliquidación</label>		 
+								<input class="w-100 " id="numeroJustificanteAutoliquidacion" name="numeroJustificanteAutoliquidacion" size="27" maxlength="13">
+							</div>
+							<div class="col-12 col-xl-4 colResponsive">
+				            	
+											            						
+								<span class="marcaError">*</span>
+			              		<label for="fechaPresentacion">Fecha presentación</label>		 
+								<input class="w-100 hasDatepicker" readonly="readonly" id="fechaPresentacion" name="fechaPresentacion" size="10" maxlength="10">
+							</div>										              		             				              				              					  		                 	
+						</div>
+						<div class="row">
+							<div class="col-12 col-xl-5 colResponsive">
+				            	
+											            						
+								<span class="marcaError">*</span>
+			              		<label for="conceptoImpositivo">Concepto impositivo</label>		 
+								<input class="w-100 " id="conceptoImpositivo" name="conceptoImpositivo" size="40" maxlength="40">
+							</div>
+							<div class="col-12 col-xl-4 colResponsive">
+				            	
+											            						
+								<span class="marcaError">*</span>
+			              		<label for="importe">Importe</label>		 
+								<input class="w-100 " style="text-align:right" id="importe" name="importe" size="23" maxlength="16">
+							</div>										              		             				              				              					  		                 	
+						</div>
+						<div class="row">
+							<div class="col-12 col-xl-5 colResponsive">
+				            	
+											            						
+								<span class="marcaError">*</span>
+			              		<label for="organo">Organo</label>		 
+								<select class="w-100 " id="organo" name="organo" size="1" onchange="submitWithPosicionScroll('organo')">
+				                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS ALBACETE</option><option value="EH1301">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS CIUDAD REAL</option><option value="EH1601">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS CUENCA</option><option value="EH1901">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS GUADALAJARA</option><option value="EH4501">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS TOLEDO</option><option value="EH0202">OFICINA LIQUIDADORA DE ALCARAZ</option><option value="EH1302">OFICINA LIQUIDADORA DE ALCÁZAR DE SAN JUAN</option><option value="EH1303">OFICINA LIQUIDADORA DE ALMADÉN</option><option value="EH1304">OFICINA LIQUIDADORA DE ALMAGRO</option><option value="EH0203">OFICINA LIQUIDADORA DE ALMANSA</option><option value="EH1305">OFICINA LIQUIDADORA DE ALMODOVAR DEL CAMPO</option><option value="EH1602">OFICINA LIQUIDADORA DE BELMONTE</option><option value="EH1902">OFICINA LIQUIDADORA DE BRIHUEGA</option><option value="EH0204">OFICINA LIQUIDADORA DE CASAS DE IBÁÑEZ</option><option value="EH0205">OFICINA LIQUIDADORA DE CHINCHILLA</option><option value="EH1903">OFICINA LIQUIDADORA DE CIFUENTES</option><option value="EH1904">OFICINA LIQUIDADORA DE COGOLLUDO</option><option value="EH1306">OFICINA LIQUIDADORA DE DAIMIEL</option><option value="EH4502">OFICINA LIQUIDADORA DE ESCALONA</option><option value="EH0206">OFICINA LIQUIDADORA DE HELLÍN</option><option value="EH1603">OFICINA LIQUIDADORA DE HUETE</option><option value="EH4503">OFICINA LIQUIDADORA DE ILLESCAS</option><option value="EH0207">OFICINA LIQUIDADORA DE LA RODA</option><option value="EH4504">OFICINA LIQUIDADORA DE LILLO</option><option value="EH4505">OFICINA LIQUIDADORA DE MADRIDEJOS</option><option value="EH1307">OFICINA LIQUIDADORA DE MANZANARES</option><option value="EH1905">OFICINA LIQUIDADORA DE MOLINA DE ARAGÓN</option><option value="EH1604">OFICINA LIQUIDADORA DE MOTILLA DEL PALANCAR</option><option value="EH4506">OFICINA LIQUIDADORA DE NAVAHERMOSA</option><option value="EH4507">OFICINA LIQUIDADORA DE OCAÑA</option><option value="EH4508">OFICINA LIQUIDADORA DE ORGAZ</option><option value="EH1906">OFICINA LIQUIDADORA DE PASTRANA</option><option value="EH1308">OFICINA LIQUIDADORA DE PIEDRABUENA</option><option value="EH4509">OFICINA LIQUIDADORA DE PUENTE DEL ARZOBISPO</option><option value="EH4510">OFICINA LIQUIDADORA DE QUINTANAR DE LA ORDEN</option><option value="EH1907">OFICINA LIQUIDADORA DE SACEDÓN</option><option value="EH1605">OFICINA LIQUIDADORA DE SAN CLEMENTE</option><option value="EH1908">OFICINA LIQUIDADORA DE SIGÜENZA</option><option value="EH4511">OFICINA LIQUIDADORA DE TALAVERA DE LA REINA</option><option value="EH1606">OFICINA LIQUIDADORA DE TARANCÓN</option><option value="EH1309">OFICINA LIQUIDADORA DE TOMELLOSO</option><option value="EH4512">OFICINA LIQUIDADORA DE TORRIJOS</option><option value="EH1310">OFICINA LIQUIDADORA DE VALDEPEÑAS</option><option value="EH1311">OFICINA LIQUIDADORA DE VILLANUEVA DE LOS INFANTES</option><option value="EH0208">OFICINA LIQUIDADORA DE YESTE</option><option value="EH0001">SS.CC. DIRECCIÓN GENERAL DE TRIBUTOS Y ORD. DEL JUEGO</option>
+			                	</select>		            								
+							</div>
+							<div class="col-12 col-xl-4 colResponsive">
+				            	
+											            						
+								<span class="marcaError"></span>
+			              		<label for="expedienteRelacionado">Expediente relacionado</label>		 
+								<input class="w-100 " id="expedienteRelacionado" name="expedienteRelacionado" size="40" maxlength="40">
+							</div>										              		             				              				              					  		                 	
+						</div>
+						
+						
+		    		 </fieldset>     
+	        	</fieldset>	
+			</div>
+			<div class="filaSepardor"></div>
+			
+	        <!-- ********************************************************************************* -->
+	        <!--  ALEGACIONES -->
+	        <!-- ********************************************************************************* -->	        	    
+            <div>
+	            <div class="contenidoCabeceraFormularios">
+		            <fieldset class="contenidoCabeceraFormularios">
+		                <div class="contenidoCabeceraTextoFormularios">
+		                    <div class="col">
+		                        ALEGACIONES (D)
+		                    </div>
+ 		                </div>
+	            	</fieldset>
+	            </div>            
+	            <fieldset class="contenidoDatos">
+		            <fieldset class="apartado">		            
+			            <div class="fila" style="height:170px">
+							
+																														
+							<label for="alegaciones" class="marcaError">*</label>
+							<textarea class="col-11 mt-1 " style="width:830px; height:170px; resize: none;" rows="20" cols="150" maxlength="3000" id="alegaciones" name="alegaciones"></textarea>		            
+			            </div>		            
+					</fieldset>
+				</fieldset>
+			</div>			
+	   		
+	   		
+ 			<!-- ********************************************************************************* -->
+            <!-- ******  DOCUMENTACIÓN ANEXA    ******************************************** -->
+            <!-- ********************************************************************************* -->            
+
+
+       		<!-- ********************************************************************************* -->
+            <!-- ***** DATOS DE DEVOLUCION F            ******************************************** -->
+            <!-- ********************************************************************************* -->
+            <div class="filaSepardor"></div>        	  
+	        <div class="contenidoCabeceraFormularios">
+	            <fieldset class="contenidoCabeceraFormularios">
+	                <div class="contenidoCabeceraTextoFormularios">
+	                    <div class="col">
+	                        Datos de devolución (F)
+	                    </div>
+	                     
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=_F_DatosDevolucion" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		             </div>
+	            </fieldset>
+            </div>
+            <fieldset class="contenidoDatos">
+		        <fieldset class="apartado">
+					<div class="row">
+						<div class="col-12 col-xl-4 colResponsive">
+							
+							
+																														
+							<input class="" type="checkbox" name="solicitaDevolucion" id="solicitaDevolucion" onchange="activacionImporte()">
+							<span class="marcaError"></span>						
+							<label for="solicitaDevolucion">Solicita devolución del siguiente importe:</label>														
+							
+																														
+							<span class="marcaError"></span>						
+							<label for="importeDevolucion" class="visually-hidden">importe devolución</label>
+							<input class="" style="text-align:right" type="text" name="importeDevolucion" id="importeDevolucion" size="18" maxlength="16" disabled="disabled">
+						</div>	
+					</div>
+					<div class="row">					
+						<div class="col-12 col-xl-6 colResponsive">							
+							
+							<span class="marcaError"></span>
+							<label for="paisIban">Cuenta bancaria donde se debe efectuar la devolución (IBAN)</label>																		
+							<select class="w-100 " id="paisIban" name="paisIban" disabled="disabled" onchange="submitWithPosicionScroll('paisIban')">
+					        	<option value="0">SELECCIONE UNA OPCIÓN</option><option value="AF">AFGANISTÁN</option><option value="AX">ALAND</option><option value="AL">ALBANIA</option><option value="DE">ALEMANIA</option><option value="AD">ANDORRA</option><option value="AO">ANGOLA</option><option value="AI">ANGUILA</option><option value="AQ">ANTÁRTIDA</option><option value="AG">ANTIGUA Y BARBUDA</option><option value="AN">ANTILLAS NEERLANDESAS</option><option value="SA">ARABIA SAUDITA</option><option value="DZ">ARGELIA</option><option value="AR">ARGENTINA</option><option value="AM">ARMENIA</option><option value="AW">ARUBA</option><option value="AU">AUSTRALIA</option><option value="AT">AUSTRIA</option><option value="AZ">AZERBAIYÁN</option><option value="BS">BAHAMAS</option><option value="BH">BAHRÉIN</option><option value="BD">BANGLADESH</option><option value="BB">BARBADOS</option><option value="BY">BIELORRUSIA</option><option value="BE">BÉLGICA</option><option value="BZ">BELICE</option><option value="BJ">BENÍN</option><option value="BM">BERMUDAS</option><option value="BT">BUTÁN</option><option value="BO">BOLIVIA</option><option value="BA">BOSNIA Y HERZEGOVINA</option><option value="BW">BOTSUANA</option><option value="BV">ISLA BOUVET</option><option value="BR">BRASIL</option><option value="BN">BRUNÉI</option><option value="BG">BULGARIA</option><option value="BF">BURKINA FASO</option><option value="BI">BURUNDI</option><option value="CV">CABO VERDE</option><option value="KY">ISLAS CAIMÁN</option><option value="KH">CAMBOYA</option><option value="CM">CAMERÚN</option><option value="CA">CANADÁ</option><option value="CF">REPÚBLICA CENTROAFRICANA</option><option value="TD">CHAD</option><option value="CZ">REPÚBLICA CHECA</option><option value="CL">CHILE</option><option value="CN">CHINA</option><option value="CY">CHIPRE</option><option value="CC">ISLAS COCOS</option><option value="CO">COLOMBIA</option><option value="KM">COMORAS</option><option value="CG">REPÚBLICA DEL CONGO</option><option value="CD">REPÚBLICA DEMOCRÁTICA DEL CONGO</option><option value="CK">ISLAS COOK</option><option value="KP">COREA DEL NORTE</option><option value="KR">COREA DEL SUR</option><option value="CI">COSTA DE MARFIL</option><option value="CR">COSTA RICA</option><option value="HR">CROACIA</option><option value="CU">CUBA</option><option value="DK">DINAMARCA</option><option value="DM">DOMINICA</option><option value="DO">REPÚBLICA DOMINICANA</option><option value="EC">ECUADOR</option><option value="EG">EGIPTO</option><option value="SV">EL SALVADOR</option><option value="AE">EMIRATOS ÁRABES UNIDOS</option><option value="ER">ERITREA</option><option value="SK">ESLOVAQUIA</option><option value="SI">ESLOVENIA</option><option selected="selected" value="ES">ESPAÑA</option><option value="US">ESTADOS UNIDOS</option><option value="UM">ISLAS ULTRAMARINAS DE ESTADOS UNIDOS</option><option value="EE">ESTONIA</option><option value="ET">ETIOPÍA</option><option value="FO">ISLAS FEROE</option><option value="PH">FILIPINAS</option><option value="FI">FINLANDIA</option><option value="FJ">FIYI</option><option value="FR">FRANCIA</option><option value="GA">GABÓN</option><option value="GM">GAMBIA</option><option value="GE">GEORGIA</option><option value="GS">ISLAS GEORGIAS DEL SUR Y SANDWICH DEL SUR</option><option value="GH">GHANA</option><option value="GI">GIBRALTAR</option><option value="GD">GRANADA</option><option value="GR">GRECIA</option><option value="GL">GROENLANDIA</option><option value="GP">GUADALUPE</option><option value="GU">GUAM</option><option value="GT">GUATEMALA</option><option value="GF">GUAYANA FRANCESA</option><option value="GG">GUERNSEY</option><option value="GN">GUINEA</option><option value="GQ">GUINEA ECUATORIAL</option><option value="GW">GUINEA-BISSAU</option><option value="GY">GUYANA</option><option value="HT">HAITÍ</option><option value="HM">ISLAS HEARD Y MCDONALD</option><option value="HN">HONDURAS</option><option value="HK">HONG KONG</option><option value="HU">HUNGRÍA I</option><option value="IN">INDIA</option><option value="ID">INDONESIA</option><option value="IR">IRÁN</option><option value="IQ">IRAQ</option><option value="IE">IRLANDA</option><option value="IS">ISLANDIA</option><option value="IL">ISRAEL</option><option value="IT">ITALIA</option><option value="JM">JAMAICA</option><option value="JP">JAPÓN</option><option value="JE">JERSEY</option><option value="JO">JORDANIA</option><option value="KZ">KAZAJISTÁN</option><option value="KE">KENIA</option><option value="KG">KIRGUISTÁN</option><option value="KI">KIRIBATI</option><option value="KW">KUWAIT</option><option value="LA">LAOS</option><option value="LS">LESOTO</option><option value="LV">LETONIA</option><option value="LB">LÍBANO</option><option value="LR">LIBERIA</option><option value="LY">LIBIA</option><option value="LI">LIECHTENSTEIN</option><option value="LT">LITUANIA</option><option value="LU">LUXEMBURGO</option><option value="MO">MACAO</option><option value="MK">MACEDONIA</option><option value="MG">MADAGASCAR</option><option value="MY">MALASIA</option><option value="MW">MALAWI</option><option value="MV">MALDIVAS</option><option value="ML">MALÍ</option><option value="MT">MALTA</option><option value="FK">ISLAS MALVINAS</option><option value="IM">ISLA DE MAN</option><option value="MP">ISLAS MARIANAS DEL NORTE</option><option value="MA">MARRUECOS</option><option value="MH">ISLAS MARSHALL</option><option value="MQ">MARTINICA</option><option value="MU">MAURICIO</option><option value="MR">MAURITANIA</option><option value="YT">MAYOTTE</option><option value="MX">MÉXICO</option><option value="FM">MICRONESIA</option><option value="MD">MOLDAVIA</option><option value="MC">MÓNACO</option><option value="MN">MONGOLIA</option><option value="ME">MONTENEGRO</option><option value="MS">MONTSERRAT</option><option value="MZ">MOZAMBIQUE</option><option value="MM">MYANMAR</option><option value="NA">NAMIBIA</option><option value="NR">NAURU</option><option value="CX">ISLA DE NAVIDAD</option><option value="NP">NEPAL</option><option value="NI">NICARAGUA</option><option value="NE">NÍGER</option><option value="NG">NIGERIA</option><option value="NU">NIUE</option><option value="NF">NORFOLK</option><option value="NO">NORUEGA</option><option value="NC">NUEVA CALEDONIA</option><option value="NZ">NUEVA ZELANDA</option><option value="OM">OMÁN</option><option value="NL">PAÍSES BAJOS</option><option value="PK">PAKISTÁN</option><option value="PW">PALAOS</option><option value="PS">PALESTINA (ANP)</option><option value="PA">PANAMÁ</option><option value="PG">PAPÚA NUEVA GUINEA</option><option value="PY">PARAGUAY</option><option value="PE">PERÚ</option><option value="PN">ISLAS PITCAIRN</option><option value="PF">POLINESIA FRANCESA</option><option value="PL">POLONIA</option><option value="PT">PORTUGAL</option><option value="PR">PUERTO RICO</option><option value="QA">QATAR</option><option value="GB">REINO UNIDO</option><option value="RE">REUNIÓN</option><option value="RW">RUANDA</option><option value="RO">RUMANIA</option><option value="RU">RUSIA</option><option value="EH">SAHARA OCCIDENTAL</option><option value="SB">ISLAS SALOMÓN</option><option value="WS">SAMOA</option><option value="AS">SAMOA AMERICANA</option><option value="KN">SAN CRISTÓBAL Y NIEVES</option><option value="SM">SAN MARINO</option><option value="PM">SAN PEDRO Y MIQUELÓN</option><option value="VC">SAN VICENTE Y LAS GRANADINAS</option><option value="SH">SANTA HELENA</option><option value="LC">SANTA LUCÍA</option><option value="ST">SANTO TOMÉ Y PRÍNCIPE</option><option value="SN">SENEGAL</option><option value="RS">SERBIA</option><option value="SC">SEYCHELLES</option><option value="SL">SIERRA LEONA</option><option value="SG">SINGAPUR</option><option value="SY">SIRIA</option><option value="SO">SOMALIA</option><option value="LK">SRI LANKA</option><option value="SZ">SUAZILANDIA</option><option value="ZA">SUDÁFRICA</option><option value="SD">SUDÁN</option><option value="SE">SUECIA</option><option value="CH">SUIZA</option><option value="SR">SURINAM</option><option value="SJ">SVALBARD Y JAN MAYEN</option><option value="TH">TAILANDIA</option><option value="TW">TAIWÁN</option><option value="TZ">TANZANIA</option><option value="TJ">TAYIKISTÁN</option><option value="IO">TERRITORIO BRITÁNICO DEL OCÉANO ÍNDICO</option><option value="TF">TERRITORIOS AUSTRALES FRANCESES</option><option value="TL">TIMOR ORIENTAL</option><option value="TG">TOGO</option><option value="TK">TOKELAU</option><option value="TO">TONGA</option><option value="TT">TRINIDAD Y TOBAGO</option><option value="TN">TÚNEZ</option><option value="TC">ISLAS TURCAS Y CAICOS</option><option value="TM">TURKMENISTÁN</option><option value="TR">TURQUÍA</option><option value="TV">TUVALU</option><option value="UA">UCRANIA</option><option value="UG">UGANDA</option><option value="EU">UNIÓN EUROPEA</option><option value="UY">URUGUAY</option><option value="UZ">UZBEKISTÁN</option><option value="VU">VANUATU</option><option value="VA">CIUDAD DEL VATICANO</option><option value="VE">VENEZUELA</option><option value="VN">VIETNAM</option><option value="VG">ISLAS VÍRGENES BRITÁNICAS</option><option value="VI">ISLAS VÍRGENES ESTADOUNIDENSES</option><option value="WF">WALLIS Y FUTUNA</option><option value="YE">YEMEN</option><option value="DJ">YIBUTI</option><option value="ZM">ZAMBIA</option><option value="ZW">ZIMBABUE</option>
+				            </select>
+				        </div>
+				        <div class="col-12 col-xl-6 colResponsive">
+				        	<label>&nbsp;</label>
+				        	<div class="w-100">
+								<span>ES</span>
+								
+									<label for="iban1" class="visually-hidden">iban1</label>
+									<input class="" type="text" name="iban1" id="iban1" size="1" maxlength="2" disabled="disabled">
+									<label for="iban2" class="visually-hidden">iban2</label>
+									<input class="" type="text" name="iban2" id="iban2" size="3" maxlength="4" disabled="disabled">
+									<label for="iban3" class="visually-hidden">iban3</label>
+									<input class="" type="text" name="iban3" id="iban3" size="3" maxlength="4" disabled="disabled">
+									<label for="iban4" class="visually-hidden">iban4</label>
+									<input class="" type="text" name="iban4" id="iban4" size="3" maxlength="4" disabled="disabled">
+									<label for="iban5" class="visually-hidden">iban5</label>
+									<input class="" type="text" name="iban5" id="iban5" size="3" maxlength="4" disabled="disabled">
+									<label for="iban6" class="visually-hidden">iban6</label>
+									<input class="" type="text" name="iban6" id="iban6" size="3" maxlength="4" disabled="disabled">
+								
+							</div>
+						</div>	
+					</div>
+				</fieldset>
+			</fieldset>
+
+
+
+       		<!-- ********************************************************************************* -->
+            <!-- ******  DESTINATARIO			      ******************************************** -->
+            <!-- ********************************************************************************* -->
+            <div class="filaSepardor"></div>
+            <div class="contenidoCabeceraFormularios">
+	            <fieldset class="contenidoCabeceraFormularios">
+	                <div class="contenidoCabeceraTextoFormularios">
+	                    <div class="col">
+	                        Destinatario (G)
+	                    </div>
+	                     
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=_G_Destinatario" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	                </div>
+            	</fieldset>
+            </div>
+            <fieldset class="contenidoDatos">
+	            <fieldset class="apartado">
+				<legend> Destinatario (G)</legend>		            
+		            <div class="row">
+		            	<div class="col-12 col-xl-6 colResponsive">
+							<span class="marcaError">
+								*
+							</span>	
+							<label for="auSelectDestinatario">
+								<strong>DIRIGIDA A:</strong>
+							</label>
+							<select class="w-100 " id="auSelectDestinatario" name="auSelectDestinatario" disabled="disabled" size="1">
+			                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS ALBACETE</option><option value="EH1301">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS CIUDAD REAL</option><option value="EH1601">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS CUENCA</option><option value="EH1901">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS GUADALAJARA</option><option value="EH4501">DELEGACIÓN PROV. HACIENDA, AAPP Y TD TRIBUTOS TOLEDO</option><option value="EH0202">OFICINA LIQUIDADORA DE ALCARAZ</option><option value="EH1302">OFICINA LIQUIDADORA DE ALCÁZAR DE SAN JUAN</option><option value="EH1303">OFICINA LIQUIDADORA DE ALMADÉN</option><option value="EH1304">OFICINA LIQUIDADORA DE ALMAGRO</option><option value="EH0203">OFICINA LIQUIDADORA DE ALMANSA</option><option value="EH1305">OFICINA LIQUIDADORA DE ALMODOVAR DEL CAMPO</option><option value="EH1602">OFICINA LIQUIDADORA DE BELMONTE</option><option value="EH1902">OFICINA LIQUIDADORA DE BRIHUEGA</option><option value="EH0204">OFICINA LIQUIDADORA DE CASAS DE IBÁÑEZ</option><option value="EH0205">OFICINA LIQUIDADORA DE CHINCHILLA</option><option value="EH1903">OFICINA LIQUIDADORA DE CIFUENTES</option><option value="EH1904">OFICINA LIQUIDADORA DE COGOLLUDO</option><option value="EH1306">OFICINA LIQUIDADORA DE DAIMIEL</option><option value="EH4502">OFICINA LIQUIDADORA DE ESCALONA</option><option value="EH0206">OFICINA LIQUIDADORA DE HELLÍN</option><option value="EH1603">OFICINA LIQUIDADORA DE HUETE</option><option value="EH4503">OFICINA LIQUIDADORA DE ILLESCAS</option><option value="EH0207">OFICINA LIQUIDADORA DE LA RODA</option><option value="EH4504">OFICINA LIQUIDADORA DE LILLO</option><option value="EH4505">OFICINA LIQUIDADORA DE MADRIDEJOS</option><option value="EH1307">OFICINA LIQUIDADORA DE MANZANARES</option><option value="EH1905">OFICINA LIQUIDADORA DE MOLINA DE ARAGÓN</option><option value="EH1604">OFICINA LIQUIDADORA DE MOTILLA DEL PALANCAR</option><option value="EH4506">OFICINA LIQUIDADORA DE NAVAHERMOSA</option><option value="EH4507">OFICINA LIQUIDADORA DE OCAÑA</option><option value="EH4508">OFICINA LIQUIDADORA DE ORGAZ</option><option value="EH1906">OFICINA LIQUIDADORA DE PASTRANA</option><option value="EH1308">OFICINA LIQUIDADORA DE PIEDRABUENA</option><option value="EH4509">OFICINA LIQUIDADORA DE PUENTE DEL ARZOBISPO</option><option value="EH4510">OFICINA LIQUIDADORA DE QUINTANAR DE LA ORDEN</option><option value="EH1907">OFICINA LIQUIDADORA DE SACEDÓN</option><option value="EH1605">OFICINA LIQUIDADORA DE SAN CLEMENTE</option><option value="EH1908">OFICINA LIQUIDADORA DE SIGÜENZA</option><option value="EH4511">OFICINA LIQUIDADORA DE TALAVERA DE LA REINA</option><option value="EH1606">OFICINA LIQUIDADORA DE TARANCÓN</option><option value="EH1309">OFICINA LIQUIDADORA DE TOMELLOSO</option><option value="EH4512">OFICINA LIQUIDADORA DE TORRIJOS</option><option value="EH1310">OFICINA LIQUIDADORA DE VALDEPEÑAS</option><option value="EH1311">OFICINA LIQUIDADORA DE VILLANUEVA DE LOS INFANTES</option><option value="EH0208">OFICINA LIQUIDADORA DE YESTE</option><option value="EH0001">SS.CC. DIRECCIÓN GENERAL DE TRIBUTOS Y ORD. DEL JUEGO</option>
+		                	</select>		            
+			            	<input type="hidden" id="auCodigoDestinatario" name="auCodigoDestinatario" value="0">
+			            </div>
+		            </div>
+		            <div class="row">
+		            	<div>	
+		            		<div class="col-12 col-xl-6 colResponsive">
+				            	<span class="marcaError">
+									
+								</span>	
+				            	<label for="selectUnidad" disabled="disabled">
+									<strong>UNIDAD:</strong>
+								</label>
+								<select id="selectUnidad" name="selectUnidad" disabled="disabled" class="w-100 " size="1" onchange="submitWithPosicionScroll('selectUnidad')">
+				                	
+			                	</select>		            
+				            	<input type="hidden" id="codigoUnidad" name="codigoUnidad" value="">
+							</div>			            	
+			            </div>	
+		            </div>
+	    		 </fieldset> <!-- FIN DEL CUADRO SOMBREADO -->    
+        	</fieldset>
+
+	
+		  <div class="filaSepardor"></div>
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabeceraFormularios">
+		<div class="contenidoCabeceraTextoFormularios">
+			<div class="col">
+				Firma (H)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=412&amp;ayudaContextual=_H_Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayudaBlanco.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoDatos">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                
+                <span class="marcaError"><input type="hidden" id="accesible">
+                	*
+                </span>
+                
+                <label for="rpLugarFirma" name="rpLugarFirma">
+                	<strong>Lugar de firma</strong>: En
+               	</label>
+                <input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+                <span> a 30 de julio de 2025</span>
+			</div>
+		</div>
+	</fieldset>	
+	
+
+
+	   
+	
+		  <div class="filaSepardor"></div>
+		
+		
+	 	
+        
+        
+        
+        <input id="412" type="hidden" value="412" name="MOD">
+        <input id="referencia" type="hidden" name="referencia" value="FORMULARIO GENERAL EN MATERIA TRIBUTARIA O RECAUDATORIA">
+        <input id="version" type="hidden" name="version" value="6">
+        <input id="modelo" name="modelo" type="hidden" value="412">
+        <input id="tipoPresentacion" name="tipoPresentacion" type="hidden" value="">
+        
+		</div>  
+
+										      		
+      </form>
+                            
+    
+    	
+    
+    
+	
+	        
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+
+//-->
+
+	function mostrarCapaCargando()
+	{
+		document.getElementById("capaCargando").className="visible";
+		
+		if (null != document.getElementById("botonAceptar_AJD_DOC_PRE_TEL"))
+		{
+			document.getElementById("botonAceptar_AJD_DOC_PRE_TEL").className="novisible";
+		}
+	}
+	
+	function ocultarCapaCargando()
+	{
+		if (null != document.getElementById("capaCargando"))
+		{
+			document.getElementById("capaCargando").className="novisible";
+		}
+		if (null != document.getElementById("botonAceptar_AJD_DOC_PRE_TEL"))
+		{
+			document.getElementById("botonAceptar_AJD_DOC_PRE_TEL").className="visible";
+		}
+		
+	}
+	
+	function ocultarCapaError()
+	{
+		if (null != document.getElementById("capaMensajesError"))
+		{
+			document.getElementById("capaMensajesError").className="novisible";
+		}
+	}
+
+</script>
+	
+	    
+        
+        		    
+	<script>				
+			
+	// Esto se ejecuta en el evento onLoad
+	function iniciar()
+	{									
+		ocultarCapaCargando();
+		checkCookie('https://webgreco.local/webgreco');
+		posicionarScroll();
+		controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')			
+	}		
+	
+	//==================================================================================================================================		
+	
+	function decimalValido(valor) {
+	    var RE = /^\d*\.?\d*$/;
+	    if (RE.test(valor)) {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}	
+	
+	//==================================================================================================================================
+		
+	function activacionImporte()
+	{
+		if($("#solicitaDevolucion").prop("checked"))
+		{
+			$("#importeDevolucion").prop("disabled", false);	
+			$("#iban1").prop("disabled", false);
+			$("#iban2").prop("disabled", false);
+			$("#iban3").prop("disabled", false);
+			$("#iban4").prop("disabled", false);
+			$("#iban5").prop("disabled", false);
+			$("#iban6").prop("disabled", false);
+			$("#paisIban").prop("disabled", false);
+			$("#ibanExtranjero").prop("disabled", false);
+		}
+		else
+		{
+			$("#importeDevolucion").prop("disabled", true);
+			$("#iban1").prop("disabled", true);
+			$("#iban2").prop("disabled", true);
+			$("#iban3").prop("disabled", true);
+			$("#iban4").prop("disabled", true);
+			$("#iban5").prop("disabled", true);
+			$("#iban6").prop("disabled", true);
+			$("#paisIban").prop("disabled", true);
+			$("#ibanExtranjero").prop("disabled", true);
+		}		
+	}
+
+	//==================================================================================================================================	
+				
+	$(function() 
+	{ 				
+		// Control de calendario en campo fechaPresentacion
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#fechaPresentacion").datepicker({showOtherMonths: true, selectOtherMonths: true});
+		
+		activacionImporte()
+		
+		// Establece opción selccionada de los select tras recargarse la pagina por un submit
+		$("#organo").val("0")
+		
+	});							
+		
+	</script>
+			
+	
+	
+    
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
