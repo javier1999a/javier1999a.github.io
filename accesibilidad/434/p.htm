@@ -35,7 +35,7 @@
 
 
 <!-- Motor JQuery -->
-<script src="p_files/jquery_003.js"></script>
+<script src="p_files/jquery.js"></script>
 
 <!-- JQuery UI -->
 <script src="p_files/jquery-ui.js"></script> 
@@ -52,7 +52,7 @@
 <script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
 
 <!-- jQuery Form Plugin -->
-<script src="p_files/jquery.js"></script>
+<script src="p_files/jquery_003.js"></script>
 
 <!-- B64 jQuery Plugin -->
 <script src="p_files/jquery_002.js"></script>
@@ -152,7 +152,7 @@
 	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
 	        
 	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
-        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="1308997545">
+        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="6484033993">
 			
 	        
 			
@@ -546,7 +546,7 @@
 								
 						</span>	
 						<label for="auSelectTipoPresentacion">Tipo de <strong>presentación</strong> del documento cumplimentado: </label>
-						<select id="auSelectTipoPresentacion" name="auSelectTipoPresentacion" class="" size="1" onchange="submitWithPosicionScroll('auSelectTipoPresentacion')" disabled="disabled">
+						<select id="auSelectTipoPresentacion" name="auSelectTipoPresentacion" class="proteger" disabled="disabled" size="1" onchange="submitWithPosicionScroll('auSelectTipoPresentacion')">
 		                	<option selected="selected" value="2">TELEMÁTICA / CERTIFICADO DIGITAL</option>
 	                	</select>	
 	                	
@@ -1244,12 +1244,32 @@ $(function()
 			  <table class="datos" cellspacing="0" cellpadding="0"> 	
 				 	<tbody><tr>
 						<td class="columna_5_porciento">&nbsp;<input type="hidden" name="cambiarCheck" value="checkbox" onclick=""></td>
-						<th>Descripcion de documento</th>
+						<td>Descripcion de documento</td>
 						<td class="columna_30_porciento">Huella (MD5 base64)</td>
 						
 						
 					</tr>
 	
+					
+					
+										<!--CONTENIDO-->
+										<tr id="fila0">
+											<td class="columna_5_porciento">
+												<input type="checkbox" id="fila0" name="fila0" value="checkbox">
+											</td>
+											<td class="columna_30_porciento">SD</td>
+											<td class="columna_30_porciento">753452E807337F16A2F728E936C2A004</td>
+		
+											<td class="columna_30_porciento"></td>
+											<input type="hidden" name="tipoDocumento0" value="">
+						
+											
+											<input type="hidden" name="id[0]" value="fila0">
+											<input type="hidden" name="nombreDocumento0" value="SD">
+										 	<input type="hidden" name="fechaPresentacionDocumento0" value="31/07/2025">
+										 	<input type="hidden" name="huellaDocumento0" value="753452E807337F16A2F728E936C2A004">
+										 	<input type="hidden" name="idRodalDocumento0" value="TEMP000000026978">
+										 </tr>
 					
 				</tbody></table>
 			</div>
@@ -1264,7 +1284,7 @@ $(function()
 		</div>	
 				
 	</fieldset>
-	<input type="hidden" name="numeroDocumetosAdjuntos" value="0">
+	<input type="hidden" name="numeroDocumetosAdjuntos" value="1">
 </div>		
 	       </fieldset>     		
 
@@ -1430,7 +1450,7 @@ $(function()
         <input id="referencia" type="hidden" name="referencia" value="FORMULARIO GENERAL EN MATERIA TRIBUTARIA O RECAUDATORIA">
         <input id="version" type="hidden" name="version" value="6">
         <input id="modelo" name="modelo" type="hidden" value="434">
-        <input id="tipoPresentacion" name="tipoPresentacion" type="hidden" value="">
+        <input id="tipoPresentacion" name="tipoPresentacion" type="hidden" value="2">
         
 		</div>  
 
@@ -1490,6 +1510,103 @@ $(function()
 
 </script>
 	
+    
+
+	
+	<!-- -------------------------------------------------------------- -->
+	<!-- -------------------------------------------------------------- -->
+	<!-- AJGG. 		VENTANA EMERGENTE DEL ASISTENTE		-->
+	<!-- -------------------------------------------------------------- -->
+	
+	<form id="FORM_IMP_DATOS_MODELO" name="IMPORTACION_DATOS_MODELO" action="./GreSvlProcesarPeticiones" method="POST" enctype="multipart/form-data" target="_self" onsubmit="mostrarCapaCargando()">
+	       
+	       
+		<div id="capaAsistenteAjuntarDocumentacion" class="capaAsistenteAjuntarDocumentacion ">
+			
+			<!-- INICIO DEL FORMULARIO -->
+			<div class="PrincipalConCabeceraOficinaElectronica">
+				<div class="filaSepardor"></div>
+						
+				<fieldset class="oficinaElectronica">
+					<legend class="oficinaElectronica">Asistente Adjuntar Documentación Presentación Telemática</legend>
+					
+					 	<div class="filaSepardor"></div>
+					
+						<div class="row">
+							<div class="col-12 col-xl-6 colResponsive">
+								<label for="nombreDocumento">Nombre del documento</label>
+								<input type="text" name="nombreDocumento" size="40" maxlength="60" id="nombreDocumento" class="w-100">
+							</div>
+						</div>
+						
+						
+				
+				 		<div class="filaSepardor"></div>
+					
+		
+						<div class="row"> <!-- FILA 2 -->
+							<div class="col-12 col-xl-12 colResponsive">
+								<label for="archivoAdjuntar">Introduzca el archivo que va a ser adjuntado:</label>
+								<input id="archivoAdjuntar" class="w-100" name="archivoAdjuntar" type="file" size="80%" onclick="ocultarCapaError();">
+							</div>
+	                   	</div>	
+						
+						
+	
+				 </fieldset>
+				
+				
+				 <div class="filaSepardor"></div>
+		
+	
+	
+						<!-- ************************** -->
+						<!-- ERRORES DE LA EJECUCCION -->
+						<!-- ************************** -->
+	
+			</div> <!-- Fin del div Principal -->
+		
+			
+			<div id="capaCargando" class="novisible">
+				<!--  
+				<div class="filaCentrada">
+					<p><h3>Procesando</h3></p>
+				</div>
+				<div class="filaCentrada">
+					<p><h3>Por favor, espere... </h3></p>
+				</div>
+				-->
+				<div class="filaCentrada">
+					<div class="ColCentrada">					
+							<img src="p_files/pb_gap.gif" alt="Trabajando..." id="ov" width="75" height="75" border="0">
+					</div>
+				</div>	
+			</div>
+		
+			 
+			 <div class="fila">	
+				 <div class="filaCentrada">
+				 		<input name="botonAceptar_AJD_DOC_PRE_TEL" type="submit" value="Adjuntar documento">
+				 		<input name="botonCancelar_AJD_DOC_PRE_TEL" type="submit" value="Cancelar">
+				</div>
+			 </div>	
+				
+			 <input type="hidden" name="sessionid" value="ECC9B11B8E55ED6AEADF37CF35D08E93">
+			 <input id="modelo" type="hidden" name="modelo" value="434">
+			 <input id="MOD" type="hidden" name="MOD" value="434">
+			 <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="6484033993">
+			
+		</div>
+		
+		
+		<!-- -------------------------------------------------------------- -->
+		<!-- -------------------------------------------------------------- -->
+		<!-- AJGG. FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA Y EL POP UP -->
+		<div class="capaFondoDisabledAsistente ">
+		</div>
+		<!-- -------------------------------------------------------------- -->
+		<!-- -------------------------------------------------------------- -->
+	</form>
 	    
         
         		    
