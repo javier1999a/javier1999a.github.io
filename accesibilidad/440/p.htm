@@ -141,7 +141,7 @@
 	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
 	        
 	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
-        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="9451210398">
+        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="4901946603">
 			
 	        
 			
@@ -1099,10 +1099,13 @@ garantía.
 				<input type="text" class="w-100" name="concepto" id="concepto" size="20" maxlength="20">
 			</div>			
 	 		<div class="col-12 col-xl-3 colResponsive">						
-				<label for="fechaFinPeriodoVoluntario">Fecha fin periodo voluntario (d/m/a)</label>					
+				<span for="fechaFinPeriodoVoluntario">Fecha fin periodo voluntario (d/m/a)</span>					
 				<div class="w-100">
+					<label for="fechaFinPeriodoVoluntarioDia" class="visually-hidden">día fecha fin periodo voluntario</label>
 					<input type="text" name="fechaFinPeriodoVoluntarioDia" id="fechaFinPeriodoVoluntarioDia" size="1" maxlength="2">					
+					<label for="fechaFinPeriodoVoluntarioMes" class="visually-hidden">mes fecha fin periodo voluntario</label>
 					<input type="text" name="fechaFinPeriodoVoluntarioMes" id="fechaFinPeriodoVoluntarioMes" size="1" maxlength="2">					
+					<label for="fechaFinPeriodoVoluntarioAnyo" class="visually-hidden">año fecha fin periodo voluntario</label>
 					<input type="text" name="fechaFinPeriodoVoluntarioAnyo" id="fechaFinPeriodoVoluntarioAnyo" size="3" maxlength="4">
 				</div>
 			</div>
@@ -1230,10 +1233,10 @@ garantía.
 	         
          <div class="row">
          	<div class="col-12 col-xl-4 colResponsive">
-				<label for="auSelectTipoPlazolabel" name="auSelectTipoPlazo" class="marcaError">
+				<span class="marcaError">
 						*
-				</label>	
-				<label for="mensajeInfo" name="mensajeInfo"> Tipo de plazo: </label>
+				</span>	
+				<label for="auSelectTipoPlazo" name="mensajeInfo"> Tipo de plazo: </label>
 				<select id="auSelectTipoPlazo" class="w-100" name="auSelectTipoPlazo" size="1" onchange="submitWithPosicionScroll('auSelectTipoPlazo')">
                 	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="1">FRACCIONAMIENTO</option><option value="2">APLAZAMIENTO</option>                	
                	</select>	
