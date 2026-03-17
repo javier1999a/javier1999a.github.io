@@ -248,7 +248,6 @@
     	<body id="idBody" onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()"> 
      
         
-        <h1></h1><h2></h2>	<!-- ESTA LINEA ES NECESARIA PARA LOS ELEMENTOS DE ACCESIBILIDAD -->
 
         <form id="MODELO" name="MODELO" method="post" action="./GreSvlProcesarPeticiones" target="_self">
         
@@ -263,7 +262,7 @@
         
 		<input type="hidden" name="idListaSesion" id="idListaSesion" value="">
         
-        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="9441990569">   
+        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="8492641436">   
       
       	<!-- hidden para controlar el funcionamiento del asistente adjuntar documentacion -->
         <input type="hidden" id="isActivadoAsistenteADJVET" name="isActivadoAsistenteADJVET" value="false">
@@ -1875,14 +1874,14 @@ $(function()
 					
 							<div class="row">
 								<div class="col-12 col-xl-12 colResponsive">
-									<label for="nombreDocumentoLabel">Nombre del documento a adjuntar:</label> 
+									<label for="nombreDocumento">Nombre del documento a adjuntar:</label> 
 									<input type="text" id="nombreDocumento" class="w-100" name="nombreDocumento" size="40" maxlength="60">
 								</div>	
 							</div>
 					
 							<div class="row mt-2">
 								<div class="col-12 col-xl-12 colResponsive">
-									<label for="archivoAdjuntarLabel">Ruta del archivo:</label>
+									<label for="archivoAdjuntar">Ruta del archivo:</label>
 									<input type="file" id="archivoAdjuntar" class="w-100" name="archivoAdjuntar">
 								</div>	
 							</div>
@@ -1916,7 +1915,7 @@ $(function()
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
-				<label>¿Esta seguro que quiere eliminar el documento adjuntado?</label>
+				<span>¿Esta seguro que quiere eliminar el documento adjuntado?</span>
 				</div>
 			</div>
 		</div>	
@@ -1928,7 +1927,7 @@ $(function()
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<label>¿Esta seguro que quiere eliminar todos los datos cumplimentados en el asistente?</label>
+				<span>¿Esta seguro que quiere eliminar todos los datos cumplimentados en el asistente?</span>
 			</div>	
 		</div>
 	</div>	
@@ -2772,13 +2771,7 @@ obligatoria las siguientes casillas:</span>
 		
 		<div style="z-index:2000; left: 45%;">
 			<span id="loading" class="hide" style="z-index:2000; left: 45%;">
-		    	<table border="1px" bordercolor="#003366" cellpadding="1" cellspacing="0" style="z-index:2000;" summary="Cargando...">			
-					<tbody><tr>
-						<td>
-							<img src="p_files/ajax_loader.gif" alt="Cargando...">
-						</td>
-					</tr>
-				</tbody></table>
+				<img src="p_files/ajax_loader.gif" alt="Cargando...">
 			</span>
 		</div>
     
