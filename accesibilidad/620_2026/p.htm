@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">   
+    
+    	    	
+    	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+		<meta charset="ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="theme-color" content="#002855">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+    
+
+    
+   		
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	<script type="text/javascript" src="p_files/purify.min.js"></script>
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+			
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.min.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.min.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery.blockUI.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.form.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery.base64.js"></script>
+
+<link href="p_files/select2.min.css" rel="stylesheet">
+<script src="p_files/select2.min.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.min.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.min.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.min.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+		
+
+	   
+	    <script src="p_files/GreJsFuncionesJQueryAdjuntarDocumento_v1.js"></script>
+
+		
+
+
+		
+	<script>
+	
+		if (history.forward(1)){location.replace(history.forward(1))}
+		
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}	
+		
+		//COMPROBAMOS SI SE TIENE QUE MOSTRAR EL AVISO DE ELIMINACION DE DATOS ADJUNTOS
+		function doCambioMatricula()
+		{
+			 $("#botonDatosVehiculoDGT").val('true');
+			 
+			 
+			 $("#btnDatosVehiculoDGT").addClass("busqueda");
+			 $("#btnDatosVehiculoDGT").addClass("buscando");
+			 
+			 
+			//ASISTENTE ADJUTAR DOCUMENTACION ACTIVADO
+			if ("true" == $("#isActivadoAsistenteADJVET").val())
+			{
+				var martriculaInicial = $("#matricula").val();
+				var matriculaNueva = $("#etNumeroMatricula").val();
+				
+				//CAMBIO DE MATRICULA
+				if (0 < $("#numeroDocumetosAdjuntos").val()
+						&& martriculaInicial != matriculaNueva)
+				{
+					mostrarDialogoConfirmacionResetarDialogoVET();
+				}
+				else
+				{
+					submitWithPosicionScroll('btnDatosVehiculoDGT');
+				}
+			}
+			else
+			{
+				submitWithPosicionScroll('btnDatosVehiculoDGT');	
+			}
+			 
+		}
+		
+		//COMPROBAMOS SI SE TIENE QUE MOSTRAR EL AVISO DE ELIMINACION DE DATOS ADJUNTOS
+		function doCambioTipoVehiculo()
+		{
+			if (0 < $("#numeroDocumetosAdjuntos").val())
+			{
+				mostrarDialogoConfirmacionResetarDialogoVET();
+			}
+			else
+			{
+				submitWithPosicionScroll('ddSelectTipoVehiculo');
+			}
+		}
+		
+		//CARGAMOS LOS DATOS EN EL CASO DE QUE SE REALICEN CAMBIOS SIN HACER SUBMIT
+		function doLoadDatos2Asistente()
+		{
+			$("#matricula").val($("#etNumeroMatricula").val());
+			$("#porcentajeTransmision").val($("#etPorcentajeTransmision").val());
+			
+			var dfecha1Matriculacion = $("#etPrimeraFechaMatriculacionDia").val()
+												  + "/" + $("#etPrimeraFechaMatriculacionMes").val()
+												  + "/" + $("#etPrimeraFechaMatriculacionAnno").val();
+			$("#fecha1Matriculacion").val(dfecha1Matriculacion);
+		}
+		
+		
+		
+		
+		$(function() 
+		{
+			
+			
+			//--Si el aviso de mostrar adjuntar documentacion ha sido mostrado.
+			if ("true" == $("#isActivadoAsistenteADJVET").val())
+			{
+				  $("#idDivDocAjuntaVET").show();//MOSTRAMOS EL DIV DEL ASISTENTE DE ADJUNTAR DOCUMENTACION
+				  $("#idDivDatosTecnicosComunes").removeClass('contenidoDatos').addClass('contenidoFila');
+			}
+			
+			//AL VALIDAR MOSTRAMOS EL AVISO DE ADJUNTAR DOCUMENTACION ADJUNTA
+
+			
+	});
+			
+			 
+
+			
+			
+			
+			
+			
+</script><script src="p_files/prompt.js"></script></head>	
+	
+    
+
+	
+    	
+        
+        
+        
+        	
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		
+        		
+
+        
+        
+        
+        
+           	
+
+
+
+	<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+	
+
+    	<body id="idBody" onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()"> 
+     
+        
+        <h1></h1><h2></h2>	<!-- ESTA LINEA ES NECESARIA PARA LOS ELEMENTOS DE ACCESIBILIDAD -->
+
+        <form id="MODELO" name="MODELO" method="post" action="./GreSvlProcesarPeticiones" target="_self">
+        
+		<!-- Varible para almacenar la posicion del scroll. -->
+        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+        
+        <!-- Varible para almacenar la posicion del foco. -->
+        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+        
+        <!-- No se puede mover de aquí, necesario para los anexos. -->
+        <input id="validar" type="hidden" name="validar" value="false">
+        
+		<input type="hidden" name="idListaSesion" id="idListaSesion" value="">
+        
+        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="9441990569">   
+      
+      	<!-- hidden para controlar el funcionamiento del asistente adjuntar documentacion -->
+        <input type="hidden" id="isActivadoAsistenteADJVET" name="isActivadoAsistenteADJVET" value="false">
+        <input type="hidden" id="isAvisoMostradoAsistenteADJVET" name="isAvisoMostradoAsistenteADJVET" value="false">
+        <input type="hidden" id="isClikedDeleteDataAsistenteADJVET" name="isClikedDeleteDataAsistenteADJVET" value="false">
+        <input type="hidden" id="botonDatosVehiculoDGT" name="botonDatosVehiculoDGT" value="false">
+        
+        
+       
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<div class="filaSepardor"></div>
+		
+		<div class="principal novisible">
+		
+			
+
+
+
+
+
+
+
+
+
+			
+			<div class="filaSepardor"></div>
+			<!-- CABECERA -->
+			<div class="contenidoCabecera">
+				<fieldset class="contenidoCabecera">
+					<div class="contenidoCabeceraTexto">
+						<div class="col">Cálculo del recargo e intereses de demora por presentación fuera de plazo</div>
+ 						
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#Recargoeinteresesdeautoliquidaci%C3%B3npresentadasfueradeplazo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+</div>
+			</fieldset>
+		</div>
+		
+		<div class="contenidoDatos">
+			<fieldset class="contenidoDatos">
+				<div class="contenidoDatos">
+					<div class="row">
+						<div class="col-5 col-xl-4 colResponsive">
+							<label for="fechaDevengoDiaIntereses" name="labelFechaDevengoDia">
+
+										Devengo
+ 
+							</label>
+						</div>
+					
+					
+						<div class="col-7 col-xl-4 colResponsive">
+ 
+								<label for="fechaDevengoDiaIntereses" name="fechaDevengoError" class="marcaError"> 
+									 
+								</label>
+								<div class="w-100">
+									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Dia fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" size="3" maxlength="4" readonly="readonly">
+								</div> 
+
+					</div>
+						
+						
+				<div class="col5px">
+					<label for="codigoTerritorialIntereses" name="labelCodigoTerritorial"> 
+					<!--  Código Territorial  -->
+					</label> 
+					<label for="codigoTerritorialIntereses" name="codigoTerritorialError" class="marcaError"> 
+						 
+					</label>
+	
+					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="" size="6" maxlength="6" readonly="readonly" type="hidden">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="labelFechaFinDePlazoDia"> 
+
+						Fecha fin de plazo 
+ 
+					</label>
+				</div>
+				
+				<div class="col-7 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="fechaFinDePlazoError" class="marcaError">
+						  
+					</label>
+					<div class="w-100">
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Dia Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoMes" class="visually-hidden">Mes Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" size="3" maxlength="4">
+					</div>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaIngresoDia" name="labelFechaIngresoDia"> 
+						Fecha de presentación prevista 
+					</label>
+				</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<label for="fechaIngresoDia" name="fechaIngresoError" class="marcaError"> 
+					 
+				</label> 
+				<div class="w-100">
+					<input id="fechaIngresoDia" name="fechaIngresoDia" title="Dia Fecha Ingreso" size="1" maxlength="2"> 
+				    
+				    <label for="fechaIngresoMes" class="visually-hidden">Mes Fecha Ingreso</label>
+				    <input id="fechaIngresoMes" title="Mes Fecha Ingreso" name="fechaIngresoMes" size="1" maxlength="2"> 
+				    
+				    <label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Ingreso</label>
+				    <input id="fechaFinDePlazoAnyo" title="Año Fecha Ingreso" name="fechaIngresoAnyo" size="3" maxlength="4">
+			    </div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeCuota" name="labelimporteCuota"> 
+					Importe a ingresar resultante de la autoliquidación 
+				</label> 
+				<label for="importeCuota" name="labelimporteCuotaIntereses" class="marcaError">
+				 	 
+				 </label>
+			</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeCuota" name="importeCuota" readonly="readonly" value="0" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="porcentajeRecargoIntereses" name="labelimporteRecargoIntereses"> Corresponde un recargo del </label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="porcentajeRecargoIntereses" name="porcentajeRecargoIntereses" value="0" size="4" maxlength="4" class="proteger alineamientoDerecha w-100" readonly="readonly"> 
+				<label for="importeRecargoIntereses" name="labelporcentajeRecargoIntereses">
+					 %. No obstante, si realiza el ingreso de la deuda resultante de esta autoliquidación el recargo se	reduce en el 25 %. 
+				</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeRecargoIntereses" name="labelimporteIntereses"> 
+					Recargo reducido 
+				</label>
+			</div>
+		
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeRecargoIntereses" name="importeRecargoIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeIntereses" name="labelimporteIntereses"> 
+					Intereses 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+			<input id="importeIntereses" name="importeIntereses" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeTotalAPagarIntereses" name="labelimporteTotalAPagarIntereses"> 
+					Total a ingresar 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	</div></fieldset>
+
+		<!-- SEPARADOR DE LA BARRA DE BOTONES -->
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<!-- MARCO BARRA DE BOTONES -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="row">
+		        	<div class="col-12 col-xl-12 colResponsive">
+			            <fieldset id="marcosInformativos" class="letra70">
+			                
+							
+							<!-- BOTONES -->	
+								<input type="submit" value="  Realizar el cálculo  " name="botonIntereses">
+								<input type="submit" value="   Incorporar datos    " name="botonInteresesIncorporar">
+								<input type="submit" value="   Salir    " name="botonInteresesSalir">
+	
+	  							
+			            </fieldset>
+			        </div>	    
+		        </div>
+		    </fieldset>
+		</div>
+
+
+	<!-- CAMPOS HIDDEN -->
+	<input type="hidden" name="comprobarIntereses" value="0">
+	<input type="hidden" name="periodoAnterior" value="null">
+
+</div>
+</div>
+        
+        
+
+        
+        
+
+
+
+
+
+
+
+<div class="principal novisible">
+	
+	<div class="contenidoDatos">
+		<!-- CABECERA PRINCIPAL -->	
+		<fieldset id="marcosInformativos" class="letraNormal">
+	        <div class="filaCentrada">
+	                <div class="filaCentrada">
+	                    <div class="colCentrada">
+	                        Vehiculos procedentes UE
+	                    </div>
+	                </div>	
+	        </div>
+	    </fieldset>
+		
+		
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		
+		<!-- PINTAMOS LA CABECERA -->
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+				<div class="contenidoCabeceraTexto">
+					<div class="col">
+					 Liquidación Vehiculos UE
+					</div>
+					
+			        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=620_2026&amp;ayudaContextual=4.donacionesacumulables.htm" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+ 
+				</div>
+			</fieldset>
+		</div>	
+		
+		
+		<fieldset class="contenidoDatos">
+	           <div class="fila">		
+					<div class="col">
+	                   	<label for="ueSelectPaisProcedencia" class="marcaError">
+	                   		
+	                  		</label>
+	                   	<label for="ueSelectPaisProcedencia">Seleccione el país de procedencia</label>
+                  		<select id="ueSelectPaisProcedencia" name="ueSelectPaisProcedencia">	
+                  			<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="DE">ALEMANIA</option><option value="AT">AUSTRIA</option><option value="BE">BÉLGICA</option><option value="CY">CHIPRE</option><option value="DK">DINAMARCA</option><option value="SK">REPÚBLICA ESLOVACA</option><option value="SI">ESLOVENIA</option><option value="EE">ESTONIA</option><option value="FL">FINLANDIA</option><option value="FR">FRANCIA</option><option value="GB">GRAN BRETAÑA</option><option value="EL">GRECIA</option><option value="HU">HUNGRÍA</option><option value="NL">HOLANDA</option><option value="IE">IRLANDA</option><option value="IT">ITALIA</option><option value="LV">LETONIA</option><option value="LT">LITUANIA</option><option value="LU">LUXEMBURGO</option><option value="MT">MALTA</option><option value="PL">POLONIA</option><option value="CZ">REPÚBLICA CHECA</option><option value="PT">PORTUGAL</option><option value="SE">SUECIA</option>
+                  		</select>
+					</div>
+				</div>
+				<div class="filaSepardor"></div>	
+				<div class="fila">	
+					<div class="col">
+	                   	<input name="ueNumeroIdentificacionError" for="ueNumeroIdentificacionError" type="hidden" value="">
+	                   	<label for="accesibilidad" class="marcaError">
+	                   		<input type="hidden" id="accesibilidad">
+	                  		</label>
+	                   	<label for="ueNumeroIdentificacion">Número de identificación</label>
+                      	<input id="ueNumeroIdentificacion" name="ueNumeroIdentificacion" size="15" maxlength="15">
+					</div>
+				</div>	
+				<div class="filaSepardor"></div>
+				<div class="fila">	
+					<div class="col">
+	                   	<input name="ueApellidosNombreError" for="ueApellidosNombreError" type="hidden" value="">
+	                   	<label for="ueApellidosNombre" class="marcaError">
+	                   		
+	                  		</label>
+	                   	<label for="ueApellidosNombre">Apellidos y nombre ó razón social</label>
+                      	<input id="ueApellidosNombre" name="ueApellidosNombre" size="55" maxlength="60">
+					</div>
+				</div>	
+		</fieldset></div>
+	
+		
+		
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">
+									
+									<input id="almacenar&gt;" name="almacenar" type="submit" value=" Almacenar datos introducidos ">
+									<input id="volver" name="volcer" type="submit" value=" Volver atrás ">
+		                </div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+		
+		
+		<div class="novisible">
+				<input id="oculto" name="almacenarVehiculosUE" type="submit" value="veamos">
+		</div>
+		
+</div><!-- FIN DEL DIV CONTENIDO DATOS -->
+
+		
+		
+			
+		<!-- BARRA DE CARGA DE DATOS -->
+		
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+
+		        
+        <!-- PRINCIPAL MODELO 620_2026 -->
+        <div id="principal" class="principal visible">
+            
+            
+           
+            
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>IMPUESTO SOBRE TRANSMISIONES PATRIMONIALES Y ACTOS JURÍDICOS DOCUMENTADOS</h1>
+			<h2>Transmisión de determinados medios de trasporte usados</h2>
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 620</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202610</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+						<div class="fila">
+							<div class="colAlineamientoDerecha">
+								  	 
+								<button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">
+											
+									<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+												<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+									</svg>
+									<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+										 Identificarse
+									</span>
+								</button>
+							</div> 
+						</div>	 	
+	
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+			<!--  <div class="filaSepardor"></div> -->
+			<div class="filaCentrada">
+				<div class="colCentrada">
+					<fieldset class="paralelos">
+						<a href="https://webgreco.local/webgreco/procesamientoporlotes/jsp/GreJspAdjuntarArchivo.jsp?modelo=620_2026" target="_self" onclick="registrarEnLogPulsacionBoton('PROCESO POR LOTES', " +="" sdatoscenso_+="" ");="" window.open(this.href,="" '',="" '');="" return="" false;"="">
+							Proceso por lotes
+						</a>
+					</fieldset>					
+					<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#Procesoporlotes" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+					</a>		
+				</div>	
+			</div>
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+           
+            
+
+	        <div class="filaSepardor"></div> 
+	         
+            
+
+
+
+
+
+
+
+
+
+            
+            <div class="filaSepardor"></div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$(function()  
+	{
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#fechaDevengo").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+	});
+	
+	function updateFechaDevengo()
+	{
+		//alert('se ha modificado la fecha de devengo.');
+		    
+	    var isCorrectaFechaDevengo = validarFormatoFecha($('#fechaDevengo').val());
+	    //alert('Fecha de devengo correcta: ' + isCorrectaFechaDevengo);
+	    
+	    if (isCorrectaFechaDevengo)
+	    {
+	    	$("#fechaDevengoDia").val($("#fechaDevengo").val().substring(0,2));
+	    	$("#fechaDevengoMes").val($("#fechaDevengo").val().substring(3,5));
+	    	$("#fechaDevengoAnno").val($("#fechaDevengo").val().substring(6,10));
+	    }
+	    else
+	    {
+	    	$("#fechaDevengoDia").val('');
+	    	$("#fechaDevengoMes").val('');
+	    	$("#fechaDevengoAnno").val('');
+	    }
+	    
+	    submitWithPosicionScroll('fechaDevengo');
+	}
+	
+	function validarFormatoFecha(campo) {
+	     var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+	     if ((campo.match(RegExPattern)) && (campo!='')) {
+	           return true;
+	     } else {
+	           return false;
+	     }
+	}
+	
+	function existeFecha(fecha){
+	     var fechaf = fecha.split("/");
+	     var day = fechaf[0];
+	     var month = fechaf[1];
+	     var year = fechaf[2];
+	     var date = new Date(year,month,'0');
+	     if((day-0)>(date.getDate()-0)){
+	           return false;
+	     }
+	     return true;
+	}
+
+</script>
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+
+	
+    
+
+ 	
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+        
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos del Documento
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#Oficinaliquidadorayc%C3%B3digoterritorial" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<div class="row"> <!-- FILA 1 -->
+			<div class="col-6 col-xl-3 colResponsive">
+				<label for="selectOficinaLiquidadora" name="selectOficinaLiquidadoraError" class="marcaError"></label>
+
+				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
+					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
+	                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option value="EH1301">CIUDAD REAL</option><option value="EH1601">CUENCA</option><option value="EH1901">GUADALAJARA</option><option value="EH4501">TOLEDO</option>
+	               	</select>
+               	
+               	
+                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="">
+
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
+				<label for="codigoTerritorial">Código territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6">
+			</div>
+		</div>
+		
+		
+				
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">
+					<strong>2</strong>
+    	            <label for="fechaDevengo">Fecha Devengo:</label><input type="hidden" id="accesibilidad">
+				<label for="fechaDevengo" class="marcaError">
+					
+				</label>
+				
+				
+				<input type="text" size="10" maxlength="10" name="fechaDevengo" id="fechaDevengo" class="w-100 hasDatepicker" readonly="readonly" onchange="updateFechaDevengo()" placeholder="dd/mm/yyyy">
+						
+				<input type="hidden" id="fechaDevengoDia" name="fechaDevengoDia" class="" value="" size="2" maxlength="2">
+				<input type="hidden" id="fechaDevengoMes" name="fechaDevengoMes" class="" value="" size="2" maxlength="2">			
+				<input type="hidden" id="fechaDevengoAnno" name="fechaDevengoAnno" class="" value="" size="4" maxlength="4">
+			</div>
+		</div>
+		
+
+		
+		
+
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+
+	
+	
+		<div class="row novisible">
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>3</strong>
+				<label for="selectConceptoDescripcion" class="labelInline">Concepto			
+				<label for="selectConceptoDescripcion" class="marcaError"></label>
+				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
+	                <select id="selectConceptoDescripcion" class="w-100" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" size="1">
+						
+					</select>	
+				</label>				
+			</div>
+			
+			<div class="col-12 col-xl-2 colResponsive">
+				<label class="labelInline" for="codigoConcepto">&nbsp;</label>
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" size="4" maxlength="4" readonly="readonly">
+				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="proteger" value="">		
+								
+			</div>
+		</div>
+
+
+		
+				
+			
+	</fieldset>
+</div>			
+            
+            <div class="filaSepardor"></div>
+            
+	         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Sujeto Pasivo (A)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#(A)Datosidentificativosdelsujetopasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="620_2026">
+</div>		
+
+	        
+	        <div class="filaSepardor"></div>
+	        
+	        
+
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Transmitente (B)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#(B)Datosidentificativosdeltransmitente" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		
+			
+			
+			
+		<!--  Fila 1 NIF, Nombre -->
+		<!-- ------------------- -->		 
+		<div class="row">			
+			<input type="hidden" name="trVehiculoUE" value=""> 
+			<input type="hidden" name="trCoeficiente" value=""> 
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>19</strong>
+				<label for="trNif" name="trNifError" class="marcaError"></label>
+                <label for="trNif">NIF</label>
+                <input id="trNif" name="trNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>20</strong>
+				<label for="trNombre" name="trNombreError" class="marcaError"></label>
+                <label for="trNombre">Apellidos y nombre o razón social</label>
+                <input id="trNombre" name="trNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>
+		</div>
+				
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>21</strong>
+				<label for="trSelectSiglas" name="trSelectSiglasError" class="marcaError"></label>
+                <label for="trSelectSiglas">Siglas</label>
+                <select id="trSelectSiglas" name="trSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+           		</select>
+               		
+                <input type="hidden" name="trSelectSiglasValidado" value=""> 
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>22</strong>
+				<label for="trNombreVia" name="trNombreViaError" class="marcaError"></label>
+                <label for="trNombreVia">Nombre Vía Pública</label>
+                <input id="trNombreVia" name="trNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>23</strong>
+				<label for="trNumero" name="trNumeroError" class="marcaError"></label>
+                <label for="trNumero">Número</label>
+                <input id="trNumero" name="trNumero" class="w-100 " size="4" maxlength="8">
+			</div>
+		</div>
+		
+		
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>24</strong>
+				<label for="trLetra" name="trLetraError" class="marcaError"></label>
+                <label for="trLetra">Bloque</label>
+                <input id="trLetra" name="trLetra" class="w-100 " size="1" maxlength="3">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>25</strong>
+				<label for="trEscalera" name="trEscaleraError" class="marcaError"></label>
+                <label for="trEscalera">Escalera</label>
+                <input id="trEscalera" name="trEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>26</strong>
+				<label for="trPiso" name="trPisoError" class="marcaError"></label>
+                <label for="trPiso">Planta</label>
+                <input id="trPiso" name="trPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>27</strong>
+				<label for="trPuerta" name="trPuertaError" class="marcaError"></label>
+                <label for="trPuerta">Puerta</label>
+                <input id="trPuerta" name="trPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>28</strong>
+				<label for="trTelefono" name="trTelefonoError" class="marcaError"></label>
+                <label for="trTelefono">Telf.</label>
+                <input id="trTelefono" name="trTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>29</strong>
+				<label for="trFax" name="trFaxError" class="marcaError"></label>
+                <label for="trFax">Fax</label>
+                <input id="trFax" name="trFax" class="w-100 " size="8" maxlength="9">
+			</div>
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				<strong>31</strong>
+				<label for="trSelectProvincia" name="trSelectProvinciaError" class="marcaError"></label>
+		        <label for="trSelectProvincia">Provincia</label>
+				<select id="trSelectProvincia" name="trSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('trSelectProvincia', 'trSelectMunicipio')">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+		        </select>
+		        	
+        		<input type="hidden" name="trSelectProvinciaValidado" value="">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>30</strong>
+				<label for="trSelectMunicipio" name="trMunicipioError" class="marcaError"></label>
+                <label for="trSelectMunicipio">Municipio</label>
+                <select id="trSelectMunicipio" name="trSelectMunicipio" class="w-100 " size="1"> 
+                	
+               	</select>
+            		
+                <input type="hidden" name="trSelectMunicipioValidado" value="">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>32</strong>
+				<label for="trCodPostal" name="trCodPostalError" class="marcaError"></label>
+                <label for="trCodPostal">C. Postal</label>
+                <input id="trCodPostal" name="trCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+		</div>
+	</fieldset>
+</div>	
+
+	
+	        
+            <div class="filaSepardor"></div>
+            
+            <!-- DATOS DEL DOCUMENTO -->           
+            <!-- CARACTERISTICAS TECNICAS -->
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+                        <div class="col">
+                        	Características Técnicas (C)
+                        </div>
+                        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#(C)Caracter%C3%ADsticast%C3%A9cnicas" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                    </div>	 
+                </fieldset>
+            </div>
+            <div class="contenidoDatos">
+                <fieldset class="contenidoFila"> <!-- FILA 1 -->
+                    <div class="row"> 
+	                    
+	                    <div class="col-12 col-xl-6 colResponsive">
+	                        <strong>47</strong>
+	                        <label for="ddSelectTipoVehiculo" class="marcaError">
+	                        	
+	                        </label>
+	                        <label for="ddSelectTipoVehiculo">Tipo de Vehículo</label> 
+	                        <select id="ddSelectTipoVehiculo" name="ddSelectTipoVehiculo" class="" size="1" onchange="doCambioTipoVehiculo()">
+	                           <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="1">TURISMO/TODOTERRENO</option><option value="17">AUTOCARAVANA</option><option value="3">MOTOCICLETA</option><option value="4">CICLOMOTOR</option><option value="15">MOTO ELECTRICA</option><option value="6">EMBARCACIÓN</option><option value="16_2026">MOTO NAUTICA</option><option value="7">AERONAVE</option><option value="8">OTROS VEHÍCULOS LIGEROS</option><option value="10">QUAD-ATV</option><option value="11">REMOLQUE AGRICOLA</option><option value="12">TRACTOR</option><option value="9">RESTO DE VEHÍCULOS</option><option value="13">VEHÍCULOS FUERA TABLAS</option>
+	                        </select>
+	                        <input type="hidden" name="ddStoredTipoVehiculo" value="">
+	                    </div>
+                    </div>
+                    
+               </fieldset>                   
+              
+
+            
+		<!-- DATOS TECNICOS COMUNES -->
+           
+   			 <fieldset class="contenidoDatos" id="idDivDatosTecnicosComunes"> <!-- DATOS TECNICOS COMUNES -->
+                    <div class="row"> 
+						<!-- AÑO DE FABRICACIÓN -->
+						<div class="col-12 col-xl-3 colResponsive">
+		                    <strong>70</strong>
+		                    <label for="etAnyoFabricacion" name="etAnyoFabricacionError" class="marcaError">
+	                            </label>
+	                    	<label for="etAnyoFabricacion">Año de fabricación</label>
+                            <input id="etAnyoFabricacion" name="etAnyoFabricacion" type="text" size="4" maxlength="4" class="w-100  alineamientoDerecha">
+                        </div>
+                        <!-- FECHA DE LA PRIMERA MATRICULACION -->
+	                     <div class="col-12 col-xl-4 colResponsive">	                        
+	                            <strong>71</strong>
+	                            <label for="etPrimeraFechaMatriculacionDia" name="etPrimeraFechaMatriculacionDiaError" class="marcaError">
+	                            </label>
+	                            <label for="etPrimeraFechaMatriculacionDia">Fecha de 1ª matriculación</label>
+								<div class="w-100">
+									
+		                            <input id="etPrimeraFechaMatriculacionDia" name="etPrimeraFechaMatriculacionDia" class="" size="2" maxlength="2">
+	                            
+	                            	<label for="etPrimeraFechaMatriculacionMes" class="visually-hidden">Mes Fecha de 1ª matriculación</label>
+		                            <input id="etPrimeraFechaMatriculacionMes" name="etPrimeraFechaMatriculacionMes" class="" size="2" maxlength="2">
+
+									<label for="etPrimeraFechaMatriculacionAnno" class="visually-hidden">Año Fecha de 1ª matriculación</label>
+		                            <input id="etPrimeraFechaMatriculacionAnno" name="etPrimeraFechaMatriculacionAnno" class="" "="" size="4" maxlength="4">
+		                        </div>
+	                        </div>
+	                  </div>
+	                 
+	                 <div class="row">       
+                    
+                        <!-- PORCENTAJE DE TRANSMISION -->
+                        <div class="col-12 col-xl-3 colResponsive">
+		                    <strong>73</strong>
+		                    <label for="etPorcentajeTransmision" class="marcaError">
+	                            </label>
+	                    	<label for="etPorcentajeTransmision">Porcentaje de transmisión</label>
+                            <input id="etPorcentajeTransmision" name="etPorcentajeTransmision" class="w-100  alineamientoDerecha" value="100,00" type="text" size="4" maxlength="5">                            	
+                        </div>
+                        <!-- FIN DE LA FILA -->
+            		</div>
+            		
+            		
+            </fieldset>
+            	
+            <fieldset class="contenidoDatos" id="idDivDocAjuntaVET" style="display: none; overflow:auto"> <!-- DATOS DOCUMENTACION ADJUNTA --> 
+				<div class="filaCentrada">
+					<strong>DOCUMENTACIÓN ADJUNTA</strong>
+				</div>	
+            	<!-- Adjuntar Documentacion -->
+            	<div class="row">
+            			
+					    	
+					    
+					    
+						
+								<div class="filaSepardor"></div>
+								
+								 <table id="tablaDocumentosVET" cellpadding="0" cellspacing="0" class="datos columna_70_porciento">
+								 </table> 
+								 
+								 <div class="filaSepardor"></div>
+							
+							  
+							<div class="fila">
+								<div class="colCentrada">
+									<button type="button" id="botonIniciar_AJD_DOC_VET" name="botonIniciar_AJD_DOC_VET" onclick="ventanaInfoAdjuntarDocumentacion();doLoadDatos2Asistente();" alt="Añadir nombre y descripción del documento a adjuntar a la hora de la presentación">Adjuntar Documento</button>
+								</div>
+							</div>
+							
+						
+						  
+						    <div id="IdContenedorDialogoDocumentacion">
+							    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="dialgo-AdjuntarDocumentacion" title="Asistente Adjuntar Documentación" style="display: none;">
+
+	<!-- MOSTRAMOS LOS ERRORES -->
+	<div class="fila">
+	
+		<div class="fila">
+			<div id="capaMensajesError">
+				<div id="divErrores" class="alert alert-danger mt-3" role="alert">
+				
+				</div>
+			</div>
+			<!-- 
+			<div class="fila  alert alert-success" id="idAlertaDatosCorrectos" style="display: none;">
+				<p>Los datos cumplimentados son correctos, pulse <strong>Salir</strong> para continuar.</p>
+			</div>
+			 -->
+		</div>
+		
+		<div class="filaSepardor"></div>
+		
+		<div class="row">
+
+			<div id="datosDeAsistenteADJ" style="overflow:auto">
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+		
+		<div class="container-fluid">
+
+			</div>		
+					
+
+
+<script>
+
+	//AÑADIMOS EL DATEPICKER A el campo de fecha de escritura
+
+
+	//UNA VEZ CUMPLIMENTADO LOS DATOS DEL ASISTENTE SE ENCAGA DE PASARLO AL MODELO
+	function pasarDatosAsistenteCasillasModelo()
+	{
+		/*
+		if (isAsistenteCumplimentadoVET())
+		{
+		
+			
+			//SI HAY DOCUMENTO ADJUNTO, BLOQUEAMOS LOS CAMPOS.
+			if ($("#numeroDocumetosAdjuntos").length > 0 && $("#numeroDocumetosAdjuntos").val() != '0')
+			{
+			
+			}
+			else
+			{
+				activarCamposModeloAsistente2Modelo();
+			}
+		}
+		else
+		{
+			activarCamposModeloAsistente2Modelo();
+		}
+		*/
+	}
+
+	function activarCamposModeloAsistente2Modelo()
+	{
+		/*
+		$('#ddProtocoloNumero').removeAttr('readonly');
+		$('#ddProtocoloNumero').removeClass('proteger');
+		
+		$('#ddProtocoloAnno').removeAttr('readonly');
+		$('#ddProtocoloAnno').removeClass('proteger');
+		
+		$('#ddProtocoloNumeroBis').removeAttr('readonly');
+		$('#ddProtocoloNumeroBis').removeClass('proteger');
+		
+		$('#ddFechaEscritura').removeAttr('readonly');
+		$('#ddFechaEscritura').removeClass('proteger');
+		
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#ddFechaEscritura").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+		*/
+	}
+	
+	
+	
+	function getJSONDatosAsistenteCumplimentados()
+	{
+		var sb_return = "{ \"tipoVehiculo\": \"";
+		sb_return = sb_return + $("#tipoVehiculo").val() + "\",";
+		
+		var sb_return = sb_return + "\"fecha1Matriculacion\": \"";
+		sb_return = sb_return + $("#fecha1Matriculacion").val() + "\",";
+		
+		var sb_return = sb_return + "\"numeroProtocolo\": \"";
+		sb_return = sb_return + $("#numeroProtocolo").val() + "\",";
+		
+		var sb_return = sb_return + "\"matricula\": \"";
+		sb_return = sb_return +  $("#matricula").val() + "\",";
+		
+		var sb_return = sb_return + "\"porcentajeTransmision\": \"";
+		sb_return = sb_return +  $("#porcentajeTransmision").val() + "\",";
+		
+	
+		var sb_return = sb_return + "\"nombreDocumento\": \"";
+		sb_return = sb_return +  $("#nombreDocumento").val() + "\"}";
+		
+		//alert('getJSONDatosAsistenteCumplimentados(): ' + sb_return);
+		sb_return = $.base64.encode(sb_return);
+		//alert('getJSONDatosAsistenteCumplimentados() Base64: ' + sb_return);
+		
+		 
+		
+		return sb_return;
+	}
+	
+	
+	
+	
+	
+	
+	//ACCIONES EN CERRAR EL DIALOGO
+	function accionCerrarDialgoADJ() 
+	{
+		$('#capaMensajesError').hide();
+		$(this).dialog("close");
+		//pasarDatosAsistenteCasillasModelo();
+		mostrarTablaDocAdjuntosVET();
+		
+	}
+	
+	
+	
+	
+
+	
+</script>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="filaSepardor"></div>
+					
+					<div class="container-fluid">
+						<fieldset>
+						<legend>Documentos adjuntados:</legend> 			
+					<div class="row" style="overflow:auto">
+						<div class="col-12 col-xl-12 colResponsive">	
+								  <table id="tablaDocumentos" class="w-100" cellpadding="0" cellspacing="0"> 	
+										<tbody><tr>
+											
+											<td>Descripcion de documento</td>
+											<td class="columna_30_porciento">Huella (MD5 base64)</td>
+											<td class="columna_5_porciento">&nbsp;<input type="hidden" name="cambiarCheck" value="checkbox" onclick=""></td>
+												
+										</tr>
+									</tbody></table>
+									<input type="hidden" id="datosTablaJSON" value="eyJwb3JjZW50YWplVHJhbnNtaXNpb24iOiIiLCJub21icmVEb2N1bWVudG8iOiIiLCJmZWNoYTFNYXRyaWN1bGFjaW9uIjoiIiwibWF0cmljdWxhIjoiIiwibnVtZXJvRG9jdW1ldG9zQWRqdW50b3MiOiIwIiwidGlwb1ZlaGljdWxvIjoiIiwibGlzdGFEb2N1bWVudG9zIjpbXSwiZXJyb3IiOmZhbHNlfQ==">
+									<input type="hidden" id="numeroDocumetosAdjuntos" name="numeroDocumetosAdjuntos" value="0">
+									<input type="hidden" id="numeroMaximoDoc" name="numeroMaximoDoc" value="5">
+								</div>
+							</div>	
+							<!-- BARRA CARGANDO -->
+							<div class="filaSepardor"></div>
+								<div class="row justify-content-center" id="capaCargandoAsistenteADJ" style="display: none;">
+									<div class="colCentrada">					
+											<img src="p_files/pb_gap.gif" width="70" height="70" alt="Trabajando..." border="0" id="ov">
+									</div>
+								</div>
+							<div class="filaSepardor"></div>
+						</fieldset>
+					</div>
+				
+					<div class="filaSepardor"></div>
+					<div class="filaSepardor"></div>
+				
+					<div class="container-fluid">
+						<fieldset class="apartado">
+							<legend>Introduzca el archivo que va a ser adjuntado:</legend> 	
+					
+							<div class="row">
+								<div class="col-12 col-xl-12 colResponsive">
+									<label for="nombreDocumentoLabel">Nombre del documento a adjuntar:</label> 
+									<input type="text" id="nombreDocumento" class="w-100" name="nombreDocumento" size="40" maxlength="60">
+								</div>	
+							</div>
+					
+							<div class="row mt-2">
+								<div class="col-12 col-xl-12 colResponsive">
+									<label for="archivoAdjuntarLabel">Ruta del archivo:</label>
+									<input type="file" id="archivoAdjuntar" class="w-100" name="archivoAdjuntar">
+								</div>	
+							</div>
+							
+							<div class="row justify-content-center mt-3">
+								<div class="colCentrada">
+									<button type="button" id="botonAdjuntarDocumentacion" name="botonAdjuntarDocumentacion" onclick="adjuntarDocumento();" alt="Añadir nombre y descripción del documento a adjuntar a la hora de la presentación">Adjuntar documento</button>
+								</div>	
+							</div>
+						</fieldset>
+					</div>		
+					
+				
+				</div> <!-- div Asistente ADJ -->
+				
+				
+				<input type="hidden" id="botonCancelar">
+				<input type="hidden" id="botonGuardarCambios">
+				<input type="hidden" id="idFilaSeleccioandaBorrar">
+				<input type="hidden" id="tipoAsistente" value="3">			
+				
+
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<div id="dialgo-ConfirmacionBorrarDocumentoADJ" title="Aviso" style="display: none;">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+				<label>¿Esta seguro que quiere eliminar el documento adjuntado?</label>
+				</div>
+			</div>
+		</div>	
+			
+</div>    
+
+
+<div id="dialgo-ConfirmacionResetearDialogoADJ" title="Aviso" style="display: none;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<label>¿Esta seguro que quiere eliminar todos los datos cumplimentados en el asistente?</label>
+			</div>	
+		</div>
+	</div>	
+</div> 
+
+
+<script>
+
+	
+	//-- -------------------------------------------------------------------------------
+	//-- -------------------------------------------------------------------------------
+	//FUNCIONES GENERALES DE COMPORTAMIENTO
+	$('#MODELO').submit(function()
+    {
+		 incorporarDatosAsistentes();                          
+    })
+     
+    function submitWithPosicionScroll(element) 
+	{
+		alamacenarPosicionFoco(element);
+		var offsetScroll = 0;
+		offsetScroll = xScrollTop(window, true);
+		document.forms[0].posicionScroll.value = offsetScroll;
+		
+		incorporarDatosAsistentes(); 
+		 
+		document.forms[0].submit();
+			
+		//MOSTRAMOS LA BARRA DE CARGA CUANDO VIAJAMOS POR UN COMBO
+		if (booVersionPublico)
+		{
+			mostrarBarraDeCarga();
+		}
+		
+		//AJGG. DESACTIVAMOS EL BOTON BUSQUEDA CUANDO HACEMOS EL SUBMIT
+		//alert("nombre del elemento; " + element)
+		if(element == "botonDatosVehiculoDGT")
+		{
+			document.forms[0].btnDatosVehiculoDGT.className = "buscando";
+		}
+		if(element == "botonMostrarVehiculoManual")
+		{
+			document.forms[0].botonMostrarVehiculoManual.className = "buscando";
+		}
+		
+		
+		 // AJGG. LEEMOS LA COOKIE STYLE PARA MANTENER EL 
+		  // TAMAO DE LETRA SELECCIONADO POR EL USUARIO
+		  var cookie = readCookie("style"); 
+		  var title = cookie? cookie : getPreferredStyleSheet(); 
+		  setActiveStyleSheet(title); 
+		
+	}
+
+	// JQuery en los dialog que crea añade un div por encima de nuestro div ventana_conConstruccion y lo saca aparte, fuera del form
+    // por tanto los datos de la ventana dejan de pertenecer al formulario.
+    // Con esta función volvemos a incorporar los datos al formulario
+	function incorporarDatosAsistentes()
+	{
+		//$('#datosDeAsistenteADJ').clone().appendTo('#IdContenedorDialogoDocumentacion'); //referenciamos al parent porque es la capa que crea jquery
+		$('#datosDeAsistenteADJ').appendTo('#IdContenedorDialogoDocumentacion'); 
+		$('#idBotonesDeAsistenteADJ').hide();
+		$('#datosDeAsistenteADJ').hide();
+	}   
+	//-- -------------------------------------------------------------------------------
+	
+	//-- ------------------------------------------------------------------------------------------
+	//-- DOCUMENTOS JUDICIALES
+	//-- ------------------------------------------------------------------------------------------
+	
+	function mostrarDialogoConfirmacionResetarDialogoJudicial()
+	{
+		if (isAsistenteCumplimentadoJudicial())
+		{
+			$("#dialgo-ConfirmacionResetearDialogoADJ").dialog({
+				modal : true,
+				buttons : {
+			       "Si" : function() 
+			       {
+			   		$(this).dialog("close");
+			   		submitWithPosicionScroll('ddDocumentoJudicial');
+			   		
+			       },
+			       "No" : function() 
+			       {
+			    	 $(this).dialog("close");  
+			         $("#ddDocumentoJudicial").prop('checked', true);
+			         
+			       }
+			     }
+			 });
+		}
+		else
+		{
+			submitWithPosicionScroll('ddDocumentoJudicial');
+		}
+	}
+	
+	function isAsistenteCumplimentadoJudicial()
+	{
+		var boo_return = false;
+		
+		if ($("#nombreJuzgado").length > 0 && $("#nombreJuzgado").val() != '')
+		{
+			boo_return = true;
+		}
+		if ($("#tipoProcedimiento").length > 0 && $("#tipoProcedimiento").val() != '')
+		{
+			boo_return = true;
+		}
+		
+		if ($("#numeroAutos").length > 0 && $("#numeroAutos").val() != '')
+		{
+			boo_return = true;
+		}
+		
+		if ($("#anyoAutos").length > 0 && $("#anyoAutos").val() != '')
+		{
+			boo_return = true;
+		}
+		
+		
+		
+		return boo_return;
+	}
+	//-- ------------------------------------------------------------------------------------------
+	//-- DOCUMENTOS NOTARIALES
+	//-- ------------------------------------------------------------------------------------------
+	
+	function mostrarDialogoConfirmacionResetarDialogoNotarial()
+	{
+		if (isAsistenteCumplimentadoNotarial())
+		{
+			$("#dialgo-ConfirmacionResetearDialogoADJ").dialog({
+				modal : true,  
+				buttons : {
+			       "Si" : function() 
+			       {
+			   		$(this).dialog("close");
+			   		submitWithPosicionScroll('ddDocumentoNotarial');
+			   		
+			       },
+			       "No" : function() 
+			       {
+			    	 $(this).dialog("close");  
+			         $("#ddDocumentoNotarial").prop('checked', true);
+			         
+			       }
+			     }
+			 });
+		}
+		else
+		{
+			submitWithPosicionScroll('ddDocumentoNotarial');
+		}
+	}
+	
+	function mostrarDialogoConfirmacionResetarDialogoNotarialFT()
+	{
+		if (isAsistenteCumplimentadoNotarial())
+		{
+			$("#dialgo-ConfirmacionResetearDialogoADJ").dialog({
+				modal : true,  
+				buttons : {
+			       "Si" : function() 
+			       {
+			   		
+						$('#ddProtocoloNumero').val("");
+						$('#ddProtocoloAnno').val("");
+						$('#ddProtocoloNumeroBis').val("");
+						$('#ddFechaEscritura').val("");	
+						
+						$(this).dialog("close");
+						 		
+						submitWithPosicionScroll('ddCheckNotarioFueraTablas');
+											
+			       },
+			       "No" : function() 
+			       {
+			    	 	$(this).dialog("close");  
+			         	$("#ddCheckNotarioFueraTablas").prop('checked', false);
+			         
+			       }
+			     }
+			 });
+		}
+		else
+		{
+			submitWithPosicionScroll('ddCheckNotarioFueraTablas');
+		}
+	}
+	
+	function isAsistenteCumplimentadoNotarial()
+	{
+		var boo_return = false;
+		
+		if ($("#numeroProtocolo").length > 0 && $("#numeroProtocolo").val() != '')
+		{
+			boo_return = true;
+		}
+		if ($("#anyoProtocolo").length > 0 && $("#anyoProtocolo").val() != '')
+		{
+			boo_return = true;
+		}
+		
+		if ($("#bis").length > 0 && $("#bis").val() != '')
+		{
+			boo_return = true;
+		}
+		
+		if ($("#fechaEscritura").length > 0 && $("#fechaEscritura").val() != '')
+		{
+			boo_return = true;
+		}
+		
+		if ($("#numeroDocumetosAdjuntos").length > 0 && $("#numeroDocumetosAdjuntos").val() != '0')
+		{
+			boo_return = true;
+		}
+		
+		
+		return boo_return;
+	}
+	
+	//CUANDO INICIALIZAMOS EL ASISTENE, PONEMOS LOS DATOS DEL MODELO, SI SE HAN CUMPLIMENTADO
+	function pasarDatosModelo2Asitente()
+	{
+		//SI EL ASISTENTE ES DE TIPO NOTARIAL
+		if ('2' == $("#tipoAsistente").val() )
+		{
+			$('#numeroProtocolo').val($("#ddProtocoloNumero").val());
+			
+			$('#anyoProtocolo').val($("#ddProtocoloAnno").val());
+			
+			$('#bis').val($("#ddProtocoloNumeroBis").val());
+			
+			$('#fechaEscritura').val($("#ddFechaEscritura").val());		
+			
+			// Control de calendario en campo fechaEscritura
+			$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+			$.datepicker.formatDate( "dd/mm/yyyy", new Date() );	
+			$("#fechaEscritura").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true, autoClose: true,  autoHide: true});
+
+		}
+		//SI EL ASISTENTE ES DE TIPO JUDICAL
+		if ('1' == $("#tipoAsistente").val() )
+		{
+			$('#nombreJuzgado').val($("#ddNombreJuzgado").val());
+			
+			$('#tipoProcedimiento').val($("#ddTipoProcedimiento").val());
+			
+			$('#numeroAutos').val($("#ddNumeroAutos").val());
+			
+			$('#anyoAutos').val($("#ddAnyoAutos").val());		
+			
+			
+		}
+		
+	}
+	//-- ------------------------------------------------------------------------------------------
+	//-- FIN DOCUMENTOS NOTARIALES
+	//-- ------------------------------------------------------------------------------------------
+
+	//-- ------------------------------------------------------------------------------------------
+	//-- DOCUMENTOS VET
+	//-- ------------------------------------------------------------------------------------------
+	
+	function mostrarDialogoConfirmacionResetarDialogoVET()
+	{
+		if (isAsistenteCumplimentadoVET())
+		{
+			$("#dialgo-ConfirmacionResetearDialogoADJ").dialog({
+				modal : true,  
+				buttons : {
+			       "Si" : function() 
+			       {
+			   		
+			    	   $('#tipoVehiculo').val("");
+					   $('#fecha1Matriculacion').val("");
+					   $('#matricula').val("");
+					   $('#porcentajeTransmision').val("");
+					   $('#isClikedDeleteDataAsistenteADJVET').val("true");	
+			    	   $(this).dialog("close");
+			    	   submitWithPosicionScroll('ddSelectTipoVehiculo');
+			   		
+			       },
+			       "No" : function() 
+			       {
+			    	 $(this).dialog("close");  
+			         //$("#ddDocumentoVET").prop('checked', true);
+			    	 submitWithPosicionScroll('ddSelectTipoVehiculo');
+			         
+			       }
+			     }
+			 });
+		}
+		else
+		{
+			submitWithPosicionScroll('ddSelectTipoVehiculo');
+		}
+	}
+	
+	function isAsistenteCumplimentadoVET()
+	{
+		var boo_return = true;
+		
+		
+		return boo_return;
+	}
+	//-- ------------------------------------------------------------------------------------------
+	//-- FIN DOCUMENTOS VET
+	//-- ------------------------------------------------------------------------------------------
+	
+	//-- ------------------------------------------------------------------------------------------
+	//-- DOCUMENTOS ADMINISTRATIVO
+	//-- ------------------------------------------------------------------------------------------
+	function mostrarDialogoConfirmacionResetarDialogoADMINISTRATIVO()
+	{
+		if (isAsistenteCumplimentadoADMINISTRATIVO())
+		{
+			$("#dialgo-ConfirmacionResetearDialogoADJ").dialog({
+				modal : true,  
+				buttons : {
+			       "Si" : function() 
+			       {
+			   		
+			    	   $('#identificacionAutoAdministrativa').val("");
+					   $('#provinciaFormalizacion').val("");
+					   $('#localidadFormalizacion').val("");
+					   $('#decripcionOperacionActo').val("");
+					   $('#valorEnDocumento').val("");
+					   $("#numeroDocumetosAdjuntos").val("0");
+			    	   $(this).dialog("close");
+			    	   submitWithPosicionScroll('ddDocumentoAdministrativo');
+			   		
+			       },
+			       "No" : function() 
+			       {
+			    	 $(this).dialog("close");  
+			         //$("#ddDocumentoADMINISTRATIVO").prop('checked', true);
+			    	 //submitWithPosicionScroll('ddDocumentoAdministrativo');
+			    	 $("#ddDocumentoAdministrativo").prop('checked', true);
+			         
+			       }
+			     }
+			 });
+		}
+		else
+		{
+			submitWithPosicionScroll('ddDocumentoAdministrativo');
+		}
+	}
+	
+	function isAsistenteCumplimentadoADMINISTRATIVO()
+	{
+		var boo_return = true;
+		
+		
+		return boo_return;
+	}
+	//-- ------------------------------------------------------------------------------------------
+	//-- FIN DOCUMENTOS ADMINISTRATIVO
+	//-- ------------------------------------------------------------------------------------------
+	
+	
+	//-- DOCUMENTOS PRIVADO
+	//-- ------------------------------------------------------------------------------------------
+	function mostrarDialogoConfirmacionResetarDialogoPRIVADO()
+	{
+		if (isAsistenteCumplimentadoPRIVADO())
+		{
+			$("#dialgo-ConfirmacionResetearDialogoADJ").dialog({
+				modal : true,  
+				buttons : {
+			       "Si" : function() 
+			       {
+			   		
+					   $('#provinciaFormalizacion').val("");
+					   $('#localidadFormalizacion').val("");
+					   $('#decripcionOperacionActo').val("");
+					   $('#valorEnDocumento').val("");
+					   $("#numeroDocumetosAdjuntos").val("0");
+			    	   $(this).dialog("close");
+			    	   submitWithPosicionScroll('ddDocumentoPrivado');
+			   		
+			       },
+			       "No" : function() 
+			       {
+			    	 $(this).dialog("close");  
+			         //$("#ddDocumentoPRIVADO").prop('checked', true);
+			    	 //submitWithPosicionScroll('ddDocumentoPrivado');
+			    	 $("#ddDocumentoPrivado").prop('checked', true);
+			         
+			       }
+			     }
+			 });
+		}
+		else
+		{
+			submitWithPosicionScroll('ddDocumentoPrivado');
+		}
+	}
+	
+	function isAsistenteCumplimentadoPRIVADO()
+	{
+		var boo_return = true;
+		
+		
+		return boo_return;
+	}
+	//-- ------------------------------------------------------------------------------------------
+	//-- FIN DOCUMENTOS PRIVADO
+	//-- ------------------------------------------------------------------------------------------
+	
+	
+</script>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							</div>	
+																		
+            		</div>
+            	</fieldset>
+            	
+            </div>	          
+            <div class="filaSepardor"></div>          
+           
+           
+          
+             <div class="filaSepardor"></div>
+             
+            <!-- AUTOLIQUIDACIÓN -->
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+                    	<div class="col">
+                        	Autoliquidación (D)
+                        </div>	
+	                    
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#(D)Autoliquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+            		</div>	
+                </fieldset>
+            </div>
+            <div class="contenidoDatos">
+                <fieldset class="contenidoFila"> <!-- FILA 1 -->
+                    <div class="row"> 
+                    	 <div class="col-12 col-xl-4 colResponsive">
+                            <strong></strong>
+                            <label for="auPrecioMedio" class="marcaError">
+                            </label>
+                            <label for="auPrecioMedio">Precio Medio</label>
+                            <input id="auPrecioMedio" name="auPrecioMedio" readonly="readonly" type="text" size="15" maxlength="16" class="proteger alineamientoDerecha">
+	                        <input type="button" id="botonCalc" name="botonCalc" value="  Calcular  " onclick="submitWithPosicionScroll('botonCalc')">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>74</strong>
+                            <label for="auValorDeclarado" class="marcaError">
+                            </label>
+                            <label for="auValorDeclarado">Valor Declarado</label>
+                            <input id="auValorDeclarado" name="auValorDeclarado" type="text" size="15" maxlength="16" class="w-100  alineamientoDerecha">
+                        </div>	
+                    </div>
+                    <div class="row">    
+                        <div class="col-12 col-xl-2 colResponsive">
+                            <strong>75</strong>
+                            <label for="auExentos" class="marcaError">
+                            </label>
+                            <label for="auExentos">Exento</label> 
+                            <input id="auExentos" name="auExentos" value="X" type="checkbox" onclick="submitWithPosicionScroll('auExentos')" null="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-xl-5 colResponsive">
+                            <strong></strong>
+                            <label for="auSelectExentos" class="marcaError">
+                            	
+                            </label>
+                            <label for="auSelectExentos">Cód. Exención</label> 
+                            <select id="auSelectExentos" name="auSelectExentos" disabled="disabled" class="w-100 " size="1">
+                               0
+                            </select>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>76</strong>
+                            <label for="auNoSujetos" class="marcaError">
+                            </label>
+                            <label for="auNoSujetos">Entrega sujeta al I.V.A</label>
+                            <input id="auNoSujetos" name="auNoSujetos" value="X" onclick="submitWithPosicionScroll('auNoSujetos')" null="" type="checkbox">	
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-12 col-xl-4 colResponsive">
+                            <strong>77</strong>
+                            <label for="auPrescrito" class="marcaError">
+                            	
+                            </label>
+                            <label for="auPrescrito">Prescrito</label>
+                            <input id="auPrescrito" name="auPrescrito" value="X" onclick="submitWithPosicionScroll('auPrescrito')" null="" type="checkbox">	
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="contenidoFila"> <!-- FILA 2 -->
+                    <div class="row"> 
+                        <div class="col-12 col-xl-4 colResponsive">
+                            <strong>79</strong>
+                            <label for="auComplementaria" class="marcaError"></label>
+                            <label for="auComplementaria">Autoliquidación complementaria</label>
+                            <input id="auComplementaria" name="auComplementaria" onclick="submitWithPosicionScroll('auComplementaria')" value="X" null="" type="checkbox">
+                        </div>
+                    </div>
+                    <div class="row"> 
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>80</strong>
+                            <label for="auFechaPresentacionDia" class="marcaError">
+                            </label>
+                            <label for="auFechaPresentacionDia">Fecha de presentación</label>
+                            <div class="w-100">
+	                            <input id="auFechaPresentacionDia" name="auFechaPresentacionDia" disabled="disabled" size="2" maxlength="2" class=" 
+	                           			proteger">
+	                            <label for="auFechaPresentacionMes" class="visually-hidden">Mes Fecha de presentación</label>
+	                            
+	                            <input id="auFechaPresentacionMes" name="auFechaPresentacionMes" disabled="disabled" size="2" maxlength="2" class="
+	                            		proteger">
+	                            
+	                            <label for="auFechaPresentacionAnno" class="visually-hidden">Año Fecha de presentación</label>
+	                            <input id="auFechaPresentacionAnno" name="auFechaPresentacionAnno" class=" 
+	                            		proteger" disabled="disabled" size="4" maxlength="4">
+                        	</div>
+                        </div>
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>81</strong>
+                            <label for="auNumero" class="marcaError">
+                            </label>
+                            <label for="auNumero">Número de justificante</label>
+                            <input id="auNumero" name="auNumero" class="w-100 
+                            		proteger
+                            		alineamientoDerecha" disabled="disabled" type="text" size="13" maxlength="13">
+                        </div>
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>82</strong>
+                            <label for="auImporteIngresado" class="marcaError">
+                            </label>
+                            <label for="auImporteIngresado">Importe ingresado</label>
+                            <input id="auImporteIngresado" disabled="disabled" name="auImporteIngresado" size="11" maxlength="16" class="w-100 
+                           			proteger 
+                           			alineamientoDerecha">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="contenidoDatos"> <!-- FILA 3 -->
+                    <div class="fila"> 
+                        <div class="colIngresos">
+                            <div class="row">
+                                <div class="col-6 col-xl-7 colResponsive">	
+                                    <label for="auBaseImponible">
+                                        <strong>83</strong>&nbsp;&nbsp;BASE IMPONIBLE
+                                    </label>
+                                    <label for="auBaseImponible" class="marcaError">
+                                        
+                                    </label>
+                                </div>
+                                <div class="col-6 col-xl-5 colResponsive">	                                
+	                                <input id="auBaseImponible" name="auBaseImponible" size="15" maxlength="16" class=" alineamientoDerecha">
+	                             </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-xl-7 colResponsive">
+                                    <label for="auTipo"><strong>84</strong>&nbsp;&nbsp;Tipo</label>
+                                    <label for="auTipo" class="marcaError"></label>
+                                </div>	
+                                <div class="col-6 col-xl-5 colResponsive">	                                
+	                                <input id="auTipo" name="auTipo" value="6,00" size="15" maxlength="4" readonly="readonly" class="proteger alineamientoDerecha">	                                
+	                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-xl-7 colResponsive">
+                                    <label for="auCuota"><strong>85</strong>&nbsp;&nbsp;CUOTA: 83x84</label>
+                                    <label for="auCuota" class="marcaError"></label>
+                                </div>	
+                                <div class="col-6 col-xl-5 colResponsive">	                                
+	                                <input id="auCuota" name="auCuota" size="15" maxlength="16" readonly="readonly" class="proteger alineamientoDerecha">
+	                             </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-xl-7 colResponsive">
+                                    <label for="auRecargo"><strong>86</strong>&nbsp;&nbsp;Recargo</label>	            	        
+                                    <label for="auRecargo" class="marcaError"></label>
+                                </div>	
+                                 <div class="col-6 col-xl-5 colResponsive">                                 	
+		                                <input id="auRecargo" name="auRecargo" size="15" maxlength="16" class=" alineamientoDerecha">
+			                           
+			                            
+			                            <input name="botonIntereses" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" type="submit">
+	                               </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-xl-7 colResponsive">
+                                    <label for="auInteresesDemora"><strong>87</strong>&nbsp;&nbsp;Intereses de demora</label>
+                                    <label for="auInteresesDemora" class="marcaError"></label>
+                                </div>	
+                                <div class="col-6 col-xl-5 colResponsive">	                                
+                                	<input id="auInteresesDemora" name="auInteresesDemora" size="15" maxlength="16" class=" alineamientoDerecha">
+                                </div>                           		
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-xl-7 colResponsive">
+                                    <label for="auTotalAIngresar"><strong>88</strong>&nbsp;&nbsp;TOTAL A INGRESAR: (85+86+87-82)</label>
+                                    <label for="auTotalAIngresar" class="marcaError"></label>
+                                </div>
+                                <div class="col-6 col-xl-5 colResponsive"> 	                                
+	                                <input id="auTotalAIngresar" name="auTotalAIngresar" size="15" maxlength="16" readonly="readonly" class="proteger alineamientoDerecha">
+	                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>	             			
+            <!-- REPRESENTANTE -->            
+            <div class="filaSepardor"></div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Firma (E)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-620-instrucciones-para-su-cumplimentacion#(E)Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda_002.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoFila">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                <span> 
+                	class="marcaError"&gt;
+                	
+                </span>
+                <label for="rpLugarFirma" name="rpLugarFirma">               	
+                	<strong>Lugar de firma</strong>: En <input type="hidden" id="accesible">
+               	</label>
+               	<input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+				<span> a 17 de marzo de 2026</span>                	                	
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="contenidoDatos">
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-12 colResponsive">
+             	<span>En caso de que la autoliquidación se suscriba por el
+ representante del sujeto pasivo, se deberá cumplimentar de forma 
+obligatoria las siguientes casillas:</span>
+            </div>                                
+		</div>
+		
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>160</strong>
+				
+                <label for="rpNif">N.I.F. del representante</label>
+                <input id="rpNif" name="rpNif" class="w-100 " size="8" maxlength="15">
+			</div>
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>161</strong>
+                
+                <label for="rpNombre">
+                	Apellidos y nombre o razón social
+               	</label>
+                <input id="rpNombre" name="rpNombre" class="w-100 " type="text" size="35" maxlength="40">
+			 </div>
+		</div>
+	</fieldset>
+	
+
+ 
+            
+
+		
+            <div class="filaSepardor"></div>		
+        </div>
+
+        <input id="620_2026" name="MOD" type="hidden" value="620_2026">
+        <input id="referencia" type="hidden" name="referencia" value="620_2026">
+        <input id="version" type="hidden" name="version" value="6">
+        <input id="isEditProcesoLotes" name="isEditProcesoLotes" type="hidden" value="false">
+        
+        <!-- ASISTENTE PARA MOSTRAR UN MENSAJE EN LA IMPORTACION DE DATOS AL MODELO -->   
+    
+	        
+
+
+
+
+
+
+
+
+	
+		
+		        
+	    <!-- FIN ASISTENTE PARA MOSTRAR UN MENSAJE EN LA IMPORTACION DE DATOS AL MODELO -->
+        
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+		
+		
+		
+		
+		
+		<div style="z-index:2000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:2000; left: 45%;">
+		    	<table border="1px" bordercolor="#003366" cellpadding="1" cellspacing="0" style="z-index:2000;" summary="Cargando...">			
+					<tbody><tr>
+						<td>
+							<img src="p_files/ajax_loader.gif" alt="Cargando...">
+						</td>
+					</tr>
+				</tbody></table>
+			</span>
+		</div>
+    
+	    <!-- -------------------------------------------------------------- -->
+		<!-- -------------------------------------------------------------- -->
+		<!-- AJGG. FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA Y EL POP UP -->
+		<div id="background" class="hide">
+		</div>
+		<!-- -------------------------------------------------------------- -->
+		<!-- -------------------------------------------------------------- -->
+        
+        </form>  
+        
+        <!-- ASISTENTE PARA LA IMPORTACIÓN DE DATOS AL MODELO -->    
+
+    
+	        
+
+
+
+
+
+
+
+
+
+	
+	    
+	    <!-- FIN ASISTENTE PARA LA IMPORTACIÓN DE DATOS AL MODELO -->   
+    
+    <div id="avisoObligatoriedadPresentacionTelematica" title="Aviso!" style="display:none">
+	<!-- <span class="ui-icon ui-icon-alert dialogoAviso"></span>-->
+	<p><strong>Importante: </strong>la autoliquidación que va a imprimir es
+ obligatorio que se presente telemáticamente en el Registro Electrónico 
+tributario. Le recomendamos pagarla y presentarla en ese Registro a 
+través de la plataforma de pagos y presentación telemática, para ello 
+pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
+	<p>Si por el contrario, prefiere pagar esta autoliquidación por otros 
+medios y posteriormente presentarla en el Registro Electrónico 
+tributario pulse <strong>Continuar</strong> para imprimir la primera hoja del Ejemplar para el interesado y el Ejemplar para la entidad colaboradora. </p> 		
+</div>
+
+      
+     
+      <div id="dialgo-aviso-info-adjuntar-documentacion" title="Aviso. Adjuntar documentación" style="display: none;">
+			
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col">
+						<p>
+						<strong>AVISO:</strong> Con los datos consignados en esta 
+autoliquidación es obligatorio presentar en los Servicios tributarios de
+ la Consejería de Hacienda, Administraciones Públicas y Transformación 
+Digital el original y copia simple del documento notarial, o bien 
+original y fotocopia del documento judicial, administrativo o privado en
+ el que conste o se relacione el acto o contrato que origine el tributo,
+ así como el permiso de circulación y la ficha técnica cuando se trate 
+de vehículos usados. Tratándose de embarcaciones o aeronaves usadas, 
+deberán aportar junto con el contrato original y su copia las hojas de 
+las características técnicas en las mismas.
+						</p>
+						
+						<p>
+						<strong>No obstante, si no desea desplazarse a una de nuestras oficinas</strong>, puede aportar una copia de los documentos originales citados pulsando en el botón <strong>Adjuntar documentación</strong>
+ y a continuación realizar la presentación telemática de la 
+autoliquidación. La documentación anexa que presente junto con la 
+autoliquidación se revisará en los Servicios tributarios de la 
+Consejería de Hacienda, Administraciones Públicas y Transformación 
+Digital. Si se corresponde con los documentos comprensivos de los hechos
+ imponibles del impuesto autoliquidados, se devolverá al presentador la 
+correspondiente diligencia certificada de presentación a través del 
+Registro electrónico tributario que incluirá el código electrónico de 
+transmisión (CET).
+						</p>
+					</div>	
+				</div>
+			</div>	
+		</div> 
+		
+		
+    
+
+
+
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
