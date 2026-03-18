@@ -1,0 +1,1682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><head>    	
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">        
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+        
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	<script type="text/javascript" src="p_files/purify.min.js"></script>
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+			
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.min.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.min.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery.blockUI.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.form.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery.base64.js"></script>
+
+<link href="p_files/select2.min.css" rel="stylesheet">
+<script src="p_files/select2.min.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.min.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.min.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.min.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+        
+
+
+	
+    <script> 
+		if (history.forward(1)){location.replace(history.forward(1))}
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}					
+	</script><script src="p_files/prompt.js"></script></head>
+
+	
+	
+	
+	<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+	 
+
+    
+    
+	
+	 
+    
+    
+
+        
+        
+        
+        
+           	
+    
+
+
+    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
+
+        <!-- ESTA LINEA ES NECESARIA PARA LOS ELEMENTOS DE ACCESIBILIDAD -->
+        
+
+        <form name="MODELO" method="post" action="https://webgreco.local/webgreco/GreSvlProcesarPeticiones" target="_self">
+
+		
+        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+        
+        
+        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+        
+        
+        <input id="validar" type="hidden" name="validar" value="false">
+
+		<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="4168685935">
+
+
+
+		<!-- BARRA DE CARGA DE DATOS -->
+		
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+
+		
+     
+                
+        <div id="principal" class="principal visible">
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>IMPUESTO SOBRE TRANSMISIONES PATRIMONIALES Y ACTOS JURÍDICOS DOCUMENTADOS</h1>
+			<h2>Pago en metálico del impuesto que graba las letras de cambio</h2>
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 630</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202610</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-630-instrucciones-para-su-cumplimentacion#630_Descripci%C3%B3nDelPrograma" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+
+	         <div class="filaSepardor"></div> 
+	         
+            
+
+
+
+
+
+
+
+
+
+            
+            <div class="filaSepardor"></div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$(function()  
+	{
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#fechaDevengo").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+	});
+	
+	function updateFechaDevengo()
+	{
+		//alert('se ha modificado la fecha de devengo.');
+		    
+	    var isCorrectaFechaDevengo = validarFormatoFecha($('#fechaDevengo').val());
+	    //alert('Fecha de devengo correcta: ' + isCorrectaFechaDevengo);
+	    
+	    if (isCorrectaFechaDevengo)
+	    {
+	    	$("#fechaDevengoDia").val($("#fechaDevengo").val().substring(0,2));
+	    	$("#fechaDevengoMes").val($("#fechaDevengo").val().substring(3,5));
+	    	$("#fechaDevengoAnno").val($("#fechaDevengo").val().substring(6,10));
+	    }
+	    else
+	    {
+	    	$("#fechaDevengoDia").val('');
+	    	$("#fechaDevengoMes").val('');
+	    	$("#fechaDevengoAnno").val('');
+	    }
+	    
+	    submitWithPosicionScroll('fechaDevengo');
+	}
+	
+	function validarFormatoFecha(campo) {
+	     var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+	     if ((campo.match(RegExPattern)) && (campo!='')) {
+	           return true;
+	     } else {
+	           return false;
+	     }
+	}
+	
+	function existeFecha(fecha){
+	     var fechaf = fecha.split("/");
+	     var day = fechaf[0];
+	     var month = fechaf[1];
+	     var year = fechaf[2];
+	     var date = new Date(year,month,'0');
+	     if((day-0)>(date.getDate()-0)){
+	           return false;
+	     }
+	     return true;
+	}
+
+</script>
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+
+	
+    
+
+ 	
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+        
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos del Documento
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-630-instrucciones-para-su-cumplimentacion#630_OficinaLiquidadoraCodigoTerritorial" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<div class="row"> <!-- FILA 1 -->
+			<div class="col-6 col-xl-3 colResponsive">
+				<label for="selectOficinaLiquidadora" name="selectOficinaLiquidadoraError" class="marcaError"></label>
+
+				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
+					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
+	                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option value="EH1301">CIUDAD REAL</option><option value="EH1601">CUENCA</option><option value="EH1901">GUADALAJARA</option><option value="EH4501">TOLEDO</option>
+	               	</select>
+               	
+               	
+                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="">
+
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
+				<label for="codigoTerritorial">Código territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6">
+			</div>
+		</div>
+		
+		
+				
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">
+					<strong>2</strong>
+    	            <label for="fechaDevengo">Fecha Devengo:</label><input type="hidden" id="accesibilidad">
+				<label for="fechaDevengo" class="marcaError">
+					
+				</label>
+				
+				
+				<input type="text" size="10" maxlength="10" name="fechaDevengo" id="fechaDevengo" class="w-100 hasDatepicker" readonly="readonly" onchange="updateFechaDevengo()" placeholder="dd/mm/yyyy">
+						
+				<input type="hidden" id="fechaDevengoDia" name="fechaDevengoDia" class="" value="" size="2" maxlength="2">
+				<input type="hidden" id="fechaDevengoMes" name="fechaDevengoMes" class="" value="" size="2" maxlength="2">			
+				<input type="hidden" id="fechaDevengoAnno" name="fechaDevengoAnno" class="" value="" size="4" maxlength="4">
+			</div>
+		</div>
+		
+
+		
+		
+
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+
+	
+	
+		<div class="row novisible">
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>3</strong>
+				<label for="selectConceptoDescripcion" class="labelInline">Concepto			
+				<label for="selectConceptoDescripcion" class="marcaError"></label>
+				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
+	                <select id="selectConceptoDescripcion" class="w-100" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" size="1">
+						
+					</select>	
+				</label>				
+			</div>
+			
+			<div class="col-12 col-xl-2 colResponsive">
+				<label class="labelInline" for="codigoConcepto">&nbsp;</label>
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" size="4" maxlength="4" readonly="readonly">
+				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="proteger" value="">		
+								
+			</div>
+		</div>
+
+
+		
+				
+			
+	</fieldset>
+</div>			
+            
+            <div class="filaSepardor"></div>
+            
+	         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Sujeto Pasivo (A)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-630-instrucciones-para-su-cumplimentacion#630_(A)DatosIdentificativosDelSujetoPasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="630">
+</div>		
+
+	        
+	        <div class="filaSepardor"></div>
+
+            <!-- LIQUIDACION -->
+            <!-- CABECERA (TITULO) -->
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+						<div class="col">
+	                        Datos identificativos de la letra de cambio (B) y liquidación (C)
+						</div>                    
+			            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-630-instrucciones-para-su-cumplimentacion#630_(B,C)DatosIndentificativosDeLetraCambio-Liquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                    </div>	                     
+                </fieldset>
+            </div>
+            
+            <!-- LETRAS EXPEDIDAS EN ESPAÑA -->           
+			<fieldset class="contenidoFila">
+				<fieldset class="contenidoDatos">
+					<legend>
+						Letras expedidas en España (exceso)
+					</legend>
+			        <div class="filaSepardor"></div> 
+					<div class="row">
+						<div class="col-12 col-xl-12 colResponsive">
+							<span class="letra90">
+								<strong>Datos identificativos de las letras de cambio expedidas en España (B)</strong>
+							</span>
+						</div>
+					</div>
+	               	<div class="row">			               		
+						<div class="col-12 col-xl-3 colResponsive">
+			               	<strong>33</strong>				               	
+							<label for="auEspaniaNumeroEfecto" class="marcaError">
+									
+							</label>		
+							<label for="auEspaniaNumeroEfecto">
+								Número del efecto               		        	
+							</label>	
+							<input id="auEspaniaNumeroEfecto" name="auEspaniaNumeroEfecto" type="text" size="15" maxlength="15" class="w-100 ">
+						</div>			
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>34</strong>
+							<label for="auEspaniaSelectProvincia" class="marcaError"></label>
+			                <label for="auEspaniaSelectProvincia">Provincia</label>
+			                <select id="auEspaniaSelectProvincia" name="auEspaniaSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('auEspaniaSelectProvincia', 'auEspaniaSelectMunicipio')">
+			                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+			               	</select>
+			               			
+						</div>
+						<div class="col-12 col-xl-4 colResponsive">
+							<strong>35</strong>
+							<label for="auEspaniaSelectMunicipio" class="marcaError">
+							 	
+						 	</label>
+			                <label for="auEspaniaSelectMunicipio">Municipio</label>
+			                <select id="auEspaniaSelectMunicipio" name="auEspaniaSelectMunicipio" class=" w-100" size="1">
+			                	
+			               	</select>
+			               		
+						</div>
+					</div>
+	                <div class="row">			               		
+						<div class="col-6 col-xl-3 colResponsive">
+			               	<strong>36</strong>				               	
+							<label for="auEspaniaImporte" class="marcaError">
+									
+							</label>		
+							<label for="auEspaniaImporte">
+								Importe               		        	
+							</label>	
+							<input id="auEspaniaImporte" name="auEspaniaImporte" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+						</div>
+						<div class="col-6 col-xl-3 colResponsive">
+			               	<strong>37</strong>				               	
+							<label for="auEspaniaMoneda" class="marcaError">
+									
+							</label>		
+							<label for="auEspaniaMoneda"> 
+								Moneda               		
+							</label>	        	
+							<input id="auEspaniaMoneda" name="auEspaniaMoneda" type="text" size="10" maxlength="10" class="w-100 ">
+						</div>
+	            	</div>								           
+			        <div class="filaSepardor"></div> 
+					<div class="row">
+						<div class="col-12 col-xl-12 colResponsive">
+							<span class="letra90">
+								<strong>Liquidación de las letras de cambio expedidas en España (C)</strong>
+							</span>
+						</div>
+					</div>
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong>43</strong>
+	                        <label for="auEspaniaBaseImponible" class="marcaError">
+	                            
+	                        </label>
+	                        <label for="auEspaniaBaseImponible">
+	                            Base imponible en euros
+	                        </label>
+	                    </div>
+	                    <div class="col-6 col-xl-4 colResponsive">
+						<input id="auEspaniaBaseImponible" name="auEspaniaBaseImponible" type="text" size="16" maxlength="16" class="alineamientoDerecha ">		                        
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong></strong>
+	                        <span>
+	                            A deducir
+	                        </span>
+	                    </div>
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <span>
+	                            192.323,87
+	                        </span>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong>44</strong>
+	                        <label for="auEspaniaExceso">
+	                            Exceso: [43] - 192.323,87
+	                        </label>
+	                    </div>
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <input id="auEspaniaExceso" name="auEspaniaExceso" readonly="auEspaniaExceso" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong>45</strong>
+	                        <label for="auEspaniaCuotaTributaria">
+	                            Cuota tributaria: (0,018030 x [44]) / 6,01
+	                        </label>
+	                    </div>
+	                   	<div class="col-6 col-xl-4 colResponsive">	                   		
+	                        <input id="auEspaniaCuotaTributaria" name="auEspaniaCuotaTributaria" readonly="readonly" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong>46</strong>
+	                        <label for="auEspaniaAIngresar">
+	                            A INGRESAR
+	                        </label>
+	                    </div>
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <input id="auEspaniaAIngresar" name="auEspaniaAIngresar" readonly="readonly" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+	                        <input name="botonIntereses" style="font-size:99%" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" type="submit">
+		               </div>                   
+		            </div>				            						
+				</fieldset>
+		        <div class="filaSepardor"></div> 
+		        
+            <!-- LETRAS EXPEDIDAS EN EL EXTRANJERO -->            
+				<fieldset class="contenidoDatos">
+					<legend>
+						Letras expedidas en el extranjero que surtan efectos jurídicos o económicos en España
+					</legend>
+			        <div class="filaSepardor"></div> 
+					<div class="row">
+						<div class="col-12 col-xl-12 colResponsive">
+							<span class="letra90">
+								<strong>Datos identificativos de las letras de cambio expedidas en el extranjero (B)</strong>
+							</span>
+						</div>
+					</div>
+	               	<div class="row">			               		
+						<div class="col-12 col-xl-3 colResponsive">
+			               	<strong>38</strong>				               	
+							<label for="auExtranjeroNumeroEfecto" class="marcaError">
+									
+							</label>		
+							<label for="auExtranjeroNumeroEfecto">
+								Número del efecto               	
+							</label>		        	
+							<input id="auExtranjeroNumeroEfecto" name="auExtranjeroNumeroEfecto" type="text" size="15" maxlength="15" class="w-100 ">
+			           	</div>
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>39</strong>
+							<label for="auExtranjeroSelectProvincia" class="marcaError"></label>
+			                <label for="auExtranjeroSelectProvincia">Provincia</label>
+			                <select id="auExtranjeroSelectProvincia" name="auExtranjeroSelectProvincia" class=" w-100" size="1" onchange="cargarMunicipiosAjax('auExtranjeroSelectProvincia', 'auExtranjeroSelectMunicipio')">
+			                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+			               	</select>
+			               			
+			                 <input type="hidden" name="auExtranjeroSelectProvinciaValidado" value="">
+						</div>
+						<div class="col-12 col-xl-4 colResponsive">
+							<strong>40</strong>
+							<label for="auExtranjeroSelectMunicipio" class="marcaError">
+							 	
+						 	</label>
+			                <label for="auExtranjeroSelectMunicipio">Municipio</label>
+			                <select id="auExtranjeroSelectMunicipio" name="auExtranjeroSelectMunicipio" class=" w-100" size="1">
+			                	
+			               	</select>
+			               		
+			                 <input type="hidden" name="auExtranjeroSelectMunicipioValidado" value="">
+						</div>
+					</div>
+	                <div class="row">			               		
+						<div class="col-6 col-xl-3 colResponsive">
+			               	<strong>41</strong>				               	
+							<label for="auExtranjeroImporte" class="marcaError">
+									
+							</label>		
+							<label for="auExtranjeroImporte">
+								Importe               		        	
+							</label>	
+							<input id="auExtranjeroImporte" name="auExtranjeroImporte" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+						</div>
+						<div class="col-6 col-xl-3 colResponsive">
+			               	<strong>42</strong>				               	
+							<label for="auExtranjeroMoneda" class="marcaError">
+									
+							</label>		
+							<label for="auExtranjeroMoneda">
+								Moneda               		 
+							</label>	       	
+							<input id="auExtranjeroMoneda" name="auExtranjeroMoneda" type="text" size="10" maxlength="10" class="w-100 ">
+		            	</div>								           
+	            	</div>								           
+			        <div class="filaSepardor"></div> 
+					<div class="row">
+						<div class="col-12 col-xl-12 colResponsive">
+							<span class="letra90">
+								<strong>Liquidación de las letras de cambio expedidas en el extranjero (C)</strong>
+							</span>
+						</div>
+					</div>
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong>47</strong>
+	                        <label for="auExtranjeroBaseImponible" class="marcaError">
+	                            
+	                        </label>
+	                        <label for="auExtranjeroBaseImponible">
+	                            Base imponible en euros
+	                        </label>
+	                    </div>
+	                    <div class="col-6 col-xl-4 colResponsive">
+						<input id="auExtranjeroBaseImponible" name="auExtranjeroBaseImponible" type="text" size="16" maxlength="16" class="alineamientoDerecha ">		                        
+	                    </div>
+	                </div>
+	                <div class="row">	                    
+	                    <div class="col-12 col-xl-12 colResponsive">
+	                        <span>
+	                            Cuota Tributaria:
+	                        </span>
+	                    </div>
+	                </div>
+	                
+		            <div class="row">
+	                    	<div class="col-6 col-xl-4 colResponsive">
+		                        <label for="auExtranjeroGravamen">			                        
+			                        <strong>48</strong>
+			                        Hasta 192.323,87 de base imponible según escala de gravamen
+		                        </label>
+		                    </div>
+		                    <div class="col-6 col-xl-4 colResponsive">		                    	
+		                        <input id="auExtranjeroGravamen" name="auExtranjeroGravamen" readonly="auExtranjeroGravamen" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col-6 col-xl-4 colResponsive">		                        
+			                        <strong>49</strong>
+		                            Exceso: [47] - 192.323,87
+		                    </div>
+		                    <div class="col-6 col-xl-4 colResponsive">
+		                        <input id="auExtranjeroExceso" name="auExtranjeroExceso" readonly="auExtranjeroExceso" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col-6 col-xl-4 colResponsive">
+			                        <strong>50</strong>
+		                            (0,018030 x [49]) / 6,01
+		                    </div>
+		                   	<div class="col-6 col-xl-4 colResponsive">		                   		
+		                        <input id="auExtranjeroCuotaTributaria" name="auExtranjeroCuotaTributaria" readonly="readonly" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+		                    </div>
+		                </div>
+
+	                <div class="row">
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <strong>51</strong>
+	                        <label for="auExtranjeroAIngresar">
+	                            A INGRESAR ([48] + [50])
+	                        </label>
+	                    </div>
+	                    <div class="col-6 col-xl-4 colResponsive">
+	                        <input id="auExtranjeroAIngresar" name="auExtranjeroAIngresar" readonly="readonly" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+	                        
+	                        <input name="botonIntereses" style="font-size:99%" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" type="submit">
+		               </div>                   
+		            </div>				            						
+				</fieldset>
+			</fieldset>
+            
+            <!-- AUTOLIQUIDACION COMPLEMENTARIA -->
+            <fieldset class="contenidoFila"> 
+                <div class="row"> 
+                    <div class="col-12 col-xl-4 colResponsive">
+                        <strong>52</strong>
+                        <label for="auComplementaria" class="marcaError"></label>
+                        <label for="auComplementaria">Autoliquidación complementaria</label>
+                                                <input id="auComplementaria" name="auComplementaria" onclick="submitWithPosicionScroll('auComplementaria')" value="X" null="" type="checkbox">
+                        		
+                        <input type="hidden" name="auComplementariaValidado" value="">
+                    </div>
+                </div>
+                 
+                <div class="row"> 
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>53</strong>
+                        <label for="auFechaPresentacionDia" class="marcaError"></label>
+                        <label for="auFechaPresentacionDia">Fecha de presentación</label>
+                    
+                    	<div class="w-100">
+	                        <input id="auFechaPresentacionDia" name="auFechaPresentacionDia" disabled="disabled" size="2" maxlength="2" class="proteger">
+                    	
+	                        <label for="auFechaPresentacionMes" class="marcaError"></label>
+	                        <input id="auFechaPresentacionMes" name="auFechaPresentacionMes" disabled="disabled" size="2" maxlength="2" class="proteger">
+
+	                        <label for="auFechaPresentacionAnno" class="marcaError"></label>
+	                        <input id="auFechaPresentacionAnno" name="auFechaPresentacionAnno" class="proteger" disabled="disabled" size="4" maxlength="4">
+	                    </div>
+	                </div>
+	                <div class="col-12 col-xl-3 colResponsive">
+                        <strong>54</strong>
+                        <label for="auNumero" class="marcaError"></label>
+                        <label for="auNumero">Número de justificante</label>
+                        <input id="auNumero" name="auNumero" class="proteger w-100" disabled="disabled" type="text" size="13" maxlength="13">
+                    </div>
+                    <div class="col-12 col-xl-3 colResponsive">
+                        <strong>55</strong>
+                        <label for="auImporteIngresado" class="marcaError"></label>
+                        <label for="auImporteIngresado">Importe ingresado</label>
+                        <input id="auImporteIngresado" disabled="disabled" name="auImporteIngresado" size="11" maxlength="16" class="w-100 proteger alineamientoDerecha">
+                    </div>
+                </div>
+          
+            </fieldset>           
+            
+            <!-- INGRESO -->
+               <fieldset class="contenidoDatos">
+                   <div class="row">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>56</strong>
+                        <label for="auRecargo" name="auRecargoError" class="marcaError">
+                            
+                        </label>
+                        <label for="auRecargo">
+                            Recargo
+                        </label>
+                    </div>
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <input id="auRecargo" name="auRecargo" type="text" size="16" maxlength="16" class=" alineamientoDerecha">                                                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>57</strong>
+                        <label for="auInteresesDemora" class="marcaError">
+                            
+                        </label>
+                        <label for="auInteresesDemora">
+                            Intereses de demora
+                        </label>
+                    </div>
+                   	<div class="col-6 col-xl-4 colResponsive">
+                        <input id="auInteresesDemora" name="auInteresesDemora" type="text" size="16" maxlength="16" class=" alineamientoDerecha">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>58</strong>
+                        <label for="auTotalAIngresar" class="marcaError">
+                            
+                        </label>
+                        <label for="auTotalAIngresar">
+                            TOTAL A INGRESAR (46 + 51 + 56 + 57 - 55)
+                        </label>
+                    </div>
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <input id="auTotalAIngresar" name="auTotalAIngresar" readonly="readonly" value="0" type="text" size="16" maxlength="16" class="proteger alineamientoDerecha">
+                    </div>                   
+                </div>
+                </fieldset>
+
+	        <div class="filaSepardor"></div>
+	        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Firma (D)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-630-instrucciones-para-su-cumplimentacion#630_(D)Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoFila">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                <span class="marcaError">
+                	
+                </span>
+                <label for="rpLugarFirma" name="rpLugarFirma">               	
+                	<strong>Lugar de firma</strong>: En <input type="hidden" id="accesible">
+               	</label>
+               	<input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+				<span> a 18 de marzo de 2026</span>                	                	
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="contenidoDatos">
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-12 colResponsive">
+             	<span>En caso de que la autoliquidación se suscriba por el
+ representante del sujeto pasivo, se deberá cumplimentar de forma 
+obligatoria las siguientes casillas:</span>
+            </div>                                
+		</div>
+		
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>70</strong>
+				
+                <label for="rpNif">N.I.F. del representante</label>
+                <input id="rpNif" name="rpNif" class="w-100 " size="8" maxlength="15">
+			</div>
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>71</strong>
+                
+                <label for="rpNombre">
+                	Apellidos y nombre o razón social
+               	</label>
+                <input id="rpNombre" name="rpNombre" class="w-100 " type="text" size="35" maxlength="40">
+			 </div>
+		</div>
+	</fieldset>
+	
+
+
+            
+            
+
+
+            
+            <div class="filaSepardor"></div>            
+            <div class="filaSepardor"></div>	
+    
+            
+     </div>	
+
+		<!-- HIDDENS -->
+        <input id="630" name="MOD" type="hidden" value="630">
+        <input id="referencia" type="hidden" name="referencia" value="630">
+        <input id="version" type="hidden" name="version" value="6">
+        
+        <!-- ASISTENTES -->
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<div class="filaSepardor"></div>
+		
+		<div class="principal novisible">
+		
+			
+
+
+
+
+
+
+
+
+
+			
+			<div class="filaSepardor"></div>
+			<!-- CABECERA -->
+			<div class="contenidoCabecera">
+				<fieldset class="contenidoCabecera">
+					<div class="contenidoCabeceraTexto">
+						<div class="col">Cálculo del recargo e intereses de demora por presentación fuera de plazo</div>
+ 						
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-630-instrucciones-para-su-cumplimentacion#630_RecargoInteresesAutoliqPresentFueraPlazo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+</div>
+			</fieldset>
+		</div>
+		
+		<div class="contenidoDatos">
+			<fieldset class="contenidoDatos">
+				<div class="contenidoDatos">
+					<div class="row">
+						<div class="col-5 col-xl-4 colResponsive">
+							<label for="fechaDevengoDiaIntereses" name="labelFechaDevengoDia">
+
+										Devengo
+ 
+							</label>
+						</div>
+					
+					
+						<div class="col-7 col-xl-4 colResponsive">
+ 
+								<label for="fechaDevengoDiaIntereses" name="fechaDevengoError" class="marcaError"> 
+									 
+								</label>
+								<div class="w-100">
+									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Dia fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" size="3" maxlength="4" readonly="readonly">
+								</div> 
+
+					</div>
+						
+						
+				<div class="col5px">
+					<label for="codigoTerritorialIntereses" name="labelCodigoTerritorial"> 
+					<!--  Código Territorial  -->
+					</label> 
+					<label for="codigoTerritorialIntereses" name="codigoTerritorialError" class="marcaError"> 
+						 
+					</label>
+	
+					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="" size="6" maxlength="6" readonly="readonly" type="hidden">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="labelFechaFinDePlazoDia"> 
+
+						Fecha fin de plazo 
+ 
+					</label>
+				</div>
+				
+				<div class="col-7 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="fechaFinDePlazoError" class="marcaError">
+						  
+					</label>
+					<div class="w-100">
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Dia Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoMes" class="visually-hidden">Mes Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" size="3" maxlength="4">
+					</div>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaIngresoDia" name="labelFechaIngresoDia"> 
+						Fecha de presentación prevista 
+					</label>
+				</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<label for="fechaIngresoDia" name="fechaIngresoError" class="marcaError"> 
+					 
+				</label> 
+				<div class="w-100">
+					<input id="fechaIngresoDia" name="fechaIngresoDia" title="Dia Fecha Ingreso" size="1" maxlength="2"> 
+				    
+				    <label for="fechaIngresoMes" class="visually-hidden">Mes Fecha Ingreso</label>
+				    <input id="fechaIngresoMes" title="Mes Fecha Ingreso" name="fechaIngresoMes" size="1" maxlength="2"> 
+				    
+				    <label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Ingreso</label>
+				    <input id="fechaFinDePlazoAnyo" title="Año Fecha Ingreso" name="fechaIngresoAnyo" size="3" maxlength="4">
+			    </div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeCuota" name="labelimporteCuota"> 
+					Importe a ingresar resultante de la autoliquidación 
+				</label> 
+				<label for="importeCuota" name="labelimporteCuotaIntereses" class="marcaError">
+				 	 
+				 </label>
+			</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeCuota" name="importeCuota" readonly="readonly" value="0" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="porcentajeRecargoIntereses" name="labelimporteRecargoIntereses"> Corresponde un recargo del </label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="porcentajeRecargoIntereses" name="porcentajeRecargoIntereses" value="0" size="4" maxlength="4" class="proteger alineamientoDerecha w-100" readonly="readonly"> 
+				<label for="importeRecargoIntereses" name="labelporcentajeRecargoIntereses">
+					 %. No obstante, si realiza el ingreso de la deuda resultante de esta autoliquidación el recargo se	reduce en el 25 %. 
+				</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeRecargoIntereses" name="labelimporteIntereses"> 
+					Recargo reducido 
+				</label>
+			</div>
+		
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeRecargoIntereses" name="importeRecargoIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeIntereses" name="labelimporteIntereses"> 
+					Intereses 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+			<input id="importeIntereses" name="importeIntereses" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeTotalAPagarIntereses" name="labelimporteTotalAPagarIntereses"> 
+					Total a ingresar 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	</div></fieldset>
+
+		<!-- SEPARADOR DE LA BARRA DE BOTONES -->
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<!-- MARCO BARRA DE BOTONES -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="row">
+		        	<div class="col-12 col-xl-12 colResponsive">
+			            <fieldset id="marcosInformativos" class="letra70">
+			                
+							
+							<!-- BOTONES -->	
+								<input type="submit" value="  Realizar el cálculo  " name="botonIntereses">
+								<input type="submit" value="   Incorporar datos    " name="botonInteresesIncorporar">
+								<input type="submit" value="   Salir    " name="botonInteresesSalir">
+	
+	  							
+			            </fieldset>
+			        </div>	    
+		        </div>
+		    </fieldset>
+		</div>
+
+
+	<!-- CAMPOS HIDDEN -->
+	<input type="hidden" name="comprobarIntereses" value="0">
+	<input type="hidden" name="periodoAnterior" value="null">
+
+</div>
+</div>
+
+                
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+        
+        </form>     
+        
+        <div id="avisoObligatoriedadPresentacionTelematica" title="Aviso!" style="display:none">
+	<!-- <span class="ui-icon ui-icon-alert dialogoAviso"></span>-->
+	<p><strong>Importante: </strong>la autoliquidación que va a imprimir es
+ obligatorio que se presente telemáticamente en el Registro Electrónico 
+tributario. Le recomendamos pagarla y presentarla en ese Registro a 
+través de la plataforma de pagos y presentación telemática, para ello 
+pulse <strong>Cancelar</strong> en esta pantalla y a continuación pulse en el botón Pagar/Presentar, que encontrará en la cabecera del modelo cumplimentado.</p>
+	<p>Si por el contrario, prefiere pagar esta autoliquidación por otros 
+medios y posteriormente presentarla en el Registro Electrónico 
+tributario pulse <strong>Continuar</strong> para imprimir la primera hoja del Ejemplar para el interesado y el Ejemplar para la entidad colaboradora. </p> 		
+</div>
+
+    
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
