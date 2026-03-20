@@ -1,0 +1,4322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><head>    	
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">
+    	 
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+        
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	<script type="text/javascript" src="p_files/purify.min.js"></script>
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+			
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.min.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.min.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery.blockUI.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.form.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery.base64.js"></script>
+
+<link href="p_files/select2.min.css" rel="stylesheet">
+<script src="p_files/select2.min.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.min.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.min.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.min.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+        
+
+
+	
+    <script> 
+		if (history.forward(1)){location.replace(history.forward(1))}
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}					
+	</script><script src="p_files/prompt.js"></script></head>
+
+	
+	
+	<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+	 
+	
+    
+    
+	
+	 
+    
+    
+
+        
+        
+        
+        
+           	
+    
+
+
+    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
+
+        
+        
+
+        <form name="MODELO" method="post" action="https://webgreco.local/webgreco/GreSvlProcesarPeticiones" target="_self">
+
+		<!-- Varible para almacenar la posicion del scroll. -->
+        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+        
+        <!-- Varible para almacenar la posicion del foco. -->
+        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+        
+        
+        <input id="validar" type="hidden" name="validar" value="false">
+
+		<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="1350973977">
+		
+		
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+
+		
+
+
+        
+
+
+
+
+
+
+
+
+
+	<div class="principal novisible">
+		<div class="filaSepardor"></div>
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+	        	<div class="contenidoCabeceraTexto">
+	            	<div class="col">
+	            		C.1. Estimación Directa
+					</div>
+		            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#C%C3%A1lculodelaBasedeLiquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+						
+				</div>
+		    </fieldset>  
+	</div>
+		
+	<fieldset class="contenidoFila"> 
+       	<div class="row"> <!-- FILA 1 -->
+           	<div class="col-12 col-xl-3 colResponsive letra70">				
+           		Mediciones realizadas desde
+             		<strong>101</strong>	
+				<label for="anexoDiaDesde" class="marcaError">
+						
+				</label>
+				<div class="w-100">
+					<input name="anexoFechaDesdeError" type="hidden" value="">		               		        	
+					<label for="anexoDiaDesde" class="visually-hidden">Desde dia</label>
+					<input id="anexoDiaDesde" name="anexoDiaDesde" type="text" size="2" maxlength="2" class="alineamientoDerecha">
+					<label for="anexoMesDesde" class="visually-hidden">Mes</label>
+					<input id="anexoMesDesde" name="anexoMesDesde" type="text" size="2" maxlength="2" class="alineamientoDerecha">
+					<label for="anexoAnioDesde" class="visually-hidden">Año</label>
+					<input id="anexoAnioDesde" name="anexoAnioDesde" type="text" size="4" maxlength="4" class="alineamientoDerecha">
+				</div>
+			</div>
+           	<div class="col-12 col-xl-3 colResponsive letra70">
+           		hasta
+             		<strong>102</strong>	
+				<label for="anexoDiaHasta" class="marcaError">
+						
+				</label>		               		        	
+				<input name="anexoFechaHastaError" type="hidden" value="">	
+				<div class="w-100">	               		        	
+					<label for="anexoDiaHasta" class="visually-hidden">Hasta día</label>
+					<input id="anexoDiaHasta" name="anexoDiaHasta" type="text" size="2" maxlength="2" class="alineamientoDerecha">
+					<label for="anexoMesHasta" class="visually-hidden">Mes</label>							
+					<input id="anexoMesHasta" name="anexoMesHasta" type="text" size="2" maxlength="2" class="alineamientoDerecha">
+					<label for="anexoAnioHasta" class="visually-hidden">Año</label>
+					<input id="anexoAnioHasta" name="anexoAnioHasta" type="text" size="4" maxlength="4" class="alineamientoDerecha">
+				</div>
+			</div>       	
+       	    
+							
+					
+					<div class="col-12 col-xl-4 colResponsive letra70">Rendimiento de los analizadores automáticos
+	                    <label for="anexoRendimientoAnalizadores" class="marcaError">
+	                        
+	                    </label>
+						<input name="anexoRendimientoAnalizadoresError" type="hidden" value="">		               		        	
+					 	<select id="anexoRendimientoAnalizadores" name="anexoRendimientoAnalizadores" size="1" class="w-100">
+					   
+					   <option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">DIRECTA: INFERIOR AL 80%</option><option value="2">DIRECTA: INFERIOR AL 90%</option><option value="3">DIRECTA: IGUAL O SUPERIOR AL 90%</option><option value="4">CAMBIO A DIRECTA: INFERIOR AL 80%</option><option value="5">CAMBIO A DIRECTA: INFERIOR AL 90%</option><option value="6">CAMBIO A DIRECTA: IGUAL O SUPERIOR AL 90%</option>
+					   </select>					
+					</div>					
+										
+			
+		</div>       	                	
+    </fieldset>	
+
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco0" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError0" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco0" class="w-100" name="anexoNumFoco0" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO20" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error0" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO20" class="w-100" name="anexoEmisionesSO20" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO20" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error0" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO20" name="anexoEmisionesNO20" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion0">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion0" name="anexoBaseLiquidacion0" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco1" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError1" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco1" class="w-100" name="anexoNumFoco1" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO21" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error1" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO21" class="w-100" name="anexoEmisionesSO21" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO21" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error1" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO21" name="anexoEmisionesNO21" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion1">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion1" name="anexoBaseLiquidacion1" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco2" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError2" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco2" class="w-100" name="anexoNumFoco2" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO22" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error2" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO22" class="w-100" name="anexoEmisionesSO22" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO22" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error2" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO22" name="anexoEmisionesNO22" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion2">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion2" name="anexoBaseLiquidacion2" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco3" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError3" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco3" class="w-100" name="anexoNumFoco3" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO23" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error3" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO23" class="w-100" name="anexoEmisionesSO23" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO23" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error3" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO23" name="anexoEmisionesNO23" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion3">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion3" name="anexoBaseLiquidacion3" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco4" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError4" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco4" class="w-100" name="anexoNumFoco4" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO24" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error4" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO24" class="w-100" name="anexoEmisionesSO24" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO24" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error4" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO24" name="anexoEmisionesNO24" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion4">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion4" name="anexoBaseLiquidacion4" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco5" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError5" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco5" class="w-100" name="anexoNumFoco5" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO25" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error5" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO25" class="w-100" name="anexoEmisionesSO25" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO25" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error5" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO25" name="anexoEmisionesNO25" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion5">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion5" name="anexoBaseLiquidacion5" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco6" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError6" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco6" class="w-100" name="anexoNumFoco6" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO26" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error6" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO26" class="w-100" name="anexoEmisionesSO26" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO26" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error6" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO26" name="anexoEmisionesNO26" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion6">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion6" name="anexoBaseLiquidacion6" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco7" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError7" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco7" class="w-100" name="anexoNumFoco7" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO27" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error7" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO27" class="w-100" name="anexoEmisionesSO27" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO27" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error7" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO27" name="anexoEmisionesNO27" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion7">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion7" name="anexoBaseLiquidacion7" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco8" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError8" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco8" class="w-100" name="anexoNumFoco8" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO28" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error8" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO28" class="w-100" name="anexoEmisionesSO28" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO28" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error8" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO28" name="anexoEmisionesNO28" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion8">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion8" name="anexoBaseLiquidacion8" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco9" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError9" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco9" class="w-100" name="anexoNumFoco9" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO29" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error9" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO29" class="w-100" name="anexoEmisionesSO29" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO29" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error9" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO29" name="anexoEmisionesNO29" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion9">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion9" name="anexoBaseLiquidacion9" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco10" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError10" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco10" class="w-100" name="anexoNumFoco10" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO210" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error10" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO210" class="w-100" name="anexoEmisionesSO210" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO210" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error10" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO210" name="anexoEmisionesNO210" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion10">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion10" name="anexoBaseLiquidacion10" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco11" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError11" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco11" class="w-100" name="anexoNumFoco11" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO211" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error11" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO211" class="w-100" name="anexoEmisionesSO211" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO211" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error11" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO211" name="anexoEmisionesNO211" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion11">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion11" name="anexoBaseLiquidacion11" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco12" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError12" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco12" class="w-100" name="anexoNumFoco12" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO212" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error12" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO212" class="w-100" name="anexoEmisionesSO212" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO212" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error12" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO212" name="anexoEmisionesNO212" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion12">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion12" name="anexoBaseLiquidacion12" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco13" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError13" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco13" class="w-100" name="anexoNumFoco13" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO213" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error13" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO213" class="w-100" name="anexoEmisionesSO213" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO213" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error13" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO213" name="anexoEmisionesNO213" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion13">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion13" name="anexoBaseLiquidacion13" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco14" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError14" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco14" class="w-100" name="anexoNumFoco14" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO214" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error14" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO214" class="w-100" name="anexoEmisionesSO214" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO214" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error14" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO214" name="anexoEmisionesNO214" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion14">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion14" name="anexoBaseLiquidacion14" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco15" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError15" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco15" class="w-100" name="anexoNumFoco15" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO215" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error15" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO215" class="w-100" name="anexoEmisionesSO215" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO215" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error15" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO215" name="anexoEmisionesNO215" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion15">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion15" name="anexoBaseLiquidacion15" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco16" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError16" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco16" class="w-100" name="anexoNumFoco16" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO216" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error16" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO216" class="w-100" name="anexoEmisionesSO216" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO216" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error16" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO216" name="anexoEmisionesNO216" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion16">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion16" name="anexoBaseLiquidacion16" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco17" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError17" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco17" class="w-100" name="anexoNumFoco17" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO217" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error17" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO217" class="w-100" name="anexoEmisionesSO217" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO217" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error17" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO217" name="anexoEmisionesNO217" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion17">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion17" name="anexoBaseLiquidacion17" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco18" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError18" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco18" class="w-100" name="anexoNumFoco18" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO218" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error18" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO218" class="w-100" name="anexoEmisionesSO218" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO218" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error18" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO218" name="anexoEmisionesNO218" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion18">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion18" name="anexoBaseLiquidacion18" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+	       <fieldset class="contenidoFila">
+       
+			<div class="row">
+				<div class="col-12 col-xl-1 colResponsive">					                    
+	                    <label for="anexoNumFoco19" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Foco Num.(a)</label>
+						<input name="anexoNumFocoError19" type="hidden" value="">		               		        	
+	                    <input id="anexoNumFoco19" class="w-100" name="anexoNumFoco19" type="text" size="4" maxlength="4">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesSO219" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de SO<sub>2</sub>(b)</label>
+						<input name="anexoEmisionesSO2Error19" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesSO219" class="w-100" name="anexoEmisionesSO219" type="text" size="18" maxlength="18">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive">						
+	                    <label for="anexoEmisionesNO219" class="marcaError">
+	                        
+	                    </label>
+	                    <label>Toneladas métricas equivalentes de NO<sub>2</sub>(c)</label>
+						<input name="anexoEmisionesNO2Error19" type="hidden" value="">		               		        	
+	                    <input id="anexoEmisionesNO219" name="anexoEmisionesNO219" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha">
+	            </div> 
+				<div class="col-12 col-xl-3 colResponsive"><label for="anexoBaseLiquidacion19">Base de liquidación en toneladas (d)=[(b)+(c)x1,5]x4</label>						
+	                    <input id="anexoBaseLiquidacion19" name="anexoBaseLiquidacion19" type="text" size="18" maxlength="18" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	            </div>
+	        </div>
+	    </fieldset>
+
+
+            
+    
+
+        <fieldset class="contenidoDatos">
+			<div class="filaCentrada">
+				<div class="alineamientoDerecha">
+						BASE DE LIQUIDACIÓN (Suma)
+						<strong>103</strong>		
+	                    <label for="anexoBaseLiquidacionSuma"></label><input id="anexoBaseLiquidacionSuma" name="anexoBaseLiquidacionSuma" type="text" size="20" maxlength="20" class="alineamientoDerecha proteger" readonly="readonly">
+	            </div> 
+            </div>         
+		</fieldset>
+    
+    <div class="filaSepardor"></div>
+    <div class="cabecera">
+	    <fieldset class="bordeTablaPrincipal">
+	        <div class="filaCentrada">
+	            <fieldset id="marcosInformativos" class="letra70">
+	                <div class="filaCentrada">
+	                    <div class="colCentrada">
+	                        <div class="colCentrada letraNormal">
+								<input id="almacenarAnexoModelo701_2012" name="almacenarAnexoModelo701_2012" type="submit" value="     Almacenar datos introducidos     ">
+	                        </div>
+	                    </div>
+	                </div>	
+	            </fieldset>	    
+	        </div>
+	    </fieldset>
+	</div>
+    
+    
+    
+    
+    <div class="novisible">
+        <input id="oculto" name="almacenarAnexoModelo701_2012" type="submit" value="veamos">
+    </div>
+<div class="fila letra70">(*) R: Miles de horas anuales de la actividad 
+de la instalación establecido en la Ley del impuesto dividido por 1.000.
+ Véanse instrucciones de cumplimentación del Anexo.</div>
+
+</div>
+	<!-- Fin del div principal -->
+
+
+        <!-- ASISTENTES -->
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<div class="filaSepardor"></div>
+		
+		<div class="principal novisible">
+		
+			
+
+
+
+
+
+
+
+
+
+			
+			<div class="filaSepardor"></div>
+			<!-- CABECERA -->
+			<div class="contenidoCabecera">
+				<fieldset class="contenidoCabecera">
+					<div class="contenidoCabeceraTexto">
+						<div class="col">Cálculo del recargo e intereses de demora por presentación fuera de plazo</div>
+ 						
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#Recargoeinteresesdeautoliquidacinesfueradeplazo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+</div>
+			</fieldset>
+		</div>
+		
+		<div class="contenidoDatos">
+			<fieldset class="contenidoDatos">
+				<div class="contenidoDatos">
+					<div class="row">
+						<div class="col-5 col-xl-4 colResponsive">
+							<label for="fechaDevengoDiaIntereses" name="labelFechaDevengoDia">
+
+										Devengo
+ 
+							</label>
+						</div>
+					
+					
+						<div class="col-7 col-xl-4 colResponsive">
+ 
+								<label for="fechaDevengoDiaIntereses" name="fechaDevengoError" class="marcaError"> 
+									 
+								</label>
+								<div class="w-100">
+									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Dia fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" size="3" maxlength="4" readonly="readonly">
+								</div> 
+
+					</div>
+						
+						
+				<div class="col5px">
+					<label for="codigoTerritorialIntereses" name="labelCodigoTerritorial"> 
+					<!--  Código Territorial  -->
+					</label> 
+					<label for="codigoTerritorialIntereses" name="codigoTerritorialError" class="marcaError"> 
+						 
+					</label>
+	
+					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="" size="6" maxlength="6" readonly="readonly" type="hidden">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="labelFechaFinDePlazoDia"> 
+
+						Fecha fin de plazo 
+ 
+					</label>
+				</div>
+				
+				<div class="col-7 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="fechaFinDePlazoError" class="marcaError">
+						  
+					</label>
+					<div class="w-100">
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Dia Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoMes" class="visually-hidden">Mes Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" size="3" maxlength="4">
+					</div>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaIngresoDia" name="labelFechaIngresoDia"> 
+						Fecha de presentación prevista 
+					</label>
+				</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<label for="fechaIngresoDia" name="fechaIngresoError" class="marcaError"> 
+					 
+				</label> 
+				<div class="w-100">
+					<input id="fechaIngresoDia" name="fechaIngresoDia" title="Dia Fecha Ingreso" size="1" maxlength="2"> 
+				    
+				    <label for="fechaIngresoMes" class="visually-hidden">Mes Fecha Ingreso</label>
+				    <input id="fechaIngresoMes" title="Mes Fecha Ingreso" name="fechaIngresoMes" size="1" maxlength="2"> 
+				    
+				    <label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Ingreso</label>
+				    <input id="fechaFinDePlazoAnyo" title="Año Fecha Ingreso" name="fechaIngresoAnyo" size="3" maxlength="4">
+			    </div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeCuota" name="labelimporteCuota"> 
+					Importe a ingresar resultante de la autoliquidación 
+				</label> 
+				<label for="importeCuota" name="labelimporteCuotaIntereses" class="marcaError">
+				 	 
+				 </label>
+			</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeCuota" name="importeCuota" readonly="readonly" value="0" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="porcentajeRecargoIntereses" name="labelimporteRecargoIntereses"> Corresponde un recargo del </label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="porcentajeRecargoIntereses" name="porcentajeRecargoIntereses" value="0" size="4" maxlength="4" class="proteger alineamientoDerecha w-100" readonly="readonly"> 
+				<label for="importeRecargoIntereses" name="labelporcentajeRecargoIntereses">
+					 %. No obstante, si realiza el ingreso de la deuda resultante de esta autoliquidación el recargo se	reduce en el 25 %. 
+				</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeRecargoIntereses" name="labelimporteIntereses"> 
+					Recargo reducido 
+				</label>
+			</div>
+		
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeRecargoIntereses" name="importeRecargoIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeIntereses" name="labelimporteIntereses"> 
+					Intereses 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+			<input id="importeIntereses" name="importeIntereses" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeTotalAPagarIntereses" name="labelimporteTotalAPagarIntereses"> 
+					Total a ingresar 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	</div></fieldset>
+
+		<!-- SEPARADOR DE LA BARRA DE BOTONES -->
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<!-- MARCO BARRA DE BOTONES -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="row">
+		        	<div class="col-12 col-xl-12 colResponsive">
+			            <fieldset id="marcosInformativos" class="letra70">
+			                
+							
+							<!-- BOTONES -->	
+								<input type="submit" value="  Realizar el cálculo  " name="botonIntereses">
+								<input type="submit" value="   Incorporar datos    " name="botonInteresesIncorporar">
+								<input type="submit" value="   Salir    " name="botonInteresesSalir">
+	
+	  							
+			            </fieldset>
+			        </div>	    
+		        </div>
+		    </fieldset>
+		</div>
+
+
+	<!-- CAMPOS HIDDEN -->
+	<input type="hidden" name="comprobarIntereses" value="0">
+	<input type="hidden" name="periodoAnterior" value="null">
+
+</div>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+		
+
+	<div class="principal novisible">
+		<div class="filaSepardor"></div>
+		<div class="filaCentrada">
+			<div class="colCentrada">
+				<label for="accesibilidad">
+					Pulse el botón situado a la izquierda para seleccionar el epígrafe.<input type="hidden" id="accesibilidad">
+				</label>
+			</div>
+		</div>
+		<div class="filaSepardor"></div>
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+	        	<div class="contenidoCabeceraTexto">
+	            	<div class="col">
+	            		Relación de epígrafes y actividad
+					</div>
+				</div>
+		    </fieldset>
+		</div>
+
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe0" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.1 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción de energía eléctrica en régimen ordinario o en régimen
+ especial, en las que se produzca la combustión de combustibles fósiles,
+ residuos o biomasa.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe1" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.1 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Cogeneración, calderas, generadores de vapor o cualquier otro 
+equipamiento o instalación de combustión existente en una industria, sea
+ ésta o no su actividad principal.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe2" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.2 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Refino de petróleo o de crudo de petróleo.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe3" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.2 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción de gas combustible distinto del gas natural y gases licuados del petróleo.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe4" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.3)
+								</strong>
+							
+						</span>
+						<span>							
+							Coquerías.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe5" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.4a)
+								</strong>
+							
+						</span>
+						<span>							
+							Gasificación y licuefacción de carbón.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe6" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(1.4b)
+								</strong>
+							
+						</span>
+						<span>							
+							Gasificación y licuefacción de otros combustibles, cuando la 
+instalación tenga comuna potencia térmica nominal igual o superior a 20 
+MW.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe7" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Calcinación o sinterización de minerales metálicos incluido el mineral sulfuroso.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe8" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.2)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción de fundición o de aceros brutos (fusión primaria o 
+secundaria), incluidas las correspondientes instalaciones de fundición 
+continua de una capacidad de más de 2,5 toneladas por hora.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe9" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.3 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Laminado en caliente con una capacidad superior a 20 toneladas de acero bruto por hora.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe10" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.3 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Forjado con martillos cuya energía de impacto sea superior a 50 
+kilojulios por martillo y cuando la potencia térmica utilizada sea 
+superior a 20 MW.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe11" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.3 c)
+								</strong>
+							
+						</span>
+						<span>							
+							Aplicación de capas de protección de metal fundido con una 
+capacidad de tratamiento de más de 2 toneladas de acero bruto por hora.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe12" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.4)
+								</strong>
+							
+						</span>
+						<span>							
+							Fundiciones de metales ferrosos con una capacidad de producción de más de 20 toneladas por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe13" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.5 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción de metales en bruto no ferrosos a partir de minerales,
+ de concentrados o de materias primas secundarias mediante 
+procedimientos metalúrgicos, químicos o electrolíticos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe14" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.5 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Fusión de metales no ferrosos, inclusive la aleación, así como 
+los productos de recuperación (refinado, moldeado en fundición) con una 
+capacidad de fusión de más de 4 toneladas para el plomo y el cadmio o 20
+ toneladas para todos los demás metales, por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe15" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(2.6)
+								</strong>
+							
+						</span>
+						<span>							
+							Tratamiento de superficie de metales y materiales plásticos por 
+procedimiento electrolítico o químico, cuando el volumen de las cubetas o
+ de las líneas completas destinadas al tratamiento empleadas sea 
+superior a 30 m3.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe16" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.1 a)
+								</strong>
+							
+						</span>
+						<span>							
+							i) Fabricación de cemento por molienda con una capacidad de 
+producción superior a 500 toneladas diarias. ii) Fabricación de clínker 
+en hornos rotatorios con una capacidad de producción superior a 500 
+toneladas diarias, o en hornos de otro tipo con una capacidad de 
+producción superior a 50 toneladas por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe17" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.1 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción de cal en hornos con una capacidad de producción superior a 50 toneladas diarias.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe18" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.1 c)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción de óxido de magnesio en hornos con una capacidad de producción superior a 50 toneladas diarias.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe19" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.2)
+								</strong>
+							
+						</span>
+						<span>							
+							Sin contenido
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe20" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.3)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de vidrio incluida la fibra de vidrio, con una capacidad de fusión superior a 20 toneladas por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe21" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.4)
+								</strong>
+							
+						</span>
+						<span>							
+							Fundición de materiales minerales, incluida la fabricación de 
+fibras minerales con una capacidad de fundición superior a 20 toneladas 
+por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe22" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(3.5)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de productos cerámicos mediante horneado, en 
+particular tejas, ladrillos, refractarios, azulejos o productos 
+cerámicos ornamentales o de uso doméstico, con una capacidad de 
+producción superior a 75 toneladas por día, y/o una capacidad de 
+horneado de más de 4 m3 y de más de 300 kg/m3 de densidad de carga por 
+horno.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe23" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de hidrocarburos simples (lineales o cíclicos, saturados o insaturados, alifáticos o aromáticos).
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe24" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de hidrocarburos oxigenados, tales como alcoholes, 
+aldehídos, cetonas, ácidos orgánicos, ésteres, acetatos, éteres, 
+peróxidos, resinas, epóxidos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe25" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 c)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de hidrocarburos sulfurados.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe26" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 d)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de hidrocarburos nitrogenados, en particular, aminas,
+ amidas, compuestos nitrosos, nítricos o nitratos, nitrilos, cianatos e 
+isocianatos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe27" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 e)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de hidrocarburos fosforados.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe28" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 f)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de hidrocarburos halogenados.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe29" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 g)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de compuestos orgánicos metálicos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe30" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 h)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de materias plásticas de base (polímeros, fibras sintéticas, fibras a base de celulosa).
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe31" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 i)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de cauchos sintéticos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe32" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 j)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de colorantes y pigmentos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe33" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.1 k)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de tensioactivos y agentes de superficie.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe34" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.2 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de gases y, en particular, el amoniaco, el cloro o el
+ cloruro de hidrógeno, el flúor o floruro de hidrógeno, los óxidos de 
+carbono, los compuestos de azufre, los óxidos del nitrógeno, el 
+hidrógeno, el dióxido de azufre, el dicloruro de carbonilo.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe35" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.2 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de ácidos y, en particular, el ácido crómico, el 
+ácido fluorhídrico, el ácido fosfórico, el ácido nítrico, el ácido 
+clorhídrico, el ácido sulfúrico, el ácido sulfúrico fumante, los ácidos 
+sulfurados.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe36" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.2 c)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de bases y, en particular, el hidróxido de amonio, el hidróxido potásico, el hidróxido sódico.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe37" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.2 d)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de sales como el cloruro de amonio, el clorato 
+potásico, el carbonato potásico (potasa), el carbonato sódico (sosa), 
+los perboratos, el nitrato argéntico.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe38" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.2 e)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de no metales, óxidos metálicos u otros compuestos 
+inorgánicos como el carburo de calcio, el silicio, el carburo de 
+silicio.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe39" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.3)
+								</strong>
+							
+						</span>
+						<span>							
+							Químicas para la fabricación de fertilizantes a base de fósforo, 
+de nitrógeno o de potasio (fertilizantes simples o compuestos).
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe40" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.4)
+								</strong>
+							
+						</span>
+						<span>							
+							Químicas para la fabricación de productos de base fitofarmacéuticos y de biocidas.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe41" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.5)
+								</strong>
+							
+						</span>
+						<span>							
+							Químicas que utilicen un procedimiento químico o biológico para la fabricación de medicamentos de base.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe42" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(4.6)
+								</strong>
+							
+						</span>
+						<span>							
+							Químicas para la fabricación de explosivos.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe43" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Valorización o eliminación de residuos peligrosos, con una 
+capacidad de más de 10 toneladas por día que realicen una o más de las 
+siguientes actividades: a) Tratamiento biológico; b) Tratamiento 
+físico-químico; c) Combinación o mezcla previas a las operaciones 
+mencionadas en los apartados 5.1 y 5.2; d) Reenvasado previo a 
+cualquiera de las operaciones mencionadas en los apartados 5.1 y 5.2; e)
+ Recuperación o regeneración de disolventes; f) Reciclado o recuperación
+ de materias inorgánicas que no sean metales o compuestos metálicos; g) 
+Regeneración de ácidos o de bases; h) Valorización de componentes 
+utilizados para reducir la contaminación; i) Valorización de componentes
+ procedentes de catalizadores; j) Regeneración o reutilización de 
+aceites; k) Embalse superficial (por ejemplo, vertido de residuos 
+líquidos o lodos en pozos, estanques o lagunas, etc.). 
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe44" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.2a)
+								</strong>
+							
+						</span>
+						<span>							
+							Valorización o eliminación de residuos en plantas de incineración
+ o coincineración de residuos peligrosos con una capacidad superior a 
+tres toneladas por hora
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe45" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.2b)
+								</strong>
+							
+						</span>
+						<span>							
+							Valorización o eliminación de residuos en plantas de incineración
+ o coincineración de residuos no peligrosos con una capacidad superior a
+ 10 toneladas por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe46" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.3)
+								</strong>
+							
+						</span>
+						<span>							
+							Eliminación de los residuos no peligrosos con una capacidad de 
+más de 50 toneladas por día, que incluyan una o más de las siguientes 
+actividades, excluyendo las incluidas en el Real Decreto-Ley 11/1995, de
+ 28 de diciembre, por el que se establecen las normas aplicables al 
+tratamiento de las aguas residuales urbanas: a) Tratamiento biológico; 
+b) Tratamiento físico-químico; c) Tratamiento previo a la incineración o
+ coincineración; d) Tratamiento de escorias y cenizas; e) tratamiento en
+ trituradoras de residuos metálicos, incluyendo residuos eléctricos y 
+electrónicos, y vehículos al final de su vida útil y sus componentes.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe47" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.4)
+								</strong>
+							
+						</span>
+						<span>							
+							Valorización, o una mezcla de valorización y eliminación, de 
+residuos no peligrosos con una capacidad superior a 75 toneladas por día
+ que incluyan una o más de las siguientes actividades, excluyendo las 
+incluidas en el Real Decreto-ley 11/1995, de 28 de diciembre, por el que
+ se establecen las normas aplicables al tratamiento de las aguas 
+residuales urbanas: a) Tratamiento biológico; b) Tratamiento previo a la
+ incineración o coincineración; c) Tratamiento de escorias y cenizas; d)
+ Tratamiento en trituradoras de residuos metálicos, incluyendo residuos 
+eléctricos y electrónicos, y vehículos al final de su vida útil y sus 
+componentes. Cuando la única actividad de tratamiento de residuos que se
+ lleve a cabo en la instalación sea la digestión anaeróbica, los 
+umbrales de capacidad para esta actividad serán de 100 toneladas al día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe48" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.5)
+								</strong>
+							
+						</span>
+						<span>							
+							Vertederos de todo tipo de residuos que reciban más de 10 
+toneladas por día o que tengan una capacidad total de más de 25.000 
+toneladas con exclusión de los vertederos de residuos inertes.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe49" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.6)
+								</strong>
+							
+						</span>
+						<span>							
+							Almacenamiento temporal de los residuos peligrosos no incluidos 
+en el apartado 5.5 en espera de la aplicación de alguno de los 
+tratamientos mencionados en el apartado 5.1, 5.2, 5.5 y 5.7, con una 
+capacidad total superior a 50 toneladas, excluyendo el almacenamiento 
+temporal, pendiente de recogida, en el sitio donde el residuo es 
+generado.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe50" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(5.7)
+								</strong>
+							
+						</span>
+						<span>							
+							Almacenamiento subterráneo de residuos peligrosos con una capacidad total superior a 50 toneladas.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe51" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(6.1 a)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de pasta de papel a partir de madera o de otras materias fibrosas.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe52" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(6.1 b)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de papel y cartón con una capacidad de producción de más de 20 toneladas diarias.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe53" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(6.2)
+								</strong>
+							
+						</span>
+						<span>							
+							Producción y tratamiento de celulosa con una capacidad de producción superior a 20 toneladas diarias
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe54" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(6.3)
+								</strong>
+							
+						</span>
+						<span>							
+							fabricación de uno o más de los siguientes tableros derivados de 
+la madera: tableros de virutas de madera orientadas, tableros 
+aglomerados o tableros de cartón comprimido, con una capacidad de 
+producción superior a 600 m3 diarios.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe55" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(7.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Tratamiento previo (operaciones de lavado, blanqueo, 
+mercerización) o para el tinte de fibras o productos textiles cuando la 
+capacidad de tratamiento supere las 10 toneladas diarias.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe56" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(8.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Curtido de cueros cuando la capacidad de tratamiento supere las 12 toneladas de productos acabados por día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe57" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.1a)
+								</strong>
+							
+						</span>
+						<span>							
+							Mataderos con una capacidad de producción de canales superior a 50 toneladas/día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe58" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.1b)
+								</strong>
+							
+						</span>
+						<span>							
+							Tratamiento y transformación, diferente del mero envasado, de las
+ siguientes materias primas, tratadas o no previamente, destinadas a la 
+fabricación de productos alimenticios o piensos a partir de: i) Materia 
+prima animal (que no sea exclusivamente la leche) de una capacidad de 
+producción de productos acabados superior a 75 toneladas/día; ii) 
+Materia prima vegetal de una capacidad de producción de productos 
+acabados superior a 300 toneladas por día o 600 toneladas por día en 
+caso de que la instalación funcione durante un período no superior a 90 
+días consecutivos en un año cualquiera; iii) solo materias primas 
+animales y vegetales, tanto en productos combinados como por separado, 
+con una capacidad de producción de productos acabados en toneladas por 
+día superior a: - 75 si A es igual o superior a 10, o - [300 - (22,5 × 
+A)] en cualquier otro caso donde "A" es la porción de materia animal (en
+ porcentaje del peso) de la capacidad de producción de productos 
+acabados. El envase no se incluirá en el peso final del producto. La 
+presente subsección no será de aplicación cuando la materia prima sea 
+solo leche.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe59" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.1c)
+								</strong>
+							
+						</span>
+						<span>							
+							Tratamiento y transformación solamente de la leche, con una 
+cantidad de leche recibida superior a 200 toneladas por día (valor medio
+ anual).
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe60" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.2)
+								</strong>
+							
+						</span>
+						<span>							
+							Eliminación o aprovechamiento de carcasas o desechos de animales 
+con una capacidad de tratamiento superior a 10 toneladas/día.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe61" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.3a)
+								</strong>
+							
+						</span>
+						<span>							
+							Cría intensiva de aves de corral o de cerdos que dispongan de más
+ de 40.000 plazas si se trata de gallinas ponedoras o del número 
+equivalente en excreta de nitrógeno para otras orientaciones productivas
+ de aves de corral.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe62" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.3b)
+								</strong>
+							
+						</span>
+						<span>							
+							Cría intensiva de aves de corral o de cerdos que dispongan de más de 2.000 plazas para cerdos de cebo de más de 30 kg.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe63" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(9.3c)
+								</strong>
+							
+						</span>
+						<span>							
+							Cría intensiva de aves de corral o de cerdos que dispongan de más de 750 plazas para cerdas reproductoras.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe64" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(10.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Tratamiento de superficies de materiales, de objetos o productos 
+con utilización de disolventes orgánicos, en particular para 
+aprestarlos, estamparlos, revestirlos y desengrasarlos, 
+impermeabilizarlos, pegarlos, enlacarlos, limpiarlos o impregnarlos, con
+ una capacidad de consumo de más de 150 Kg de disolvente por hora o más 
+de 200 toneladas/año.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe65" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(11.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Fabricación de carbono sinterizado o electrografito por combustión o grafitación.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe66" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(12.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Conservación de la madera y de los productos derivados de la 
+madera utilizando productos químicos, con una capacidad de producción 
+superior a 75 m3 diarios, distinta de tratamientos para combatir la 
+albura exclusivamente
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoFila">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe67" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(13.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Tratamiento independiente de aguas residuales, no contemplado en 
+la legislación sobre aguas residuales urbanas, y vertidas por una 
+instalación contemplada en el presente anejo.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+			<fieldset class="contenidoDatos">
+				<input type="hidden" id="accesibilidad">
+				<div class="fila">
+					<div class="col">
+						<input id="epigrafe" name="epigrafe68" type="submit" value="&nbsp;">
+						<span>
+							
+								<strong>
+									(14.1)
+								</strong>
+							
+						</span>
+						<span>							
+							Captura de flujos de CO2 procedentes de instalaciones incluidas 
+en el presente anejo con fines de almacenamiento geológico con arreglo a
+ la Ley 40/2010, de 29 de diciembre, de almacenamiento geológico de 
+dióxido de carbono.
+						</span>
+	            	</div>
+		      </div>
+		  </fieldset>
+
+
+	<div class="filaSepardor"></div>
+
+</div>
+	<!-- Fin del div principal -->
+     
+                
+   <div id="principal" class="principal visible">
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>IMPUESTO SOBRE DETERMINADAS ACTIVIDADES QUE INCIDEN EN EL MEDIO AMBIENTE</h1>
+			<h2>Autoliquidación Trimestral</h2>
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 701</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202610</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+
+	         <div class="filaSepardor"></div> 
+	         
+            
+
+
+
+
+
+
+
+
+
+            
+            <div class="filaSepardor"></div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$(function()  
+	{
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#fechaDevengo").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+	});
+	
+	function updateFechaDevengo()
+	{
+		//alert('se ha modificado la fecha de devengo.');
+		    
+	    var isCorrectaFechaDevengo = validarFormatoFecha($('#fechaDevengo').val());
+	    //alert('Fecha de devengo correcta: ' + isCorrectaFechaDevengo);
+	    
+	    if (isCorrectaFechaDevengo)
+	    {
+	    	$("#fechaDevengoDia").val($("#fechaDevengo").val().substring(0,2));
+	    	$("#fechaDevengoMes").val($("#fechaDevengo").val().substring(3,5));
+	    	$("#fechaDevengoAnno").val($("#fechaDevengo").val().substring(6,10));
+	    }
+	    else
+	    {
+	    	$("#fechaDevengoDia").val('');
+	    	$("#fechaDevengoMes").val('');
+	    	$("#fechaDevengoAnno").val('');
+	    }
+	    
+	    submitWithPosicionScroll('fechaDevengo');
+	}
+	
+	function validarFormatoFecha(campo) {
+	     var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+	     if ((campo.match(RegExPattern)) && (campo!='')) {
+	           return true;
+	     } else {
+	           return false;
+	     }
+	}
+	
+	function existeFecha(fecha){
+	     var fechaf = fecha.split("/");
+	     var day = fechaf[0];
+	     var month = fechaf[1];
+	     var year = fechaf[2];
+	     var date = new Date(year,month,'0');
+	     if((day-0)>(date.getDate()-0)){
+	           return false;
+	     }
+	     return true;
+	}
+
+</script>
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+
+	
+    
+
+ 	
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+        
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos del Documento
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#Oficinaliquidadorayc%C3%B3digoterritorial" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<div class="row"> <!-- FILA 1 -->
+			<div class="col-6 col-xl-3 colResponsive">
+				<label for="selectOficinaLiquidadora" name="selectOficinaLiquidadoraError" class="marcaError"></label>
+
+				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
+					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
+	                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option value="EH1301">CIUDAD REAL</option><option value="EH1601">CUENCA</option><option value="EH1901">GUADALAJARA</option><option value="EH4501">TOLEDO</option>
+	               	</select>
+               	
+               	
+                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="">
+
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
+				<label for="codigoTerritorial">Código territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6">
+			</div>
+		</div>
+		
+		
+
+		
+		
+
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+				
+				<input id="fechaDevengoDia" name="fechaDevengoDia" type="hidden" value="30" size="2" maxlength="2">
+				<input id="fechaDevengoMes" name="fechaDevengoMes" type="hidden" value="00" size="2" maxlength="2">
+				<input id="fechaDevengoAnno" name="fechaDevengoAnno" type="hidden" value="0" size="4" maxlength="4">			
+				
+				<div class="row">
+					<div class="col-6 col-xl-3 colResponsive">
+						<label for="modelo_701_2012_Devengo">Devengo: <strong>3</strong> ejercicio</label>
+						<label for="modelo_701_2012_Devengo" class="marcaError">
+							
+						</label>				
+		   	            <select id="modelo_701_2012_Devengo" name="modelo_701_2012_Devengo" class="w-100 " onchange="submitWithPosicionScroll('modelo_701_2012_Devengo')" size="1"> 
+							<option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">2026</option><option value="2">2025</option><option value="3">2024</option><option value="4">2023</option><option value="5">2022</option><option value="6">2021</option><option value="7">2020</option><option value="8">2019</option><option value="9">2018</option><option value="10">2017</option><option value="11">2016</option><option value="12">2015</option><option value="13">2014</option><option value="14">2013</option>
+						</select>
+					</div>
+					<div class="col-6 col-xl-3 colResponsive">
+		   	            <label for="modelo_701_2012_Periodo">Periodo</label>
+						<label for="modelo_701_2012_Periodo" class="marcaError">
+							
+						</label>
+		   	            <select id="modelo_701_2012_Periodo" name="modelo_701_2012_Periodo" class="w-100 " onchange="submitWithPosicionScroll('modelo_701_2012_Periodo')" size="1"> 
+							<option selected="selected" value="0">SELECCIONE UNA OPCIÓN</option><option value="1">1T</option><option value="2">2T</option><option value="3">3T</option>
+						</select>
+		               
+					</div>
+				</div>
+		
+				
+
+	
+	
+		<div class="row novisible">
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>2</strong>
+				<label for="selectConceptoDescripcion" class="labelInline">Concepto			
+				<label for="selectConceptoDescripcion" class="marcaError"></label>
+				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
+	                <select id="selectConceptoDescripcion" class="w-100" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" size="1">
+						
+					</select>	
+				</label>				
+			</div>
+			
+			<div class="col-12 col-xl-2 colResponsive">
+				<label class="labelInline" for="codigoConcepto">&nbsp;</label>
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" size="4" maxlength="4" readonly="readonly">
+				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="proteger" value="">		
+								
+			</div>
+		</div>
+
+
+		
+				
+			
+	</fieldset>
+</div>			
+            
+            <div class="filaSepardor"></div>
+            
+	         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Sujeto Pasivo (A)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#(A)Datosidentificativosdelsujetopasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="701_2012">
+</div>		
+
+	        
+	        <div class="filaSepardor"></div>
+	       
+            <!--     INSTALACION    -->
+            
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Instalación (B)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#(B)Instalaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+        </div>
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		
+		<div class="row">
+			<div class="col-12 col-xl-11 colResponsive">
+				<strong>19
+</strong>
+				<label for="inActividad" class="marcaError"></label>
+	               <label for="inActividad">Actividad realizada</label>
+	               <textarea id="inActividad" name="inActividad" cols="35" rows="6" class="w-100 proteger" readonly="readonly"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>20</strong>
+                <label for="inEpigrafe" class="marcaError"></label>
+                <label for="inEpigrafe">Epígrafe</label>
+                <input id="inEpigrafe" name="inEpigrafe" type="text" size="10" maxlength="10" class="w-100 proteger" readonly="readonly">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<input id="botonRelacionEpigrafes" name="botonRelacionEpigrafes" type="submit" class="w-100" value=" Seleccionar epígrafe/actividad">
+			</div>
+		</div>
+		
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>21</strong>
+				<label for="inSelectSiglas" class="marcaError"></label>
+                <label for="inSelectSiglas">Siglas</label>
+                <select id="inSelectSiglas" name="inSelectSiglas" size="1" class="w-100 "><option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option></select>
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>22</strong>
+				<label for="inNombreVia" class="marcaError"></label>
+                <label for="inNombreVia">Nombre Vía Pública</label>
+                <input id="inNombreVia" name="inNombreVia" type="text" size="31" maxlength="60" class="w-100 ">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>23</strong>
+				<label for="inNumero" class="marcaError"></label>
+                <label for="inNumero">Número</label>
+                <input id="inNumero" name="inNumero" size="4" maxlength="8" class="w-100 ">
+			</div>
+		</div>
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>24</strong>
+				<label for="inLetra" class="marcaError"></label>
+                <label for="inLetra">Bloque</label>
+                <input id="inLetra" name="inLetra" size="1" maxlength="2" class="w-100 ">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>25</strong>
+				<label for="inEscalera" class="marcaError"></label>
+                <label for="inEscalera">Escalera</label>
+                <input id="inEscalera" name="inEscalera" size="1" maxlength="2" class="w-100 ">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>26</strong>
+				<label for="inPiso" class="marcaError"></label>
+                <label for="inPiso">Planta</label>
+                <input id="inPiso" name="inPiso" size="1" maxlength="2" class="w-100 ">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>27</strong>
+				<label for="inPuerta" class="marcaError"></label>
+                <label for="inPuerta">Puerta</label>
+                <input id="inPuerta" name="inPuerta" size="1" maxlength="2" class="w-100 ">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>28</strong>
+				<label for="inTelefono" class="marcaError"></label>
+                <label for="inTelefono">Telf.</label>
+                <input id="inTelefono" name="inTelefono" size="8" maxlength="9" class="w-100 ">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+     			<strong>29</strong>
+     			<label for="inFax" class="marcaError"></label>
+                <label for="inFax">Fax</label>
+                <input id="inFax" name="inFax" size="8" maxlength="9" class="w-100 ">
+			</div>
+		</div>
+		<div class="row"><!-- FILA 4 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				
+				<strong>31</strong>
+				<label for="inSelectProvincia" class="marcaError"></label>
+                <label for="inSelectProvincia">Provincia</label>
+                <select id="inSelectProvincia" name="inSelectProvincia" size="1" onchange="cargarMunicipiosAjax('inSelectProvincia', 'inSelectMunicipio')" class="w-100 ">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+               			
+                 <input type="hidden" name="spSelectProvinciaValidado" value="">
+
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>30</strong>
+				<label for="inSelectMunicipio" class="marcaError"></label>
+                <label for="inSelectMunicipio">Municipio</label>
+                <select id="inSelectMunicipio" name="inSelectMunicipio" size="1" class="w-100 ">
+                	
+               	</select>
+               		
+                 <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>32</strong>
+				<label for="inCodPostal" class="marcaError"></label>
+                <label for="inCodPostal">C. Postal</label>
+                <input id="inCodPostal" name="inCodPostal" type="text" size="4" maxlength="5" class="w-100 ">
+			</div>
+		</div>
+	</fieldset>
+</div>		
+	         
+	        <div class="filaSepardor"></div>
+	                 
+            <!--     LIQUIDACION    -->            
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+						<div class="col">
+	                        Liquidación (C)
+						</div>                    
+			            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#(C)Liquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                    </div>	                     
+                </fieldset>
+            </div>
+            <div class="contenidoDatos">
+               <fieldset class="contenidoFila">
+            	 <div class="row">
+            	 	<div class="col-12 col-xl-12 colResponsive">
+            	 		<strong>1) Emisión de gases contaminantes (Debe acompañarse del Anexo a Modelo 701_2012)</strong>
+            	 	</div>
+            	 </div>
+               	 <div class="row">
+               	 	<div class="col-12 col-xl-12 colResponsive">
+               	 		ESTIMACIÓN de la base:
+               	 	</div>
+               	 </div>              	   
+                        
+           			<!-- ***************************************************************** -->	
+           			<!-- ******************* COLUMNA 1 *********************************** -->
+           			<!-- ***************************************************************** -->
+
+
+		          	
+		          		<!-- ******************* FILA 1 *********************************** -->
+			        	<div class="row">
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   			<label for="cantidadActividadesDirecta">
+					               	<strong>36</strong> Directa (Nº.Focos)
+				               	</label>
+	               	   		</div>
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   		
+               	   				<input id="auGasesContDirecta" name="auGasesContDirecta" value="" type="hidden">												               		        	
+								<label for="cantidadActividadesDirecta" class="marcaError">
+										
+								</label>										     
+								<label for="checkDirecta" class="visually-hidden">check cantidad actividades directa</label>
+								<input id="checkDirecta" name="checkDirecta" type="checkbox" disabled="disabled">
+               	   				<input id="cantidadActividadesDirecta" name="cantidadActividadesDirecta" value="20" type="text" size="2" maxlength="2" class="alineamientoDerecha ">		               		        	
+								<input id="botonCantidadActividadesDirecta" name="botonCantidadActividadesDirecta" value="Anexo Directa" type="submit">		               		        	
+	               	   		</div> 
+		          		</div><!-- fin de la fila -->
+		          		<!-- *********************** FILA 2 ************************************* -->
+		          		<div class="row">
+		          			<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   			<label for="cantidadActividadesObjetiva">
+					               	<strong>37</strong> Objetiva (Nº.Focos)
+				               	</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	               	   			<input id="auGasesContObjetiva" name="auGasesContObjetiva" value="" type="hidden">		               		        	
+	               		        	
+									<label for="cantidadActividadesObjetiva" class="marcaError">
+											
+									</label>		               		        										
+									<label for="checkObjetiva" class="visually-hidden">check cantidad actividades objetiva</label>
+									<input id="checkObjetiva" name="checkObjetiva" type="checkbox" disabled="disabled">
+	               	   				
+		               	   			<input id="cantidadActividadesObjetiva" name="cantidadActividadesObjetiva" value="20" type="text" size="2" maxlength="2" class="alineamientoDerecha ">		               		        	
+									<input id="botonCantidadActividadesObjetiva" name="botonCantidadActividadesObjetiva" value="Anexo Objetiva" type="submit">               	   		       		        	
+	               	   		</div> 
+		          		</div>
+		          		<!-- ******************* FILA 3 *********************************** -->
+			        	<div class="row">
+			        		<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   			<label for="auGasesContBase"> 
+				               		<strong>38</strong> BASE: Gases emitidos
+			               		</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">		             	   		
+								<input id="auGasesContBase" name="auGasesContBase" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+	               	   				
+	               	   		</div>
+			        	
+			        	</div>
+		          		<!-- ******************* FILA 4 *********************************** -->
+			        	<div class="row">
+			        		<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   			<label for="auGasesContTipo"> 
+								<strong>39</strong> TIPO
+								</label>	
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   		
+								<input id="auGasesContTipo" name="auGasesContTipo" type="text" size="8" maxlength="8" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+										<label for="accesibilidad" class="letra70">Euros/t</label>		
+	               	   		</div>
+			        	
+			        	</div>
+
+			      
+		          
+		          <!-- ***************************************************************** -->	
+           		  <!-- ******************* COLUMNA 2 *********************************** -->
+           		  <!-- ***************************************************************** -->
+		          
+		          		 
+		          		 <!-- ******************* FILA 1 *********************************** -->
+		          		 <div class="row">
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auGasesContPagoIntegro"> 
+	  			               		<strong>40</strong> PAGO A CUENTA ÍNTEGRO (38 x 39 / 4)
+	 			               	</label>
+	               	   		</div>
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   			
+								<input id="auGasesContPagoIntegro" name="auGasesContPagoIntegro" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+	               	   		</div>
+		          		</div>
+		          		<!-- ******************* FILA 2 *********************************** -->
+			        	<div class="row">
+			        		<!-- COLUMNA 5 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   				<label for="auGasesContPorcentajeDeduccion"> 
+		   			               		<strong>41</strong> Porcentaje de deducción
+	   			               		</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 6 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	              		        
+								<input id="auGasesContPorcentajeDeduccion" name="auGasesContPorcentajeDeduccion" type="text" size="5" maxlength="5" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+	               	   		</div>
+			        	
+			        	</div>
+		          		<!-- ******************* FILA 3 *********************************** -->
+			        	<div class="row">
+			        		<!-- COLUMNA 5 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auGasesContImporteDeduccion"> 
+	   			               		<strong>42</strong> Importe deducción (40 x 41)
+				               	</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 6 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   			
+								<input id="auGasesContImporteDeduccion" name="auGasesContImporteDeduccion" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+	               	   		</div>
+			        	
+			        	</div>
+		          		<!-- ******************* FILA 4 *********************************** -->
+			        	<div class="row">
+			        		<!-- COLUMNA 5 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auGasesContPagoLiquido"> 
+	   			               		<strong>43</strong> PAGO A CUENTA LÍQUIDO (40 - 42)
+	  			               	</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 6 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	               	   			
+								<input id="auGasesContPagoLiquido" name="auGasesContPagoLiquido" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+	               	   		</div>
+			        	
+			        	</div>
+		
+		          		 
+			 		 
+		
+		<div class="row mt-4"><strong>2) Producción termonuclear de energía eléctrica</strong></div>               					               	    
+		
+					<!-- ***************************************************************** -->	
+           			<!-- ******************* COLUMNA 1 *********************************** -->
+           			<!-- ***************************************************************** -->
+		          	
+		          	
+		          		<!-- ******************* FILA 1 *********************************** -->
+			        	 <div class="row">
+	               	   		<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   				<label for="auEnergiaElectBase">
+				               		<strong>47</strong> BASE: Energía eléctrica producida
+			               		</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   			
+								<label for="auEnergiaElectBase" class="marcaError">
+										
+								</label>		               		        	
+								<input id="auEnergiaElectBase" disabled="disabled" name="auEnergiaElectBase" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+								<label for="accesibilidad" class="letra70">MWh</label>
+				               	   				
+	               	   		</div>
+		          		</div><!-- fin de la fila -->
+		          		<!-- ******************* FILA 1 *********************************** -->
+			        	 <div class="row">
+	               	   		<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   			<label for="auEnergiaElectTipo"> 
+				   			          <strong>48</strong>TIPO
+			   			        </label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   			
+								<input id="auEnergiaElectTipo" name="auEnergiaElectTipo" type="text" size="8" maxlength="8" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+									<label for="accesibilidad" class="letra70">Euros/MWh</label>	  
+	               	   		</div>
+		          		</div><!-- fin de la fila -->
+		          		
+			       
+			      
+		 
+		 
+		          
+		          <!-- ***************************************************************** -->	
+           		  <!-- ******************* COLUMNA 2 *********************************** -->
+           		  <!-- ***************************************************************** -->
+		          
+		          		 
+		          		<!-- ******************* FILA 2 *********************************** -->
+		          		 <div class="row">
+	               	   		
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auEnergiaElectPagoLiquido">
+							           <strong>49</strong> PAGO A CUENTA LÍQUIDO (47 x 48)
+						        </label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 6 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	               	   			
+								<input id="auEnergiaElectPagoLiquido" name="auEnergiaElectPagoLiquido" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">  		
+	               	   		</div>
+		          		</div>
+		
+		        
+		        
+		        
+		        
+		      
+		   <div class="row mt-4"><strong>3) Almacenamiento de residuos radiactivos</strong></div>               			               		   
+		     
+		        
+		        
+		        	<!-- ***************************************************************** -->	
+           			<!-- ******************* COLUMNA 1 *********************************** -->
+           			<!-- ***************************************************************** -->
+		   
+		          	
+		          		<!-- ******************* FILA 1 *********************************** -->
+			        	 <div class="row">
+	               	   		<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   			<label for="auResiduosRadTipoAltaAct">
+					            	<strong>50</strong> TIPO: Residuos alm. alta actividad
+				                </label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	            	   			
+								<label for="auResiduosRadBaseAltaAct" class="marcaError">
+										
+								</label>		               		        	
+								<input id="auResiduosRadBaseAltaAct" disabled="disabled" name="auResiduosRadBaseAltaAct" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+										<label for="accesibilidad" class="letra70">Kg U</label>		               	   				
+	               	   		</div>
+		          		</div><!-- fin de la fila -->
+		          		<!-- ******************* FILA 2 *********************************** -->
+			        	 <div class="row">
+	               	   		<!-- COLUMNA 1 -->	
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	            	   		   <label for="auResiduosRadTipoAltaAct">
+				               		<strong>51</strong> TIPO: Residuos alm. alta actividad
+			                   </label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 2 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	             	   			
+								<input id="auResiduosRadTipoAltaAct" name="auResiduosRadTipoAltaAct" type="text" size="8" maxlength="8" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+										<label for="accesibilidad" class="letra70">Euros/kg U</label>	               	   				
+	               	   		</div>
+		          		</div><!-- fin de la fila -->
+		          			<!-- ******************* FILA 3 *********************************** -->
+		          		
+			      
+		           		   
+		          <!-- ***************************************************************** -->	
+           		  <!-- ******************* COLUMNA 2 *********************************** -->
+           		  <!-- ***************************************************************** -->
+		          
+		          		 
+		          		 <!-- ******************* FILA 1 *********************************** -->
+		          		 <div class="row">
+	               	   		<!-- COLUMNA 5 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auResiduosRadBaseBajaAct">
+				               		<strong>52</strong> BASE: Resid. alm. media y baja actividad
+			               		</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 6 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">	            	   				
+								<label for="auResiduosRadBaseBajaAct" class="marcaError">
+										
+								</label>		               		        	
+								<input id="auResiduosRadBaseBajaAct" disabled="disabled" name="auResiduosRadBaseBajaAct" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+										<label for="accesibilidad" class="letra70">m<sup>3</sup></label>	
+	               	   		</div>
+		          		</div>
+		          		<!-- ******************* FILA 2 *********************************** -->
+		          		 <div class="row">
+	               	   		<!-- COLUMNA 5 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auResiduosRadTipoBajaAct">
+							             <strong>53</strong> TIPO: Resid. alm. media y baja actividad
+						         </label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 6 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	         	   				
+								<input id="auResiduosRadTipoBajaAct" name="auResiduosRadTipoBajaAct" type="text" size="8" maxlength="8" class="w-100 alineamientoDerecha proteger" readonly="readonly">
+										<label for="accesibilidad" class="letra70">Euros/m<sup>3</sup> </label>		
+	               	   		</div>
+		          		</div>
+		          		<!-- ******************* FILA 3 *********************************** -->
+		          		 <div class="row">
+	               	   		<!-- COLUMNA 3 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive"> 
+	               	   			<label for="auResiduosPagoCuentaLiquido">
+	       	   	   		   			<strong>54</strong> PAGO A CUENTA LÍQUIDO [(50x51)+(52x53)]/4
+	      	   	   		   		</label>
+	               	   		</div>
+	               	   		<!-- COLUMNA 4 -->
+	               	   		<div class="col-6 col-xl-4 colResponsive">
+	         	   				
+									<input id="auResiduosPagoCuentaLiquido" name="auResiduosPagoCuentaLiquido" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">	  
+	               	   		</div>
+		          		</div>
+		           </fieldset>		
+		        
+	    <!-- ****************************************************************************** -->
+	    <!-- ***************************** FIN DIV PARALELOS AJGG ************************* -->
+	    <!-- ****************************************************************************** -->  	 
+		          		 
+		                   
+          <fieldset class="contenidoDatos">
+                <div class="row">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>55</strong>
+                        <label for="auAIngresar" class="marcaError">
+                            
+                        </label>
+                        <label for="auAIngresar">
+                            A ingresar (43 ó 49 ó 54)
+                        </label>
+                    </div>
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <input id="auAIngresar" name="auAIngresar" readonly="readonly" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+                        
+                    </div>
+                </div>
+                   <div class="row">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>56</strong>
+                        <label for="auRecargo" class="marcaError">
+                            
+                        </label>
+                        <label for="auRecargo">
+                            Recargo por presentación fuera de plazo
+                        </label>
+                    </div>
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <input id="auRecargo" name="auRecargo" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+                        <input name="botonIntereses" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" class="small" type="submit">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>57</strong>
+                        <label for="auInteresesDemora" class="marcaError">
+                            
+                        </label>
+                        <label for="auInteresesDemora">
+                            Intereses de demora por presentación fuera de plazo
+                        </label>
+                    </div>
+                   	<div class="col-6 col-xl-4 colResponsive">
+                        <input id="auInteresesDemora" name="auInteresesDemora" type="text" size="16" maxlength="16" class="w-100 alineamientoDerecha ">
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <strong>58</strong>
+                        <label for="auTotalAIngresar" name="auTotalAIngresarError" class="marcaError">
+                            
+                        </label>
+                        <label for="auTotalAIngresar">
+                            Total a ingresar (55 + 56 + 57)
+                        </label>
+                    </div>
+                    <div class="col-6 col-xl-4 colResponsive">
+                        <input id="auTotalAIngresar" name="auTotalAIngresar" readonly="readonly" type="text" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+                    </div>                   
+                </div>
+                </fieldset>
+            </div>	
+
+	        
+            <!-- DECLARANTES -->            
+            
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Declarante (D)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-701-instrucciones-para-su-cumplimentacion#(D)Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoFila">
+		<div class="row">	
+			<div class="col-12 col-xl-4 colResponsive">
+                <label for="rpLugarFirma" class="marcaError">
+                	
+                </label>
+                <input type="hidden" id="accesible">                
+                <label for="rpLugarFirma" name="rpLugarFirma">
+                	<strong>Lugar de firma</strong>
+               	</label>
+                <input id="rpLugarFirma" name="rpLugarFirma" class="w-100 " type="text" size="35" maxlength="40">
+			</div>
+		</div>
+	</fieldset>
+
+	
+	       <fieldset class="contenidoFila">
+       
+    				
+		
+					<div class="row">
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>70</strong>
+							<label for="rpNif0" class="marcaError">
+								
+							</label>
+			                <label for="rpNif0">
+			                	N.I.F. del representante
+			               	</label>
+			                <input id="rpNif0" name="rpNif0" class="w-100 " size="15" maxlength="15">
+			           </div>
+					   <div class="col-12 col-xl-3 colResponsive">
+							<strong>71</strong>
+			                <label for="rpNombre0" class="marcaError">
+			                	
+			               	</label>
+			                <label for="rpNombre0">
+			                	Apellidos y nombre o razón social
+			               	</label>
+			                <input id="rpNombre0" name="rpNombre0" class="w-100 " type="text" size="45" maxlength="45">
+						</div>
+						<div class="col-12 col-xl-3 colResponsive">
+								<strong>72</strong>
+				                <label for="rpNotaria0" class="marcaError">
+				                	
+				               	</label>
+				                <label for="rpNotaria0">
+				                	Notaría
+				               	</label>
+				                <input id="rpNotaria0" name="rpNotaria0" class="w-100 " type="text" size="45" maxlength="45">
+				         </div>												
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>73</strong>
+			                <label for="rpFechaPoderDia0" class="marcaError">
+			                	
+			               	</label>
+			                <label for="rpFechaPoderDia0">
+			                	Fecha Poder
+			               	</label>
+			               	<div class="w-100">
+				                <input id="rpFechaPoderDia0" name="rpFechaPoderDia0" class="" type="text" size="2" maxlength="2">
+				                <label for="rpFechaPoderMes0" class="visually-hidden">Fecha Poder Mes</label>
+				                <label for="rpFechaPoderMes0"></label><input id="rpFechaPoderMes0" name="rpFechaPoderMes0" class="" type="text" size="2" maxlength="2">
+				                <label for="rpFechaPoderAnyo0" class="visually-hidden">Fecha Poder Año</label>
+				                <label for="rpFechaPoderAnyo0"></label><input id="rpFechaPoderAnyo0" name="rpFechaPoderAnyo0" class="" type="text" size="4" maxlength="4">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+	
+	       <fieldset class="contenidoFila">
+       
+    				
+		
+					<div class="row">
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>76</strong>
+							<label for="rpNif1" class="marcaError">
+								
+							</label>
+			                <label for="rpNif1">
+			                	N.I.F. del representante
+			               	</label>
+			                <input id="rpNif1" name="rpNif1" class="w-100 " size="15" maxlength="15">
+			           </div>
+					   <div class="col-12 col-xl-3 colResponsive">
+							<strong>77</strong>
+			                <label for="rpNombre1" class="marcaError">
+			                	
+			               	</label>
+			                <label for="rpNombre1">
+			                	Apellidos y nombre o razón social
+			               	</label>
+			                <input id="rpNombre1" name="rpNombre1" class="w-100 " type="text" size="45" maxlength="45">
+						</div>
+						<div class="col-12 col-xl-3 colResponsive">
+								<strong>78</strong>
+				                <label for="rpNotaria1" class="marcaError">
+				                	
+				               	</label>
+				                <label for="rpNotaria0">
+				                	Notaría
+				               	</label>
+				                <input id="rpNotaria1" name="rpNotaria1" class="w-100 " type="text" size="45" maxlength="45">
+				         </div>												
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>79</strong>
+			                <label for="rpFechaPoderDia1" class="marcaError">
+			                	
+			               	</label>
+			                <label for="rpFechaPoderDia1">
+			                	Fecha Poder
+			               	</label>
+			               	<div class="w-100">
+				                <input id="rpFechaPoderDia1" name="rpFechaPoderDia1" class="" type="text" size="2" maxlength="2">
+				                <label for="rpFechaPoderMes1" class="visually-hidden">Fecha Poder Mes</label>
+				                <label for="rpFechaPoderMes1"></label><input id="rpFechaPoderMes1" name="rpFechaPoderMes1" class="" type="text" size="2" maxlength="2">
+				                <label for="rpFechaPoderAnyo1" class="visually-hidden">Fecha Poder Año</label>
+				                <label for="rpFechaPoderAnyo1"></label><input id="rpFechaPoderAnyo1" name="rpFechaPoderAnyo1" class="" type="text" size="4" maxlength="4">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+	
+	        <fieldset class="contenidoDatos">
+       
+    				
+		
+					<div class="row">
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>82</strong>
+							<label for="rpNif2" class="marcaError">
+								
+							</label>
+			                <label for="rpNif2">
+			                	N.I.F. del representante
+			               	</label>
+			                <input id="rpNif2" name="rpNif2" class="w-100 " size="15" maxlength="15">
+			           </div>
+					   <div class="col-12 col-xl-3 colResponsive">
+							<strong>83</strong>
+			                <label for="rpNombre2" class="marcaError">
+			                	
+			               	</label>
+			                <label for="rpNombre2">
+			                	Apellidos y nombre o razón social
+			               	</label>
+			                <input id="rpNombre2" name="rpNombre2" class="w-100 " type="text" size="45" maxlength="45">
+						</div>
+						<div class="col-12 col-xl-3 colResponsive">
+								<strong>84</strong>
+				                <label for="rpNotaria2" class="marcaError">
+				                	
+				               	</label>
+				                <label for="rpNotaria0">
+				                	Notaría
+				               	</label>
+				                <input id="rpNotaria2" name="rpNotaria2" class="w-100 " type="text" size="45" maxlength="45">
+				         </div>												
+						<div class="col-12 col-xl-3 colResponsive">
+							<strong>85</strong>
+			                <label for="rpFechaPoderDia2" class="marcaError">
+			                	
+			               	</label>
+			                <label for="rpFechaPoderDia2">
+			                	Fecha Poder
+			               	</label>
+			               	<div class="w-100">
+				                <input id="rpFechaPoderDia2" name="rpFechaPoderDia2" class="" type="text" size="2" maxlength="2">
+				                <label for="rpFechaPoderMes2" class="visually-hidden">Fecha Poder Mes</label>
+				                <label for="rpFechaPoderMes2"></label><input id="rpFechaPoderMes2" name="rpFechaPoderMes2" class="" type="text" size="2" maxlength="2">
+				                <label for="rpFechaPoderAnyo2" class="visually-hidden">Fecha Poder Año</label>
+				                <label for="rpFechaPoderAnyo2"></label><input id="rpFechaPoderAnyo2" name="rpFechaPoderAnyo2" class="" type="text" size="4" maxlength="4">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+	
+</div>	         
+	                  
+	        
+
+
+	                  
+            <div class="filaSepardor"></div>			
+            
+            <div class="filaSepardor"></div>	    
+            
+        </div>
+
+        <input id="701_2012" name="MOD" type="hidden" value="701_2012">
+        <input id="referencia" type="hidden" name="referencia" value="701_2012">
+        <input id="version" type="hidden" name="version" value="6">
+        <input id="tipoAnexo" name="tipoAnexo" type="hidden" value="directa">
+        <input id="cantidadActividades" name="cantidadActividades" type="hidden" value="20">
+        
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+        
+        </form>     
+    
+</body></html>
