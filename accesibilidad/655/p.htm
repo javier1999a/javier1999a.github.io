@@ -1,0 +1,3036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><head>  
+    	<meta name="viewport" content="width=device-width, initial-scale=1">  	
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11,chrome=IE11">
+    	<!-- AJGG. UTILIZAMOS EL URL BASE PARA MANTENER EL CONTEXTO DE LA APLICACIÓN, ES NECESARIO SI UTILIZAMOS EL REQUESTDISPACHER EN VER DEL SENDREDIRECT -->
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+        
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	<script type="text/javascript" src="p_files/purify.min.js"></script>
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+			
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.min.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.min.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery.blockUI.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.form.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery.base64.js"></script>
+
+<link href="p_files/select2.min.css" rel="stylesheet">
+<script src="p_files/select2.min.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.min.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.min.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.min.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+        
+
+
+	
+    <script src="p_files/GreJsFuncionesJQueryAdjuntarDocumento_v1.js"></script><script> 
+		if(history.forward(1)){location.replace(history.forward(1))}
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}		
+		//CONTROLAMOS LOS EVENTOS DEL MODELO
+		$(function() 
+		{
+			
+			
+			$("#ddDocumentoJudicial").on('change',function()
+			{
+				if ($("#ddDocumentoJudicial").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoJudicial');
+				}
+				else
+				{
+					//SI HEMOS DESMARCADO EL CHECK
+					mostrarDialogoConfirmacionResetarDialogoJudicial();
+				}
+		    });
+			
+			$("#ddDocumentoNotarial").on('change',function()
+			{
+				if ($("#ddDocumentoNotarial").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoNotarial');
+				}
+				else
+				{
+					//SI HEMOS DESMARCADO EL CHECK
+					mostrarDialogoConfirmacionResetarDialogoNotarial();
+				}
+			}); 
+			
+			$("#ddCheckNotarioFueraTablas").on('change',function()
+			{
+				if ($("#ddCheckNotarioFueraTablas").is(':checked'))
+				{
+					//SI HEMOS DESMARCADO EL CHECK
+					mostrarDialogoConfirmacionResetarDialogoNotarialFT();
+				}
+				else
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddCheckNotarioFueraTablas');
+				}
+			}); 
+			
+			if ($("#ddDocumentoNotarial").is(':checked'))
+			{
+				//SI SE DESHABILITA SI TIENE DOCUEMENTOS ADJUTNOS.
+				if ($("#numeroDocumetosAdjuntos").length > 0 
+						&& $("#numeroDocumetosAdjuntos").val() != '0')
+				{
+					deshabilitarDatepicker('ddFechaEscritura');
+				}
+				else
+				{
+					// Control de calendario en campo ddFechaEscritura
+					$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+					$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+					$("#ddFechaEscritura").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+				}
+			}
+			
+			
+			$("#ddDocumentoAdministrativo").on('change',function()
+			{
+				if ($("#ddDocumentoAdministrativo").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoAdministrativo');
+				}
+				else
+				{
+					
+					//SI HEMOS DESMARCADO EL CHECK
+					if ($("#numeroDocumetosAdjuntos").length > 0 
+							&& $("#numeroDocumetosAdjuntos").val() != '0')
+					{
+						//SI HEMOS DESMARCADO EL CHECK
+						mostrarDialogoConfirmacionResetarDialogoADMINISTRATIVO();
+					}
+					else
+					{
+						submitWithPosicionScroll('ddDocumentoAdministrativo');
+					}
+				}
+		    });
+			
+			$("#ddDocumentoPrivado").on('change',function()
+			{
+				if ($("#ddDocumentoPrivado").is(':checked'))
+				{
+					//SI HEMOS CHECKEADO EL CHECK
+					submitWithPosicionScroll('ddDocumentoPrivado');
+					
+				}
+				else
+				{
+					
+					if ($("#numeroDocumetosAdjuntos").length > 0 
+							&& $("#numeroDocumetosAdjuntos").val() != '0')
+					{
+						//SI HEMOS DESMARCADO EL CHECK
+						mostrarDialogoConfirmacionResetarDialogoPRIVADO();
+					}
+					else
+					{
+						submitWithPosicionScroll('ddDocumentoPrivado');
+					}
+				}
+		    });
+			
+		
+		});
+		
+		//CARGAMOS LOS DATOS EN EL CASO DE QUE SE REALICEN CAMBIOS SIN HACER SUBMIT
+		function doLoadDatos2Asistente()
+		{
+			//CARGAMOS EN EL ASISTENTE EL CAMPO identificacionAutoAdministrativa
+			if ($("#ddNombreAutoridad").length > 0 && $("#ddNombreAutoridad").val() != '')
+			{
+				$("#identificacionAutoAdministrativa").val($("#ddNombreAutoridad").val());
+				$("#filaIdentificacionAutoAdministrativa").show();
+			}
+			else
+			{
+				$("#identificacionAutoAdministrativa").val("");
+				$("#filaIdentificacionAutoAdministrativa").hide();
+			}
+			
+			//CARGAMOS EN EL ASISTENTE EL CAMPO valorEnDocumento
+			if ($("#ddValorDocumento").length > 0 && $("#ddValorDocumento").val() != '')
+			{
+				$("#valorEnDocumento").val($("#ddValorDocumento").val());
+				$("#filaValorEnDocumento").show();
+			}
+			else
+			{
+				$("#valorEnDocumento").val("");
+				$("#filaValorEnDocumento").hide();
+			}
+			
+			//CARGAMOS EN EL ASISTENTE EL CAMPO localidadFormalizacion
+			if ($("#ddOtorgSelectMunicipio").length > 0 
+					&& $("#ddOtorgSelectMunicipio").val() != '0'
+						&& $("#ddOtorgSelectMunicipio").val() != null)
+			{
+				$("#localidadFormalizacion").val($('select[name="ddOtorgSelectMunicipio"] option:selected').text());
+				$("#filaLocalidadFormalizacion").show();
+			}
+			else
+			{
+				$("#localidadFormalizacion").val("");
+				$("#filaLocalidadFormalizacion").hide();
+			}
+			
+			//String decripcionOperacionActo = "";//casilla 57  	ddOperacion
+			//CARGAMOS EN EL ASISTENTE EL CAMPO localidadFormalizacion
+			if ($("#ddOperacion").length > 0 
+					&& $("#ddOperacion").val() != '0'
+						&& $("#ddOperacion").val() != null)
+			{
+				$("#decripcionOperacionActo").val($('#ddOperacion').val());
+				$("#filaDecripcionOperacionActo").show();
+			}
+			else
+			{
+				$("#decripcionOperacionActo").val("");
+				$("#filaDecripcionOperacionActo").hide();
+			}
+			
+			
+		}
+		
+		function updateIdentificacionAutoridadJudicial()
+		{
+			var sb_return = "";
+			sb_return = sb_return + $("#ddNombreJuzgado").val();
+			
+			sb_return = sb_return + " - ";
+			sb_return = sb_return + $("#ddTipoProcedimiento").val();
+			
+			sb_return = sb_return + " - ";
+			sb_return = sb_return + $("#ddNumeroAutos").val();
+			
+			sb_return = sb_return + " - ";
+			sb_return = sb_return + $("#ddAnyoAutos").val();
+			
+			$('#ddNombreAutoridad').val(sb_return);
+		}
+	</script><script src="p_files/prompt.js"></script></head>
+
+	
+	
+	<!-- SE ELIMINA LA ACCION VOLVER ATRAS -->
+	 
+
+    
+
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+
+    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
+
+        <!-- ESTA LINEA ES NECESARIA PARA LOS ELEMENTOS DE ACCESIBILIDAD -->
+        
+
+        <form id="MODELO" name="MODELO" method="post" action="https://webgreco.local/webgreco/GreSvlProcesarPeticiones" target="_self">
+
+			<!-- Variable para almacenar la posicion del scroll -->
+	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+	        
+	        <!-- Variable para almacenar la posicion del foco -->
+	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+	        
+	        <!-- No se puede mover de aquí, necesario para los anexos -->
+	        <input id="validar" type="hidden" name="validar" value="false">
+	        
+			<input type="hidden" name="modelo" value="655_2009">         												
+        
+        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="9532977705">
+        
+       		<!-- BARRA DE CARGA DE DATOS -->    
+			
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+      
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<div class="filaSepardor"></div>
+		
+		<div class="principal novisible">
+		
+			
+
+
+
+
+
+
+
+
+
+			
+			<div class="filaSepardor"></div>
+			<!-- CABECERA -->
+			<div class="contenidoCabecera">
+				<fieldset class="contenidoCabecera">
+					<div class="contenidoCabeceraTexto">
+						<div class="col">Cálculo del recargo e intereses de demora por presentación fuera de plazo</div>
+ 						
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#Recargoeintereses" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+</div>
+			</fieldset>
+		</div>
+		
+		<div class="contenidoDatos">
+			<fieldset class="contenidoDatos">
+				<div class="contenidoDatos">
+					<div class="row">
+						<div class="col-5 col-xl-4 colResponsive">
+							<label for="fechaDevengoDiaIntereses" name="labelFechaDevengoDia">
+
+										Devengo
+ 
+							</label>
+						</div>
+					
+					
+						<div class="col-7 col-xl-4 colResponsive">
+ 
+								<label for="fechaDevengoDiaIntereses" name="fechaDevengoError" class="marcaError"> 
+									 
+								</label>
+								<div class="w-100">
+									<input id="fechaDevengoDiaIntereses" name="fechaDevengoDiaIntereses" title="Dia fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoMesIntereses" name="fechaDevengoMesIntereses" title="Mes fecha devengo intereses" class="proteger" size="1" maxlength="2" readonly="readonly"> 
+									<input id="fechaDevengoAnyoIntereses" name="fechaDevengoAnyoIntereses" title="Año fecha devengo intereses" class="proteger" size="3" maxlength="4" readonly="readonly">
+								</div> 
+
+					</div>
+						
+						
+				<div class="col5px">
+					<label for="codigoTerritorialIntereses" name="labelCodigoTerritorial"> 
+					<!--  Código Territorial  -->
+					</label> 
+					<label for="codigoTerritorialIntereses" name="codigoTerritorialError" class="marcaError"> 
+						 
+					</label>
+	
+					<input id="codigoTerritorialIntereses" name="codigoTerritorialIntereses" class="proteger" value="" size="6" maxlength="6" readonly="readonly" type="hidden">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="labelFechaFinDePlazoDia"> 
+
+						Fecha fin de plazo 
+ 
+					</label>
+				</div>
+				
+				<div class="col-7 col-xl-4 colResponsive">
+					<label for="fechaFinDePlazoDia" name="fechaFinDePlazoError" class="marcaError">
+						  
+					</label>
+					<div class="w-100">
+						<input id="fechaFinDePlazoDia" name="fechaFinDePlazoDia" title="Dia Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoMes" class="visually-hidden">Mes Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoMes" name="fechaFinDePlazoMes" title="Mes Fecha Fin de Plazo" size="1" maxlength="2"> 
+						
+						<label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Fin de Plazo</label>
+						<input id="fechaFinDePlazoAnyo" name="fechaFinDePlazoAnyo" title="Año Fecha Fin de Plazo" size="3" maxlength="4">
+					</div>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-5 col-xl-4 colResponsive">
+					<label for="fechaIngresoDia" name="labelFechaIngresoDia"> 
+						Fecha de presentación prevista 
+					</label>
+				</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<label for="fechaIngresoDia" name="fechaIngresoError" class="marcaError"> 
+					 
+				</label> 
+				<div class="w-100">
+					<input id="fechaIngresoDia" name="fechaIngresoDia" title="Dia Fecha Ingreso" size="1" maxlength="2"> 
+				    
+				    <label for="fechaIngresoMes" class="visually-hidden">Mes Fecha Ingreso</label>
+				    <input id="fechaIngresoMes" title="Mes Fecha Ingreso" name="fechaIngresoMes" size="1" maxlength="2"> 
+				    
+				    <label for="fechaFinDePlazoAnyo" class="visually-hidden">Año Fecha Ingreso</label>
+				    <input id="fechaFinDePlazoAnyo" title="Año Fecha Ingreso" name="fechaIngresoAnyo" size="3" maxlength="4">
+			    </div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeCuota" name="labelimporteCuota"> 
+					Importe a ingresar resultante de la autoliquidación 
+				</label> 
+				<label for="importeCuota" name="labelimporteCuotaIntereses" class="marcaError">
+				 	 
+				 </label>
+			</div>
+			
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeCuota" name="importeCuota" readonly="readonly" value="0" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="porcentajeRecargoIntereses" name="labelimporteRecargoIntereses"> Corresponde un recargo del </label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="porcentajeRecargoIntereses" name="porcentajeRecargoIntereses" value="0" size="4" maxlength="4" class="proteger alineamientoDerecha w-100" readonly="readonly"> 
+				<label for="importeRecargoIntereses" name="labelporcentajeRecargoIntereses">
+					 %. No obstante, si realiza el ingreso de la deuda resultante de esta autoliquidación el recargo se	reduce en el 25 %. 
+				</label>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeRecargoIntereses" name="labelimporteIntereses"> 
+					Recargo reducido 
+				</label>
+			</div>
+		
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeRecargoIntereses" name="importeRecargoIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeIntereses" name="labelimporteIntereses"> 
+					Intereses 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+			<input id="importeIntereses" name="importeIntereses" size="16" maxlength="16" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-5 col-xl-4 colResponsive">
+				<label for="importeTotalAPagarIntereses" name="labelimporteTotalAPagarIntereses"> 
+					Total a ingresar 
+				</label>
+			</div>
+			<div class="col-7 col-xl-4 colResponsive">
+				<input id="importeTotalAPagarIntereses" name="importeTotalAPagarIntereses" size="16" maxlength="16" class="proteger alineamientoDerecha w-100" readonly="readonly">
+			</div>
+		</div>
+	</div></fieldset>
+
+		<!-- SEPARADOR DE LA BARRA DE BOTONES -->
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<!-- MARCO BARRA DE BOTONES -->
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="row">
+		        	<div class="col-12 col-xl-12 colResponsive">
+			            <fieldset id="marcosInformativos" class="letra70">
+			                
+							
+							<!-- BOTONES -->	
+								<input type="submit" value="  Realizar el cálculo  " name="botonIntereses">
+								<input type="submit" value="   Incorporar datos    " name="botonInteresesIncorporar">
+								<input type="submit" value="   Salir    " name="botonInteresesSalir">
+	
+	  							
+			            </fieldset>
+			        </div>	    
+		        </div>
+		    </fieldset>
+		</div>
+
+
+	<!-- CAMPOS HIDDEN -->
+	<input type="hidden" name="comprobarIntereses" value="0">
+	<input type="hidden" name="periodoAnterior" value="null">
+
+</div>
+</div>
+
+       <div class="filaSepardor"></div>
+        
+               
+               
+        <!-- ANEXO BIENES CONSOLIDADOS -->        
+
+        
+
+
+
+
+<div class="principal novisible">
+	<div class="contenidoDatos">
+	
+		<!-- CABECERA PRINCIPAL -->	
+		<fieldset id="marcosInformativos" class="letraNormal">
+	        <div class="filaCentrada">
+	                <div class="filaCentrada">
+	                    <div class="colCentrada">
+	                        Datos del usufructo y relación de bienes consolidados 
+	                    </div>
+	                </div>	
+	        </div>
+	    </fieldset>
+	    
+	    <!-- PINTAMOS LA CABECERA -->
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+				<div class="contenidoCabeceraTexto">
+					<div class="col">
+					(H) Causante/Donante (de la transmisión en la que se produjo la constitución del usufructo)
+					</div>
+					
+			        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(H)Causantedonante" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+ 
+				</div>
+			</fieldset>
+		</div>
+	    <fieldset class="contenidoDatos">
+	            	<div class="row">		
+	 					<div class="col-12 col-xl-2 colResponsive">
+	 						<strong>150</strong>
+	 						<input id="duNifDonanteError" name="duNifDonanteError" type="hidden" value=""> 
+	 						<label for="duNifDonante" class="marcaError"></label>
+	 						<label for="duNifDonante">NIF</label>
+	 						<input id="duNifDonante" name="duNifDonante" size="9" maxlength="9" class="w-100">
+						</div>
+						<div class="col-12 col-xl-4 colResponsive">
+	 						<strong>151</strong>
+	 						<input id="duApellidosNombreDonanteError" name="duApellidosNombreDonanteError" type="hidden" value="">
+	 						<label for="duApellidosNombreDonante" class="marcaError"></label>
+	 						<label for="duApellidosNombreDonante">Apellidos y nombre</label>
+	 						<input id="duApellidosNombreDonante" name="duApellidosNombreDonante" size="60" maxlength="60" class="w-100">
+						</div>
+					</div>	
+		</fieldset>
+		
+
+		
+		<!-- DATOS DEL USUFRUCTO -->
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+				<div class="contenidoCabeceraTexto">
+					<div class="col">
+					(I) Datos de la constitución del usufructo
+					</div>
+					
+			        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(I)datosdeconstitucionusufructo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+ 
+				</div>
+			</fieldset>
+		</div>
+	    <fieldset class="contenidoDatos">
+	            	<div class="row">		
+	            		
+						 <!-- FECHA DE PRESENTACIÓN -->
+	                     <div class="col-12 col-xl-4 colResponsive">
+								<strong>160</strong>	
+		                        <input name="duFechaConsolidacionDiaError" id="duFechaConsolidacionDiaError" for="duFechaConsolidacionDiaError" type="hidden" value="">
+	                            <label for="duFechaConsolidacionDia" class="marcaError">
+	                            </label>
+	                            <label for="duFechaConsolidacionDia">Fecha de constitución</label>
+	                            <div class="w-100">
+		                            <input id="duFechaConsolidacionDia" name="duFechaConsolidacionDia" size="2" maxlength="2">
+									<label for="duFechaConsolidacionMes" class="visually-hidden">Fecha de constitución Mes</label>	                           			
+		                            <input id="duFechaConsolidacionMes" name="duFechaConsolidacionMes" size="2" maxlength="2">
+		                            <label for="duFechaConsolidacionAnyo" class="visually-hidden">Fecha de constitución Año</label>
+		                            <input id="duFechaConsolidacionAnyo" name="duFechaConsolidacionAnyo" size="4" maxlength="4">
+		                        </div>
+	                     </div>	                     
+						<!-- fin del campo fecha -->
+					</div>
+					<div class="row mt-2">
+						<div class="col-12 col-xl-12 colResponsive">
+							<strong>
+								<label for="duChkSucesion">ORIGEN:</label>
+							</strong>
+						</div>
+					</div>	
+					<div class="row">
+						<div class="col-6 col-xl-2 colResponsive">
+	 						<strong>161</strong>
+	 						<input id="duChkSucesionError" name="duChkSucesionError" type="hidden" value="">
+	 						<label for="duChkSucesion" class="marcaError"></label>
+	 						<label for="duChkSucesion">Sucesión</label>
+	 						<input id="duChkSucesion" name="duChkSucesion" type="checkbox" null="">
+						</div>
+						<div class="col-6 col-xl-2 colResponsive">
+	 						<strong>162</strong>
+	 						<input id="duChkDonacionError" name="duChkDonacionError" type="hidden" value="">
+	 						<label for="duChkDonacion" class="marcaError"></label>
+	 						<label for="duChkDonacion">Donación</label>
+	 						<input id="duChkDonacion" name="duChkDonacion" type="checkbox" null="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-xl-6 colResponsive">
+	 						<strong>163</strong>
+	 						<input id="duNumeroJustificanteError" name="duNumeroJustificanteError" type="hidden" value="">
+	 						<label for="duNumeroJustificante" class="marcaError"></label>
+	 						<label for="duNumeroJustificante">Nº de expediente correspondiente a la constitución del usufructo</label>
+	 						<input id="duNumeroJustificante" name="duNumeroJustificante" size="20" maxlength="20" class="w-100">
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col-12 col-xl-12 colResponsive">
+							<strong>
+								<label for="duChkVitalicio">TIPO DE USUFRUCTO:</label>
+							</strong>
+						</div>
+					</div>	
+					<div class="row">
+						<div class="col-6 col-xl-2 colResponsive">
+	 						<strong>165</strong>
+	 						<input id="duChkVitalicioError" name="duChkVitalicioError" type="hidden" value="">
+	 						<label for="duChkVitalicio" class="marcaError"></label>
+	 						<label for="duChkVitalicio">Vitalicio</label>
+	 						<input id="duChkVitalicio" name="duChkVitalicio" type="checkbox" null="">
+						</div>
+						<div class="col-6 col-xl-2 colResponsive">
+	 						<strong>166</strong>
+	 						<input id="duChkTemporalError" name="duChkTemporalError" type="hidden" value="">
+	 						<label for="duChkTemporal" class="marcaError"></label>
+	 						<label for="duChkTemporal">Temporal</label>
+	 						<input id="duChkTemporal" name="duChkTemporal" type="checkbox" null="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-xl-2 colResponsive">
+	 						<strong>167</strong>
+	 						<input id="duDuracionError" name="duDuracionError" type="hidden" value="">
+	 						<label for="duDuracion" class="marcaError"></label>
+	 						<label for="duDuracion">Duración</label>
+	 						<input id="duDuracion" name="duDuracion" size="7" maxlength="7" class="w-100 alineamientoDerecha">
+						</div>
+					</div>
+		</fieldset>
+
+
+			
+		<!-- OTROS DATOS, SUJETO PASIVO. -->
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+				<div class="contenidoCabeceraTexto">
+					<div class="col">
+					(J) Otros datos del sujeto pasivo
+					</div>
+					
+			        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(J)otrosdatosdelsujetopasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+ 
+				</div>
+			</fieldset>
+		</div>
+	    <fieldset class="contenidoDatos">
+		<div class="row">
+				<div class="col-12 col-xl-4 colResponsive">
+                    <label for="spCheckSujetoPasivoSegundoNudoPropietario">Si es segundo o posterior nudo propietario</label>
+                    <input id="spCheckSujetoPasivoSegundoNudoPropietario" name="spCheckSujetoPasivoSegundoNudoPropietario" null="" type="checkbox" onclick="almacenarPosicionScroll('spCheckSujetoPasivoSegundoNudoPropietario');document.forms[0].almacenarBienesConsolidados.click()">
+                </div>             
+		</div>
+		
+		<div class="row"><!-- FILA 6 -->
+			<!-- TITULO ADQUISICIÓN DE LA NUDA PROPIEDAD -->
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>170</strong>
+				<input type="hidden" name="spSelectTituloAdquisicionNudaPropiedadError" value="">
+				<label for="spSelectTituloAdquisicionNudaPropiedad" class="marcaError">
+					</label>
+                <label for="spSelectTituloAdquisicionNudaPropiedad">
+                	Título de adquisición de la nuda propiedad
+               	</label>
+    	         <select id="spSelectTituloAdquisicionNudaPropiedad" name="spSelectTituloAdquisicionNudaPropiedad" class="w-100" disabled="disabled" readonly="readonly" size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="1">TRANSMISIÓN ONEROSA</option><option value="2">SUCESIÓN</option><option value="3">DONACIÓN</option> 
+                 </select>     
+			</div>
+			
+		</div>	
+		<div class="row"><!-- FILA 7 -->
+			<!-- COLUMNA FECHA DE Adquisicion -->
+			<div class="col-12 col-xl-3 colResponsive">
+                    <strong>171</strong>
+                    <input type="hidden" name="spFechaAdquisicionDiaError" value="">
+                    <label for="spFechaAdquisicionDia" name="spFechaAdquisicionDiaError" class="marcaError">
+                    
+                    </label>
+                    <label for="spFechaAdquisicionDia">Fecha de Adquisicion</label>
+                    <div class="w-100">
+	                    <input id="spFechaAdquisicionDia" name="spFechaAdquisicionDia" class="proteger" disabled="disabled" readonly="readonly" size="2" maxlength="2">
+	                    <label for="spFechaAdquisicionMes" class="visually-hidden">Fecha de Adquisicion Mes</label>
+	                    <input id="spFechaAdquisicionMes" name="spFechaAdquisicionMes" class="proteger" disabled="disabled" readonly="readonly" size="2" maxlength="2">
+		                <label for="spFechaAdquisicionAnyo" class="visually-hidden">Fecha de Adquisicion Año</label>
+	                    <input id="spFechaAdquisicionAnyo" name="spFechaAdquisicionAnyo" class="proteger" disabled="disabled" readonly="readonly" size="4" maxlength="4">
+		            </div>
+            </div>
+        	
+			<!-- COLUMNA NUMERO JUSTIFICANTE-->
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>172</strong>
+				<input type="hidden" name="spNumeroJustificanteError" value="">
+				<label for="spNumeroJustificante" name="spNumeroJustificanteError" class="marcaError">
+					</label>
+                <label for="spNumeroJustificante">
+                	Número de expediente
+               	</label>
+                <input id="spNumeroJustificante" name="spNumeroJustificante" class="proteger" disabled="disabled" readonly="readonly" size="20" maxlength="20">
+			</div>
+		
+		</div>    
+		
+			<div class="row mt-2">
+				<div class="col-12 col-xl-12 colResponsive">
+					<strong><label for="spNifTransmitente">DATOS DEL TRANSMITENTE</label></strong>
+				</div>
+			</div>
+	   		<!-- COLUMNA NIF DEL TRANSMITENTE -->
+	   		<div class="row">
+	   			<div class="col-12 col-xl-2 colResponsive">
+					<strong>175</strong>
+					<input type="hidden" name="spNifTransmitenteError" value="">
+					<label for="spNifTransmitente" class="marcaError">
+						</label>
+	                <label for="spNifTransmitente">
+	                	NIF
+	               	</label>
+	                <input id="spNifTransmitente" name="spNifTransmitente" class="proteger" disabled="disabled" readonly="readonly" size="8" maxlength="9">		         
+				</div>
+		<!-- COLUMNA NOMBRE DEL TRANSMITENTE -->
+				<div class="col-12 col-xl-4 colResponsive">
+					<strong>176</strong>
+					<input type="hidden" name="spApellidosNombreTransmitenteError" value="">
+					<label for="spApellidosNombreTransmitente" class="marcaError">
+					</label>
+                	<label for="spApellidosNombreTransmitente">
+                	Apellidos y nombre o razón social
+               		</label>
+                	<input id="spApellidosNombreTransmitente" name="spApellidosNombreTransmitente" class="w-100" disabled="disabled" readonly="readonly" size="60" maxlength="60">
+			    </div>
+			</div>
+		</fieldset>
+				
+		<div class="filaSepardor"></div>
+		
+		<!-- PINTAMOS LA CABECERA -->
+		<div class="contenidoCabecera">
+			<fieldset class="contenidoCabecera">
+				<div class="contenidoCabeceraTexto">
+					<div class="col">
+					 (K) Relación bienes consolidados
+					</div>
+					
+			        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(K)Relaciondebienes" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+ 
+				</div>
+			</fieldset>
+		</div>
+		
+	 			<fieldset class="contenidoFila">
+	            	<div class="row">		
+	 					<div class="col-12 col-xl-4 colResponsive">
+	                    	<input name="tipoBienError0" for="0" type="hidden" value="">
+	                    	<label for="selectTipoBien0" class="marcaError">
+	                    		
+	                   		</label>
+	                    	<label for="selectTipoBien0">
+	                    		Naturaleza del bien
+	                   		</label>
+	                   		<select id="selectTipoBien0" class="w-100" name="selectTipoBien0" onchange="almacenarPosicionScroll('selectTipoBien0');document.forms[0].almacenarBienesConsolidados.click()">	
+	                   			<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="U">BIEN INMUEBLE URBANO</option><option value="R">BIEN INMUEBLE RÚSTICO</option><option value="A">ACCIONES Y PARTICIPACIONES</option><option value="M">OTROS BIENES MUEBLES</option>
+	                   		</select>
+						</div>
+						<div class="col-12 col-xl-4 colResponsive">
+	                    	<input name="descripcionError0" for="0" type="hidden" value="">
+	                    	<label for="0" class="marcaError">
+	                    		
+	                   		</label>
+	                    	<label for="0">
+	                    		Descripcion 
+	                   		</label>
+	                       	<input id="0" name="descripcion0" class="w-100" size="55" maxlength="60">
+						</div>
+					</div>
+					<div class="row">
+						 <div class="col-12 col-xl-4 colResponsive">
+                            <label for="chkSinreferenciaCatastral0">
+                                Sin ref. catastral
+                            </label>
+                            <input id="chkSinreferenciaCatastral0" name="chkSinreferenciaCatastral0" type="checkbox" null="" disabled="disabled" class="proteger">
+                        </div>
+                    </div>
+					
+					<div class="row">
+						<div class="col-12 col-xl-4 colResponsive">
+	                    	<input name="referenciaCatastralError0" for="0" type="hidden" value="">
+	                    	<label for="0" class="marcaError">
+	                    		
+	                   		</label>
+	                    	<label for="0">
+	                    		Referencia Catastral
+	                   		</label>
+	                       	<input id="0" name="referenciaCatastral0" disabled="disabled" class="proteger w-100" size="25" maxlength="20">
+						</div>	 					
+	 		  	     </div>
+	 		  	     
+	 		  	     <div class="row"> 		
+	 					<!-- NIF Entidad Emisora -->
+	 					<div class="col-12 col-xl-4 colResponsive">
+	                    	<input name="NIFEntidadEmisoraError0" for="NIFEntidadEmisora0" type="hidden" value="">
+	                    	<label for="NIFEntidadEmisora0" class="marcaError">
+	                    		
+	                   		</label>
+	                    	<label for="NIFEntidadEmisora0">
+	                    		NIF entidad emisora(en caso de valores)
+	                   		</label>
+	                       	<input id="NIFEntidadEmisora0" name="NIFEntidadEmisora0" class="w-100 proteger" disabled="disabled" readonly="readonly" size="9" maxlength="9">
+						</div>
+	 					
+	 					
+	 					<div class="col-12 col-xl-4 colResponsive">
+	                    	<input name="valorBienConsolidadoError0" for="0" type="hidden" value="">
+	                    	<label for="0" class="marcaError">
+	                    		
+	                   		</label>
+	                    	<label for="0">
+	                    		Valor declarado del bien
+	                   		</label>
+	                       	<input id="0" name="valorBienConsolidado0" size="10" maxlength="16" class="w-100 alineamientoDerecha">
+						</div>
+	 				</div>
+	 			</fieldset>	
+		
+		<fieldset class="contenidoDatos">
+	       	<div class="filaCentrada">	
+	       			<div class="colCentrada">
+	                   	<input name="totalBienesConsolidadosError" for="totalBienesConsolidadosError" type="hidden" value="">
+	                   	<label for="totalBienesConsolidados" class="marcaError">
+	                   		
+	                  		</label>
+	                   	<label for="totalBienesConsolidados">
+	                 	 	VALOR TOTAL DE LOS BIENES CONSOLIDADOS
+	                		</label>
+	                    	<input id="totalBienesConsolidados" name="totalBienesConsolidados" value="0" class="proteger alineamientoDerecha" size="10" maxlength="15" readonly="readonly">
+					</div>
+	       	</div>
+	    </fieldset> 
+	    
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">
+									<input id="botonCalcularBienesConsolidados" name="botonCalcularBienesConsolidados" type="submit" value=" Calcular ">
+									<input id="almacenar" name="almacenar" type="submit" value=" Almacenar datos introducidos ">
+									<input id="volver" name="volcer" type="submit" value=" Volver atrás ">
+		                </div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+		
+		
+		<div class="novisible">
+				<input id="oculto" name="almacenarBienesConsolidados" type="submit" value="veamos">
+		</div>
+		
+	</div><!-- FIN DEL DIV CONTENIDO DATOS -->
+</div><!-- FIN DEL DIV PRESENTACIÓN -->
+
+	
+	
+      
+        
+        <!-- ANEXO CUMPLIMENTAR LIQUIDACION -->
+        
+
+        
+
+
+
+	
+
+<div class="principal novisible">
+	<div class="contenidoDatos">
+	
+		<!-- CABECERA PRINCIPAL -->	
+		<fieldset id="marcosInformativos" class="letraNormal">
+	        <div class="filaCentrada">
+	                <div class="filaCentrada">
+	                    <div class="colCentrada">
+	                        Anexo. Cumplimentación de la liquidación
+	                    </div>
+	                </div>	
+	        </div>
+	    </fieldset>
+		
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+
+
+		<div class="contenidoCabecera">
+              <fieldset class="contenidoCabecera">
+                  <div class="contenidoCabeceraTexto">
+                      <div class="col">
+                          Autoliquidación (E)
+                      </div>
+                      
+			          
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(E)Autoliquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                  </div>
+              </fieldset>
+          </div>
+          <div class="contenidoDatos" style="border: solid 2px">
+				<div class="row">
+				<div class="col-12 col-xl-6 colResponsive">	
+		          	<fieldset>
+		          		<legend>&nbsp;Primer nudo propietario</legend>
+		          		 <div class="filaSepardor"></div>
+		          		 <div class="row">
+				                            <div class="col-8 col-xl-7 colResponsive">
+					                            <strong>61</strong>
+					                            <input type="hidden" name="auPrimerNudoPropValorBienesConsolidadosError" value="">
+					                            <label for="auPrimerNudoPropValorBienesConsolidados" class="marcaError">
+					                                
+					                            </label>
+					                            <label for="auPrimerNudoPropValorBienesConsolidados">
+					                                Valor de los bienes consolidados
+					                            </label>
+					                         </div> 
+					                         <div class="col-4 col-xl-4 colResponsive">  
+					                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auPrimerNudoPropValorBienesConsolidados" name="auPrimerNudoPropValorBienesConsolidados" readonly="readonly">
+						                     </div>  
+					        </div> 
+					        <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+						                            <strong>62</strong>
+						                            <input type="hidden" name="auPrimerNudoPropPorcentajeUsufructoError" value="">
+						                            <label for="auPrimerNudoPropPorcentajeUsufructo" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropPorcentajeUsufructo">
+						                                Pocentaje de usufructo
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="5" maxlength="5" class="w-100 alineamientoDerecha" id="auPrimerNudoPropPorcentajeUsufructo" name="auPrimerNudoPropPorcentajeUsufructo">
+							                     </div>  
+					        </div> 
+					        <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+						                            <strong>63</strong>
+						                            <input type="hidden" name="auPrimerNudoPropBaseImponibleError" value="">
+						                            <label for="auPrimerNudoPropBaseImponible" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropBaseImponible">
+						                                <strong>Base Imponible (61x62)</strong>
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auPrimerNudoPropBaseImponible" name="auPrimerNudoPropBaseImponible" value="0" readonly="readonly">
+							                     </div>  
+					        </div> 
+					         <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+						                            <strong>64</strong>
+						                            <input type="hidden" name="auPrimerNudoPropReducionesPropUsufructoError" value="">
+						                            <label for="auPrimerNudoPropReducionesPropUsufructo" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropReducionesPropUsufructo">
+						                               Reducciones propias del usufructo
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auPrimerNudoPropReducionesPropUsufructo" name="auPrimerNudoPropReducionesPropUsufructo">
+							                     </div>  
+					        </div> 
+					         <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+						                            <strong>65</strong>
+						                            <input type="hidden" name="auPrimerNudoPropExcesoReduccionNudaPropError" value="">
+						                            <label for="auPrimerNudoPropExcesoReduccionNudaProp" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropExcesoReduccionNudaProp">
+						                               Exceso de reducción de la nuda propiedad
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auPrimerNudoPropExcesoReduccionNudaProp" name="auPrimerNudoPropExcesoReduccionNudaProp">
+							                     </div>  
+					        </div> 
+					         <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+						                            <strong>66</strong>
+						                             <input type="hidden" name="auPrimerNudoPropBaseLiquidableError" id="auPrimerNudoPropBaseLiquidableError" value="">
+						                            <label for="auPrimerNudoPropBaseLiquidable" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropBaseLiquidable">
+						                               <strong>Base Liquidable (63-64-65)</strong>
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auPrimerNudoPropBaseLiquidable" name="auPrimerNudoPropBaseLiquidable" value="0" readonly="readonly">
+							                     </div>  
+					        </div> 
+					        <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+						                            <strong>67</strong>
+						                            <input type="hidden" name="auPrimerNudoPropTipoMedioEfectivoError" id="auPrimerNudoPropTipoMedioEfectivoError" value="">
+						                            <label for="auPrimerNudoPropTipoMedioEfectivo" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropTipoMedioEfectivo">
+						                               Tipo medio efectivo
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="5" maxlength="5" class="w-100 alineamientoDerecha" id="auPrimerNudoPropTipoMedioEfectivo" name="auPrimerNudoPropTipoMedioEfectivo">
+							                     </div>  
+					        </div> 
+					        
+					        <div class="row">
+					                            <div class="col-8 col-xl-7 colResponsive">
+					                            	<input type="hidden" value="68">
+					                            	<input type="hidden" value="69">
+						                            <strong>70</strong>
+						                            <input type="hidden" name="auPrimerNudoPropCuotaTributariaError" value="">
+						                            <label for="auPrimerNudoPropCuotaTributaria" class="marcaError">
+						                                
+						                            </label>
+						                            <label for="auPrimerNudoPropCuotaTributaria">
+						                               <strong>Cuota tributaria (66x67)</strong>
+						                            </label>
+						                         </div> 
+						                         <div class="col-4 col-xl-4 colResponsive">  
+						                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auPrimerNudoPropCuotaTributaria" name="auPrimerNudoPropCuotaTributaria" value="0" readonly="readonly">
+							                     </div>  
+					        </div> 
+					        <div class="filaSepardor"></div>     
+		          	</fieldset>
+		          	</div>
+		          	<div class="col-12 col-xl-6 colResponsive">
+					        
+					        
+		          	<fieldset>
+		          		<legend>&nbsp;Segundo o posterior nudo propietario</legend>
+				          		<div class="filaSepardor"></div>
+				          		<div class="filaSepardor"></div>
+		          				<div class="row">
+			                            <div class="col-8 col-xl-7 colResponsive">
+				                            <strong>71</strong>
+				                            <input type="hidden" name="auSegundoNudoPropValorBienesConsolidadosError" value="">
+				                            <label for="auSegundoNudoPropValorBienesConsolidados" class="marcaError">
+				                                
+				                            </label>
+				                            <label for="auSegundoNudoPropValorBienesConsolidados">
+				                                Valor de los bienes consolidados
+				                            </label>
+				                         </div> 
+				                         <div class="col-4 col-xl-4 colResponsive">  
+				                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auSegundoNudoPropValorBienesConsolidados" name="auSegundoNudoPropValorBienesConsolidados" readonly="readonly">
+					                     </div>  
+					             </div> 
+					              <div class="row">
+			                            <div class="col-8 col-xl-7 colResponsive">
+				                            <strong>72</strong>
+				                            <input type="hidden" name="auSegundoNudoPropPorcentajeUsufructoError" id="auSegundoNudoPropPorcentajeUsufructoError" value="">
+				                            <label for="auSegundoNudoPropPorcentajeUsufructo" class="marcaError">
+				                                
+				                            </label>
+				                            <label for="auSegundoNudoPropPorcentajeUsufructo">
+				                                Porcentaje del usufructo
+				                            </label>
+				                         </div> 
+				                         <div class="col-4 col-xl-4 colResponsive">  
+				                            <input size="5" maxlength="5" class="w-100 alineamientoDerecha" id="auSegundoNudoPropPorcentajeUsufructo" name="auSegundoNudoPropPorcentajeUsufructo">
+					                     </div> 					                      
+					             </div> 
+					             <div class="row">
+			                            <div class="col-8 col-xl-7 colResponsive">
+				                            <strong>73</strong>
+				                            <input type="hidden" name="auSegundoNudoPropBaseImponibleError" id="auSegundoNudoPropBaseImponibleError" value="">
+				                            <label for="auSegundoNudoPropBaseImponible" class="marcaError">
+				                                
+				                            </label>
+				                            <label for="auSegundoNudoPropBaseImponible">
+				                                <strong>Base Imponible (71x72)</strong>
+				                            </label>
+				                         </div> 
+				                         <div class="col-4 col-xl-4 colResponsive">  
+				                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auSegundoNudoPropBaseImponible" name="auSegundoNudoPropBaseImponible" value="0" readonly="readonly">
+					                     </div>  
+					             </div> 
+					             
+					             <!-- FALTA EL HASTA, RESTO PORCENTAJE Y RESULTADOS A Y B -->
+					        <div class="row">
+			                            <div class="col-8 col-xl-7 colResponsive">
+			                            	<input type="hidden" name="auSegundoNudoPropHastaError" value="">
+				                            <label for="auSegundoNudoPropHasta" class="marcaError">
+				                                
+				                            </label>
+				                            <label for="auSegundoNudoPropHasta">
+				                                Hasta
+				                            </label>
+				                         
+				                            <input id="auSegundoNudoPropHasta" name="auSegundoNudoPropHasta" size="10" class="proteger alineamientoDerecha" readonly="readonly">
+					                       <input type="hidden" name="auSegundoNudoPropAError" value="">
+				                            <label for="auSegundoNudoPropA" class="marcaError">
+				                                
+				                            </label>
+				                        </div>
+			                            
+				                         <div class="col-4 col-xl-4 colResponsive">  
+				                         	<label for="auSegundoNudoPropA">
+				                                a
+				                            </label>
+				                            <input id="auSegundoNudoPropA" size="11" class="w-100 proteger alineamientoDerecha" name="auSegundoNudoPropA" readonly="readonly">
+					                     </div>
+					        </div> 
+					        <div class="row">
+	                            <div class="col-8 col-xl-7 colResponsive">
+		                            <input type="hidden" name="auSegundoNudoPropRestoError" value="">
+		                            <label for="auSegundoNudoPropResto" class="marcaError">
+		                                
+		                            </label>
+		                            <label for="auSegundoNudoPropResto">
+		                                Resto
+		                            </label>
+		                            <input id="auSegundoNudoPropResto" name="auSegundoNudoPropResto" size="10" class="proteger alineamientoDerecha" readonly="readonly">
+
+			                      	<label for="auSegundoNudoPropPorcentaje">al</label>
+		                            <input id="auSegundoNudoPropPorcentaje" name="auSegundoNudoPropPorcentaje" size="3" class="proteger alineamientoDerecha" readonly="readonly">
+			                      	<label for="auSegundoNudoPropPorcentaje">%</label>
+			                     	<input type="hidden" name="auSegundoNudoPropBError" value="">
+		                            <label for="auSegundoNudoPropB" class="marcaError">
+		                                
+		                            </label>
+		                        </div>
+	                           
+		                         <div class="col-4 col-xl-4 colResponsive"> 
+		                          <label for="auSegundoNudoPropB">
+		                                b
+		                            </label> 
+		                            <input id="auSegundoNudoPropB" name="auSegundoNudoPropB" size="11" class="w-100 proteger alineamientoDerecha" readonly="readonly">
+			                     </div> 
+							                     
+					        </div>
+					         <div class="row">
+		                            <div class="col-8 col-xl-7 colResponsive">
+		                            	
+			                            <strong>80</strong>
+			                            <input type="hidden" name="auSegundoNudoPropCuotaTributariaError" id="auSegundoNudoPropCuotaTributariaError" value="">
+			                            <label for="auSegundoNudoPropCuotaTributaria" class="marcaError">
+			                                
+			                            </label>
+			                            <label for="auSegundoNudoPropCuotaTributaria">
+			                                <strong>Cuota tributaria (a + b)</strong>
+			                            </label>
+			                         </div> 
+			                         <div class="col-4 col-xl-4 colResponsive">  
+			                            <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auSegundoNudoPropCuotaTributaria" name="auSegundoNudoPropCuotaTributaria" readonly="readonly">
+				                     </div>  
+					             </div>
+					             <div class="filaSepardor"></div> 
+					</fieldset>
+					</div>
+					</div>
+				<div class="filaSepardor"></div>          
+
+				<hr>
+						        
+			
+			<!-- FILA CUOTA TRIBUTARIA -->	
+			
+			<div class="filaSepardor"></div>  	
+			
+	      	  	<div class="row">	      	  		
+               	   	<div class="col-8 col-xl-4 colResponsive">
+                      	  
+                          <strong>85&nbsp;&nbsp;</strong>
+                          <input type="hidden" name="auTotalCuotaTributariaError" id="auTotalCuotaTributariaError" value="">
+                          <label for="auTotalCuotaTributaria" class="marcaError">
+                              
+                          </label>
+                          <label for="auTotalCuotaTributaria">
+                              <strong>CUOTA TRIBUTARIA (70 U 80)</strong>
+                          </label>
+                     </div> 
+                     <div class="col-4 col-xl-2 colResponsive">  
+                          <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auTotalCuotaTributaria" name="auTotalCuotaTributaria" value="0" readonly="readonly">
+                    </div>  
+	          </div>
+				
+			 <div class="row">		
+                     <div class="col-8 col-xl-4 colResponsive">
+                        <strong>86&nbsp;&nbsp;</strong>
+                        <input type="hidden" name="auDeduccionesYBonificacionesEstatalesError" value="">
+                       <label for="auDeduccionesYBonificacionesEstatales" class="marcaError">
+                           
+                       </label>
+                       <label for="auDeduccionesYBonificacionesEstatales">
+                          	Deducciones y bonificaciones estatales
+                       </label>
+                    </div> 
+                    <div class="col-4 col-xl-2 colResponsive">  
+                       <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auDeduccionesYBonificacionesEstatales" name="auDeduccionesYBonificacionesEstatales">
+            	    </div>  
+			</div> 
+			
+	         <div class="row">	         		
+                    <div class="col-8 col-xl-4 colResponsive">
+                      	
+                      <strong>88&nbsp;&nbsp;</strong>
+                      <input type="hidden" name="auCuotaLiquidableResultanteEstatalError" value="">
+                      <label for="auCuotaLiquidableResultanteEstatal" class="marcaError">
+                          
+                      </label>
+                      <label for="auCuotaLiquidableResultanteEstatal">
+                          <strong>Cuota líquida resultante de aplicar las deducciones y bonificaciones estatales (85-86)</strong>
+                      </label>
+                   	</div> 
+                   	<div class="col-4 col-xl-2 colResponsive">  
+                      <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auCuotaLiquidableResultanteEstatal" name="auCuotaLiquidableResultanteEstatal" value="0" readonly="readonly">
+                	</div>  
+	       	  </div> 
+	       	  
+	       	  <div class="row">	       	  		
+                    <div class="col-8 col-xl-4 colResponsive">
+                      	
+                      <strong>100</strong>
+                      <input type="hidden" name="auDeduccionesYBonificacionesAutonomicasError" value="">
+                      <label for="auDeduccionesYBonificacionesAutonomicas" class="marcaError">
+                          
+                      </label>
+                      <label for="auDeduccionesYBonificacionesAutonomicas">
+                         	Deducciones y bonificaciones autonómicas
+                      </label>
+                   </div> 
+                   <div class="col-4 col-xl-2 colResponsive">  
+                      <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auDeduccionesYBonificacionesAutonomicas" name="auDeduccionesYBonificacionesAutonomicas">
+                   </div>  
+        	 </div> 
+
+	         <div class="row">
+                     <div class="col-8 col-xl-4 colResponsive">
+                       		
+                       <strong>105</strong>
+                       <input type="hidden" name="auCuotaLiquidaError" value="">
+                       <label for="auCuotaLiquida" class="marcaError">
+                           
+                       </label>
+                       <label for="auCuotaLiquida">
+                          <strong>CUOTA LÍQUIDA (88 - 100)</strong>
+                       </label>
+                    </div> 
+                    <div class="col-4 col-xl-2 colResponsive">  
+                       <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auCuotaLiquida" name="auCuotaLiquida" value="0" readonly="readonly">
+                 </div>  
+	         </div> 
+	         
+	         <div class="row">	
+                  <div class="col-8 col-xl-4 colResponsive">
+                    		
+             			<strong>110</strong>
+                    <input type="hidden" name="auDeduccionesCuotasAnterioresError" value="">
+                    <label for="auDeduccionesCuotasAnteriores" class="marcaError">
+                        
+                    </label>
+                    <label for="auDeduccionesCuotasAnteriores">
+                       Deducción de cuotas anteriores
+                    </label>
+                 </div> 
+                 <div class="col-4 col-xl-2 colResponsive">  
+                    <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auDeduccionesCuotasAnteriores" name="auDeduccionesCuotasAnteriores">
+              	</div>  
+	         </div>     
+	            	
+	         <div class="row">
+               	<div class="col-8 col-xl-4 colResponsive">
+                 	 		
+           			<strong>115</strong>
+                 	<input type="hidden" name="auCuotaAIngresarError" value="">
+                 	<label for="auCuotaAIngresar" class="marcaError">
+                     
+                 	</label>
+                    <label for="auCuotaAIngresar">
+                       <strong>CUOTA A INGRESAR (105-110)</strong>
+                    </label>
+                 </div> 
+	             <div class="col-4 col-xl-2 colResponsive">  
+	                  <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha" id="auCuotaAIngresar" name="auCuotaAIngresar" readonly="readonly" value="0">
+	              </div>  
+	             
+	         </div>        	
+
+			
+			<!-- ****************************************************************************** -->
+			<!-- ************************************** CUOTA TOTAL A INGRESAR **************** -->
+			<!-- ****************************************************************************** -->
+			
+			<div class="row">				   	
+			       <div class="col-8 col-xl-4 colResponsive">
+			          <strong>116</strong>
+			          <input type="hidden" name="auRecargoPorFueraPlazoError" value="">
+			         <label for="auRecargoPorFueraPlazo" class="marcaError">
+			             
+			         </label>
+			         <label for="auRecargoPorFueraPlazo">
+			            	Recargo por presentación fuera de plazo
+			         </label>
+			      </div> 
+			      <div class="col-4 col-xl-2 colResponsive">  
+			         <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auRecargoPorFueraPlazo" name="auRecargoPorFueraPlazo">
+			          <!-- BOTON DE ASISTENTE INTERESES -->
+	                   <input name="botonIntereses" class="w-100" title="Recargo e intereses por presentación fuera de plazo" value="Recargo e intereses" type="submit">
+			   	  </div>  
+	         </div> 
+			<div class="row">	
+                 <div class="col-8 col-xl-4 colResponsive">
+                   <strong>117</strong>
+                    <input type="hidden" name="auInteresDemoraError" value="">
+                    <label for="auInteresDemora" class="marcaError">
+                        
+                    </label>
+                    <label for="auInteresDemora">
+                       	Intereses de demora
+                    </label>
+                 </div> 
+                 <div class="col-4 col-xl-2 colResponsive">  
+                    <input size="15" maxlength="16" class="w-100 alineamientoDerecha" id="auInteresDemora" name="auInteresDemora">
+             	 </div>  
+	         </div>          
+		
+			<hr>
+	
+     		 <div class="row">
+                 <div class="col-8 col-xl-4 colResponsive">
+                    <strong>118</strong>
+                    <input type="hidden" name="auTotalAIngresarError" value="">
+                    <label for="auTotalAIngresar" class="marcaError">
+                        
+                    </label>
+                    <label for="auTotalAIngresar">
+                       	<strong>TOTAL A INGRESAR (115+116+117)</strong>
+                    </label>
+                 </div> 
+                 <div class="col-4 col-xl-2 colResponsive">  
+                    <input size="15" maxlength="16" class="w-100 proteger alineamientoDerecha mb-2" id="auTotalAIngresar" name="auTotalAIngresar" value="0" readonly="readonly">
+              	 </div>  
+	         </div> 
+     
+				
+
+
+    </div>
+          
+       
+	 
+		<div class="filaSepardor"></div>
+		<div class="filaSepardor"></div>
+		
+		<div class="cabecera">
+		    <fieldset class="bordeTablaPrincipal">
+		        <div class="filaCentrada">
+		            <fieldset id="marcosInformativos" class="letra70">
+		                <div class="filaCentrada">
+									<input id="botonCalcularLiquidacion" name="botonCalcularLiquidacion" type="submit" value=" Calcular ">
+									<input id="almacenar&gt;" name="almacenar" type="submit" value=" Almacenar datos introducidos ">
+									<input id="volver" name="volcer" type="submit" value=" Volver atrás ">
+		                </div>	
+		            </fieldset>	    
+		        </div>
+		    </fieldset>
+		</div>
+		
+		
+		<div class="novisible">
+				<input id="oculto" name="almacenarLiquidacion" type="submit" value="veamos">
+		</div>
+		
+		
+		<!--  //      apartado 5 base imponible.-->
+
+	    	
+	    	
+	    	<input type="hidden" name="auPrimerNudoPropValorBienesConsolidadosError" value="auPrimerNudoPropValorBienesConsolidadosError">
+			<input type="hidden" name="auPrimerNudoPropPorcentajeUsufructoError" value="auPrimerNudoPropPorcentajeUsufructoError">
+			<input type="hidden" name="auPrimerNudoPropBaseImponibleError" value="auPrimerNudoPropBaseImponibleError">
+			<input type="hidden" name="auPrimerNudoPropReducionesPropUsufructoError" value="auPrimerNudoPropReducionesPropUsufructoError">
+			<input type="hidden" name="auPrimerNudoPropExcesoReduccionNudaPropError" value="auPrimerNudoPropExcesoReduccionNudaPropError">
+			<input type="hidden" name="auPrimerNudoPropBaseLiquidableError" value="auPrimerNudoPropBaseLiquidableError">
+			<input type="hidden" name="auPrimerNudoPropTipoMedioEfectivoError" value="auPrimerNudoPropTipoMedioEfectivoError">
+			<input type="hidden" name="auPrimerNudoPropCuotaTributariaError" value="auPrimerNudoPropCuotaTributariaError">
+
+			<input type="hidden" name="auSegundoNudoPropValorBienesConsolidadosError" value="auSegundoNudoPropValorBienesConsolidadosError">
+			<input type="hidden" name="auSegundoNudoPropPorcentajeUsufructoError" value="auSegundoNudoPropPorcentajeUsufructoError">
+			<input type="hidden" name="auSegundoNudoPropBaseImponibleError" value="auSegundoNudoPropBaseImponibleError">
+			<input type="hidden" name="auSegundoNudoPropHastaError" value="auSegundoNudoPropHastaError">
+			<input type="hidden" name="auSegundoNudoPropRestoError" value="auSegundoNudoPropRestoError">
+			<input type="hidden" name="auSegundoNudoPropPorcentajeError" value="auSegundoNudoPropPorcentajeError">
+			<input type="hidden" name="auSegundoNudoPropAError" value="auSegundoNudoPropAError">
+			<input type="hidden" name="auSegundoNudoPropBError" value="auSegundoNudoPropBError">
+			<input type="hidden" name="auSegundoNudoPropCuotaTributariaError" value="auSegundoNudoPropCuotaTributariaError">
+			<input type="hidden" name="auTotalCuotaTributariaError" value="auTotalCuotaTributariaError">
+
+			<input type="hidden" name="auDeduccionesYBonificacionesEstatalesError" value="auDeduccionesYBonificacionesEstatalesError">
+			<input type="hidden" name="auCuotaLiquidableResultanteEstatalError" value="auCuotaLiquidableResultanteEstatalError">
+			<input type="hidden" name="auDeduccionesYBonificacionesAutonomicasError" value="auDeduccionesYBonificacionesAutonomicasError">
+			<input type="hidden" name="auCuotaLiquidaError" value="auCuotaLiquidaError">
+			<input type="hidden" name="auDeduccionesCuotasAnterioresError" value="auDeduccionesCuotasAnterioresError">
+			<input type="hidden" name="auCuotaAIngresarError" value="auCuotaAIngresarError">
+
+			<input type="hidden" name="auRecargoPorFueraPlazoError" value="auRecargoPorFueraPlazoError">
+			<input type="hidden" name="auInteresDemoraError" value="auInteresDemoraError">
+			<input type="hidden" name="auTotalAIngresarError" value="auTotalAIngresarError">
+	    	
+	</div><!-- FIN DEL DIV DATOS DEL DOCUMENTO -->
+</div><!-- FIN DEL DIV PRESENTACIÓN -->	
+        
+        
+        <!-- PRINCIPAL MODELO 655_2009 -->        
+   		<div id="principal" class="principal visible">	        
+            <!-- CABECERA DEL DOCUMENTO -->            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>IMPUESTO SOBRE SUCESIONES Y DONACIONES</h1>
+			<h2>Consolidación de dominio</h2>
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 655</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202610</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+	        <div class="filaSepardor"></div>	       
+            <!-- VALIDACIONES -->            
+            
+
+
+
+
+
+
+
+
+            
+            <div class="filaSepardor"></div>           
+            <!-- DATOS DEL DOCUMENTO -->            
+            
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+$(function()  
+	{
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$.datepicker.formatDate( "dd/mm/yyyy", new Date() );				
+		$("#fechaDevengo").datepicker({showButtonPanel:true, showOtherMonths: true, selectOtherMonths: true, changeMonth:true, changeYear:true});
+	});
+	
+	function updateFechaDevengo()
+	{
+		//alert('se ha modificado la fecha de devengo.');
+		    
+	    var isCorrectaFechaDevengo = validarFormatoFecha($('#fechaDevengo').val());
+	    //alert('Fecha de devengo correcta: ' + isCorrectaFechaDevengo);
+	    
+	    if (isCorrectaFechaDevengo)
+	    {
+	    	$("#fechaDevengoDia").val($("#fechaDevengo").val().substring(0,2));
+	    	$("#fechaDevengoMes").val($("#fechaDevengo").val().substring(3,5));
+	    	$("#fechaDevengoAnno").val($("#fechaDevengo").val().substring(6,10));
+	    }
+	    else
+	    {
+	    	$("#fechaDevengoDia").val('');
+	    	$("#fechaDevengoMes").val('');
+	    	$("#fechaDevengoAnno").val('');
+	    }
+	    
+	    submitWithPosicionScroll('fechaDevengo');
+	}
+	
+	function validarFormatoFecha(campo) {
+	     var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+	     if ((campo.match(RegExPattern)) && (campo!='')) {
+	           return true;
+	     } else {
+	           return false;
+	     }
+	}
+	
+	function existeFecha(fecha){
+	     var fechaf = fecha.split("/");
+	     var day = fechaf[0];
+	     var month = fechaf[1];
+	     var year = fechaf[2];
+	     var date = new Date(year,month,'0');
+	     if((day-0)>(date.getDate()-0)){
+	           return false;
+	     }
+	     return true;
+	}
+
+</script>
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+
+	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+
+	
+    
+
+ 	
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+
+	
+    
+        
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos del Documento
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(D)Datosdeldocumento" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<div class="row"> <!-- FILA 1 -->
+			<div class="col-6 col-xl-3 colResponsive">
+				<label for="selectOficinaLiquidadora" name="selectOficinaLiquidadoraError" class="marcaError"></label>
+
+				<label for="selectOficinaLiquidadora">Oficina Liquidadora</label>
+					<select id="selectOficinaLiquidadora" name="selectOficinaLiquidadora" class="w-100 " size="1" onchange="submitWithPosicionScroll()">
+	                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="EH0201">ALBACETE</option><option value="EH0202">ALCARAZ</option><option value="EH1302">ALCÁZAR DE SAN JUAN</option><option value="EH1303">ALMADÉN</option><option value="EH1304">ALMAGRO</option><option value="EH0203">ALMANSA</option><option value="EH1305">ALMODOVAR DEL CAMPO</option><option value="EH1602">BELMONTE</option><option value="EH1902">BRIHUEGA</option><option value="EH0204">CASAS DE IBÁÑEZ</option><option value="EH0205">CHINCHILLA</option><option value="EH1903">CIFUENTES</option><option value="EH1301">CIUDAD REAL</option><option value="EH1904">COGOLLUDO</option><option value="EH1601">CUENCA</option><option value="EH1306">DAIMIEL</option><option value="EH4502">ESCALONA</option><option value="EH1901">GUADALAJARA</option><option value="EH0206">HELLÍN</option><option value="EH1603">HUETE</option><option value="EH4503">ILLESCAS</option><option value="EH0207">LA RODA</option><option value="EH4504">LILLO</option><option value="EH4505">MADRIDEJOS</option><option value="EH1307">MANZANARES</option><option value="EH1905">MOLINA DE ARAGÓN</option><option value="EH1604">MOTILLA DEL PALANCAR</option><option value="EH4506">NAVAHERMOSA</option><option value="EH4507">OCAÑA</option><option value="EH4508">ORGAZ</option><option value="EH1906">PASTRANA</option><option value="EH1308">PIEDRABUENA</option><option value="EH4509">PUENTE DEL ARZOBISPO</option><option value="EH4510">QUINTANAR DE LA ORDEN</option><option value="EH1907">SACEDÓN</option><option value="EH1605">SAN CLEMENTE</option><option value="EH1908">SIGÜENZA</option><option value="EH4511">TALAVERA DE LA REINA</option><option value="EH1606">TARANCÓN</option><option value="EH4501">TOLEDO</option><option value="EH1309">TOMELLOSO</option><option value="EH4512">TORRIJOS</option><option value="EH1310">VALDEPEÑAS</option><option value="EH1311">VILLANUEVA DE LOS INFANTES</option><option value="EH0208">YESTE</option>
+	               	</select>
+               	
+               	
+                 <input type="hidden" name="selectOficinaLiquidadoraValidado" value="">
+
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
+				<label for="codigoTerritorial">Código territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" class="w-100 proteger" readonly="readonly" size="6">
+			</div>
+		</div>
+		
+		
+				
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">
+					<strong>2</strong>
+    	            <label for="fechaDevengo">Fecha Devengo:</label><input type="hidden" id="accesibilidad">
+				<label for="fechaDevengo" class="marcaError">
+					
+				</label>
+				
+				
+				<input type="text" size="10" maxlength="10" name="fechaDevengo" id="fechaDevengo" class="w-100 hasDatepicker" readonly="readonly" onchange="updateFechaDevengo()" placeholder="dd/mm/yyyy">
+						
+				<input type="hidden" id="fechaDevengoDia" name="fechaDevengoDia" class="" value="" size="2" maxlength="2">
+				<input type="hidden" id="fechaDevengoMes" name="fechaDevengoMes" class="" value="" size="2" maxlength="2">			
+				<input type="hidden" id="fechaDevengoAnno" name="fechaDevengoAnno" class="" value="" size="4" maxlength="4">
+			</div>
+		</div>
+		
+
+		
+		
+
+		
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+
+	
+	
+		<div class="row ">
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>4</strong>
+				<label for="selectConceptoDescripcion" class="labelInline">Concepto			
+				<label for="selectConceptoDescripcion" class="marcaError"></label>
+				<label for="codigoConcepto" name="codigoConceptoError" class="marcaError"></label>
+	                <select id="selectConceptoDescripcion" class="w-100" name="selectConceptoDescripcion" onchange="submitWithPosicionScroll('selectConceptoDescripcion')" size="1">
+						<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="CD10">CD10 - POR EXTINCIÓN DEL USUFRUCTO CONSTITUIDO 'MORTIS CAUSA' (SUCESIÓN)</option><option value="CD20">CD20 - POR EXTINCIÓN DEL USUFRUCTO CONSTITUIDO POR DONACIÓN</option>
+					</select>	
+				</label>				
+			</div>
+			
+			<div class="col-12 col-xl-2 colResponsive">
+				<label class="labelInline" for="codigoConcepto">&nbsp;</label>
+				<input id="codigoConcepto" name="codigoConcepto" class="w-100 proteger" size="4" maxlength="4" readonly="readonly">
+				<input id="descripcionConceptoSeleccionado" name="descripcionConceptoSeleccionado" type="hidden" class="proteger" value=" ">		
+								
+			</div>
+		</div>
+
+
+		
+				
+			
+	</fieldset>
+</div>						    
+            <div class="filaSepardor"></div>
+            <!-- SUJETO PASIVO -->            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Sujeto Pasivo (A)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(A)Datosidentificativossujetopasivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+	
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>19</strong>
+				
+                <label for="spSelectSexo">Sexo</label>
+                 <select id="spSelectSexo" name="spSelectSexo" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="H">HOMBRE</option><option value="M">MUJER</option>
+                 </select>   
+			</div>		
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="655_2009">
+</div>		
+	        
+            <div class="filaSepardor"></div>
+            <!-- USUFRUCTUARIO -->           
+            
+
+
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Usufructuario (B)
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(B)Datosidentificativosusufructuario" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<div class="row"><!-- FILA 1 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>25</strong>
+				<label for="ufNif" name="ufNifError" class="marcaError"></label>
+                <label for="ufNif">NIF</label>
+                <input id="ufNif" name="ufNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>26</strong>
+				<label for="ufNombre" name="ufNombreError" class="marcaError"></label>
+                <label for="ufNombre">Apellidos y nombre o razón social</label>
+                <input id="ufNombre" name="ufNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>
+		</div>
+		
+		<div class="row"><!-- FILA 5 -->
+				<!-- COLUMNA FECHA DE NACIMIENTO -->
+				<div class="col-12 col-xl-3 colResponsive">
+	                   <strong>27</strong>
+	                   <label for="doFechaNacimientoDia" name="doFechaNacimientoDiaError" class="marcaError">
+	                   
+	                   </label>
+	                   <label for="doFechaNacimientoDia">Fecha de nacimiento</label>
+	                   <div class="w-100">
+		                   <input id="doFechaNacimientoDia" name="doFechaNacimientoDia" class="" size="2" maxlength="2">
+		                   <input id="doFechaNacimientoMes" name="doFechaNacimientoMes" class="" size="2" maxlength="2">
+		                   <input id="doFechaNacimientoAnyo" name="doFechaNacimientoAnyo" class="" size="4" maxlength="4">
+		                  </div>
+	          </div>
+		</div>
+	</fieldset>
+</div>	
+
+	
+            <div class="filaSepardor"></div>            
+            <!-- DATOS DEL DOCUMENTO -->
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+                        <div class="col">
+                            Causa de la extinción del usufructo (C)
+                        </div>
+                       	 
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(C)Datosextincionusufructo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                    </div>
+                </fieldset>
+            </div>
+            <div class="contenidoDatos">
+                <fieldset class="contenidoDatos"> 
+                
+                	<div class="row">
+						<div class="col-12 col-xl-4 colResponsive">
+	 						<strong>30</strong>
+	 						<input id="duChkVencimientoTemporalError" name="duChkVencimientoTemporalError" type="hidden" value="">
+	 						<label for="duChkVencimientoTemporal" class="marcaError"></label>
+	 						<label for="duChkVencimientoTemporal">Vencimiento de usufructo temporal</label>
+	 						<input id="duChkVencimientoTemporal" name="duChkVencimientoTemporal" type="checkbox" null="">
+						</div>
+						<div class="col-12 col-xl-3 colResponsive">
+	 						<strong>31</strong>
+	 						<input id="duChkFallecimientoUsufructuarioError" name="duChkFallecimientoUsufructuarioError" type="hidden" value="">
+	 						<label for="duChkFallecimientoUsufructuario" class="marcaError"></label>
+	 						<label for="duChkFallecimientoUsufructuario">Fallecimiento del usufructuario</label>
+	 						<input id="duChkFallecimientoUsufructuario" name="duChkFallecimientoUsufructuario" type="checkbox" null="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-xl-6 colResponsive">
+	 						<strong>32</strong>
+	 						<input id="duOtrasCausasError" name="duOtrasCausasError" type="hidden" value="">
+	 						<label for="duOtrasCausas" class="marcaError"></label>
+	 						<label for="duOtrasCausas">Otras (citar)</label>
+	 						<input id="duOtrasCausas" name="duOtrasCausas" size="60" maxlength="60" class="w-100 ">
+						</div>
+					</div>
+                
+                </fieldset>
+            </div>               
+            <div class="filaSepardor"></div>            
+            <!-- DATOS DEL DOCUMENTO -->            
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+                        <div class="col">
+                            Datos del documento (D)
+                        </div>
+                       	 
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(D)Datosdeldocumento" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+                    </div>
+                </fieldset>
+            </div>
+            <div class="contenidoDatos">
+                <fieldset class="contenidoDatos"> 
+                    <div class="row"> <!-- FILA 1 -->
+                        <div class="col-12 col-xl-3 colResponsive">                            
+                            <label for="ddDocumentoNotarial" class="marcaError">
+                                
+                            </label>
+                            <label for="ddDocumentoNotarial">
+                                <strong>35</strong> Documento Notarial
+                            </label>
+                            <input id="ddDocumentoNotarial" name="ddDocumentoNotarial" type="checkbox" value="X" null="">
+                        </div>
+                        <div class="col-12 col-xl-3 colResponsive">                            
+                            <label for="ddDocumentoPrivado" class="marcaError">
+                                
+                            </label>
+                            <label for="ddDocumentoPrivado">
+                                <strong>36</strong> Documento Privado
+                            </label>
+                            <input id="ddDocumentoPrivado" name="ddDocumentoPrivado" type="checkbox" value="X" null="">
+                        </div>
+                        <div class="col-12 col-xl-3 colResponsive">                                                       
+                            <label for="ddDocumentoJudicial" class="marcaError">
+                                
+                            </label>
+                            <label for="ddDocumentoJudicial">
+                                <strong>37</strong> Documento Judicial
+                            </label>
+                            <input id="ddDocumentoJudicial" name="ddDocumentoJudicial" type="checkbox" value="X" null="">
+                        </div>
+                        <div class="col-12 col-xl-3 colResponsive">                            
+                            <label for="ddDocumentoAdministrativo" class="marcaError">
+                            </label>
+                            <label for="ddDocumentoAdministrativo">
+                                <strong>38</strong> Documento Administrativo
+                            </label>
+                            <input id="ddDocumentoAdministrativo" name="ddDocumentoAdministrativo" type="checkbox" value="X" null="">
+                        </div>
+                    </div>                    				 
+				<!-- FILTRO DE NOTARIOS -->
+ 	           
+	           
+				<div class="novisible ocultarCombo">
+					
+					<fieldset class="sombreado ">
+						<legend>Cumplimentación del Notario/a o Fedatario/a Público</legend>
+						
+						<div class="filaSepardor"></div>
+						
+						<!-- AVISO SELECCIÓN MANUAL DEL NOTARIO-->
+						<div class="fila">
+							<div class="fila"></div>
+							<label for="ddApellidoNotario" class="mensajeInfoStrong"> 
+								Introduzca el primer apellido del Notario/a o Fedatario/a Público para realizar la búsqueda
+							</label>
+						</div>
+						     
+						<div class="fila">
+							<div class="col">
+								
+								 <label for="ddApellidoNotario">  
+								 	Primer Apellido
+								 </label>
+								 <input id="ddApellidoNotario" name="ddApellidoNotario" class=" proteger" type="text" size="18" maxlength="15" disabled="disabled" onkeypress="caracteresAlfaNumericosPermitiendoEspacios(event)">
+				                      	  
+								<input type="submit" id="botonDatosNotarios" name="botonDatosNotarios" class="busqueda" value=" " title="Pulse para obtener automáticamente la lista de notarios." onclick="sinSubmitWithPosicionScroll('botonDatosNotarios')" disabled="disabled">
+							</div>
+							
+							<div class="col">
+															
+								<label for="ddNotarioSelectNotarios" name="ddNotarioSelectNotariosError" class="marcaError">
+		                            
+		                        </label> 
+		                        <label for="ddNotarioSelectNotarios">Notarios </label> 
+		                        
+								<select id="ddNotarioSelectNotarios" name="ddNotarioSelectNotarios" size="1" onchange="submitWithPosicionScroll('ddNotarioSelectNotarios')" disabled="disabled" class=" proteger">
+									
+								</select> 
+						</div>		
+						
+
+					<div class="fila">
+						<div class="col10px"></div>
+						<div class="col">
+							<fieldset class="sombreadoAmarillo">						
+								<!-- AVISO SELECCIÓN MANUAL DEL NOTARIO-->
+								<div class="row">									
+									<div class="col-12 col-xl-12 colResponsive">
+										<div class="ImgMensajeInfo"></div>
+										<label for="ddCheckNotarioFueraTablas" class="mensajeInfoStrongAmarillo"> Si el Notario/a o Fedatario/a Público no ha sido encontrado mediante la búsqueda anterior,
+											 se puede cumplimentar directamente activando la siguiente casilla 
+										</label>
+										
+										<input id="ddCheckNotarioFueraTablas" name="ddCheckNotarioFueraTablas" style="display: inline;" value="X" onclick="submitWithPosicionScroll('ddCheckNotarioFueraTablas')" null="" type="checkbox">
+									</div>
+								</div>
+								
+								
+								
+								<div class="row">
+									<div class="col-12 col-xl-6 colResponsive">
+				                        <label for="ddNombreNotario"><strong>51</strong>  
+											<span class="marcaError">
+					                            
+				                        	</span> 
+										 	Apellidos y Nombre del Notario/a o Fedatario/a Público 
+										</label>										 
+										<input id="ddNombreNotario" name="ddNombreNotario" readonly="readonly" class="w-100   proteger" type="text" size="48" maxlength="60">
+									</div>
+								</div>	
+							</fieldset>
+						</div>
+						<div class="col10px"></div>	
+					</div>
+					</div></fieldset>	
+	            </div>        
+	                             
+                    
+                    
+               	     
+                    
+                    
+                    <div class="row"><!-- FILA 4 -->
+                        <div class="col-6 col-xl-2 colResponsive">
+                            <strong>41</strong>
+                            <label for="ddProtocoloNumero" class="marcaError">
+                                
+                            </label>
+                            <label for="ddProtocoloNumero">
+                                Nº Protocolo
+                            </label>
+                            <input id="ddProtocoloNumero" name="ddProtocoloNumero" disabled="disabled" class="w-100   proteger" type="text" size="6" maxlength="6">
+                        </div>
+                        <div class="col-6 col-xl-2 colResponsive">
+                            <strong>42</strong>
+                            <label for="ddProtocoloAnno" class="marcaError">
+                                
+                            </label>
+                            <label for="ddProtocoloAnno">Año Protocolo</label>
+                            <input id="ddProtocoloAnno" name="ddProtocoloAnno" disabled="disabled" class="w-100   proteger" type="text" size="4" maxlength="4">									
+                        </div>
+                        <div class="col-6 col-xl-2 colResponsive">
+                            <strong>47</strong>
+                            <label for="ddProtocoloNumeroBis" class="marcaError">
+                                
+                            </label>
+                            <label for="ddProtocoloNumeroBis">Bis</label>
+                            <input id="ddProtocoloNumeroBis" name="ddProtocoloNumeroBis" disabled="disabled" class="w-100   proteger" type="text" size="3" maxlength="3">									
+                        </div>
+                        <div class="col-6 col-xl-2 colResponsive">
+                            <strong>48</strong>
+                            <label for="ddFechaEscritura" class="marcaError">
+                                
+                            </label>
+                            <label for="ddFechaEscritura">Fecha Escritura</label>
+                            <input id="ddFechaEscritura" name="ddFechaEscritura" readonly="readonly" disabled="disabled" class="w-100 proteger hasDatepicker" type="text" size="10" maxlength="10">									
+                        </div>
+                        
+                    </div>
+                    
+                
+                
+                
+                
+                    <div class="novisible ocultarCombo">
+		            											
+									<div class="row">									
+										<div class="col-12 col-xl-12 colResponsive">																
+												<!-- AVISO SELECCIÓN MANUAL DEL NOTARIO-->
+													<strong class="me-2">49</strong>
+													<label for="ddNotarioAutorizaso_SP" class="mt-1"> El 
+interesado declara que el notario ha remitido la copia simple 
+electrónica del documento notarial a requerimiento de los obligados 
+tributarios
+													</label>
+													
+													<input id="ddNotarioAutorizaso_SP" name="ddNotarioAutorizaso_SP" value="X" class="ms-1" null="" type="checkbox">
+										</div>					
+									</div>	<!-- fin de la fila -->		
+						
+		            </div>
+	            
+	            
+                    
+                    <div class="row">
+                        <div class="col-12 col-xl-4 colResponsive">
+                            <strong>43</strong>
+                            <label for="ddOtorgSelectProvincia" class="marcaError"></label>
+                            <label for="ddOtorgSelectProvincia">Provincia Formalización / Otorgamiento</label>
+                            <select id="ddOtorgSelectProvincia" name="ddOtorgSelectProvincia" size="1" class="w-100  " onchange="cargarMunicipiosAjax('ddOtorgSelectProvincia', 'ddOtorgSelectMunicipio')">
+                                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+                            </select>
+                        </div>  
+                        <div class="col-12 col-xl-4 colResponsive">
+                            <strong>44</strong>
+                            <label for="ddOtorgSelectMunicipio" class="marcaError"></label>
+                            <label for="ddOtorgSelectMunicipio">Municipio Formalización / Otorgamiento</label>
+                            <select id="ddOtorgSelectMunicipio" name="ddOtorgSelectMunicipio" size="1" class="w-100  ">
+                                
+                            </select>
+                        </div>   
+                    </div>
+                </fieldset>
+            </div>
+            
+            <div class="filaSepardor"></div>                  
+             	<!-- CUMPLIMENTACION DE LA LIQUIDACION -->
+		             <div class="contenidoCabecera">
+		                <fieldset class="contenidoCabecera">
+		                    <div class="contenidoCabeceraTexto">
+		                    	<div class="col">
+			                        Datos del usufructo y relación de bienes consolidados
+			                    </div>
+			                    
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#Cumplimentaciondatosusufructo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+    
+		                    </div>
+		                </fieldset>
+		            </div>
+		            <div class="contenidoDatos">
+		            	<fieldset class="contenidoDatos"> <!-- FILA 1 -->
+		                     <div class="row">
+		                     	 	<div class="col-12 col-xl-3 colResponsive">
+										<label for="cantidadBienesConsolidados">Nº de bienes:</label>
+										<input id="cantidadBienesConsolidados" name="cantidadBienesConsolidados" value="1" class="" size="1" maxlength="2">
+									</div>
+									<div class="col-12 col-xl-5 colResponsive">	
+				                     	 <input id="botonCalcularBienesConsolidados" type="submit" class="w-100" name="botonCalcularBienesConsolidados" value="Pág 2-Datos del usufructo-Relación Bienes">
+				                    </div> 	 
+		                     </div>
+					    </fieldset>                 
+		            </div>            
+            <div class="filaSepardor"></div>            
+            <!-- AUTOLIQUIDACION -->
+            <div class="contenidoCabecera">
+                <fieldset class="contenidoCabecera">
+                    <div class="contenidoCabeceraTexto">
+                    	<div class="col">
+	                       Autoliquidación (E)
+	                    </div>   
+                         
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(E)Autoliquidaci%C3%B3n" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+	
+                    </div>	 
+                </fieldset>
+            </div>
+            <div class="contenidoDatos">
+            	<fieldset class="contenidoFila"> <!-- FILA 1 -->
+           		 <fieldset class="contenidoDatos">
+                  	    <legend>Cumplimentación de la autoliquidación</legend>            
+	                     <div class="fila">
+	                     	<div class="colWidth350px">
+	                     		<label for="accesibilidad">&nbsp;</label>
+	                     	</div>
+	                     	<div class="col">
+	                     		 <input id="botonCumplimentarLiquidacion" type="submit" name="botonCumplimentarLiquidacion" value="Cumplimentar autoliquidación">
+	                     	</div> 
+	                     </div>
+				    </fieldset>       
+                    <div class="row"> 
+                        <div class="col-12 col-xl-4 colResponsive">
+                            <strong>50</strong>
+                            <label for="auComplementaria" class="marcaError"></label>
+                            <label for="auComplementaria">Autoliquidación complementaria</label>
+                            <input id="auComplementaria" name="auComplementaria" onclick="submitWithPosicionScroll('auComplementaria')" value="X" null="" type="checkbox">
+                        </div>
+                    </div>                 
+                    <div class="row"> 
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>51</strong>
+                            <label for="auFechaPresentacionDia" class="marcaError"></label>
+                            <label for="auFechaPresentacionDia">Fecha de presentación</label>
+                            <div class="w-100">
+	                            <input id="auFechaPresentacionDia" name="auFechaPresentacionDia" disabled="disabled" size="2" maxlength="2" class=" proteger">
+	                            <label for="auFechaPresentacionMes" class="marcaError"></label>
+	                            <input id="auFechaPresentacionMes" name="auFechaPresentacionMes" disabled="disabled" size="2" maxlength="2" class=" proteger">
+	                            <label for="auFechaPresentacionAnno" class="marcaError"></label>
+	                            <input id="auFechaPresentacionAnno" name="auFechaPresentacionAnno" class=" proteger" disabled="disabled" size="4" maxlength="4">
+	                       </div>
+                        </div>
+                        <div class="col-12 col-xl-3 colResponsive">
+                            <strong>52</strong>
+                            <label for="auNumero" class="marcaError"></label>
+                            <label for="auNumero">Nº de autoliquidación previa</label>
+                            <input id="auNumero" name="auNumero" class="w-100  proteger" disabled="disabled" type="text" size="13" maxlength="13">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="contenidoFila"> <!-- FILA 2 -->
+                	<div class="row">
+                        <div class="col-6 col-xl-4 colResponsive">
+                            <strong>55</strong>
+                            <label for="auNoSujetos" class="marcaError"></label>
+                            <label for="auNoSujetos">No Sujeta</label>
+                            <input id="auNoSujetos" name="auNoSujetos" value="X" onclick="submitWithPosicionScroll('auNoSujetos')" null="" type="checkbox">	
+ 						</div>
+                    
+                    	<div class="col-6 col-xl-2 colResponsive">
+                            <strong>56</strong>
+                            <label for="auPrescrito" class="marcaError"></label>
+                            <label for="auPrescrito">Prescrita</label>
+                            <input id="auPrescrito" name="auPrescrito" value="X" onclick="submitWithPosicionScroll('auPrescrito')" null="" type="checkbox">	
+                    	</div>
+                    </div>
+                </fieldset>                
+                <fieldset class="contenidoDatos"> <!-- FILA 3 -->
+                    <div class="row"> 
+                        <div class="col-6 col-xl-4 colResponsive">
+                                <label for="auCuota"><strong>115</strong> CUOTA A INGRESAR (105-110)</label>
+                                <label for="auCuota" class="marcaError"></label>
+                        </div>
+                        <div class="col-6 col-xl-2 colResponsive">
+                                <input id="auCuota" name="auCuota" class="w-100" value="0" size="15" maxlength="16" readonly="true">
+                                
+                        </div>
+                    </div>
+                    <div class="row">
+                    	<div class="col-6 col-xl-4 colResponsive">
+                                <label for="auRecargo"><strong>116</strong> Recargo por presentacion fuera de plazo</label>	            	        
+                                <label for="auRecargo" class="marcaError"></label>                        	                                                                 
+                        </div>
+                         <div class="col-6 col-xl-2 colResponsive">
+                         		<input id="auRecargo" name="auRecargo" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-xl-4 colResponsive">						
+                                <label for="auInteresesDemora"><strong>117</strong> Intereses de demora</label>
+                                <label for="auInteresesDemora" class="marcaError"></label>
+                         </div>
+                        <div class="col-6 col-xl-2 colResponsive">
+                                <input id="auInteresesDemora" name="auInteresesDemora" size="15" maxlength="16" readonly="true" class="w-100 proteger alineamientoDerecha">                           		
+                        </div>                        
+                    </div>
+                    <div class="row">
+						<div class="col-6 col-xl-4 colResponsive">
+                                <label for="auTotalAIngresar"><strong>118</strong> TOTAL A INGRESAR: (115+116+117)</label>
+                                <label for="auTotalAIngresar" class="marcaError"></label>
+                        </div>
+                        <div class="col-6 col-xl-2 colResponsive">
+                                <input id="auTotalAIngresar" name="auTotalAIngresar" class="w-100" value="0" size="15" maxlength="16" readonly="true">
+                        </div>
+                    </div>                    
+                </fieldset>
+            </div>	
+            <div class="filaSepardor"></div>
+            <!-- REPRESENTANTE -->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Firma (F)
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://portaltributario.jccm.es/modelo-655-instrucciones-para-su-cumplimentacion-0#(F)Firma" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoFila">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                <span class="marcaError">
+                	
+                </span>
+                <label for="rpLugarFirma" name="rpLugarFirma">               	
+                	<strong>Lugar de firma</strong>: En <input type="hidden" id="accesible">
+               	</label>
+               	<input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+				<span> a 20 de marzo de 2026</span>                	                	
+			</div>
+		</div>
+	</fieldset>
+	<fieldset class="contenidoDatos">
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-12 colResponsive">
+             	<span>En caso de que la autoliquidación se suscriba por el
+ representante del sujeto pasivo, se deberá cumplimentar de forma 
+obligatoria las siguientes casillas:</span>
+            </div>                                
+		</div>
+		
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>140</strong>
+				
+                <label for="rpNif">N.I.F. del representante</label>
+                <input id="rpNif" name="rpNif" class="w-100 " size="8" maxlength="15">
+			</div>
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>141</strong>
+                
+                <label for="rpNombre">
+                	Apellidos y nombre o razón social
+               	</label>
+                <input id="rpNombre" name="rpNombre" class="w-100 " type="text" size="35" maxlength="40">
+			 </div>
+		</div>
+	</fieldset>
+	
+
+
+            
+
+
+            <div class="filaSepardor"></div>			
+            <div class="filaSepardor"></div>		
+        </div>     
+
+        <input id="655_2009" type="hidden" value="655_2009" name="MOD">
+        <input id="referencia" type="hidden" name="referencia" value="655_2009">
+        <input id="version" type="hidden" name="version" value="7">
+        
+        <!-- ASISTENTE MENSAJE IMPORTAR -->
+    
+	        
+
+
+
+
+
+
+
+
+	
+		
+	    
+        <!-- FIN ASISTENTE MENSAJE IMPORTAR -->
+        
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+        
+        </form>     
+        
+        <!-- ASISTENTE IMPORTAR -->
+    
+	        
+
+
+
+
+
+
+
+
+
+	
+	    
+         <!-- FIN ASISTENTE IMPORTAR -->
+        
+    
+    
+    <script>
+	$(function() 
+	{ 	
+		$("#ddFechaEscritura").datepicker();
+		$("#ddProtocoloNumeroBis").ForceNumericOnly();				     		
+	});		
+    </script>    
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
