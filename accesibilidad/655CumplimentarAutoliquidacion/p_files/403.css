@@ -1,0 +1,56 @@
+.botonTablaDinamica
+{
+	border-width:thin;
+	padding:0px; 
+	width:22px;  
+	height:22px;		
+}
+
+.botonVentana
+{
+	border-width:thin;
+	padding:0px; 
+	width:32px; 
+	height:32px;	
+}
+
+.imagenBotonVentana
+{
+	width:20px; 
+	height:20px;
+}
+
+.fuenteNumeros 
+{
+	vertical-align:4px;
+	font-size:14pt
+}
+
+.fuenteCumplimentacion 
+{
+	font-size:17pt
+}
+
+.mensajeFugaz
+{
+	display:none; 
+	font-weight: bold; 	 
+	background-color: rgb(255, 255, 255); 
+	color: rgb(60, 87, 18); 
+	opacity: 0.9;	
+}
+
+div.capaPopup
+{
+	DISPLAY: none;  
+	BORDER: 3px solid #012D5A;
+	POSITION: absolute; 
+	BACKGROUND: #fff;	
+	HEIGHT: auto;					 
+}		
+
+.dialogoAviso
+{
+	float:left;
+	margin:12px 12px 20px 0;
+}
