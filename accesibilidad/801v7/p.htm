@@ -1,0 +1,2122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><head>			
+    	<!-- UTILIZAMOS EL URL BASE PARA MANTENER EL CONTEXTO DE LA APLICACIÓN, ES NECESARIO SI UTILIZAMOS EL REQUESTDISPACHER EN VER DEL SENDREDIRECT -->
+    	<!-- base href="https://webgreco.local/webgreco/" -->
+        <meta http-equiv="Content-type" content="text/html; charset=windows-1252">                
+		
+
+
+
+
+
+      <meta http-equiv="Content-Language" content="es-ES">
+	  <!--  <meta http-equiv="Cache-Control" content="private,  max-age=7200, , must-revalidate"> -- 2 horas -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="robots" content="NOINDEX, FOLLOW">
+
+		
+		
+	
+	<link type="image/x-icon" href="https://webgreco.local/webgreco/imagenes/jccm.ico" rel="shortcut icon">
+
+
+
+ 	<title>Programas de ayuda CLM-WEB</title>
+ 		
+	<script type="text/javascript" src="p_files/purify.min.js"></script>
+	
+	<script type="text/javascript" src="p_files/GreJsFunciones_v2.js">
+	</script>
+			
+	<!-- JQUERY -->	
+	
+
+
+
+<!-- Motor JQuery -->
+<script src="p_files/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="p_files/jquery-ui.min.js"></script> 
+
+<!--  Estilos JQuery UI -->
+<link rel="stylesheet" href="p_files/jquery-ui.min.css"> 
+
+<!-- API para bloqueos interfaz usuario (Permite autenticas ventanas modales) -->
+<script src="p_files/jquery.blockUI.js"></script>
+
+<script src="p_files/browserDetect.js"></script>
+
+<!-- Funciones JQuery-Ajax aniadidas por nosotros  -->
+<script src="p_files/GreJsFuncionesJQuery_v3.js"></script> 
+
+<!-- jQuery Form Plugin -->
+<script src="p_files/jquery.form.js"></script>
+
+<!-- B64 jQuery Plugin -->
+<script src="p_files/jquery.base64.js"></script>
+
+<link href="p_files/select2.min.css" rel="stylesheet">
+<script src="p_files/select2.min.js"></script>
+
+
+<script src="p_files/datepicker-es.js"></script> 
+
+<!-- compatibilidad IE 11 
+<link rel="stylesheet" href="%=GreClsPathRequest.getRequestPath()%/css/bootstrap-ie11.min.css" 
+										media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+										-->
+
+	
+	
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="p_files/bootstrap.min.css">
+
+	<script type="text/javascript" src="p_files/bootstrap.min.js"></script>
+	
+	
+	<!-- HOJA DE ESTILOS CORPORATIVA -->
+	<link rel="stylesheet" href="p_files/styles.css">
+	<!-- HOJA DE ESTILOS WEBGRECO -->
+	<link rel="stylesheet" type="text/css" href="p_files/grecoOV.css">
+	
+	
+	<!-- compatibilidad IE 11 -->
+	<link rel="stylesheet" href="p_files/bootstrap-ie11.min.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+	
+
+
+	
+	
+	
+	
+		
+
+
+	
+					
+    <script type="text/javascript"> 
+		if (history.forward(1)){location.replace(history.forward(1))}
+		function comprobarNavegadorEsOk()
+		{
+			if(!navegadorOk())
+			{
+				document.getElementById("btnIzq").disabled='disabled'; 
+				return false;
+			}
+			
+			return true;
+		}					
+	</script><script src="p_files/prompt.js"></script></head>
+		
+	<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+	 
+	
+	
+		    
+	
+		    
+	
+
+
+			
+	
+    
+    
+	    
+	
+	    
+	
+	
+	
+    <body onload="if(!comprobarNavegadorEsOk()) return false; checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion')" onunload="doUnload()">
+	        
+
+        <form name="modelo" id="modelo" method="post" action="https://webgreco.local/webgreco/GreSvlProcesarPeticiones" target="_self">
+	        
+	        <input id="posicionScroll" type="hidden" name="posicionScroll" value="0">	
+		        
+	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">	
+						
+			<input type="hidden" name="idListaSesion" id="idListaSesion" value="">
+        
+        	<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="6149059173">
+			
+			
+	
+		    <!-- BARRA DE CARGA DE DATOS -->
+			
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:1000; left: 45%;">
+			<span id="loading" class="hide" style="z-index:1000; left: 45%;">
+					<img src="p_files/ajax_loader.gif" alt="Cargando...">
+			</span>
+		</div>
+
+			     
+        <div id="principal" class="principal visible">
+
+	        
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- AJGG. NUEVA CABECERA -->
+	<header class="shadow-sm">
+		<img class="logo" src="p_files/manifest-icon-192.png" alt="Castilla la Mancha"> 
+		<img class="logo-xl" src="p_files/logo-xl.png" alt="Castilla la Mancha">
+		<div>
+			<h1>RESGUARDO DE CONSTITUCIÓN DE DEPÓSITO O GARANTÍA EN EFECTIVO</h1>
+			<h2>Caja General de Depósitos</h2>
+		</div>
+		 
+		<div class="g-0 mb-3">
+			<div class="d-flex textoModeloCabeceraResponsibe"><strong>MODELO 801</strong></div>
+			<div class="d-none d-sm-none d-md-block textAutoliquidacionCabeceraResponsibe">
+				<strong>AUTOLIQUIDACIÓN</strong> 
+				<div class="letra70 textAutoliquidacionCabeceraResponsibe d-none d-lg-block">V.WEB.202610</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+	<nav id="nav">
+
+
+
+	</nav>
+	<!-- AJGG. FIN NUEVA CABECERA -->
+	
+	
+	
+	
+	<div class="container-fluid mb-2 border border-secondary rounded-lg backgroundcolorwhite color3">
+		<div class="form-row">
+			<div class="form-group col-12 col-sm-6 col-md-6 col-lg-6">
+		 
+						<div class="fila">
+						Una vez cumplimentados los apartados, pulse el botón <strong>Validar</strong> para comprobar los datos tecleados.
+		
+						</div>
+		
+		</div>
+		<div class="form-group col-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="separadorFilaAncha"></div>
+
+				<input class="botonCabecera" id="btnIzq" name="btnIzq" type="submit" value="     Validar     " onclick="registrarEnLogPulsacionBoton('VALIDAR', false); return procesarPeticion();">
+
+				<input class="botonCabecera" id="btnCentro" name="btnCentro" type="button" value="     Limpiar     ">
+
+				<input id="btnDrcha" class="botonCabecera" name="btnDrcha" type="button" value="      Salir      " onclick="window.close()">
+				
+		</div>		
+		<div class="form-group col-12 col-sm-12 col-md-2 col-lg-2">
+				
+				<fieldset class="paralelos">											
+					<!-- <button type="button" class="cursor-pointer btn btn-primary mr-1 mr-sm-2 px-3 shadow-sm d-flex align-items-right" data-original-title="Identificarse" onclick="redirigirCASClave('https://webgreco.local/webgreco/RetornoCAS');">											
+						<svg class="svg-inline--fa fa-ico-usuario-sm fa-w-16 ico-size-1 mr-2" aria-hidden="true" role="presentation" focusable="false" data-icon="ico-usuario-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px" data-fa-i2svg="">
+									<path fill="currentColor" d="M12,13A6,6,0,0,1,6,7V6A6,6,0,0,1,18,6V7A6,6,0,0,1,12,13ZM12,2A4,4,0,0,0,8,6V7a4,4,0,0,0,8,0V6A4,4,0,0,0,12,2ZM23,24H1V20.91a5,5,0,0,1,3.67-4.82A28.83,28.83,0,0,1,12,15a28.83,28.83,0,0,1,7.33,1.09A5,5,0,0,1,23,20.91ZM3,22H21V20.91A3,3,0,0,0,18.8,18,26.67,26.67,0,0,0,12,17a26.67,26.67,0,0,0-6.8,1A3,3,0,0,0,3,20.91Z"></path>
+						</svg>
+						<span class="d-none d-lg-inline small font-weight-bold pr-2 py-1">
+							 Identificarse
+						</span>						
+					</button>-->	
+					
+					<a class="mt-3" href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=801_2021" target="_blank" onclick="window.open(this.href, '', 'height=600,width=800,resizable=1'); return false;">
+						<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+	        		</a>	        		
+								
+				</fieldset>
+		</div>				
+			
+
+
+		
+
+		</div>
+	</div>
+	
+	<script>
+	$("#btnCentro").click(function()
+	{		
+		registrarEnLogPulsacionBoton('LIMPIAR', 'false');
+		
+		$(document).find(":input").each(function () 
+		{
+            var obj = this;                        
+            
+            if(obj.type!='hidden' && obj.type!='submit' && obj.type!='button' && obj.type!='checkbox')
+            {            	
+            	if(obj.type=='select-one' || obj.type=='select' || obj.class=='form-select')
+            		obj.value = '0'
+            	else
+            		obj.value = ''            	    
+            }            	
+        });
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierdaAux2").click(function()   //Desactiva el boton de imprimir al pulsarlo para evitar clicks repetidos
+	{			                                //No se hace lo obvio de usar el evento click del propio botón "botonIzquierda" porque se interrumpiria el submit		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false'); 
+		$("#botonIzquierdaAux2").prop('disabled', 'true');
+		$("#botonIzquierdaAux2").css('background-color', '#F0EBE1'); //#E9ECEF 
+		$("#botonIzquierda").trigger("click"); //Simula pulsacion click del botonIzquierda que se encuentra en realidad oculto
+	});
+	
+	//==========================================================================
+		
+	$("#botonIzquierda").click(function()  
+	{			                           		
+		registrarEnLogPulsacionBoton('IMPRIMIR', 'false');
+		return true; //continua con el submit
+	});
+	
+	</script>
+	
+	        
+	        
+	        <div class="filaSepardor"></div> 
+	        
+
+
+
+
+
+
+
+
+	        
+	        
+	        
+	        <div class="filaSepardor"></div>
+	        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+          
+    
+    
+       
+        
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">Datos del Documento</div>
+
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=801_2021&amp;ayudaContextual=SucursalDeLaCajaGeneralDeDepositos" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos"> 
+		<div class="fila">
+			<div class="col">
+				<label for="selectSucursal" class="marcaError"></label>
+				<label for="selectSucursal">Sucursal de la Caja General de Depósitos</label>
+				<select id="selectSucursal" name="selectSucursal" disabled="disabled" readonly="" size="1">					
+                	<option value="0" selected="selected"></option><option value="EH0201">ALBACETE</option><option value="EH1301">CIUDAD REAL</option><option value="EH1601">CUENCA</option><option value="EH1901">GUADALAJARA</option><option value="EH4501">TOLEDO</option>
+               	</select>
+
+                <input type="hidden" name="selectSucursalValidado" value="">
+			</div>
+			<!-- <div class="col">
+				<label for="codigoTerritorial" name="codigoTerritorialError" class="marcaError"></label>
+				<label for="codigoTerritorial">Código territorial</label>
+				<input id="codigoTerritorial" name="codigoTerritorial" class="proteger" readonly="readonly" size="6" value="">
+			</div>-->
+		</div>		
+	</fieldset>
+</div>	
+			        
+
+			<!-- ARRENDADOR: CONSTITUYENTE O GARANTIZADO ===== -->
+            <!-- ============================================= -->			
+	        <div class="filaSepardor"></div>
+	         
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				 Arrendador. Constituyente o garantizado
+			</div>
+		
+        
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=801_2021&amp;ayudaContextual=ConstituyenteOGarantizado" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+        </div>
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>19
+</strong>
+				
+                <label for="prNif">NIF</label>
+                <input id="prNif" name="prNif" class="w-100 
+                	" size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>20</strong>
+                
+                <label for="prNombre">Apellidos y nombre o razón social</label>
+                <input id="prNombre" name="prNombre" class="w-100 " type="text" size="38" maxlength="55">
+			</div>
+		</div>
+		<div class="row"><!-- FILA 2 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>21</strong>
+				
+                <label for="prSelectSiglas">Siglas</label>
+                <select id="prSelectSiglas" name="prSelectSiglas" class="w-100 " size="1">
+                		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+       			</select>
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>22</strong>
+				
+                <label for="prNombreVia">Nombre Vía Pública</label>
+                <input id="prNombreVia" name="prNombreVia" class=" w-100" type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>23</strong>
+				
+                <label for="prNumero">Número</label>
+                <input id="prNumero" name="prNumero" class=" w-100" size="4" maxlength="8">
+			</div>
+		</div>
+		<div class="row"><!-- FILA 3 -->
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>24</strong>
+				
+                <label for="prLetra">Bloque</label>
+                <input id="prLetra" name="prLetra" class=" w-100" size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>25</strong>
+				
+                <label for="prEscalera">Escalera</label>
+                <input id="prEscalera" name="prEscalera" class=" w-100" size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>26</strong>
+				
+                <label for="prPiso">Planta</label>
+                <input id="prPiso" name="prPiso" class=" w-100" size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>27</strong>
+				
+                <label for="prPuerta">Puerta</label>
+                <input id="prPuerta" name="prPuerta" class=" w-100" size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>28</strong>
+				
+                <label for="prTelefono">Telf.</label>
+                <input id="prTelefono" name="prTelefono" class=" w-100" size="8" maxlength="9">
+			</div>
+			
+
+			<div class="col-6 col-xl-2 colResponsive">
+     			<strong>29</strong>
+     			
+                <label for="prFax">Fax</label>
+                <input id="prFax" name="prFax" class="w-100 " size="8" maxlength="9">
+			</div>	
+
+			
+			
+		</div>
+		<div class="row"><!-- FILA 4 -->
+			<div class="col-12 col-xl-2 colResponsive">
+				
+
+				
+				<strong>31</strong>
+				
+                <label for="prSelectProvincia">Provincia</label>
+                <select id="prSelectProvincia" name="prSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('prSelectProvincia', 'prSelectMunicipio')">
+                		<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+               	
+               			
+                 <input type="hidden" name="spSelectProvinciaValidado" value="">
+
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>30</strong>
+				
+                <label for="prSelectMunicipio">Municipio</label>
+                <select id="prSelectMunicipio" name="prSelectMunicipio" class="w-100 " size="1">
+                		
+               	</select>
+               		
+                 <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>32</strong>
+				
+                <label for="prCodPostal">C. Postal</label>
+                <input id="prCodPostal" name="prCodPostal" class=" w-100" type="text" size="4" maxlength="5">
+			</div>
+		</div>
+	</fieldset>
+</div>		
+     
+
+
+			<!-- PROPIETARIO DEL EFECTIVO ==================== -->
+            <!-- ============================================= -->			
+	        <div class="filaSepardor"></div>
+	         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Propietario del efectivo
+			</div>
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=801_2021&amp;ayudaContextual=PropietarioDelEfectivo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+
+			
+		</div>	 
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<input type="hidden" name="spCoeficiente" value="">		
+
+
+		<div class="row">
+			<div class="col colResponsive">    
+	   	    	<label for="botonCopiarDatosArrendadorAPropietario">Si la persona arrendadora es propietaria del efectivo, pulse para copiar aquí los datos&nbsp;&nbsp;</label>
+	   	    	<input id="botonCopiarDatosArrendadorAPropietario" name="botonCopiarDatosArrendadorAPropietario" type="button" value="Copiar datos arrendador">
+   	    	</div>	    	    	
+		</div>
+
+
+		<!--  Fila 1 NIF, Nombre, Extranjero(046_2012) -->
+		<!-- ----------------------------------------- -->		 
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>5</strong>
+				
+                <label for="spNif">NIF</label>
+                <input id="spNif" name="spNif" class="w-100 " size="8" maxlength="9">
+			</div>
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>6</strong>
+				
+                <label for="spNombre">Apellidos y nombre o razón social</label>
+                <input id="spNombre" name="spNombre" class="w-100 " type="text" size="42" maxlength="60">
+			</div>			
+						
+		</div>	
+		
+		<!--  Fila 2 Siglas, Nombre via, Numero -->
+		<!-- ---------------------------------- -->		
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>7</strong>
+				
+                <label for="spSelectSiglas">Siglas</label>
+                <select id="spSelectSiglas" name="spSelectSiglas" class="w-100 " size="1">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="AV">AVENIDA</option><option value="AL">ALAMEDA</option><option value="AD">ALDEA</option><option value="AP">APARTAMENTO</option><option value="AR">AREA,ARRABAL</option><option value="AY">ARROYO</option><option value="BJ">BAJADA</option><option value="BR">BARRANCO</option><option value="BO">BARRIO</option><option value="BL">BLOQUE</option><option value="BV">BULEVAR</option><option value="CL">CALLE</option><option value="CJ">CALLEJA</option><option value="CM">CAMINO</option><option value="CR">CARRETERA</option><option value="CS">CASERIO</option><option value="CG">COLEGIO</option><option value="CO">COLONIA</option><option value="CN">CONJUNTO</option><option value="CT">CUESTA</option><option value="CH">CHALET</option><option value="ED">EDIFICIO</option><option value="EN">ENTRADA</option><option value="ES">ESCALINATA</option><option value="EX">EXPLANADA</option><option value="EM">EXTRAMUROS</option><option value="ER">EXTRARRADIO</option><option value="FC">FERROCARRIL</option><option value="GL">GLORIETA</option><option value="GV">GRAN	VIA</option><option value="GR">GRUPO</option><option value="HT">HUERTA</option><option value="JR">JARDINES</option><option value="LD">LADO</option><option value="LG">LUGAR</option><option value="MZ">MANZANA</option><option value="MS">MASIA</option><option value="MC">MERCADO</option><option value="MT">MONTE</option><option value="ML">MUELLE</option><option value="MN">MUNICIPIO</option><option value="PZ">PLAZA</option><option value="PA">PARCELA</option><option value="PQ">PARQUE</option><option value="PD">PARTIDA</option><option value="PJ">PASAJE</option><option value="PS">PASEO</option><option value="PB">POBLADO</option><option value="PG">POLIGONO</option><option value="PR">PROLONGACION</option><option value="PT">PUENTE</option><option value="PU">PUERTA</option><option value="QT">QUINTA</option><option value="RM">RAMAL</option><option value="RB">RAMBLA</option><option value="RP">RAMPA</option><option value="RR">RIERA</option><option value="RC">RINCON</option><option value="RD">RONDA</option><option value="RU">RUA</option><option value="SA">SALIDA</option><option value="SC">SECTOR,SECCION</option><option value="SD">SENDA</option><option value="SL">SOLAR,SALON</option><option value="SB">SUBIDA</option><option value="TN">TERRENOS</option><option value="TO">TORRENTE</option><option value="TR">TRAVESIA</option><option value="UR">URBANIZACION</option><option value="VI">VIA</option><option value="VP">VIA	PUBLICA</option>
+                </select>
+                		
+                 <input type="hidden" name="spSelectSiglasValidado" value="">
+			</div>
+			<div class="col-8 col-xl-6 colResponsive">
+				<strong>8</strong>
+				
+                <label for="spNombreVia">Nombre Vía Pública</label>
+                <input id="spNombreVia" name="spNombreVia" class="w-100 " type="text" size="31" maxlength="60">
+			</div>
+			<div class="col-4 col-xl-2 colResponsive">
+				<strong>9</strong>
+				
+                <label for="spNumero">Número</label>
+                <input id="spNumero" name="spNumero" class="w-100 " size="4" maxlength="8">
+            </div>
+		</div>
+
+		<!--  Fila 3 Bloque, Escalera, Planta, Puerta, Telefono, Fax -->
+		<!-- ------------------------------------------------------- -->				
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>10</strong>
+				
+                <label for="spLetra">Bloque</label>
+                <input id="spLetra" name="spLetra" class="w-100 " size="1" maxlength="3">
+            </div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>11</strong>
+				
+                <label for="spEscalera">Escalera</label>
+                <input id="spEscalera" name="spEscalera" class="w-100 " size="1" maxlength="2">						
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>12</strong>
+				
+                <label for="spPiso">Planta</label>
+                <input id="spPiso" name="spPiso" class="w-100 " size="1" maxlength="2">
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>13</strong>
+				
+                <label for="spPuerta">Puerta</label>
+                <input id="spPuerta" name="spPuerta" class="w-100 " size="1" maxlength="2">
+			</div>
+
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>14</strong>
+				
+                <label for="spTelefono">Telf.</label>
+                <input id="spTelefono" name="spTelefono" class="w-100 " size="8" maxlength="9">
+			</div>
+			
+
+				<div class="col-6 col-xl-2 colResponsive">
+					<strong>15</strong>
+					
+	                <label for="spFax">Fax</label>
+	                <input id="spFax" name="spFax" class="w-100 " size="8" maxlength="9">
+				</div>				
+			
+		</div>
+		
+		
+		<!--  Fila 4 Provincia, Municipio, Codigo Postal -->
+		<!-- ------------------------------------------- -->
+								
+		<div class="row">
+			<div class="col-12 col-xl-2 colResponsive">				
+				
+				<strong>17</strong>
+				
+                <label for="spSelectProvincia">Provincia</label>
+                <select id="spSelectProvincia" name="spSelectProvincia" class="w-100 " size="1" onchange="cargarMunicipiosAjax('spSelectProvincia', 'spSelectMunicipio')">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option><option value="02">ALBACETE</option><option value="01">ALAVA</option><option value="03">ALICANTE</option><option value="04">ALMERIA</option><option value="33">ASTURIAS</option><option value="05">AVILA</option><option value="06">BADAJOZ</option><option value="07">BALEARES</option><option value="08">BARCELONA</option><option value="09">BURGOS</option><option value="13">CIUDAD REAL</option><option value="16">CUENCA</option><option value="10">CACERES</option><option value="11">CADIZ</option><option value="39">CANTABRIA</option><option value="12">CASTELLON</option><option value="51">CEUTA</option><option value="14">CORDOBA</option><option value="15">CORUÑA LA</option><option value="19">GUADALAJARA</option><option value="17">GERONA</option><option value="18">GRANADA</option><option value="20">GUIPUZCOA</option><option value="21">HUELVA</option><option value="22">HUESCA</option><option value="23">JAEN</option><option value="26">LA RIOJA</option><option value="24">LEON</option><option value="25">LERIDA</option><option value="27">LUGO</option><option value="28">MADRID</option><option value="29">MALAGA</option><option value="52">MELILLA</option><option value="30">MURCIA</option><option value="31">NAVARRA</option><option value="32">ORENSE</option><option value="34">PALENCIA</option><option value="35">PALMAS LAS</option><option value="36">PONTEVEDRA</option><option value="37">SALAMANCA</option><option value="40">SEGOVIA</option><option value="41">SEVILLA</option><option value="42">SORIA</option><option value="38">STA. CRUZ TENERIFE</option><option value="45">TOLEDO</option><option value="43">TARRAGONA</option><option value="44">TERUEL</option><option value="46">VALENCIA</option><option value="47">VALLADOLID</option><option value="48">VIZCAYA</option><option value="49">ZAMORA</option><option value="50">ZARAGOZA</option>
+               	</select>
+		
+            <input type="hidden" name="spSelectProvinciaValidado" value="">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>16</strong>
+				
+                <label for="spSelectMunicipio">Municipio</label>
+                <select id="spSelectMunicipio" name="spSelectMunicipio" class="w-100  " size="1">
+                	
+               	</select>
+               		
+               <input type="hidden" name="spSelectMunicipioValidado" value="">
+			</div>
+
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>18</strong>
+				
+                <label for="spCodPostal">C. Postal</label>
+                <input id="spCodPostal" name="spCodPostal" class="w-100 " type="text" size="4" maxlength="5">
+			</div>
+
+			
+		</div>
+		
+
+	</fieldset>
+	<!-- HIDDEN TYPES -->
+	<input type="hidden" name="MOD" value="801_2021">
+</div>		
+
+
+
+			<!-- DATOS ANEXO ================================= -->
+            <!-- ============================================= -->	
+            		
+			<div class="filaSepardor"></div>
+	        
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+input:disabled {background-color: #E8E8E8;}		
+select:disabled {background-color: #E8E8E8;}
+input[readonly] {background-color: #E8E8E8;}
+textarea[readonly] {background-color: #E8E8E8;}
+select[readonly] {background-color: #E8E8E8;}
+input[type=checkbox] {vertical-align: -2px;}
+.ui-spinner {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0;
+	vertical-align: middle;
+}
+.ui-spinner-input {
+	border: 10px solid #000;;
+	background: red;
+	color: blue;
+	padding: .222em 0;
+	margin: .2em 0;
+	vertical-align: middle;
+	margin-left: .4em;
+	margin-right: 2em;
+}
+.ui-spinner-button {
+	width: 1.6em;
+	height: 50%;
+	font-size: .5em;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	position: absolute;
+	cursor: default;
+	display: block;
+	overflow: hidden;
+	right: 0;
+}
+/* more specificity required here to override default borders */
+/*.ui-spinner a.ui-spinner-button {
+	border-top-style: none;
+	border-bottom-style: none;
+	border-right-style: none;
+}
+.ui-spinner-up {
+	top: 0;
+}
+.ui-spinner-down {
+	bottom: 0;
+}*/
+	
+</style> 
+
+<!-- ==================================================================================================================== -->
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				ANEXO: CENSO REGIONAL DE CONTRATOS DE ARRENDAMIENTO DE FINCAS URBANAS DE CASTILLA-LA MANCHA
+			</div>
+			
+			
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=801_2021&amp;ayudaContextual=DatosAnexo" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+						
+        </div>
+	</fieldset>
+</div>
+
+<div class="contenidoDatos">
+	<fieldset class="contenidoDatos">
+		<div class="fila">
+			<strong>Información de la persona arrendataria</strong><hr>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-5 colResponsive">				
+				<label for="arrendatarioPersonaFisicaOJuridica" id="arrendatarioPersonaFisicaOJuridicaError" class="marcaError"></label>
+				<label for="arrendatarioPersonaFisicaOJuridica">¿El arrendatario es persona física o jurídica?</label>
+                <select id="arrendatarioPersonaFisicaOJuridica" name="arrendatarioPersonaFisicaOJuridica" class="w-100 " size="1">
+	                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+	                <option value="personaFisica">PERSONA FÍSICA</option>				
+	                <option value="personaJuridica">PERSONA JURÍDICA</option>
+                </select>
+			</div>
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>404</strong>
+				<label for="nifPersonaArrendataria" id="nifPersonaArrendatariaError" class="marcaError"></label>
+                <label for="nifPersonaArrendataria">NIF de la persona arrendataria</label>
+                <input id="nifPersonaArrendataria" class="w-100 " name="nifPersonaArrendataria" type="text" size="9" maxlength="9">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>409</strong>
+				<label for="apellidosYNombrePersonaArrendataria" id="apellidosYNombrePersonaArrendatariaError" class="marcaError"></label>
+                <label for="apellidosYNombrePersonaArrendataria">Apellidos y nombre/Razón social de la persona arrendataria</label>
+                <input id="apellidosYNombrePersonaArrendataria" class="w-100 " name="apellidosYNombrePersonaArrendataria" type="text" size="42" maxlength="60">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>410</strong>
+				<label for="apellidosYNombreDelRepresentante" id="apellidosYNombreDelRepresentanteError" class="marcaError"></label>
+                <label for="apellidosYNombreDelRepresentante">Apellidos y nombre del representante</label>
+                <input id="apellidosYNombreDelRepresentante" class="w-100 " name="apellidosYNombreDelRepresentante" type="text" size="42" maxlength="60" disabled="disabled">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">				
+				<strong>405</strong>				
+				<label for="extranjeroSinNIF_NIE">Extranjero sin NIF-NIE</label>
+				<input id="extranjeroSinNIF_NIE" name="extranjeroSinNIF_NIE" type="checkbox" value="" class="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>406</strong>
+				<label for="tipoDocumentoIdentificacionArrendatario" id="tipoDocumentoIdentificacionArrendatarioError" class="marcaError"></label>
+				<label for="tipoDocumentoIdentificacionArrendatario">Tipo documento de identificación del arrendatario</label>
+                <select id="tipoDocumentoIdentificacionArrendatario" name="tipoDocumentoIdentificacionArrendatario" class="w-100 " size="1" disabled="disabled">
+	                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+	                <option value="PASAPORTE">PASAPORTE</option>				
+	                <option value="CEDULA">CÉDULA EXTRANJERA DE INDENTIFICACIÓN</option>
+                </select>
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>407</strong>
+				<label for="numeroDocumentoIdentificacion" id="numeroDocumentoIdentificacionError" class="marcaError"></label>
+                <label for="numeroDocumentoIdentificacion">Número del documento de identificación</label>
+                <input id="numeroDocumentoIdentificacion" class="w-100 " name="numeroDocumentoIdentificacion" type="text" size="9" maxlength="20" disabled="disabled">
+			</div>
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>408</strong>
+				<label for="paisArrendatario" class="marcaError"></label>
+				<label for="paisArrendatario">País del arrendatario</label>
+                <select id="paisArrendatario" name="paisArrendatario" class="w-100 " size="1" disabled="disabled">
+	                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+						                	
+	                	<option value="AD">ANDORRA</option>	                	
+	                	<option value="AE">EMIRATOS ARABES UNIDOS</option>	                	
+	                	<option value="AF">AFGANISTAN</option>	                	
+	                	<option value="AG">ANTIGUA Y BARBUDA</option>	                	
+	                	<option value="AI">ANGUILA</option>	                	
+	                	<option value="AL">ALBANIA</option>	                	
+	                	<option value="AM">ARMENIA</option>	                	
+	                	<option value="AO">ANGOLA</option>	                	
+	                	<option value="AQ">ANTARTIDA</option>	                	
+	                	<option value="AR">ARGENTINA</option>	                	
+	                	<option value="AS">SAMOA AMERICANA</option>	                	
+	                	<option value="AT">AUSTRIA</option>	                	
+	                	<option value="AU">AUSTRALIA</option>	                	
+	                	<option value="AW">ARUBA</option>	                	
+	                	<option value="AZ">AZERBAIYAN</option>	                	
+	                	<option value="BA">BOSNIA-HERZEGOVINA</option>	                	
+	                	<option value="BB">BARBADOS</option>	                	
+	                	<option value="BD">BANGLADESH</option>	                	
+	                	<option value="BE">BELGICA</option>	                	
+	                	<option value="BF">BURKINA FASO</option>	                	
+	                	<option value="BG">BULGARIA</option>	                	
+	                	<option value="BH">BAHREIN</option>	                	
+	                	<option value="BI">BURUNDI</option>	                	
+	                	<option value="BJ">BENIN</option>	                	
+	                	<option value="BM">BERMUDAS</option>	                	
+	                	<option value="BN">BRUNEI</option>	                	
+	                	<option value="BO">BOLIVIA</option>	                	
+	                	<option value="BQ">PAISES BAJOS (PARTE CARIBEÑA)</option>	                	
+	                	<option value="BR">BRASIL</option>	                	
+	                	<option value="BS">BAHAMAS</option>	                	
+	                	<option value="BT">BUTAN</option>	                	
+	                	<option value="BV">BOUVET, ISLA</option>	                	
+	                	<option value="BW">BOTSUANA</option>	                	
+	                	<option value="BY">BIELORRUSIA</option>	                	
+	                	<option value="BZ">BELICE</option>	                	
+	                	<option value="CA">CANADA</option>	                	
+	                	<option value="CC">COCOS</option>	                	
+	                	<option value="CD">CONGO, REPUBLICA DEMOCRATICA</option>	                	
+	                	<option value="CF">CENTROAFRICANA, REPUBLICA</option>	                	
+	                	<option value="CG">CONGO</option>	                	
+	                	<option value="CH">SUIZA</option>	                	
+	                	<option value="CI">COSTA DE MARFIL</option>	                	
+	                	<option value="CK">COOK, ISLAS</option>	                	
+	                	<option value="CL">CHILE</option>	                	
+	                	<option value="CM">CAMERUN</option>	                	
+	                	<option value="CN">CHINA</option>	                	
+	                	<option value="CO">COLOMBIA</option>	                	
+	                	<option value="CR">COSTA RICA</option>	                	
+	                	<option value="CU">CUBA</option>	                	
+	                	<option value="CV">CABO VERDE, REPUBLICA DE</option>	                	
+	                	<option value="CW">CURAÇAO</option>	                	
+	                	<option value="CX">NAVIDAD, ISLA</option>	                	
+	                	<option value="CY">CHIPRE</option>	                	
+	                	<option value="CZ">CHECA, REPUBLICA</option>	                	
+	                	<option value="DE">ALEMANIA</option>	                	
+	                	<option value="DJ">YIBUTI</option>	                	
+	                	<option value="DK">DINAMARCA</option>	                	
+	                	<option value="DM">DOMINICA</option>	                	
+	                	<option value="DO">DOMINICANA, REPUBLICA</option>	                	
+	                	<option value="DZ">ARGELIA</option>	                	
+	                	<option value="EC">ECUADOR</option>	                	
+	                	<option value="EE">ESTONIA</option>	                	
+	                	<option value="EG">EGIPTO</option>	                	
+	                	<option value="EH">SAHARA OCCIDENTAL</option>	                	
+	                	<option value="ER">ERITREA</option>	                	
+	                	<option value="ES">ESPAÑA</option>	                	
+	                	<option value="ET">ETIOPIA</option>	                	
+	                	<option value="FI">FINLANDIA</option>	                	
+	                	<option value="FJ">FIYI</option>	                	
+	                	<option value="FK">MALVINAS, ISLAS</option>	                	
+	                	<option value="FM">MICRONESIA</option>	                	
+	                	<option value="FO">FEROE, ISLAS</option>	                	
+	                	<option value="FR">FRANCIA</option>	                	
+	                	<option value="GA">GABON</option>	                	
+	                	<option value="GB">REINO UNIDO</option>	                	
+	                	<option value="GD">GRANADA</option>	                	
+	                	<option value="GE">GEORGIA</option>	                	
+	                	<option value="GG">GUERNESEY</option>	                	
+	                	<option value="GH">GHANA</option>	                	
+	                	<option value="GI">GIBRALTAR</option>	                	
+	                	<option value="GL">GROENLANDIA</option>	                	
+	                	<option value="GM">GAMBIA</option>	                	
+	                	<option value="GN">GUINEA</option>	                	
+	                	<option value="GQ">GUINEA ECUATORIAL</option>	                	
+	                	<option value="GR">GRECIA</option>	                	
+	                	<option value="GS">GEORGIA DEL SUR</option>	                	
+	                	<option value="GT">GUATEMALA</option>	                	
+	                	<option value="GU">GUAM</option>	                	
+	                	<option value="GW">GUINEA-BISSAU</option>	                	
+	                	<option value="GY">GUYANA</option>	                	
+	                	<option value="HK">HONG-KONG</option>	                	
+	                	<option value="HM">HEARD Y MCDONALD, ISLAS</option>	                	
+	                	<option value="HN">HONDURAS</option>	                	
+	                	<option value="HR">CROACIA</option>	                	
+	                	<option value="HT">HAITI</option>	                	
+	                	<option value="HU">HUNGRIA</option>	                	
+	                	<option value="ID">INDONESIA</option>	                	
+	                	<option value="IE">IRLANDA</option>	                	
+	                	<option value="IL">ISRAEL</option>	                	
+	                	<option value="IM">ISLA DE MAN</option>	                	
+	                	<option value="IN">INDIA</option>	                	
+	                	<option value="IO">OCEANO INDICO, TERRI.BRITANICO</option>	                	
+	                	<option value="IQ">IRAQ</option>	                	
+	                	<option value="IR">IRAN</option>	                	
+	                	<option value="IS">ISLANDIA</option>	                	
+	                	<option value="IT">ITALIA</option>	                	
+	                	<option value="JE">JERSEY</option>	                	
+	                	<option value="JM">JAMAICA</option>	                	
+	                	<option value="JO">JORDANIA</option>	                	
+	                	<option value="JP">JAPON</option>	                	
+	                	<option value="KE">KENIA</option>	                	
+	                	<option value="KG">KIRGUISTAN</option>	                	
+	                	<option value="KH">CAMBOYA</option>	                	
+	                	<option value="KI">KIRIBATI</option>	                	
+	                	<option value="KM">COMORAS</option>	                	
+	                	<option value="KN">SAN CRISTOBAL Y NIEVES</option>	                	
+	                	<option value="KP">COREA DEL NORTE</option>	                	
+	                	<option value="KR">COREA DEL SUR</option>	                	
+	                	<option value="KW">KUWAIT</option>	                	
+	                	<option value="KY">CAIMAN, ISLAS</option>	                	
+	                	<option value="KZ">KAZAJSTAN</option>	                	
+	                	<option value="LA">LAOS</option>	                	
+	                	<option value="LB">LIBANO</option>	                	
+	                	<option value="LC">SANTA LUCIA</option>	                	
+	                	<option value="LI">LIECHTENSTEIN</option>	                	
+	                	<option value="LK">SRI LANKA</option>	                	
+	                	<option value="LR">LIBERIA</option>	                	
+	                	<option value="LS">LESOTHO</option>	                	
+	                	<option value="LT">LITUANIA</option>	                	
+	                	<option value="LU">LUXEMBURGO</option>	                	
+	                	<option value="LV">LETONIA</option>	                	
+	                	<option value="LY">LIBIA</option>	                	
+	                	<option value="MA">MARRUECOS</option>	                	
+	                	<option value="MC">MONACO</option>	                	
+	                	<option value="MD">MOLDAVIA</option>	                	
+	                	<option value="ME">MONTENEGRO</option>	                	
+	                	<option value="MG">MADAGASCAR</option>	                	
+	                	<option value="MH">MARSHALL, ISLAS</option>	                	
+	                	<option value="MK">MACEDONIA</option>	                	
+	                	<option value="ML">MALI</option>	                	
+	                	<option value="MM">MYANMAR</option>	                	
+	                	<option value="MN">MONGOLIA</option>	                	
+	                	<option value="MO">MACAO</option>	                	
+	                	<option value="MP">MARIANAS DEL NORTE, ISLAS</option>	                	
+	                	<option value="MR">MAURITANIA</option>	                	
+	                	<option value="MS">MONTSERRAT</option>	                	
+	                	<option value="MT">MALTA</option>	                	
+	                	<option value="MU">MAURICIO</option>	                	
+	                	<option value="MV">MALDIVAS</option>	                	
+	                	<option value="MW">MALAWI</option>	                	
+	                	<option value="MX">MEXICO</option>	                	
+	                	<option value="MY">MALASIA</option>	                	
+	                	<option value="MZ">MOZAMBIQUE</option>	                	
+	                	<option value="NA">NAMIBIA</option>	                	
+	                	<option value="NC">NUEVA CALEDONIA</option>	                	
+	                	<option value="NE">NIGER</option>	                	
+	                	<option value="NF">NORFOLK, ISLA</option>	                	
+	                	<option value="NG">NIGERIA</option>	                	
+	                	<option value="NI">NICARAGUA</option>	                	
+	                	<option value="NL">PAISES BAJOS</option>	                	
+	                	<option value="NO">NORUEGA</option>	                	
+	                	<option value="NP">NEPAL</option>	                	
+	                	<option value="NR">NAURU</option>	                	
+	                	<option value="NU">NIUE, ISLA</option>	                	
+	                	<option value="NZ">NUEVA ZELANDA</option>	                	
+	                	<option value="OM">OMAN</option>	                	
+	                	<option value="PA">PANAMA</option>	                	
+	                	<option value="PE">PERU</option>	                	
+	                	<option value="PF">POLINESIA FRANCESA</option>	                	
+	                	<option value="PG">PAPUA NUEVA GUINEA</option>	                	
+	                	<option value="PH">FILIPINAS</option>	                	
+	                	<option value="PK">PAKISTAN</option>	                	
+	                	<option value="PL">POLONIA</option>	                	
+	                	<option value="PM">SAN PEDRO Y MIQUELON</option>	                	
+	                	<option value="PN">PITCAIRN</option>	                	
+	                	<option value="PR">PUERTO RICO</option>	                	
+	                	<option value="PS">TERRITORIO PALESTINO OCUPADO</option>	                	
+	                	<option value="PT">PORTUGAL</option>	                	
+	                	<option value="PW">PALAU</option>	                	
+	                	<option value="PY">PARAGUAY</option>	                	
+	                	<option value="QA">QATAR</option>	                	
+	                	<option value="QU">OTROS PAISES NO RELACIONADOS</option>	                	
+	                	<option value="RO">RUMANIA</option>	                	
+	                	<option value="RS">SERBIA</option>	                	
+	                	<option value="RU">RUSIA</option>	                	
+	                	<option value="RW">RUANDA</option>	                	
+	                	<option value="SA">ARABIA SAUDI</option>	                	
+	                	<option value="SB">SALOMON, ISLAS</option>	                	
+	                	<option value="SC">SEYCHELLES</option>	                	
+	                	<option value="SD">SUDAN</option>	                	
+	                	<option value="SE">SUECIA</option>	                	
+	                	<option value="SG">SINGAPUR</option>	                	
+	                	<option value="SH">SANTA ELENA</option>	                	
+	                	<option value="SI">ESLOVENIA</option>	                	
+	                	<option value="SK">ESLOVAQUIA</option>	                	
+	                	<option value="SL">SIERRA LEONA</option>	                	
+	                	<option value="SM">SAN MARINO</option>	                	
+	                	<option value="SN">SENEGAL</option>	                	
+	                	<option value="SO">SOMALIA</option>	                	
+	                	<option value="SR">SURINAM</option>	                	
+	                	<option value="SS">SUDAN DEL SUR</option>	                	
+	                	<option value="ST">SANTO TOME Y PRINCIPE</option>	                	
+	                	<option value="SV">SALVADOR, EL</option>	                	
+	                	<option value="SX">SAN MARTIN</option>	                	
+	                	<option value="SY">SIRIA</option>	                	
+	                	<option value="SZ">SUAZILANDIA</option>	                	
+	                	<option value="TC">TURCAS Y CAICOS, ISLAS</option>	                	
+	                	<option value="TD">CHAD</option>	                	
+	                	<option value="TF">TIERRAS AUSTRALES FRANCESAS</option>	                	
+	                	<option value="TG">TOGO</option>	                	
+	                	<option value="TH">TAILANDIA</option>	                	
+	                	<option value="TJ">TAYIKISTAN</option>	                	
+	                	<option value="TK">TOKELAU, ISLAS</option>	                	
+	                	<option value="TL">TIMOR LESTE</option>	                	
+	                	<option value="TM">TURKMENISTAN</option>	                	
+	                	<option value="TN">TUNEZ</option>	                	
+	                	<option value="TO">TONGA</option>	                	
+	                	<option value="TR">TURQUIA</option>	                	
+	                	<option value="TT">TRINIDAD Y TOBAGO</option>	                	
+	                	<option value="TV">TUVALU</option>	                	
+	                	<option value="TW">TAIWAN</option>	                	
+	                	<option value="TZ">TANZANIA</option>	                	
+	                	<option value="UA">UCRANIA</option>	                	
+	                	<option value="UG">UGANDA</option>	                	
+	                	<option value="UM">MENORES ALEJADAS EE.UU, ISLAS</option>	                	
+	                	<option value="US">ESTADOS UNIDOS DE AMERICA</option>	                	
+	                	<option value="UY">URUGUAY</option>	                	
+	                	<option value="UZ">UZBEKISTAN</option>	                	
+	                	<option value="VA">VATICANO, CIUDAD DEL</option>	                	
+	                	<option value="VC">SAN VICENTE Y LAS GRANADINAS</option>	                	
+	                	<option value="VE">VENEZUELA</option>	                	
+	                	<option value="VG">VIRGENES BRITANICAS, ISLAS</option>	                	
+	                	<option value="VI">VIRGENES DE LOS EE.UU, ISLAS</option>	                	
+	                	<option value="VN">VIETNAM</option>	                	
+	                	<option value="VU">VANUATU</option>	                	
+	                	<option value="WF">WALLIS Y FUTUNA, ISLAS</option>	                	
+	                	<option value="WS">SAMOA</option>	                	
+	                	<option value="YE">YEMEN</option>	                	
+	                	<option value="YT">MAYOTTE</option>	                	
+	                	<option value="ZA">SUDAFRICA</option>	                	
+	                	<option value="ZM">ZAMBIA</option>	                	
+	                	<option value="ZW">ZIMBABUE</option>                
+                </select>
+                <input type="hidden" name="paisArrendatarioDesc" id="paisArrendatarioDesc">
+			</div>													
+		</div>
+
+
+<!-- ==================================================================================================================== -->
+
+
+		<div class="row mt-4">
+			<div class="col-12 col-xl-12 text-center">
+				<strong>Ubicación inmueble</strong>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>411</strong>
+				<label for="referenciaCatastral" id="referenciaCatastralError" class="marcaError"></label>
+                <label for="referenciaCatastral">Referencia catastral del inmueble</label>
+                <input class="w-100 " title="Introduzca la referencia catastral del inmueble si la conoce, o bien rellene los datos con su ubicación" id="referenciaCatastral" name="referenciaCatastral" type="text" size="20" maxlength="20">
+			</div>
+			<div class="col-12 col-xl-5 colResponsive">
+				<label>&nbsp;</label> 
+                <input readonly="readonly" id="direccionReferenciaCatastral" class="w-100" name="direccionReferenciaCatastral" type="text" size="60" maxlength="60">
+			</div>						
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-9 colResponsive">
+				<strong>413</strong>
+				<label for="identificacionAdicionalDelInmueble" id="identificacionAdicionalDelInmuebleError" class="marcaError"></label>
+                <label for="identificacionAdicionalDelInmueble">Identificación adicional del inmueble</label>
+                <input class="w-100 " title="Introduzca la referencia catastral del inmueble si la conoce, o bien rellene los datos con su ubicación" id="identificacionAdicionalDelInmueble" name="identificacionAdicionalDelInmueble" type="text" size="100" maxlength="100">
+			</div>
+		</div>				
+		
+
+<!-- ==================================================================================================================== -->
+
+		<div class="row mt-3">
+			<div class="col-12 col-xl-12 colResponsive">
+				<strong>Datos del arrendamiento</strong>
+			</div>
+		</div>		
+		<hr>
+		<div class="row">			
+			<div class="col-6 col-xl-3 colResponsive">
+				<strong>421</strong>
+				<label for="tipoFianza" id="tipoFianzaError" class="marcaError"></label>
+                <label for="tipoFianza">Tipo de fianza</label>
+                <select name="tipoFianza" id="tipoFianza" class="w-100 ">
+	                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					
+	                <option value="NUEVO CONTRATO">NUEVO CONTRATO</option>
+	                <option value="ACTUALIZACIÓN DE FIANZA">ACTUALIZACIÓN DE FIANZA</option>                
+       			</select>
+                
+			</div>
+			<div class="col-6 col-xl-3 colResponsive" id="divUsoInmueble">
+				<strong>422</strong>
+				<label for="usoInmueble" id="usoInmuebleError" class="marcaError"></label>
+                <label for="usoInmueble">Uso inmueble</label>
+                <select name="usoInmueble" id="usoInmueble" class="w-100 " disabled="disabled">
+                    <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					
+	                <option value="VIVIENDA">VIVIENDA</option>
+	                <option value="USO DISTINTO DEL DE VIVIENDA">USO DISTINTO DEL DE VIVIENDA</option>                 
+       			</select>
+			</div>
+			<div class="col-6 col-xl-3 colResponsive" id="divActualizacionFianza">				
+				<strong>431</strong>						
+				<label for="actualizacionFianza">Actualización fianza</label>
+				<select id="actualizacionFianza" name="actualizacionFianza" class="w-100 " disabled="disabled">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					<option value="S">SÍ</option>
+					<option value="N">NO</option>					
+				</select>					   					   					   					   
+			</div>			
+			<div class="col-6 col-xl-3 colResponsive" id="divGarantiaAdicional">				
+				<strong>433</strong>						
+				<label for="garantiaAdicional">Garantía adicional</label>
+				<select id="garantiaAdicional" name="garantiaAdicional" class="w-100 ">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					<option value="S">SÍ</option>
+					<option value="N">NO</option>					
+				</select>					   					   
+			</div>								
+		</div>
+		<div class="row">
+			<div class="col-6 col-xl-3 colResponsive" id="divImporteFianza">
+				<strong>450</strong>
+				<label for="importeFianza" id="importeFianzaError" class="marcaError"></label>
+                <label for="importeFianza">Importe fianza</label>
+                <input id="importeFianza" name="importeFianza" style="text-align:right" type="text" size="15" maxlength="15" class="w-100 ">
+			</div>						
+			<div class="col-6 col-xl-2 colResponsive" id="divRentaMensual">
+				<strong>436</strong>
+				<label for="rentaMensual" id="rentaMensualError" class="marcaError"></label>
+                <label for="rentaMensual">Renta mensual</label>
+                <input id="rentaMensual" name="rentaMensual" style="text-align:right" type="text" size="15" maxlength="15" class="w-100 " disabled="disabled">
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive" id="divFechaContratoArrendamiento">
+				<strong>423</strong>
+				<label for="fechaContratoArrendamiento" id="fechaContratoArrendamientoError" class="marcaError"></label>
+                <label for="fechaContratoArrendamiento">Fecha contrato arrendamiento</label>
+                <input readonly="readonly" id="fechaContratoArrendamiento" name="fechaContratoArrendamiento" type="text" size="10" maxlength="10" class="w-100 hasDatepicker" style="background-color: rgb(232, 232, 232);" disabled="disabled">
+			</div>
+			<div class="col-12 col-xl-4 colResponsive" id="divFechaFinContratoArrendamiento"> 
+				<strong>424</strong>
+				<label for="fechaFinContratoArrendamiento" id="fechaFinContratoArrendamientoError" class="marcaError"></label>
+                <label for="fechaFinContratoArrendamiento">Fecha prevista fin contrato arrendamiento</label>
+                <input readonly="readonly" id="fechaFinContratoArrendamiento" name="fechaFinContratoArrendamiento" type="text" size="10" maxlength="10" class="w-100 hasDatepicker" disabled="disabled" style="background-color: rgb(232, 232, 232);">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 col-xl-2 colResponsive">				
+				<strong>425</strong>						
+				<label for="trastero">Trastero</label>
+				<select id="trastero" name="trastero" class="w-100 " disabled="disabled">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					<option value="S">SÍ</option>
+					<option value="N">NO</option>					
+				</select>					   
+			</div>					
+			<div class="col-6 col-xl-2 colResponsive">				
+				<strong>426</strong>						
+				<label for="amueblado">Amueblado</label>
+				<select id="amueblado" name="amueblado" class="w-100 " disabled="disabled">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					<option value="S">SÍ</option>
+					<option value="N">NO</option>					
+				</select>					   					   
+			</div>						
+			<div class="col-12 col-xl-5 colResponsive" id="divViviendaConRegimenProteccionPublica">				
+				<strong>427</strong>						
+				<label for="viviendaConRegimenProteccionPublica">Vivienda con algún régimen de protección pública</label>
+				<select id="viviendaConRegimenProteccionPublica" name="viviendaConRegimenProteccionPublica" class="w-100 " disabled="disabled">
+					<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					<option value="S">SÍ</option>
+					<option value="N">NO</option>					
+				</select>					   					   
+			</div>			
+			<div class="col-12 col-xl-3 colResponsive" id="divNumeroPlazasAparcamiento">
+				<strong>428</strong>
+				<label for="numeroPlazasAparcamiento" id="numeroPlazasAparcamientoError" class="marcaError"></label>
+                <label for="numeroPlazasAparcamiento">Nº de plazas de aparcamiento</label>
+                <span class="ui-spinner ui-corner-all ui-widget ui-widget-content"><input id="numeroPlazasAparcamiento" name="numeroPlazasAparcamiento" type="text" size="2" maxlength="1" class="w-100" aria-valuemin="0" aria-valuemax="99" autocomplete="off" role="spinbutton" disabled="disabled"><a tabindex="-1" aria-hidden="true" class="ui-spinner-button ui-spinner-up ui-corner-tr"></a><a tabindex="-1" aria-hidden="true" class="ui-spinner-button ui-spinner-down ui-corner-br"></a></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-4 colResponsive" id="divConsumoEnergia">
+				<strong>429</strong>
+				<label for="consumoEnergia" id="consumoEnergiaError" class="marcaError"></label>
+                <label for="consumoEnergia">Consumo de energía</label>
+                <select name="consumoEnergia" ,="" id="consumoEnergia" class="w-100 " disabled="disabled">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					
+	                <option value="X">EXENTO</option>
+	                <option value="A">CATEGORÍA A &lt; 37.1 kWh/m2 AÑO</option>
+	                <option value="B">CATEGORÍA B 37.1-60.1 kWh/m2 AÑO</option>
+	                <option value="C">CATEGORÍA C 60.1-93.2 kWh/m2 AÑO</option>
+	                <option value="D">CATEGORÍA D	93.2-143.3 kWh/m2 AÑO</option>
+	                <option value="E">CATEGORÍA E	143.3-298.1 kWh/m2 AÑO</option>
+	                <option value="F">CATEGORÍA F 298.1-336.8 kWh/m2 AÑO</option>
+	                <option value="G">CATEGORÍA G &gt;= 336.8 kWh/m2 AÑO</option>                                 	
+                </select>
+			</div>
+			<div class="col-12 col-xl-4 colResponsive" id="divNivelEmisionesCO2">
+				<strong>430</strong>
+				<label for="nivelEmisionesCO2" id="nivelEmisionesCO2Error" class="marcaError"></label>
+                <label for="nivelEmisionesCO2">Nivel emisiones CO2</label>
+                <select name="nivelEmisionesCO2" id="nivelEmisionesCO2" class="w-100 " disabled="disabled">
+                	<option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+					
+	                <option value="X">EXENTO</option>
+	                <option value="A">CATEGORÍA A	&lt; 8.4 kgCO2/ m2 AÑO</option>
+	                <option value="B">CATEGORÍA B 8.4-13.6 kgCO2/ m2 AÑO</option>
+	                <option value="C">CATEGORÍA C 13.6-21.1 kgCO2/ m2 AÑO</option>
+	                <option value="D">CATEGORÍA D 21.1-32.4 kgCO2/ m2 AÑO</option>
+	                <option value="E">CATEGORÍA E 32.4-66.3 kgCO2/ m2 AÑO</option>
+	                <option value="F">CATEGORÍA F 66.3-79.6 kgCO2/ m2 AÑO</option>
+	                <option value="G">CATEGORÍA G &gt;= 79.6 kgCO2/ m2 AÑO</option>                 
+                </select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>434</strong>
+				<label for="tipoAcuerdoPagoSuministrosBasicos" id="tipoAcuerdoPagoSuministrosBasicosError" class="marcaError"></label>
+				<label for="tipoAcuerdoPagoSuministrosBasicos">Tipo de acuerdo pago suministros básicos</label>
+                <select id="tipoAcuerdoPagoSuministrosBasicos" name="tipoAcuerdoPagoSuministrosBasicos" class="w-100 " size="1">
+	                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+	                <option value="PARTE ARRENDADORA">PARTE ARRENDADORA</option>				
+	                <option value="PARTE ARRENDATARIA">PARTE ARRENDATARIA</option>
+	                <option value="COMPARTIDOS">COMPARTIDOS</option>
+                </select>
+			</div>
+			<div class="col-12 col-xl-4 colResponsive">
+				<strong>437</strong>
+				<label for="sistemaActualizacionRenta" id="sistemaActualizacionRentaError" class="marcaError"></label>
+				<label for="sistemaActualizacionRenta">Sistema actualización renta</label>
+                <select id="sistemaActualizacionRenta" name="sistemaActualizacionRenta" class="w-100 " size="1">
+	                <option value="0" selected="selected">SELECCIONE UNA OPCIÓN</option>
+	                <option value="No se aplica">NO SE APLICA</option>				
+	                <option value="IGC(Indice garantia competitividad)">IGC(INDICE GARANTIA COMPETITIVIDAD)</option>
+	                <option value="IPC(Indice de precios al consumo)">IPC(INDICE DE PRECIOS AL CONSUMO)</option>
+	                <option value="Otros">OTROS</option>
+                </select>
+			</div>		
+		</div>
+	</fieldset>
+</div>		
+
+
+<script>
+$(function()
+{				
+	$("#paisArrendatario option[value='']").attr("selected",true);							
+	$("#tipoFianza option[value='']").attr("selected",true);	
+	
+	$("#dgNorma").attr("readonly", "true")
+	$("#dgNorma").val("Decreto 6/2022, de 25 de enero, por el que se regula el depósito de fianzas y el Censo Regional de Contratos de Arrendamiento de Fincas Urbanas de Castilla-La Mancha")
+	
+	$("#dgSelectFinalidad").attr("readonly", "true")
+	$("#dgSelectFinalidad").val("A")
+	
+	$("#dgFinalidad").attr("readonly", "true")
+	$("#dgFinalidad").val("FIANZA ARRENDAMIENTO REGIMEN GENERAL")
+	
+	$('#dgExpedienteRelacionado').val("")	
+	
+	$("#tipoGarantia").attr("readonly", "true")
+	$("#dgDefinitivo").prop('checked', true)
+	$("#dgDeposito").prop('checked', true)
+	
+	
+		$("#fechaContratoArrendamiento").datepicker();	
+		$("#fechaFinContratoArrendamiento").datepicker();
+		$("#numeroPlazasAparcamiento").spinner({min:0, max:99}).removeClass("ui-spinner-input"); //convierte el input en un spinner. El removeClass es para eliminar el class de jquery q hace que salga mas grande de lo esperado el spinner	
+		$("#numeroPlazasAparcamiento").keypress(function(tecla){if(tecla.charCode < 48 || tecla.charCode > 57) return false;}); //impide que se puedan teclear caracteres no numericos
+	
+	
+	$("#importeFianza").keypress(function(tecla){if( (tecla.charCode < 48 || tecla.charCode > 57) && tecla.charCode!=44) return false;}); //impide que se puedan teclear caracteres no numericos
+						
+	actualizarCheckBox("extranjeroSinNIF_NIE")
+	extranjeroSinNIF_NIEClick();
+	$("#arrendatarioPersonaFisicaOJuridica option[value='']").attr("selected",true);
+	$("#tipoDocumentoIdentificacionArrendatario option[value='']").attr("selected",true);
+	tipoFianzaChange();	
+	$("#usoInmueble option[value='']").attr("selected",true);
+	usoInmuebleChange()
+	$("#consumoEnergia option[value='']").attr("selected",true);
+	$("#nivelEmisionesCO2 option[value='']").attr("selected",true);
+	rentaMensualChange();
+	referenciaCatastralChange();
+	personaFisicaOJuridicaChange();
+	importeFianzaChange();
+	$("#selectSucursal option[value='0']").text('') //No queremos que aparezca SELECCIONE UNA OPCION ya que este combo se autoselecciona en función de la provincia de la ubicación del inmueble	
+	
+	//Actualiza seleccion en los SELECTs al recargar la pagina		
+	$("#actualizacionFianza option[value='']").attr("selected",true);
+	$("#garantiaAdicional option[value='']").attr("selected",true);
+	$("#trastero option[value='']").attr("selected",true);
+	$("#amueblado option[value='']").attr("selected",true);
+	$("#viviendaConRegimenProteccionPublica option[value='']").attr("selected",true);
+	$("#tipoAcuerdoPagoSuministrosBasicos option[value='']").attr("selected",true);
+	$("#sistemaActualizacionRenta option[value='']").attr("selected",true);
+	
+	// Esto es de GreJspSujetoPasivo.jsp pero como ese jsp es generico y no usa jquery pongo aqui el código
+	$("#propietariaDelEfectivo option[value='null']").attr("selected",true);	
+});
+	
+
+//============================================================================================
+	
+$("#modelo").submit(function()
+{
+	if($("#paisArrendatario").val()=='0')
+		$("#paisArrendatarioDesc").val('')
+	else
+		$("#paisArrendatarioDesc").val($("#paisArrendatario option:selected").html())
+				
+	$("#selectSucursal").prop('disabled', false)
+	$("#dgSelectCentro").prop('disabled', false)
+	$("#dgSelectTerritorial").prop('disabled', false)
+	
+});
+
+
+//============================================================================================
+function copiaDatosArrendadorEnDatosPropietario()
+{
+	//if($("#propietariaDelEfectivo option:selected").val()=='S')
+	//{
+		$("#spNif").val($("#prNif").val());
+		$("#spNombre").val($("#prNombre").val());
+		$("#spSelectSiglas").val($("#prSelectSiglas").val());
+		$("#spNombreVia").val($("#prNombreVia").val());
+		$("#spNumero").val($("#prNumero").val());
+		$("#spLetra").val($("#prLetra").val());
+		$("#spEscalera").val($("#prEscalera").val());
+		$("#spPiso").val($("#prPiso").val());
+		$("#spPuerta").val($("#prPuerta").val());
+		$("#spTelefono").val($("#prTelefono").val());
+		$("#spFax").val($("#prFax").val());
+				
+		$("#spSelectProvincia option[value='"+ $("#prSelectProvincia option:selected").val() +"']").attr("selected",true);
+		$("#spSelectProvincia").change();
+		$("#spSelectMunicipio option[value='"+ $("#prSelectMunicipio option:selected").val() +"']").attr("selected",true);
+		
+		$("#spCodPostal").val($("#prCodPostal").val());
+	//}
+}
+	
+//$("#propietariaDelEfectivo").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+
+$("#botonCopiarDatosArrendadorAPropietario").click(function(){copiaDatosArrendadorEnDatosPropietario()});
+
+/*$("#prNif").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prNombre").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prSelectSiglas").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prNombreVia").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prNumero").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prLetra").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prEscalera").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prPiso").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prPuerta").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prTelefono").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prFax").change(function(){copiaDatosArrendadorEnDatosPropietario()});
+$("#prCodPostal").change(function(){copiaDatosArrendadorEnDatosPropietario()});*/
+
+
+
+//============================================================================================
+
+function actualizarCheckBox(nombre)
+{
+	if($("#"+nombre).val()=="X")
+		$("#"+nombre).prop("checked", true);
+	else
+		$("#"+nombre).prop("checked", false);	
+}
+
+//============================================================================================
+	
+function asignarValorCheckBox(nombre)
+{
+	if($("#"+nombre).prop("checked"))
+		$("#"+nombre).val("X")
+	else
+		$("#"+nombre).val("")
+}
+
+//============================================================================================
+	
+function esNumeroEntero(numero)
+{
+   var valoresAceptados = /^[0-9]+$/;
+   if (numero.match(valoresAceptados))
+   	   return true
+   return false;    	 
+}
+
+//============================================================================================
+	
+function esNumeroDecimal(numero)
+{
+   var valoresAceptados = /^[0-9]*(\.?)[0-9]+$/;
+   if (numero.match(valoresAceptados))
+   	   return true
+   return false;    	 
+}
+	
+//============================================================================================
+	
+$("#usoInmueble").change(function(){usoInmuebleChange();});
+$("#rentaMensual").change(function(){rentaMensualChange();});
+$("#importeFianza").change(function(){importeFianzaChange();});
+$("#tipoFianza").change(function(){tipoFianzaChange();});
+$("#referenciaCatastral").change(function(){referenciaCatastralChange();});
+
+$("#arrendatarioPersonaFisicaOJuridica").change(function(){personaFisicaOJuridicaChange();});
+
+$("#extranjeroSinNIF_NIE").click(function(){extranjeroSinNIF_NIEClick();});
+
+
+//============================================================================================
+
+function extranjeroSinNIF_NIEClick()
+{
+	
+	var valor
+	
+	asignarValorCheckBox("extranjeroSinNIF_NIE")
+	if($("#extranjeroSinNIF_NIE").prop("checked"))
+		valor = false;
+	else
+		valor = true;
+						
+	$("#nifPersonaArrendataria").prop('disabled', !valor)
+	$("#tipoDocumentoIdentificacionArrendatario").prop('disabled', valor)
+	$("#numeroDocumentoIdentificacion").prop('disabled', valor)
+	$("#paisArrendatario").prop('disabled', valor)
+
+}
+
+//============================================================================================
+	
+function rentaMensualChange()
+{		
+	if($("#tipoFianza").val()=='NUEVO CONTRATO' && $("#usoInmueble").val()!='0')
+	{
+		$("#rentaMensual").val($("#rentaMensual").val().replace(',', '.'))
+		
+		if(esNumeroDecimal($("#rentaMensual").val()))
+		{
+			if($("#usoInmueble").val() == 'VIVIENDA')
+				$("#importeFianza").val($("#rentaMensual").val())
+			else
+				$("#importeFianza").val($("#rentaMensual").val()*2)					
+		}
+		else
+		{
+			$("#importeFianza").val('')
+		}
+	}
+	
+	$("#dgImporte").val($("#importeFianza").val())
+	
+}
+
+//============================================================================================
+	
+function importeFianzaChange()
+{
+	$("#dgImporte").val($("#importeFianza").val())
+}
+
+//============================================================================================
+	
+function tipoFianzaChange()
+{
+	
+	var valor
+	
+	if($("#tipoFianza").val()=='0')	
+		valor = true
+	else
+		valor = false	
+	
+	// Campos que se rellenan en opción actualizacionFianza	
+	$("#garantiaAdicional").prop('disabled', false)
+	$("#importeFianza").prop('disabled', false)	
+
+	
+	if($("#tipoFianza").val()=='ACTUALIZACIÓN DE FIANZA')
+	{
+		$("#dgExpedienteRelacionado").removeAttr("readonly");
+		if($("#dgExpedienteRelacionado").val()=="SE AUTOGENERA AL COMPLETAR FORMULARIO")
+			$("#dgExpedienteRelacionado").val("");
+	}
+	else
+	{
+		$("#dgExpedienteRelacionado").attr("readonly","readonly").val("SE AUTOGENERA AL COMPLETAR FORMULARIO")
+	}
+	
+	if($("#tipoFianza").val()=='0')
+		$("#fechaFinContratoArrendamiento").prop('disabled', true)
+	else
+		$("#fechaFinContratoArrendamiento").prop('disabled', false)
+	
+	if($("#tipoFianza").val()=='0' || $("#tipoFianza").val()=='ACTUALIZACIÓN DE FIANZA')
+	{
+		valor = true		
+		$("#importeFianza").prop("readonly",false); //Queda como campo abierto
+
+		$("#fechaContratoArrendamiento").css('background-color', '#E8E8E8');    //Cambia color fechas para que	
+		if($("#tipoFianza").val()=='0')
+			$("#fechaFinContratoArrendamiento").css('background-color', '#E8E8E8'); //aparezca como desactivado
+		else
+			$("#fechaFinContratoArrendamiento").css('background-color', 'white');	
+	}
+	else //Nuevo contrato
+	{
+		valor = false;
+		$("#importeFianza").prop("readonly",true); //Queda como campo calculado automaticamente
+		
+		$("#fechaContratoArrendamiento").css('background-color', 'white');	 //Cambia color fechas para que
+		$("#fechaFinContratoArrendamiento").css('background-color', 'white');//aparezca blanco, como activado aunque sin poder editar el campo ya que se rellena por el calendar						
+	}	
+		
+	// En nuevoContrato se rellenan todos los campos	
+	$("#actualizacionFianza").prop('disabled', valor)
+	$("#fechaContratoArrendamiento").prop('disabled', valor)			
+	$("#amueblado").prop('disabled', valor)
+	$("#usoInmueble").prop('disabled', valor).val('0')			
+	$("#trastero").prop('disabled', valor)	
+	$("#viviendaConRegimenProteccionPublica").prop('disabled', valor)
+	$("#numeroPlazasAparcamiento").prop('disabled', valor)
+	$("#consumoEnergia").prop('disabled', valor).val('0')
+	$("#nivelEmisionesCO2").prop('disabled', valor).val('0')
+	$("#rentaMensual").prop('disabled', valor)
+			
+	usoInmuebleChange()
+	
+}
+
+//============================================================================================
+	
+function usoInmuebleChange()
+{
+		
+	var valor					
+	
+	if($("#usoInmueble").val() == 'VIVIENDA') 	
+		$("#viviendaConRegimenProteccionPublica").prop('disabled', false)
+	else
+		$("#viviendaConRegimenProteccionPublica").prop('disabled', true)
+			
+		
+	if($("#usoInmueble").val() != '0' && $("#tipoFianza").val()=='NUEVO CONTRATO')
+		$("#rentaMensual").prop('disabled', false)				
+	else
+		$("#rentaMensual").prop('disabled', true)
+					
+	rentaMensualChange();
+	
+	
+}
+
+//============================================================================================
+
+function personaFisicaOJuridicaChange()
+{ 	
+	if($("#arrendatarioPersonaFisicaOJuridica").val()=='personaJuridica')  
+		$("#apellidosYNombreDelRepresentante").prop('disabled', false)
+	else
+		$("#apellidosYNombreDelRepresentante").prop('disabled', true)
+}
+
+//============================================================================================
+	
+function referenciaCatastralChange()
+{ 	
+	var nombreProvincia, datosVivienda, valor;
+	
+	var objJSON = obtenerDireccionReferenciaCatastralAjax($("#referenciaCatastral").val())
+	
+	$("#direccionReferenciaCatastral").val(objJSON.datosVivienda);
+	
+	if($("#direccionReferenciaCatastral").val()=='' || $("#direccionReferenciaCatastral").val()=='Sin datos para la referencia catastral indicada')
+		valor=false;
+	else
+	{
+		valor=true;		
+		actualizarSucursalCajaGeneralDepositos(objJSON.nombreProvincia);
+	}
+}
+
+//============================================================================================
+
+function actualizarSucursalCajaGeneralDepositos(provincia)
+{		
+	if(provincia.toUpperCase() == 'ALBACETE')
+	{
+		$("#selectSucursal option[value='EH0201']").attr("selected",true);
+		$("#dgSelectTerritorial option[value='OV0201']").attr("selected",true);		
+	}
+	else
+	if(provincia.toUpperCase() == 'CIUDAD REAL')
+	{
+		$("#selectSucursal option[value='EH1301']").attr("selected",true);
+		$("#dgSelectTerritorial option[value='OV1301']").attr("selected",true);
+	}
+	else
+	if(provincia.toUpperCase() == 'CUENCA')
+	{
+		$("#selectSucursal option[value='EH1601']").attr("selected",true);
+		$("#dgSelectTerritorial option[value='OV1601']").attr("selected",true);
+	}
+	else
+	if(provincia.toUpperCase() == 'GUADALAJARA')
+	{
+		$("#selectSucursal option[value='EH1901']").attr("selected",true);
+		$("#dgSelectTerritorial option[value='OV1901']").attr("selected",true);
+	}
+	else
+	if(provincia.toUpperCase() == 'TOLEDO')
+	{
+		$("#selectSucursal option[value='EH4501']").attr("selected",true);
+		$("#dgSelectTerritorial option[value='OV4501']").attr("selected",true);
+	}
+	else
+	{
+		$("#selectSucursal option[value='0']").attr("selected",true);
+		$("#dgSelectTerritorial option[value='0']").attr("selected",true);
+	}
+	
+	$("#codigoTerritorial").val($("#selectSucursal option:selected").html())
+	$("#dgCodigoTerritorial").val($("#dgSelectTerritorial option:selected").val())
+}
+	
+//============================================================================================
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- DATOS DE LA GARANTIA/DEPOSITO =============== -->
+            <!-- ============================================= -->			
+			<div class="filaSepardor"></div>
+	        
+
+
+
+
+
+
+
+
+
+
+<div class="contenidoCabecera">
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Datos de la garantia/deposito
+			</div>
+
+            
+
+
+
+
+
+
+
+
+
+	<div class="colAlineamientoDerecha">
+		<a href="https://webgreco.local/webgreco/modelos/jsp/ayudas/comun/GreAyuPrincipal.jsp?modelo=801_2021&amp;ayudaContextual=DatosDeLaGarantiaDeposito" target="_blank" onclick="window.open(this.href, this.target, 'height=600,width=800,resizable=1'); return false;">
+			<img src="p_files/ayuda.gif" alt="Imagen que muestra la acción 'ayuda'">  
+		</a>		
+	</div>
+			
+		</div>	 
+	</fieldset>
+</div>
+<div class="contenidoDatos">
+	<fieldset class="contenidoFila">
+		<!-- FILA 1 -->
+		<div class="row">
+			<div class="col-12 col-xl-7 colResponsive">
+				<strong>33</strong>
+                <label for="dgNorma" class="marcaError"></label>
+                <label for="dgNorma">Norma que impone la constitución del déposito o la garantía</label>
+                <textarea style="resize:none" rows="2" id="dgNorma" name="dgNorma" class="w-100 " readonly="readonly">Decreto
+ 6/2022, de 25 de enero, por el que se regula el depósito de fianzas y 
+el Censo Regional de Contratos de Arrendamiento de Fincas Urbanas de 
+Castilla-La Mancha</textarea>                 	   
+			</div>
+		</div>
+		<!-- FILA 1A - LISTA DESPLEGABLE CÓDIGO FINALIDAD -->
+		<div class="row">
+			<div class="col-12 col-xl-3 colResponsive">
+				<strong>46</strong>
+				<label for="dgSelectFinalidad">Finalidad</label>
+				<label for="dgSelectFinalidad" class="marcaError"></label>
+				<input type="hidden" name="dgSelectFinalidad" id="dgSelectFinalidad" value="A" readonly="readonly">
+				<input type="text" name="dgSelectFinalidadDesc" class="w-100" id="dgSelectFinalidadDesc" readonly="readonly" value="A - ARRENDAMIENTOS">
+			</div>	
+			<div class="col-12 col-xl-6 colResponsive">
+				<strong>34</strong>
+                <label for="dgFinalidad" class="marcaError"></label>
+                <label for="dgFinalidad">Descripción de la finalidad para la que se constituye el depósito o la garantía</label>
+                <input id="dgFinalidad" name="dgFinalidad" class="w-100 " value="FIANZA ARRENDAMIENTO REGIMEN GENERAL" type="text" size="60" maxlength="60" readonly="readonly">
+			</div>
+		</div>
+		
+		<div class="row">			
+			<div class="col-6 col-xl-2 colResponsive">				
+				<strong>36</strong>
+				<label for="dgDefinitivo" class="marcaError"></label>
+				<label for="dgDefinitivo">Definitivo</label>
+				<input id="dgDefinitivo" name="dgDefinitivo" type="checkbox" value="X" checked="checked">					   
+			</div>
+			<div class="col-6 col-xl-2 colResponsive">
+				<strong>37</strong>
+				<label for="dgDeposito" class="marcaError"></label>
+				<label for="dgDeposito">Depósito</label>
+				<input id="dgDeposito" name="dgDeposito" type="checkbox" value="X" checked="checked">					   
+			</div>
+		</div>
+		<div class="row">			   
+			<div class="col-12 col-xl-5 colResponsive">
+				<strong>38</strong>
+                <label for="dgExpedienteRelacionado" class="marcaError"></label>
+                <label for="dgExpedienteRelacionado">Expediente relacionado</label>
+                <input id="dgExpedienteRelacionado" name="dgExpedienteRelacionado" class="w-100 " value="SE AUTOGENERA AL COMPLETAR FORMULARIO" type="text" size="23" maxlength="23" readonly="readonly">
+			</div>
+		</div>				
+	</fieldset>
+		<!-- FILA 5 -->
+	<fieldset class="contenidoFila">
+		<div class="row">			               		
+			<div class="col-12 col-xl-12 colResponsive">
+				<strong>Órgano ante el que se constituye</strong>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-xl-4 colResponsive">
+				<label for="dgSelectCentro">Seleccione la Consejería u Organismo Autónomo:&nbsp;&nbsp;</label>
+				<label for="dgSelectCentro" class="marcaError"></label>
+				<select name="dgSelectCentro" id="dgSelectCentro" disabled="disabled" class="w-100 ">
+					<option value="OV" selected="selected">CONSEJERIA DE FOMENTO</option>
+				</select>
+			</div>	
+			<div class="col-12 col-xl-2 colResponsive">
+				<strong>45</strong>	
+				<label for="dgCodigoTerritorial">Código Territorial</label>
+				<input id="dgCodigoTerritorial" name="dgCodigoTerritorial" disabled="disabled" type="text" size="6" maxlength="6" class="w-100 proteger" readonly="readonly">
+			</div>
+			<div class="col-12 col-xl-2 colResponsive">			
+				<strong>39</strong>
+				<label for="dgSelectTerritorial">Órgano Gestor</label>
+				<label for="dgSelectTerritorial" class="marcaError"></label>
+				<select name="dgSelectTerritorial" id="dgSelectTerritorial" disabled="disabled" class="w-100 ">
+					<option value="0" selected="selected"></option>
+					<option value="OV0201">Albacete</option>
+					<option value="OV1301">Ciudad Real</option>
+					<option value="OV1601">Cuenca</option>
+					<option value="OV1901">Guadalajara</option>
+					<option value="OV4501">Toledo</option>
+				</select>
+			</div>	
+		</div>
+	</fieldset>
+	<fieldset class="contenidoDatos">
+		<div class="fila">
+			<div class="colAlineamientoDerecha">
+				<strong>41</strong>
+				<label for="dgImporte" class="marcaError"></label>
+                <label for="dgImporte">Importe</label>
+                <input id="dgImporte" name="dgImporte" readonly="readonly" class="  alineamientoDerecha" type="text" size="13" maxlength="13">
+			</div>		
+		</div>		
+	</fieldset>
+</div>
+
+<script>
+$("#dgProvisional").click(function(){$("#dgProvisional").prop("checked", false);});
+$("#dgDefinitivo").click(function(){$("#dgDefinitivo").prop("checked", true);});
+$("#dgDeposito").click(function(){$("#dgDeposito").prop("checked", true);});
+
+/*$(function()
+{	
+	
+	$("#dgExpedienteRelacionado").prop('disabled', false)
+	$("#dgExpedienteRelacionado").attr("readonly", "false")
+});*/
+</script>
+						
+
+            <!-- FIRMA ======================================= -->
+            <!-- ============================================= -->
+            <div class="filaSepardor"></div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="p_files/403.css">
+
+
+
+
+
+	    
+	    
+	    	    
+	    
+	    
+	    
+
+
+
+
+	<fieldset class="contenidoCabecera">
+		<div class="contenidoCabeceraTexto">
+			<div class="col">
+				Firma
+			</div>
+			
+	        
+
+
+
+
+
+
+
+
+
+	     </div>
+	</fieldset>
+	
+	<fieldset class="contenidoDatos">
+		<div class="fila">	
+			<div class="col"><!-- FILA 1 -->
+                
+                <label for="rpLugarFirma" name="rpLugarFirma">
+                	<strong>Lugar de firma</strong>: En
+               	</label>
+                <input id="rpLugarFirma" name="rpLugarFirma" class="" type="text" size="35" maxlength="40">
+                <span> a 24 de marzo de 2026</span>
+			</div>
+		</div>
+	</fieldset>	
+	
+
+
+
+
+            <!-- TEXTO datos de caracter personal (no aparece) -->
+            <!-- ============================================= -->                        			
+            
+
+                 
+            <div class="filaSepardor"></div>	                    
+            <div class="filaSepardor"></div>
+        </div> 	
+        
+        <input type="hidden" name="MOD" id="801_2021" value="801_2021">
+        
+        <input type="hidden" name="referencia" id="referencia" value="801_2021">
+        
+        <input type="hidden" name="version" id="version" value="6">
+        
+        <input type="hidden" name="modelo" id="modelo" value="801_2021">        
+        
+        <!-- ASISTENTE MENSAJE SESION -->
+		
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+        
+        </form>
+    
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
