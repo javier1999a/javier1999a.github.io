@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es"><head>		
+		<!-- base href="https://webgreco.local/webgreco/" -->
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+		<meta http-equiv="Expires" content="-1">	
+		<title>VALORACIÓN DE BIENES URBANOS</title>
+		
+		<script type="text/javascript" async="" defer="defer" src="p_files/piwik_nG_X.js"></script><script type="text/javascript" src="p_files/GreJsFunciones_v2_nG_X.js">
+		</script>
+		
+		<link rel="stylesheet" type="text/css" href="p_files/grecoOV_nG_X.css">	
+		
+		<!-- ELIMINAMOS LA ACCIÓN VOLVER ATRAS -->
+		<script> 
+			if (history.forward(1)){
+				location.replace(history.forward(1))
+			} 
+			
+			<!-- Piwik -->
+			var _paq = _paq || [];
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+			var u="//piwik.jccm.es/";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', 118]);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+			g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script> 
+		
+
+
+	
+	<script>			
+		function mostrarAviso2020() {
+			var devengoSelect = document.forms[0].selectAnnoTransmision.value;
+			var hoy = new Date();
+			var anoHoy = hoy.getFullYear();
+			if(anoHoy==2019 && devengoSelect=='2020') {
+				var radiosTipoConsulta = document.getElementsByName('tipoConsulta');
+				var radioChecked = 'N';				
+				for(var i = 0, length = radiosTipoConsulta.length; i < length; i++) {
+					if(radiosTipoConsulta[i].checked) {
+						radioChecked = 'S';				  		
+				  		break;
+					}
+				}
+				if(radioChecked == 'N') {
+					window.open("https://webgreco.local/webgreco" + "/html/AvisoCatastro.html", "_blank", "top=240,left=240,width=840,height=320");	
+				}						
+			}
+		}
+		
+		function consignarFecha()
+		{
+			document.getElementById("diaTransmision").value = '7';
+			document.getElementById("mesTransmision").value = '7';		
+		}
+		
+	</script><script src="p_files/prompt_nG_X.js"></script></head>	
+	
+
+	
+	<!-- AVISO - DEVENGO 2020 -->
+	
+	
+	<body onload="checkCookie('https://webgreco.local/webgreco');posicionarScroll();controlarSesion('https://webgreco.local/webgreco/GreSvlComprobarSesion');mostrarAviso2020();" onunload="doUnload()">
+
+	<!-- FIN AVISO - DEVENGO 2020 -->
+	
+	
+	
+
+		
+		
+
+
+
+
+
+
+
+
+
+	
+    
+		
+	
+    
+    
+    
+    
+		
+
+		 
+		
+		<form name="valoracionCatastro" action="https://webgreco.local/webgreco/GreSvlProcesarPeticionesValoracion" method="post" target="_self" onsubmit="barraDeCargaOnsubmit()">
+			
+			<input type="hidden" name="idBeanSesion" id="idBeanSesion" value="null">
+
+		 	
+		
+		 	<!-- Variable para almacenar la posicion del scroll -->
+        	<input id="posicionScroll" type="hidden" name="posicionScroll" value="0">
+
+        			 
+			 <!-- Varible para almacenar la posicion del foco -->
+	        <input id="posicionFoco" type="hidden" name="posicionFoco" value="">
+	        
+	        <!-- campo hidden para almacenar el origen -->
+	        <input type="hidden" name="origen" id="origen" value="VIRTUAL">
+	        
+	        <!-- campo hidden para almacenar la presentacion -->
+	        <input type="hidden" name="presentacion" id="presentacion" value="asistenteVisible">
+	        
+	        <!-- campo hidden para almacenar el modelo -->
+	        <input type="hidden" name="modelo" id="modelo" value="null">
+	        
+	        <input type="hidden" name="idBeanSesion" id="idBeanSesion" value="">
+	        	
+	        <!--<input type="hidden" name="temp" id="temp" value="N">-->
+	        	
+	        <input type="hidden" name="MOD" id="MOD" value="079">
+        	
+        	<input type="hidden" name="referencia" id="referencia" value="079">
+	        	        	
+		
+			
+
+
+
+
+<script type="text/javascript">booVersionPublico = true</script>
+
+		
+		
+		
+		<div style="z-index:2000; left: 45%;">			
+			<div id="loading" class="hide" style="border: 1px solid #003366; padding: 1px; display: inline-block; z-index: 2000;" aria-label="Cargando..." role="status">			    
+			    <img src="p_files/ajax_loader_nG_X.gif" alt="Cargando información">
+			        
+			</div>
+		</div>
+    
+    <!-- -------------------------------------------------------------- -->
+	<!-- -------------------------------------------------------------- -->
+	<!-- AJGG. FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA Y EL POP UP -->
+	<div id="background" class="hide">
+	</div>
+	<!-- -------------------------------------------------------------- -->
+	<!-- -------------------------------------------------------------- -->
+			<!-- DIV CABECERA -->
+			<div class="CabeceraPrincipal" id="MenuPrincipalSinFrame" style="margin-top: 0%;">
+				<div id="colSeparador"></div>
+				<div id="imgLogoCastillaLaManchaSinFrame">
+					<a href="http://www.castillalamancha.es/" target="_blank" title="Volver a la página de inicio de Gobierno de Castilla-La Mancha" tabindex="-1">
+						<img class="imgLogoCastillaLaMancha" typeof="foaf:Image" src="p_files/logo_nG_X.png" alt="Gobierno de Castilla-La Mancha">
+					</a>
+				</div>				
+				<div id="colmenu">
+						<div id="div_tituloIzq">
+						 	<h1 class="text_tituloDer">INFORME DE VALORACIÓN DE BIENES URBANOS</h1>
+						</div>
+						<div id="div_tituloDer">
+							<p class="text_tituloIzqGrande">Oficina electrónica</p>
+							<p class="text_tituloPequenyo">Consejería de Hacienda, Administraciones Públicas y Transformación Digital</p>
+						</div>
+				</div>
+			</div>		
+			<!-- FIN DEL DIV CABECERA -->
+		
+	
+			<div class="PrincipalConCabeceraOficinaElectronica asistenteVisible">	<!-- DIV CON CLASE CSS VARIABLE -->
+			
+				<div class="filaSepardor"></div>
+				
+
+				<fieldset class="oficinaElectronica">
+					<legend class="oficinaElectronica">Valoración bien urbano</legend>
+
+
+
+						<!-- CONTENIDO COMUN (NO DEPENDE DEL ORIGEN) -->			
+						<!-- FILA FECHA DE TRANSMISION -->
+						<div class="fila">
+							<div class="col">
+								<label for="fechaTransmision" class="marcaError">
+								 	
+								</label>	
+								<label for="fechaTransmision">Fecha de transmisión: </label>
+								<label for="diaTransmision">Día</label>
+								<input id="diaTransmision" name="diaTransmision" tabindex="1" class="" value="1" size="2" maxlength="2">
+								<label for="mesTransmision">Mes</label>
+								<input id="mesTransmision" name="mesTransmision" tabindex="2" class="" value="1" size="2" maxlength="2">
+								<label for="selectAnnoTransmision">Año</label>								
+		                        <select id="selectAnnoTransmision" class="" onchange="submitWithPosicionScroll('selectAnnoTransmision')" tabindex="3" name="selectAnnoTransmision">
+		                        		<option value="0">SELECCIONE UNA OPCIÓN</option><option selected="selected" value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option>
+		                   		</select>  
+							</div>
+						</div>				
+						<!-- <div class="fila">
+						<div class="col" style='color:red;'>Valoración desactivada temporalmente para fechas de transmisión de 2021. En breve se activará de nuevo.</div>
+						</div>
+						annosValoracionCatastro=2020,2019,2018,2017,2016,2015,2014,2013-->		
+						
+
+			
+
+
+
+
+
+
+
+
+
+	
+	   
+	
+
+			<!-- TIPO DE VALORACION. -->
+        	<input id="tipoValoracion" type="hidden" name="tipoValoracion" value="valoracionCatastro">      
+        	 					
+						
+						<!-- FILA REFERENCIA CATASTRAL -->
+						<div class="fila">
+							<div class="col">
+								<label for="tipoConsultaReferencia" class="marcaError">
+								 	
+								</label>								
+								<input type="radio" name="tipoConsulta" id="tipoConsultaReferencia" value="REFERENCIA" tabindex="4" onclick="submitWithPosicionScroll('tipoConsulta')" class="">								
+								<label for="tipoConsultaReferencia">Referencia catastral:</label>
+							</div>							
+						</div>
+											
+						<!-- FILA LOCALIZACION -->
+						<div class="fila">
+							<div class="col">
+								<label for="tipoConsultaLocalizacion" class="marcaError">
+								 	
+								</label>	
+								<input type="radio" name="tipoConsulta" id="tipoConsultaLocalizacion" value="LOCALIZACION" tabindex="6" onclick="submitWithPosicionScroll('tipoConsulta');" class="">
+								<label for="tipoConsultaLocalizacion">Localización:</label>
+							</div>
+						</div>
+
+	       		 
+	       		           
+
+
+	<div class="filaSepardor"></div>
+	<div class="filaSepardor"></div>
+	
+<!-- BARRA DE BOTONES -->
+	<div class="cabecera">
+		<div class="filaCentrada">				    		
+								
+
+	<input type="submit" value="  Buscar  " name="botonBuscar" id="botonBuscar">
+
+	<input type="submit" value="  Limpiar    " name="botonLimpiar">	
+
+	<input type="submit" value="   Salir111    " name="botonSalir" onclick="window.close()">
+
+	<!-- con javascript desactivado -->
+    <noscript>
+    	<div class="filaCentrada">
+			 <img src="./imagenes/aplicacion/errorleve.gif" alt="Aviso" height="17px" width="17px">
+			 Para salir de la aplicación, pulse en el aspa del borde superior derecho de su navegador.<br> 
+			 El navegador Web no soporta o no tiene activada la opción de JavaScript.
+        </div>
+    </noscript>	
+        	
+															
+		</div>
+	</div>			
+<!-- FIN DE BARRA DE BOTONES -->
+	 			
+	<div class="filaSepardor"></div>
+	<div class="filaSepardor"></div>
+	
+<!-- TEXTOS INFORMATIVOS -->	
+
+	<div class="cabecera">
+		<fieldset class="bordeTablaPrincipal">
+	    	<div class="filaCentrada"><img src="p_files/errorleve_nG_X.gif" align="bottom">ATENCIÓN</div>
+	    		    		    	    		
+	    	<p class="textoJustificadoPadding">Este valor es meramente 
+informativo a efectos de los Impuestos sobre Sucesiones y Donaciones y 
+sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados, de 
+acuerdo con el artículo 134.1 de la Ley 58/2003, de 17 de diciembre, 
+General tributaria. No siendo de aplicación en los siguientes casos:</p>	    		
+	    		    	
+	    	<p class="textoJustificadoPadding">a) Cuando el valor indicado en 
+este informe sea inferior al valor declarado por el interesado o al 
+precio o contraprestación pactada en el acto o negocio jurídico que dé 
+lugar al hecho imponible. En tal caso, se tomará la mayor de dichas 
+cantidades como base imponible, de acuerdo con lo previsto en el 
+artículo 46.3 del Texto Refundido de la Ley del Impuesto sobre 
+Transmisiones Patrimoniales y Actos Jurídicos Documentados, aprobado por
+ el Real Decreto Legislativo 1/1993, de 24 de septiembre y en el 
+artículo 18.2 de la Ley 29/1987, de 18 de diciembre, del Impuesto sobre 
+Sucesiones y Donaciones.</p>
+	    		    	
+	    	<p class="textoJustificadoPadding">b) En aquellos bienes en los que el valor declarado o indicado en este informe exceda de 300.000 euros. </p>
+	    		
+	    	<p class="textoJustificadoPadding">c) Cuando se trate de suelos 
+sin edificar, parcelas infraedificadas, inmuebles con construcciones en 
+estado ruinoso en su totalidad, o cuyo valor de la construcción segun 
+los valores catastrales sea inferior al 20 por ciento de su valor total.</p>
+	    	
+	    	<p class="textoJustificadoPadding">d) En edificaciones singulares de carácter histórico o artístico. </p>
+	    		
+	    	<p class="textoJustificadoPadding">e) Cuando el bien que se pretende valorar carezca de referencia catastral. </p>
+	    		    	
+	    	<p class="textoJustificadoPadding">f) En el caso de inmuebles que 
+tengan un precio máximo de venta fijado por la Administración, cuando el
+ valor indicado en este informe sea superior al indicado precio máximo, 
+supuesto en el que prevalecerá este último.</p>
+	    		
+	    	<p class="textoJustificadoPadding">g) Cuando se trate de inmuebles que tengan un precio establecido en subasta judicial, notarial o administrativa.</p>
+	    		
+	    	<p class="textoJustificadoPadding">h) Cuando el transmitente o el 
+adquirente sea una Administración pública, un organismo autónomo o 
+cualquiera de las entidades integrantes del sector público.</p>	    	
+	    	    		
+	    	<div class="filaSepardor"></div>
+	    </fieldset>
+	</div>		
+
+	
+
+<!-- FIN DE TEXTOS INFORMATIVOS -->	 		
+	 		
+	 	
+        		
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+				
+		 
+						 
+				<!-- FIN CONTENIDO COMUN (NO DEPENDE DEL ORIGEN) -->	
+
+	       		</fieldset>
+
+			</div>	<!-- FIN DIV CON CLASE CSS VARIABLE -->
+
+	<!-- ASISTENTE MENSAJE SESION -->
+	
+
+
+
+	       
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION -->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesion">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de finalización de sesión</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Queda 5 minuto/s para que finalice la sesión.</div>
+                </div>
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para continuar con la sesión activa, pulse el botón <strong>Continuar</strong>.</div>
+                </div>				
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">
+				<input name="botonContinuar" type="button" value="  Continuar  " onclick="continuarSesionActiva()">
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+		
+	<!-- CAPA CON ASISTENTE CON MENSAJE SESION FINALIZADA-->
+	<div class="capaAsistenteMensajeSesion" id="capaMensajeSesionFinalizada">		
+		<div class="PrincipalConCabeceraOficinaElectronica">
+			<div class="filaSepardor"></div>						
+			<fieldset class="oficinaElectronica">					
+				<legend class="oficinaElectronica">Aviso de sesión finalizada</legend>
+				<div class="fila"></div>	
+				<div class="fila">
+					<div class="col">Ha finalizado la sesión.</div>
+                </div>                	
+                <div class="fila"></div>	
+                <div class="fila">
+					<div class="col">Para salir de la aplicación, pulse el botón <strong>Salir</strong>.</div>
+                </div>					
+			 </fieldset>
+			 <div class="filaSepardor"></div>		
+		</div>			 
+		<div class="fila">	
+			<div class="filaCentrada">				
+			 	<input name="botonSalir" type="button" value="  Salir  " onclick="salirAplicacion()">
+			</div>
+		</div>			 		
+	</div>
+				
+	<!-- CAPA CON FONDO INTERMEDIO QUE SE PONE ENTRE LA PAGINA PRINCIPAL Y EL ASISTENTE CON EL MENSAJE -->
+	<div class="capaFondoDisabledAsistenteMensajeSesion" id="capaFondoMensajeSesion"></div>		
+	
+	<!-- AVISO CATASTRO URBANOS  -->
+
+	<!-- FIN AVISO CATASTRO URBANOS  -->
+	
+					
+		</form>	<!-- FIN DEL FORMULARIO -->	
+	
+		 
+	
+</body></html>
